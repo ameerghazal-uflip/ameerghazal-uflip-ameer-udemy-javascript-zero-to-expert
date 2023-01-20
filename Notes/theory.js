@@ -21,6 +21,14 @@ var: old, don't use
 - similar >, <, >=, <= operators
 - precedence rules are similar
 
+- we can use ${variable} for concation of a string, it can be much faster than + "" ... etc. with back tickets (above tab) ``
+- we can also use backticks for all string. Also somewhat similar newline \n\ feature, but instead we can use backticks. 
+(e.g. console.log(`String 
+with 
+multiple 
+lines`))
+
+
 
 
 

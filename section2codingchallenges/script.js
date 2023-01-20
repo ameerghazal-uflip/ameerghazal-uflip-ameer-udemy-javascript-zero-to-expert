@@ -39,7 +39,7 @@ var job = "programmer";
 job = "teacher";
 console.log(job); // should not use var these days
 
-*/
+
 
 const now = 2037;
 const ageJonas = now - 1991;
@@ -68,3 +68,25 @@ const isFullAge = (ageSarah >= 18);
 console.log(isFullAge);
 console.log(now - 1991 > now - 2018); // precendence rules
 
+*/
+
+const firstName = "Jonas";
+const job = "teacher";
+const birthYear = 1991;
+const year = 2037;
+
+const jonas = "I'm " + firstName + ', a ' + (year - birthYear) + " year old " + job + "!";
+console.log(jonas);
+
+const jonasNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`; // two different ways
+console.log(jonasNew);
+
+// for multi-line string
+console.log('String with \n\
+multiple \n\
+lines');
+
+// Template Literate Instead
+console.log(`String
+with 
+multiple lines`);
