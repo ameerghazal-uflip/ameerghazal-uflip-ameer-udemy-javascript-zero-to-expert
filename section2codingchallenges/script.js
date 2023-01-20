@@ -89,7 +89,6 @@ console.log(`String
 with 
 multiple lines`);
 
-*/
 
 const age = 15;
 if (age >= 18) {
@@ -110,3 +109,21 @@ else {
 }
 
 console.log(century);
+
+*/
+
+// Type Conversion
+const inputYear = '1991';
+console.log(Number(inputYear), inputYear);
+console.log(Number(inputYear) + 18);
+
+console.log(String(23));
+
+// Type Coercion
+console.log("I am " + 23 + " years old"); // all converted to a string
+console.log(23 - 10 - 3); // all converted to a number 
+
+let n = '1' + 1; // ('11', converts to a String)
+n = n - 1 // '11' = 1 = 10 (converts to a number)
+console.log(n);
+
