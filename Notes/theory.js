@@ -20,7 +20,7 @@ var: old, don't use
 - ++i & i++ ... are the same
 - similar >, <, >=, <= operators
 - precedence rules are similar
-
+- can declare two variables at the same time (let x, y;)
 
 
 
