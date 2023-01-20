@@ -18,6 +18,8 @@ var: old, don't use
 - concatination works similar to java
 - += & -= ... are the same as java
 - ++i & i++ ... are the same
+- similar >, <, >=, <= operators
+- precedence rules are similar
 
 
 

@@ -61,6 +61,10 @@ x--;
 console.log(x);
 
 // Comparison Operators
-console.log(ageJonas > ageSarah); // asks an if statment 
-if ()
+console.log(ageJonas > ageSarah); // asks an if statment using 
+console.log(ageSarah < 18);
+
+const isFullAge = (ageSarah >= 18);
+console.log(isFullAge);
+console.log(now - 1991 > now - 2018); // precendence rules
 
