@@ -39,7 +39,6 @@ var job = "programmer";
 job = "teacher";
 console.log(job); // should not use var these days
 
-*/
 
 const now = 2037;
 const ageJonas = now - 1991;
@@ -68,3 +67,17 @@ const isFullAge = (ageSarah >= 18);
 console.log(isFullAge);
 console.log(now - 1991 > now - 2018); // precendence rules
 
+const now = 2037;
+const ageJonas = now - 1991;
+const ageSarah = now - 2018;
+console.log(now - 1991 > now - 2018); // precendence rules
+
+let x, y;
+x = y = 25 - 10 - 5; // x = y = 10, x = 10
+console.log(x, y);
+
+const averageAge = (ageJonas + ageSarah) / (2);
+console.log(ageJonas, ageSarah)
+console.log(averageAge);
+
+*/
