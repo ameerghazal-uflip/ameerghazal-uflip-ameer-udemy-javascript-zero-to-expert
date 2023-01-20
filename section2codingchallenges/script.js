@@ -68,8 +68,6 @@ const isFullAge = (ageSarah >= 18);
 console.log(isFullAge);
 console.log(now - 1991 > now - 2018); // precendence rules
 
-*/
-
 const firstName = "Jonas";
 const job = "teacher";
 const birthYear = 1991;
@@ -90,3 +88,25 @@ lines');
 console.log(`String
 with 
 multiple lines`);
+
+*/
+
+const age = 15;
+if (age >= 18) {
+    console.log("Sarah can start driving license");
+}
+else {
+    const yearsLeft = 18 - age;
+    console.log(`Sarah is too young. Wait anohter ${yearsLeft} years :)`);
+}
+
+const birthYear = 2012;
+let century; // defined before similar to java 
+if (birthYear <= 2000) {
+    century = 20;
+}
+else {
+    century = 21;
+}
+
+console.log(century);
