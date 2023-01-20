@@ -9,8 +9,9 @@ Big int: larger integers than a number can hold.
 - we do not have to manually define the data type (different from java)
 
 
-
-
+let: use for any variable
+const: only for final values (e.g. birthYear)
+var: old, don't use
 
 
 
