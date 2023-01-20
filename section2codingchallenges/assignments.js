@@ -1,5 +1,4 @@
-// let, const and var
-
+// ZBasic Operators 
 
 language = "English";
 const country = "United States";
@@ -12,5 +11,3 @@ console.log(population > 6); // assuming we are in millons (units)
 console.log(population < 33);
 const description = country + " is in " + continent + ", and its " + population + " million people speak " + language;
 console.log(description);
-
-
