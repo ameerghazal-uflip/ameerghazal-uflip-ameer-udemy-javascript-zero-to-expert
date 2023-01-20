@@ -13,6 +13,13 @@ let: use for any variable
 const: only for final values (e.g. birthYear)
 var: old, don't use
 
+- we can log more than one thing by seperating with a comma (console.log( , ))
+- we can raise something to a power by ** (e.g 2 ** 3) is 2 cubed. 
+- concatination works similar to java
+- += & -= ... are the same as java
+- ++i & i++ ... are the same
+
+
 
 
 

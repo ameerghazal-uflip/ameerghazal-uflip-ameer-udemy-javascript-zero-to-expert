@@ -31,7 +31,6 @@ console.log(typeof year); // returns undefined since it is empty
 year = 1991;
 console.log(typeof year); // dynamic typing
 
-*/
 
 const birthYear = 1991;
 //birthYear = 1992; // cannot do this. This is similar to final ... in java
@@ -39,3 +38,29 @@ const birthYear = 1991;
 var job = "programmer";
 job = "teacher";
 console.log(job); // should not use var these days
+
+*/
+
+const now = 2037;
+const ageJonas = now - 1991;
+const ageSarah = now - 2001
+console.log(ageJonas, ageSarah); // we can log more than one
+
+console.log(ageJonas * 2, ageJonas / 10, 2 ** 3);
+// 2 ** 3 is 2 cubed = 8 =>
+
+const firstName = "Jonas";
+const lastName = "Brothers";
+console.log(firstName + " " + lastName); // similar  to java
+
+let x = 10 + 5;
+x += 10; // the same as java
+x *= 4; // x = x * 4
+x++;
+x--;
+console.log(x);
+
+// Comparison Operators
+console.log(ageJonas > ageSarah); // asks an if statment 
+if ()
+
