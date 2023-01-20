@@ -1,4 +1,5 @@
-
+/*
+Lessons before 11
 let js = 'daily';
 console.log(40 + 8 + 23 - 10);
 
@@ -14,3 +15,20 @@ let myFirstJob = "Coder";
 let myCurrentJob = "Eater";
 
 console.log(myFirstJob);
+
+*/
+
+let javascriptIsFun = true;
+console.log(javascriptIsFun);
+console.log(typeof javascriptIsFun); // has the type to the console
+console.log(typeof "Jonas"); // can either use ' ' , or , " "
+
+javascriptIsFun = "YES!"; // we can use the same variable and swtich the data type without redefining
+console.log(javascriptIsFun);
+console.log(typeof javascriptIsFun); // in this case it switched from a boolean to a string (different from java)
+
+let year;
+console.log(year);
+console.log(typeof year); // returns undefined since it is empty
+year = 1991;
+console.log(typeof year); // dynamic typing
