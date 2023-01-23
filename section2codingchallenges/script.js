@@ -254,7 +254,31 @@ else {
     console.log("Invalid");
 }
 
+
+// Expressions 
+2 + 4
+true && false && !false
+
+// Statements 
+if (23 > 10) {
+    const str = '23 is bigger';
+}
+
+const age = 15;
+age >= 18 ? console.log("I like to drink wine") : console.log("I like to drink water");
+
+const drink = age >= 18 ? 'wine' : 'water' // this is the same as the if statement under. 
+console.log(drink);
+
+let drink2; // this is the longer version into the version above. 
+if (age >= 18) {
+    drink2 = 'wine';
+}
+else {
+    drink2 = 'water';
+}
+console.log(drink2);
+
+console.log(`I like to drink ${age >= 18 ? 'wine' : 'water'}`); // this is perfectly legal since it returns a value.
+
 */
-
-
-

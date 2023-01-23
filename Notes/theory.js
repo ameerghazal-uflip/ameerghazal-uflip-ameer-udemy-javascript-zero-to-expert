@@ -60,7 +60,17 @@ Switch Statement
 - we end cases with breaks, and we can stack cases if they have the same function (similar to an && / || operator). (without break, it continues for the entire structure, similar to curly braces for if-else)
 - we can - optional - end swtich statements with a defualt if all fail (similar to an else statement at the end).
 
+Statements & Expressions 
+- entire line of code (ending with a semicolon) is a statement.
+- just the line of code without a semicolon (e.g 2+4) is just an expression similar to java. 
 
+The Conditonal (Ternary) Operator (?)
+- ? allows us to define an if-else statement all in one line.
+- after the ? we write our "if block" if the statement prior is true.
+- we need a mandatory "else" block. So, we seperate the first statment with a colon (:) and write the else part. 
+- 3 parts: conditon, if, else 
+- we can assign it to a value. 
+- we can use these inside of template literals.
 
 
 */
