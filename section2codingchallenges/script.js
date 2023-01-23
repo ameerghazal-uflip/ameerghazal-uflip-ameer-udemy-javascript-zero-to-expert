@@ -6,7 +6,7 @@ console.log(40 + 8 + 23 - 10);
 console.log("Jonas");
 console.log("Whole lotta red");
 
-let firstName = "carti"; // let is used as a variable 
+let firstName = "carti"; // let is used as a variable
 console.log(firstName);
 console.log(firstName);
 console.log(firstName); // logs things to the computer using camelCase, similar to java
@@ -61,7 +61,7 @@ x--;
 console.log(x);
 
 // Comparison Operators
-console.log(ageJonas > ageSarah); // asks an if statment using 
+console.log(ageJonas > ageSarah); // asks an if statment using
 console.log(ageSarah < 18);
 
 const isFullAge = (ageSarah >= 18);
@@ -86,7 +86,7 @@ lines');
 
 // Template Literate Instead
 console.log(`String
-with 
+with
 multiple lines`);
 
 
@@ -100,7 +100,7 @@ else {
 }
 
 const birthYear = 2012;
-let century; // defined before similar to java 
+let century; // defined before similar to java
 if (birthYear <= 2000) {
     century = 20;
 }
@@ -119,7 +119,7 @@ console.log(String(23));
 
 // Type Coercion
 console.log("I am " + 23 + " years old"); // all converted to a string
-console.log(23 - 10 - 3); // all converted to a number 
+console.log(23 - 10 - 3); // all converted to a number
 
 let n = '1' + 1; // ('11', converts to a String)
 n = n - 1 // '11' = 1 = 10 (converts to a number)
@@ -146,8 +146,6 @@ if (height) {
 else {
     console.log("Height is UNDEFINED");
 }
-
-*/
 
 const age = "18";
 if (age === 18) {
@@ -178,3 +176,34 @@ else {
 if (fav !== 23) { // = has the type change, !== is strict, similar equality operators
     console.log("why not 23");
 }
+
+// Boolean Logic
+
+const hasDriversLicense = true; // A
+const hasGoodVision = true; // B
+
+console.log(hasDriversLicense && hasGoodVision) // returns a boolean
+console.log(hasDriversLicense || hasGoodVision);
+console.log(!hasDriversLicense);
+
+const shouldDrive = hasDriversLicense && hasGoodVision;
+// if (shouldDrive) { // true
+//     console.log("Sarah is able to drive");
+// }
+// else { // if false
+//     console.log("Someone else should drive...");
+// }
+
+const isTired = false; // c
+console.log(hasDriversLicense || hasGoodVision || isTired); // at least one needs to be true
+console.log(hasDriversLicense && hasGoodVision && isTired); // at least one needs to be true
+
+if (hasDriversLicense && hasGoodVision && !isTired) { // if she has drivers, good vision, and not tired
+    console.log("Sarah is able to drive");
+}
+else { // if false
+    console.log("Someone else should drive...");
+}
+
+*/
+

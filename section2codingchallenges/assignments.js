@@ -1,12 +1,13 @@
-// Equality Operators: == vs. ===
+// Logical Operators: == vs. ===
 
-const numNeighbours = Number(prompt("How many neighbour countries does your country have?")); // type change is nessecary for strict (===) operator / type conversion.
-if (numNeighbours === 1) {
-    console.log("Only 1 border!"); // does not run properly since it is a strict equal (no type coericen)
-}
-else if (numNeighbours > 1) {
-    console.log("More than one border");
+let language = "English";
+const country = "United States";
+let population = 331.45;
+const isIsland = false;
+
+if ((language === "English") && (population < 50) && (!isIsland)) {
+    console.log(`You should live in ${country}`);
 }
 else {
-    console.log("No borders"); // 0 
+    console.log(`${country} does not meet your criteria`);
 }
