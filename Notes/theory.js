@@ -108,6 +108,15 @@ Reviewing Functions
 - functions have local variables, similar to methods. 
 - call the function with the parenthesis (). Add arguments inside if needed. 
 
+Introduction to Arrays
+- creating basic arrays can be done by setting a variable equal to closed square brackets [], seperating each item by a comma. 
+- it can also be created by using new Array(...). 
+- These are much different from java. In java, the array type all has to match, and we must use {} or decalre an oversize, etc..
+- Indexing is very similar (0,1,2, etc.). Printing is also similar. Call the array by name, and in tn the square brackets, implement the index.
+- length is also similar 
+- Only primitve values are immutable. So we can mutate array's
+- We can place function calls into arrays
+
 
 
 
