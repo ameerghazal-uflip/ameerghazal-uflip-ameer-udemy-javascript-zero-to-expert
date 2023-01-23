@@ -1,39 +1,17 @@
 'use strict';
 
-/*
-// Section 3 Lesson 34: Function declerations vs. expressions. 
+// Section 3 Lesson 36: Functions Calling Other Functions
 
-// Function Declerations
-function calcAge1(birthYear) {
-    return 2037 - birthYear;
+function cutFruitPieces(fruit) {
+    return fruit * 4; // this machine cuts the fruit into pieces.
 }
 
-const age1 = calcAge1(1991); // argument is what we use to fill in the place holder.
+function fruitProcessor(apples, oranges) {
+    const applePieces = cutFruitPieces(apples);
+    const orangePieces = cutFruitPieces(oranges);
 
-// Function Expressions
-const calcAge2 = function (birthYear) {
-    return 2037 - birthYear;
+    const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of oranges`;
+    return juice;
 }
 
-const age2 = calcAge2(1991);
-console.log(age1, age2);
-
-*/
-
-// Section 3 Lesson 35
-
-// Arrow Function
-const calcAge3 = birthYear => 2037 - birthYear; // special form of function exp.
-const age3 = calcAge3(1991);
-console.log(age3);
-
-const yearsUntilRetirement = (birthYear, firstName) => {
-    const age = 2037 - birthYear;
-    const retirement = 65 - age;
-    return ` ${firstName} retires in ${retirement} years`;
-}
-
-console.log(yearsUntilRetirement(1991, 'Jonas'));
-console.log(yearsUntilRetirement(1980, 'Bob'));
-
-
+console.log(fruitProcessor(2, 3)); // the arguements replace the parameter place holders. From there cutPieces is called inside of the function. 

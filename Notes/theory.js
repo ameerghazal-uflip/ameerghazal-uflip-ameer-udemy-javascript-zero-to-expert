@@ -84,8 +84,8 @@ Functions
 - The arguements are the values chosen when the function is called.
 
 Function Declaration vs. Expression
-- we can have anyonmus functions by setting the nameless function equal to a variable. (function expressions)
-- (function decleration) defines it the normal member method way. 
+- we can have anyonmus functions by setting the nameless function equal to a variable. (function expressions): const calcAge2 = function (birthYear)
+- (function decleration) defines it the normal member method way: function calcAge1(birthYear)
 
 Arrow Functions
 - implict return
@@ -93,7 +93,12 @@ Arrow Functions
 - add a parameter like normal (e.g. birthYear) followed by an arrow (=>), then the body.
 - for longer lines of code, we need the curly braces and a return statement
 - very similar to the functions. For multiple parameters we can wrap them with parenthesis like normal. 
-.
+    e.g. const calcAge3 = birthYear => 2037 - birthYear;
+
+Functions Calling Other Functions
+- So we use a function inside of another function
+- we do not need to explicity call both functions in the main program. 
+- very similar to methods in java.
 
 
 
