@@ -52,5 +52,5 @@ else if ((avgKoalasBonus2 > avgDolphinsBonus2) && ((avgDolphinsBonus2 || avgKoal
     console.log("Koalas win!");
 }
 
-
+// Did extra things for the over 100 calculations; nevertheless, it still functions the same. 
 
