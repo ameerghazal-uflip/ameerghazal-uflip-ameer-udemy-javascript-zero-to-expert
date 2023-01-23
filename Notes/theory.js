@@ -50,11 +50,15 @@ Eqaulity Logic
 
 Boolean Logic
 - and (&&) (both true), or (||) (at least one true), not (!) (flips the boolean). All similar to java (e.g. if A is false, then !A is true)
-- 
--
--
-
-
+ 
+Switch Statement
+- Similar function to an if-else statment. 
+- we use the case function, followed by ... (e.g. day of the week), followed by a colon.
+  ex: case 'monday':
+        console.log(".."); // this is the fuction if the statement is true.
+        break; // we end it off with a break
+- we end cases with breaks, and we can stack cases if they have the same function (similar to an && / || operator). (without break, it continues for the entire structure, similar to curly braces for if-else)
+- we can - optional - end swtich statements with a defualt if all fail (similar to an else statement at the end).
 
 
 

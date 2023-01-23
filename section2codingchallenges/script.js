@@ -205,5 +205,56 @@ else { // if false
     console.log("Someone else should drive...");
 }
 
+// Switch Statement
+const day = "tuesday";
+
+// Switch version
+switch (day) {
+    case 'monday':
+        console.log('Plan course structre');
+        console.log("Go to coding meet-up");
+        break;
+    case 'tuesday':
+        console.log("Gym");
+        break;
+    case 'wednesday':
+    case 'thursday':
+        console.log("Go to work");
+        break;
+    case 'friday':
+        console.log("Record");
+        break;
+    case 'Saturday':
+    case 'Sunday':
+        console.log("Have a good weekend");
+        break;
+
+    default:
+        console.log("Not a valid week day");
+}
+
+// if-else verison
+if (day === 'monday') {
+    console.log('Plan course structre');
+    console.log("Go to coding meet-up");
+}
+else if (day === 'tuesday') {
+    console.log("Gym");
+}
+else if (day === 'wednesday' || 'thursday') {
+    console.log("Go to work");
+}
+else if (day === 'friday') {
+    console.log("Record");
+}
+else if (day === 'Saturday' || 'Sunday') {
+    console.log("Have a good weekend");
+}
+else {
+    console.log("Invalid");
+}
+
 */
+
+
 
