@@ -1,15 +1,21 @@
 # ameer-udemy-javascript-zero-to-expert
 
-LECTURE: Logical Operators
-1. Comment out the previous code so the prompt doesn't get in the way
-2. Let's say Sarah is looking for a new country to live in. She wants to live in a 
-country that speaks english, has less than 50 million people and is not an 
-island.
-3. Write an if statement to help Sarah figure out if your country is right for her. 
-You will need to write a condition that accounts for all of Sarah's criteria. Take 
-your time with this, and check part of the solution if necessary.
-4. If yours is the right country, log a string like this: 'You should live in Portugal :)'. If 
-not, log 'Portugal does not meet your criteria :('
-5. Probably your country does not meet all the criteria. So go back and temporarily 
-change some variables in order to make the condition true (unless you live in 
-Canada :D)
+Coding Challenge #3
+There are two gymnastics teams, Dolphins and Koalas. They compete against each 
+other 3 times. The winner with the highest average score wins a trophy!
+Your tasks:
+1. Calculate the average score for each team, using the test data below
+2. Compare the team's average scores to determine the winner of the competition, 
+and print it to the console. Don't forget that there can be a draw, so test for that 
+as well (draw means they have the same average score)
+3. Bonus 1: Include a requirement for a minimum score of 100. With this rule, a 
+team only wins if it has a higher score than the other team, and the same time a 
+score of at least 100 points. Hint: Use a logical operator to test for minimum 
+score, as well as multiple else-if blocks �
+4. Bonus 2: Minimum score also applies to a draw! So a draw only happens when 
+both teams have the same score and both have a score greater or equal 100 
+points. Otherwise, no team wins the trophy
+Test data:
+§ Data 1: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110
+§ Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
+§ Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
