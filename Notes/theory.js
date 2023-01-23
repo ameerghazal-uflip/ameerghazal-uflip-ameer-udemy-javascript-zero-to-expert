@@ -82,4 +82,7 @@ Functions
 - A function can reuse a piece of code, reuse data, and return data. (These are similar to methods in java).
 - Can uses parameters which are defnied in or before the function is run.
 - The arguements are the values chosen when the function is called.
+
+- we can have anyonmus functions by setting the nameless function equal to a variable. (function expressions)
+- (function decleration) defines it the normal member method way. 
 */

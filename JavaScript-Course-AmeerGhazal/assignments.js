@@ -1,11 +1,23 @@
-// Functions
+// Function Declerations vs. Expressions
 
-function describeCountry(country, population, capitalCity) {
-    return (`${country} has ${population} million people and its capital city is ${capitalCity}.`);
+// Decleration
+function percentageOfWorld1(population) {
+    return ((population / 7900) * 100);
 }
 
-const us = describeCountry("United States", 331.45, "D.C.")
-const japan = describeCountry("Japan", 126.23, "Tokyo")
-const brazil = describeCountry("Brazil", 212.56, "Brasilia");
+let us = percentageOfWorld1(331.45);
+let japan = percentageOfWorld1(126.23);
+let brazil = percentageOfWorld1(212.56);
+
+console.log(us, japan, brazil);
+
+// Expression
+const percentageOfWorld2 = function (population) {
+    return ((population / 7900) * 100);
+}
+
+us = percentageOfWorld2(331.45);
+japan = percentageOfWorld2(126.23);
+brazil = percentageOfWorld2(212.56);
 
 console.log(us, japan, brazil);
