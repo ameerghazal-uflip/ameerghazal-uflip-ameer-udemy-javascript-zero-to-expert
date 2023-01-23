@@ -117,6 +117,11 @@ Introduction to Arrays
 - Only primitve values are immutable. So we can mutate array's
 - We can place function calls into arrays
 
+Basic Array Operations (Methods)
+-
+-
+-
+-
 
 
 
