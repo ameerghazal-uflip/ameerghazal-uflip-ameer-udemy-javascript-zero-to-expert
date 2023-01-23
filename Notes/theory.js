@@ -39,6 +39,13 @@ lines`))
     e.g. : let n = '1' + 1; // ('11', converts to a String)
     n = n - 1 // '11' = 1 = 10 (converts to a number)
 
+- 5 falsy values: 0, "", undefined, null, Nan when converted to a boolean. The rest are truthy values 
+- (===) is the strict equality operator, no type coericen. 
+- (==) is the loose equality operator, does type coericen. (e.g. "18" == 18)
+- we can prompt something to the user by using the prompt command (e.g. prompt("...")). From there, we can assign the value given by a user in a variable.
+- using the user respone, we can wrap the object (changing the type to a number) (e.g. Number(prompt(".."))) (type conversion)
+- if, else if, etc. is also the same as java.
+- != has the type change, !== is strict, similar to the equality operators
 
 
 

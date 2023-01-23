@@ -110,8 +110,6 @@ else {
 
 console.log(century);
 
-*/
-
 // Type Conversion
 const inputYear = '1991';
 console.log(Number(inputYear), inputYear);
@@ -127,3 +125,56 @@ let n = '1' + 1; // ('11', converts to a String)
 n = n - 1 // '11' = 1 = 10 (converts to a number)
 console.log(n);
 
+// Boolean Type Coercion
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean('Jonas')); // any string that is not empty is true. Empty objects are also true
+console.log(Boolean({}));
+
+const money = 110;
+if (money) { // javascript trypes to cohert any value into a boolean
+    console.log("Don't spend it all");
+}
+else {
+    console.log("You should get a job");
+}
+
+let height; // undefined, so it is converted to a boolean -> false
+if (height) {
+    console.log("Height is defined");
+}
+else {
+    console.log("Height is UNDEFINED");
+}
+
+*/
+
+const age = "18";
+if (age === 18) {
+    console.log("You just became an adult"); // strict, better
+}
+
+if (age == 18) {
+    console.log("You just became an adult (loose)"); // loose
+}
+
+const fav = Number(prompt("What's yor fav number?"));
+console.log(fav);
+console.log(typeof fav);
+
+if (fav === 23) { // '23'== 23
+    console.log("Dope number");
+}
+else if (fav === 7) {
+    console.log("7 is also a cool number");
+}
+else if (fav === 9) {
+    console.log("9 is also a cool number");
+}
+else {
+    console.log("Number is not 23 or 7");
+}
+
+if (fav !== 23) { // = has the type change, !== is strict, similar equality operators
+    console.log("why not 23");
+}

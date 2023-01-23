@@ -1,7 +1,12 @@
-// Type Conversion and Coercion: Predictions
+// Equality Operators: == vs. ===
 
-console.log('9' - '5'); // should be the number 4
-console.log('19' - '13' + '17'); // should be the number 6 added to the string 17, equaling the string '617'
-console.log('19' - '13' + 17); // number 6 added to the number 17 == the number 23
-console.log('123' < 57); // should be false, converting the 123 to a number
-console.log(5 + 6 + '4' + 9 - 4 - 2); // 11 plus '4' converting to string "114" + 9, becoming 1149 - 4 - 2, equaling 1143 number.
+const numNeighbours = Number(prompt("How many neighbour countries does your country have?")); // type change is nessecary for strict (===) operator / type conversion.
+if (numNeighbours === 1) {
+    console.log("Only 1 border!"); // does not run properly since it is a strict equal (no type coericen)
+}
+else if (numNeighbours > 1) {
+    console.log("More than one border");
+}
+else {
+    console.log("No borders"); // 0 
+}
