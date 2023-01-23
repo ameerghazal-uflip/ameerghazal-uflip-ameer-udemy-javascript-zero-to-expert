@@ -72,7 +72,14 @@ The Conditonal (Ternary) Operator (?)
 - we can assign it to a value. 
 - we can use these inside of template literals.
 
+Section 3
+- Strict mode (with 'use strict') helps for finding bugs. define at the start.
 
-
-
+Functions
+- we can use functions for things we would need to use more then once.
+- we can access by using the title name followed by a parenthesis (e.g. logger())
+    fucntion logger() console.log(...) 
+- A function can reuse a piece of code, reuse data, and return data. (These are similar to methods in java).
+- Can uses parameters which are defnied in or before the function is run.
+- The arguements are the values chosen when the function is called.
 */

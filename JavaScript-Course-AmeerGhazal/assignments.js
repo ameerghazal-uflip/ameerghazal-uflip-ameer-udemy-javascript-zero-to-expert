@@ -1,8 +1,11 @@
-// Coding Challenge #4
+// Functions
 
+function describeCountry(country, population, capitalCity) {
+    return (`${country} has ${population} million people and its capital city is ${capitalCity}.`);
+}
 
-// Data 1: Test for bill values 275, 40 and 430
+const us = describeCountry("United States", 331.45, "D.C.")
+const japan = describeCountry("Japan", 126.23, "Tokyo")
+const brazil = describeCountry("Brazil", 212.56, "Brasilia");
 
-const bill = 40;
-const tip = bill >= 50 && bill <= 300 ? tip = (bill * 0.15) : tip = (bill * .20);
-console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
+console.log(us, japan, brazil);
