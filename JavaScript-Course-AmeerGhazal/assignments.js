@@ -1,13 +1,27 @@
-// Functions Calling Other Functions
+// Section 3 Coding Challenge 1
 
-const percentageOfWorld1 = population => (population / 7900 * 100);
+// § Data 1: Dolphins score 44, 23 and 71. Koalas score 65, 54 and 49
+const calcAverage = (score1, score2, score3) => ((score1 + score2 + score3) / 3);
 
-function describePopulation(country, population) {
-    return (`${country} has ${population} million people, which is about ${percentageOfWorld1(population)}% of the world.`);
+let avgDolphins = calcAverage(44, 23, 71);
+let avgKoalas = calcAverage(65, 54, 49);
+
+
+function checkWinner(avgDolphins, avgKoalas) {
+    if (avgDolphins >= (avgKoalas * 2)) {
+        console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas}).`)
+    }
+    else if (avgKoalas >= (avgDolphins * 2)) {
+        console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins}).`)
+    }
+    else {
+        console.log("No winner");
+    }
 }
 
-const us = describePopulation("United States", 331.45);
-const japan = describePopulation("Japan", 126.23);
-const brazil = describePopulation("Brazil", 212.56);
+checkWinner(avgDolphins, avgKoalas);
 
-console.log(us, japan, brazil);
+// § Data 2: Dolphins score 85, 54 and 41. Koalas score 23, 34 and 27
+avgDolphins = calcAverage(85, 54, 41);
+avgKoalas = calcAverage(23, 34, 27);
+checkWinner(avgDolphins, avgKoalas);

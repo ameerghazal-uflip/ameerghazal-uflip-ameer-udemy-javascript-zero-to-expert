@@ -100,6 +100,14 @@ Functions Calling Other Functions
 - we do not need to explicity call both functions in the main program. 
 - very similar to methods in java.
 
+Reviewing Functions
+-  similar to java, if the return statement is used, the method ends/returns
+- function declarations can be used before they are declared in the code: function name (param)
+- function expressions (value stored in a variable)
+- Arrow fucntions great for one-line functions. No this keyword!
+- functions have local variables, similar to methods. 
+- call the function with the parenthesis (). Add arguments inside if needed. 
+
 
 
 

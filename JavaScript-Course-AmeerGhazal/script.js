@@ -1,17 +1,25 @@
 'use strict';
 
-// Section 3 Lesson 36: Functions Calling Other Functions
 
-function cutFruitPieces(fruit) {
-    return fruit * 4; // this machine cuts the fruit into pieces.
+// Section 3 Lesson 37: Reviewig Functions
+
+const yearsUntilRetirement = function (birthYear, firstName) {
+    const age = calcAge(birthYear);
+    const retirement = 65 - age;
+    if (retirement > 0) {
+        return retirement;
+    }
+    else {
+        return -1;
+    }
+
+    //return `${firstName} retires in ${retirement} years`;
 }
 
-function fruitProcessor(apples, oranges) {
-    const applePieces = cutFruitPieces(apples);
-    const orangePieces = cutFruitPieces(oranges);
-
-    const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces of oranges`;
-    return juice;
+const calcAge = function (birthYear) {
+    return 2037 - birthYear;
 }
 
-console.log(fruitProcessor(2, 3)); // the arguements replace the parameter place holders. From there cutPieces is called inside of the function. 
+console.log(yearsUntilRetirement(1991, 'Jonas'));
+console.log(yearsUntilRetirement(1800, 'Mike'));
+
