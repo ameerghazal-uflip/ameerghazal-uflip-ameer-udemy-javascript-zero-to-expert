@@ -282,3 +282,4 @@ console.log(drink2);
 console.log(`I like to drink ${age >= 18 ? 'wine' : 'water'}`); // this is perfectly legal since it returns a value.
 
 */
+
