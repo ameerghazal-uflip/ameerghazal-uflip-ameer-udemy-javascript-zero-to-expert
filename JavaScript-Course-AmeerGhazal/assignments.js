@@ -1,17 +1,14 @@
-// Introduction to Arrays
+// Basic Array Operations (Methods)
 
-const populations = [331.45, 126.23, 200.23, 111];
-if (populations.length === 4) {
-    console.log(true);
-}
-else {
-    console.log(false);
-}
+const neighbors = ['Brazil', 'Venezula', 'Argentina'];
+neighbors.push('Utopia'); // adds to the end=
+neighbors.pop(); /// removes last element
+console.log(neighbors);
 
-function percentageOfWorld1(population) {
-    return ((population / 7900) * 100);
+if (neighbors.includes('Germany')) {
+    console.log("Probably not a central country");
 }
 
-
-const percentages = [percentageOfWorld1(populations[0]), percentageOfWorld1(populations[1]), percentageOfWorld1(populations[2]), percentageOfWorld1(populations[3])];
-console.log(percentages);
+const value = neighbors.indexOf('Brazil');
+neighbors[value] = 'Filler';
+console.log(neighbors);

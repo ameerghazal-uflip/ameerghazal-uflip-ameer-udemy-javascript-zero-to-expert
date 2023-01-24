@@ -1,42 +1,27 @@
 'use strict';
 
+// Section 3 Lesson 4 : Basic Array Methods
 
-// Section 3 Lesson 39: Intro to Arrays
-
+// push methods add an element to the end of the array, and returns the length
 const friends = ['Micheal', 'Steven', 'Peter'];
-console.log(friends);
+const newLength = friends.push('Jay');
+console.log(newLength);
 
-const values = new Array(1991, 1984, 2008, 2020);
-console.log(values);
-
-console.log(friends[0]); // index based, starting at 0
-console.log(friends[2]);
-console.log(friends.length); // not 0 based
-console.log(friends[friends.length - 1]); // we had to subtract 1 for indexing reasons
-
-
-friends[2] = 'Jay';
+// adds an element to the front of the array, and returns the length 
+friends.unshift('John');
 console.log(friends)
 
+// Remove elements
+friends.pop(); // removes the last element of the array and returns the removed element 
+console.log(friends);
 
-const jonas = ['Jonas', 'lastname', 2034 - 1000, 'teacher', friends]; // we can mix and match types: strings, numbers, arrays, etc.
-console.log(jonas);
-console.log(jonas.length);
+const popp = friends.shift(); // removes the first element 
+console.log(popp);
 
-// Exercise
-function calcAge(birthYear) {
-    return 2037 - birthYear;
+console.log(friends.indexOf('Steven')); // returns the index of the element
+
+console.log(friends.includes('Bob')); // returns true or false if the value is in the array
+
+if (friends.includes('Peter')) {
+    console.log("Peterrrr");
 }
-
-const years = [1990, 1967, 2002, 2010, 2018];
-const age1 = calcAge(years[0]);
-const age2 = calcAge(years[1]);
-const age3 = calcAge(years[2]);
-const age4 = calcAge(years[3]);
-const age5 = calcAge(years[years.length - 1]);
-console.log(age1, age2, age3, age4, age5);
-
-const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])];
-console.log(ages);
-
-

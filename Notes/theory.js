@@ -118,10 +118,12 @@ Introduction to Arrays
 - We can place function calls into arrays
 
 Basic Array Operations (Methods)
--
--
--
--
+- push() is a method/function that adds an element to the array. Returns new length.
+- unshift() adds an element to the front of the array. Returns new length.
+- pop() removes the last element of an array. Returns removed element.
+- shift() removes the first element of the array. Returns removed element.
+- indexOf() returns the index of the value. Similar to java.
+- includes() returns a booelan if the value is in the array (true, false)
 
 
 
