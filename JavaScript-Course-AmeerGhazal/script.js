@@ -1,7 +1,7 @@
 'use strict';
 
 // Section 3 Lesson 44: Object Methods
-
+/*
 const jonas = {
     firstName: 'Jonas',
     lastName: 'Schem',
@@ -50,3 +50,4 @@ console.log(jonas.getSummary());
 jonas.hasDriverLicense ? console.log(`${jonas.firstName} is a ${jonas.calcAge3()} year old ${jonas.job}, and he has a driver's license.`) : console.log(`${jonas.firstName} is a ${jonas.calcAge3()} year old ${jonas.job}, and he does not have a driver's license.`);
 
 
+*/

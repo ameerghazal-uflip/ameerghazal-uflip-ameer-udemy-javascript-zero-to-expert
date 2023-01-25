@@ -1,24 +1,40 @@
-// Object Methods
+// Coding Challenge 3
 
-const myCountry = {
-    country: "United States",
-    capital: "Wasington D.C.",
-    language: "English",
-    population: 331.45,
-    neighbors: ["Mexico", "Canada"],
+const Mark = {
 
-    describe: function () {
-        return (`${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbors.length} neighboring countries, and a capital called ${this.capital}.`);
-    },
+    firstName: "Mark",
+    lastName: "Miller",
+    mass: 78,
+    height: 1.69,
 
-    checkIsland: function () {
-        this.isIsland = this.neighbors.length === 0 ? true : false; // if the array is empty, there are no neighbors, so true.
-        // no need to return anything here, optional
+    calcBMI: function () {
+        this.BMI = (this.mass / (this.height ** 2));
+        return this.BMI;
     }
-
 };
 
-console.log(myCountry.describe());
-myCountry.checkIsland();
-console.log(myCountry.isIsland);
+const John = {
+    firstName: "John",
+    lastName: "Smith",
+    mass: 92,
+    height: 1.95,
 
+    calcBMI: function () {
+        this.BMI = (this.mass / (this.height ** 2));
+        return this.BMI;
+    }
+};
+
+Mark.calcBMI();
+John.calcBMI();
+
+
+if (Mark.BMI > John.BMI) {
+    console.log(`${Mark.firstName} ${Mark.lastName}'s BMI (${Mark.BMI}) is higher than ${John.firstName} ${John.lastName}'s (${John.BMI})!`);
+}
+else if (John.BMI > Mark.BMI) {
+    console.log(`${John.firstName} ${John.lastName}'s BMI (${John.BMI}) is higher than ${Mark.firstName} ${Mark.lastName}'s (${Mark.BMI})!`);
+}
+else {
+    console.log("Both are equal!");
+}
