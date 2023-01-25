@@ -1,5 +1,6 @@
-// Dot. Vs. Bracket Notation
+// Object Methods
 
+/*
 const myCountry = {
     country: "United States",
     capital: "D.C.",
@@ -14,3 +15,5 @@ console.log(`${myCountry.country} has ${myCountry.population} million ${myCountr
 myCountry.population += 2; // dot notation
 console.log(myCountry['population']);
 myCountry['population'] -= 2; // bracket notation
+
+*/

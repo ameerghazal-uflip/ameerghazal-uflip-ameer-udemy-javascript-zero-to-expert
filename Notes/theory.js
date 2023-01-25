@@ -154,6 +154,24 @@ Bracket Notation
 - prompt() prompts to the user.
 - we can add elements to the object by using the object name, square brackets filled with the new variable name (e.g. carti['Twitter'] = "...")
 
+Object Methods
+- we can use the function expression to attach it to an object, calling it a method.
+- define functions the same way (function name: function (pararmeter) {..})
+- use a parameter for the function if it is not defined in the object.
+- if it is defined in the object, just use the 'this' keyword, similar to java, to use that specfic year. In the main body, we would not need an argument, nor would we need a parameter for the function: (e.g. calcAge2: function () {
+        return 2037 - this.birthYear;
+    })
+- 'this' keyword defines the entire object. When we use it with the dot operator, we can select the specific value we want in the object.
+- we can do this.variablename to add a new variable inside of a function defined in an object.
+- from here, all we would have to do is to call the object name ('carti') dot (.) the new variable name.
+example:
+            calcAge3: function () {
+                this.age = 2037 - this.birthYear;
+                return this.age;
+                }
+    console.log(jonas.calcAge3()); // we call the function once to get the value defined 
+    console.log(jonas.age); // then we can use the variable like normanl
+
 
 
 
