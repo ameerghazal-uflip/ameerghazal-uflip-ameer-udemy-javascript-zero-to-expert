@@ -133,10 +133,26 @@ e.g. const aG {
     name: Amlop,
     last: pop,
     ...
+};
 - in objects, order does not matter (un-structed).
 - we can actually name the data with objects (different from arrays).
-} 
 
+
+Dot Notation
+- simply just write the object name dot (.) what we are trying to find in the object
+- e.g. carti.lastName;
+- we can add elements to the object by using the object name dot the variable we want to add
+e.g. carti.location = "Crib";
+- we can stack the dot notation (left to right precedence)
+e.g. ${myCountry.neighbors.length} // inside a log
+
+Bracket Notation
+- wrtie the object name followed by square brackets. In the brackets and in quotes, write down the field trying to be located
+- e.g. carti['lastName']
+- we can put any expression in the sqaure brackets (e.g. const nameKey = 'Name'; console.log(carti['first' + nameKey]);)
+- we can put variable values inside the brackets and javascript will find what we are looking for.
+- prompt() prompts to the user.
+- we can add elements to the object by using the object name, square brackets filled with the new variable name (e.g. carti['Twitter'] = "...")
 
 
 
