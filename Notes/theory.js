@@ -125,6 +125,18 @@ Basic Array Operations (Methods)
 - indexOf() returns the index of the value. Similar to java.
 - includes() returns a booelan if the value is in the array (true, false)
 
+Introduction to Objects
+- Mutliple ways of creating objects.
+- We use objects to group toghter multiple values like array (e.g. first-last names, friends, ages, etc.)
+- define a variable const varaible = {} use the curly braces and inside define each function with its value seperated by a :, then a comma.
+e.g. const aG {
+    name: Amlop,
+    last: pop,
+    ...
+- in objects, order does not matter (un-structed).
+- we can actually name the data with objects (different from arrays).
+} 
+
 
 
 

@@ -1,17 +1,9 @@
-// Coding Challenge 2 (Section 3)
+// Introduction to Objects
 
-function calcTip(bill) {
-    if (bill >= 50 && bill <= 300) {
-        return (bill * 0.15); // this is the tip
-    }
-
-    return (bill * 0.2);
+const myCountry = {
+    country: "United States",
+    capital: "D.C.",
+    language: "English",
+    population: 331.45,
+    neighbors: ["Mexico, Canada"]
 }
-
-const bills = [125, 555, 44];
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
-console.log(tips);
-
-
-const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
-console.log(total);
