@@ -176,6 +176,13 @@ example:
 
 
 
+Iteration: The for loop
+- for loops work very similar - if not exact - to java for loops.
+-
+-
+
+
+
 
 
 
