@@ -1,1 +1,1 @@
-// Looping Arrays, Breaking, and Continuin
+// Looping Arrays, Breaking, and Continuing
