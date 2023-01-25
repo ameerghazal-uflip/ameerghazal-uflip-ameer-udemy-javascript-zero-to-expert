@@ -1,54 +1,5 @@
 'use strict';
 
-/*
-// Section 3 Lesson 43: Dot vs. Bracket Notation
-
-const carti = {
-    firstName: "Jordan",
-    lastName: 'Carter',
-    age: 24,
-    job: 'music',
-    friends: ['ken', 'lonley', 'matt']
-
-};
-
-console.log(carti);
-
-// dot notation
-console.log(carti.lastName);
-
-// bracket notation
-console.log(carti['lastName']);
-
-const nameKey = 'Name';
-console.log(carti['first' + nameKey]);
-console.log(carti['last' + nameKey]);
-
-
-const intrest = prompt('What do you want to know about carti? Choose between firstName, lastName, age, job, friends');
-console.log(carti[intrest]);
-
-if (carti[intrest]) {
-    console.log(carti[intrest]);
-}
-else {
-    console.log("Wrong request! What do you want to know about carti? Choose between firstName, lastName, age, job, friends");
-}
-
-
-// using both to add new properties
-carti.location = "Untited States";
-carti['Twitter'] = "@playboicarti";
-console.log(carti);
-
-// Challenge
-// Jonas has 3 friends, and his best friend is named Mike.
-
-console.log(`${carti.firstName} has ${carti.friends.length} friends, and his best friend is named ${carti.friends[0]}.`);
-
-*/
-
-
 // Section 3 Lesson 44: Object Methods
 
 const jonas = {
@@ -71,6 +22,10 @@ const jonas = {
     calcAge3: function () {
         this.age = 2037 - this.birthYear;
         return this.age;
+    },
+
+    getSummary: function () {
+        return `${this.firstName} is a ${this.calcAge3()} year old ${this.job}, and he has ${this.hasDriverLicense ? 'a' : 'no'} driver's license.`;
     }
 };
 
@@ -86,6 +41,12 @@ console.log(jonas.age);
 
 
 // Challenge
-// "Jonas is a 46 year old teahcer, and he has a driver's license."
+// "Jonas is a 46 year old teahcer, and he has a driver's license." 
 
-if (jonas.hasDriverLicense) 
+
+console.log(jonas.getSummary());
+
+// What does this say: first, it checks the condition after the ? is the if, then : is the else. Good for one-liners (ternary).
+jonas.hasDriverLicense ? console.log(`${jonas.firstName} is a ${jonas.calcAge3()} year old ${jonas.job}, and he has a driver's license.`) : console.log(`${jonas.firstName} is a ${jonas.calcAge3()} year old ${jonas.job}, and he does not have a driver's license.`);
+
+

@@ -1,19 +1,24 @@
 // Object Methods
 
-/*
 const myCountry = {
     country: "United States",
-    capital: "D.C.",
+    capital: "Wasington D.C.",
     language: "English",
     population: 331.45,
-    neighbors: ["Mexico", "Canada"]
+    neighbors: ["Mexico", "Canada"],
+
+    describe: function () {
+        return (`${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbors.length} neighboring countries, and a capital called ${this.capital}.`);
+    },
+
+    checkIsland: function () {
+        this.isIsland = this.neighbors.length === 0 ? true : false; // if the array is empty, there are no neighbors, so true.
+        // no need to return anything here, optional
+    }
+
 };
 
+console.log(myCountry.describe());
+myCountry.checkIsland();
+console.log(myCountry.isIsland);
 
-console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbors.length} neighboring countries and a capital called ${myCountry.capital}.`);
-
-myCountry.population += 2; // dot notation
-console.log(myCountry['population']);
-myCountry['population'] -= 2; // bracket notation
-
-*/

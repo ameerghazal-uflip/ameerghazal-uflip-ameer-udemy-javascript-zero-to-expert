@@ -172,6 +172,8 @@ example:
     console.log(jonas.calcAge3()); // we call the function once to get the value defined 
     console.log(jonas.age); // then we can use the variable like normanl
 
+- Arrays are also objects
+
 
 
 
