@@ -179,13 +179,17 @@ example:
 Iteration: The for loop
 - for loops work very similar - if not exact - to java for loops.
 
-// Looping Arrays, Breaking, and Continuing
+Looping Arrays, Breaking, and Continuing
 - length for loops is the same as java
 - with continue, we can exit the current iteration of the loop, and the next one starts immediatley
 - break terminates the entire loop if the value is found
 - similar to java
 
-
+Looping Backwards and Loops in Loops
+- similar to loops in java
+- we can enter an array inside of an array but using [][]
+- first [] is the index in the larger array
+- second[] is the element at the inner index
 
 
 

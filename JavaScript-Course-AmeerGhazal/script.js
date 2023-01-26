@@ -1,52 +1,21 @@
 'use strict';
 
-// Section 3 Lesson 47: Looping Arrays, Breaking, and Continuing
+// Section 3 Lesson 48: Looping Backwards and Nested Loops
 
-const jonas = ["KO", 4, 5, "Jamie", "Peter", true, ["Jj", "Diggs"]];
-/*
-for (let i = 0; i < jonas.length; ++i) {
-    console.log(jonas[i], typeof jonas[i]); //  how to loop arrays using loop
+const jonas = ['Jonas', 'Schem', 38, 'teacher', ['Mike', 'Peter']]
+// 0, 1, 2 ... 4
+
+// Backwards loop (4, 3, ... ,0)
+
+for (let i = jonas.length - 1; i >= 0; --i) {
+    console.log(i, jonas[i]);
 }
 
-const types = [];
-for (let i = 0; i < jonas.length; ++i) {
-    types[i] = typeof jonas[i]; // two different ways
-    types.push(typeof jonas[i]);
-}
-console.log(types);
+// Nested Loops
 
-
-const years = [1991, 2007, 1966, 2018];
-const ages = [];
-
-for (let i = 0; i < years.length; ++i) {
-    ages.push(2037 - years[i]);
-}
-
-console.log(ages);
-
-
-
-// break and continue
-const types = [];
-for (let i = 0; i < jonas.length; ++i) {
-
-    if (typeof jonas[i] !== 'string') {
-        continue;
+for (let exercise = 1; exercise < 4; ++exercise) {
+    console.log("Starting exercise " + exercise);
+    for (let reps = 1; reps < 6; ++reps) {
+        console.log(" Exersize: " + exercise + " Lifting weights rep: " + reps);
     }
-    types.push(typeof jonas[i]);
 }
-console.log(types);
-
-
-const types = [];
-for (let i = 0; i < jonas.length; ++i) {
-
-    if (typeof jonas[i] === 'number') {
-        break;
-    }
-    types.push(typeof jonas[i]);
-}
-console.log(types);
-
-*/
