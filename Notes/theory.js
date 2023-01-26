@@ -191,6 +191,11 @@ Looping Backwards and Loops in Loops
 - first [] is the index in the larger array
 - second[] is the element at the inner index
 
+While Loops
+- similar to java. Similar to for loops.
+- they only need conditions, no counters. If we have counters, define outside and inside. 
+- Go for no known iterations. (rolling a dice)
+
 
 
 

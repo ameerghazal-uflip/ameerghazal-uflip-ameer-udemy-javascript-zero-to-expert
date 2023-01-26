@@ -1,21 +1,22 @@
 'use strict';
 
-// Section 3 Lesson 48: Looping Backwards and Nested Loops
+// Section 3 Lesson 49: While Loops
 
-const jonas = ['Jonas', 'Schem', 38, 'teacher', ['Mike', 'Peter']]
-// 0, 1, 2 ... 4
+const jonas = ['Jonas', 'Schem', 38, 'teacher', ['Mike', 'Peter']];
 
-// Backwards loop (4, 3, ... ,0)
 
-for (let i = jonas.length - 1; i >= 0; --i) {
-    console.log(i, jonas[i]);
+let rep = 1;
+while (rep <= 10) {
+    console.log(`Lifting weights repetition ${rep}`);
+    ++rep;
 }
 
-// Nested Loops
 
-for (let exercise = 1; exercise < 4; ++exercise) {
-    console.log("Starting exercise " + exercise);
-    for (let reps = 1; reps < 6; ++reps) {
-        console.log(" Exersize: " + exercise + " Lifting weights rep: " + reps);
-    }
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if (dice === 6) console.log("Loop is about to end");
 }
