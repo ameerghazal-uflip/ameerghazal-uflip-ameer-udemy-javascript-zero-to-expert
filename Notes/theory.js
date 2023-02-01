@@ -227,6 +227,23 @@ HTML & CSS
 - div is a generic box with barley any meaning.
  <form id="Your-name"></form>
 - <input type="text" placeholder="Your name" /> for info in box & type
--
+
+
+CSS Styling
+- goes under the head, before the title. Or, it can be linked, which is better.
+- body { // data }
+- <link href="cssfilename.css" rel="nameofsheet" />. This links an html file to a css file. 
+- font-family is inherited. All things under the body tab (as stated previously) are changed fonts.
+- for class selectors, we use dot notation (e.g. .first { // })
+- for ID's we use a #idname  for the styles
+- we can use the ref name from html to code styles in css (e.g. <p></p>, we use p { })
+
+
+
+
+
+
+
+
 
 */

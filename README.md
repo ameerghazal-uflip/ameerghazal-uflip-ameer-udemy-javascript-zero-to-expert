@@ -1,17 +1,13 @@
 # ameer-udemy-javascript-zero-to-expert
 
-Developer Skills & Editor Setup
-Coding Challenge #1
+Section 6 Lesson 66
 
-Given an array of forecasted maximum temperatures, the thermometer displays a
-string with the given temperatures. Example: [17, 21, 23] will print "... 17ºC in 1
-days ... 21ºC in 2 days ... 23ºC in 3 days ..."
-Your tasks:
+Add styling to the html code you created early to build your Idea Form.
 
-1. Create a function 'printForecast' which takes in an array 'arr' and logs a
-   string like the above to the console. Try it with both test datasets.
-2. Use the problem-solving framework: Understand the problem and break it up
-   into sub-problems!
-   Test data:
-   § Data 1: [17, 21, 23]
-   § Data 2: [12, 5, -5, 0, 4]
+Use the style tag inside the head of your html to change the background of your Idea from
+Create a separate css file to change the styling of the following:
+A. Change the paragraph head font size to 40px
+B. Add a black border around the form
+C. Change the font family of the paragraph to Arial and the font size to 18px
+D. Change the background color of the paragraph (make it different color then the web page background color)
+E. Change the background and font color of the button
