@@ -213,9 +213,20 @@ HTML & CSS
 - <p> describes a paragraoh.
 - auto close & rename tag are useful extensions for html
 - we can write a skeleton structure with ! (Tab) to get html skel.
--
--
--
+- we can nest elements inside on another.
+- href is a reference to a hyper link. Use an anchor to implement the data (e.g. <a href="https://github.com">Github link</a>)
+- heading (<h1></h1>, etc.) are block elements 
+- for images, we can do the same <img src="..." />. Does not have closing tag. We can link to something in the folder, or a link.
+- Use classes & id's so we can name and style them in CSS. Also, we use them in javascript for dumb manipulation
+- source attribuite is for images. href is for links.
+- Id's have to be unique and can only be used once on a page. (e.g. img ="..")
+- Classes can be used over and over again (mainly used) (e.g. class="..")
+- In CSS, use the - to seperate names
+- we have a div box, input bot w/ place holder, and a button element
+- form element better describes what is in the box.
+- div is a generic box with barley any meaning.
+ <form id="Your-name"></form>
+- <input type="text" placeholder="Your name" /> for info in box & type
 -
 
 */
