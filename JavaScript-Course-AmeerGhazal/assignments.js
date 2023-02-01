@@ -1,16 +1,37 @@
-// Th While Loop
+// Section 3 Coding Challenge 4
 
-const populations = [331.45, 126.23, 200.23, 111];
-const percentages3 = [];
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
 
-function percentageOfWorld1(population) {
-    return ((population / 7900) * 100);
+
+function calcTip(bill) {
+    if (bill >= 50 && bill <= 300) {
+        return (bill * 0.15); // this is the tip
+    }
+
+    return (bill * 0.2);
 }
 
-let count = 0;
-while (count < populations.length) {
-    percentages3.push(percentageOfWorld1(populations[count]));
-    ++count;
+for (let index = 0; index < bills.length; ++index) {
+    tips.push(calcTip(bills[index])); // adds tips to the array
+    totals.push(tips[index] + bills[index]); // is applicable since tips at the index is defined
 }
 
-console.log(percentages3);
+console.log(bills, tips, totals);
+
+// Bonus
+
+function calcAverage(arr) // has an array argument 
+{
+    let sum = 0;
+    for (let index = 0; index < arr.length; ++index) {
+        sum += arr[index];
+    }
+
+    const average = (sum / arr.length);
+    return average;
+
+}
+
+console.log(calcAverage(totals));

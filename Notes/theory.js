@@ -128,13 +128,13 @@ Basic Array Operations (Methods)
 Introduction to Objects
 - Mutliple ways of creating objects.
 - We use objects to group toghter multiple values like array (e.g. first-last names, friends, ages, etc.)
-- define a variable const varaible = {} use the curly braces and inside define each function with its value seperated by a :, then a comma.
+- define a variable const varaibleName = {} use the curly braces and inside define each function with its value seperated by a :, then a comma.
 e.g. const aG {
     name: Amlop,
     last: pop,
     ...
 };
-- in objects, order does not matter (un-structed).
+- in objects, order does not matter (un-structured).
 - we can actually name the data with objects (different from arrays).
 
 
@@ -187,7 +187,7 @@ Looping Arrays, Breaking, and Continuing
 
 Looping Backwards and Loops in Loops
 - similar to loops in java
-- we can enter an array inside of an array but using [][]
+- we can enter an array inside of an array by using [][]
 - first [] is the index in the larger array
 - second[] is the element at the inner index
 
@@ -195,6 +195,8 @@ While Loops
 - similar to java. Similar to for loops.
 - they only need conditions, no counters. If we have counters, define outside and inside. 
 - Go for no known iterations. (rolling a dice)
+
+
 
 
 
