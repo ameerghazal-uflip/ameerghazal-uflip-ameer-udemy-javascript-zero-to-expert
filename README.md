@@ -1,26 +1,29 @@
 # ameer-udemy-javascript-zero-to-expert
 
-Coding Challenge #4
-Let's improve Steven's tip calculator even more, this time using loops!
-Your tasks:
-1. Create an array 'bills' containing all 10 test bill values
-2. Create empty arrays for the tips and the totals ('tips' and 'totals')
-3. Use the 'calcTip' function we wrote before (no need to repeat) to calculate 
-tips and total values (bill + tip) for every bill value in the bills array. Use a for
-loop to perform the 10 calculations!
-Test data: 22, 295, 176, 440, 37, 105, 10, 1100, 86 and 52
-Hints: Call ‘calcTip ‘in the loop and use the push method to add values to the 
-tips and totals arrays �
-Bonus:
-4. Bonus: Write a function 'calcAverage' which takes an array called 'arr' as 
-an argument. This function calculates the average of all numbers in the given 
-array. This is a difficult challenge (we haven't done this before)! Here is how to 
-solve it:
-4.1. First, you will need to add up all values in the array. To do the addition, 
-start by creating a variable 'sum' that starts at 0. Then loop over the 
-array using a for loop. In each iteration, add the current value to the 
-'sum' variable. This way, by the end of the loop, you have all values 
-added together
-4.2. To calculate the average, divide the sum you calculated before by the 
-length of the array (because that's the number of elements)
-4.3. Call the function with the 'totals' array
+Debug a function called calculate that takes 3 values. The first and third values are numbers. The second value is a character. If the character is "+" , "-", "\*", or "/", the function will return the result of the corresponding mathematical function on the two numbers. If the string is not one of the specified characters, the function should return null.
+
+Test Data
+calculate(2,"+", 4); //Should return 6
+calculate(6,"-", 1.5); //Should return 4.5
+calculate(-4,"\*", 8); //Should return -32
+calculate(49,"/", -7); //Should return -7
+calculate(8,"m", 2); //Should return null
+calculate(4,"/",0) //should return null
+
+Code to debug
+var calculate = function calculate(a, o, b) {
+var result = 0;
+
+if(O === "+") {
+return a + b;
+else if(o =!= "-") {
+return b - a;
+}
+if(o !== "/" || b === 0) {
+return a / b;
+if(0 === "_")
+return a _ b;
+}
+
+return result;
+}

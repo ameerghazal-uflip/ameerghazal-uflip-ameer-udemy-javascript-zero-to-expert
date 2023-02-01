@@ -1,37 +1,24 @@
-// Section 3 Coding Challenge 4
+// Section 5 Lesson 61 (DeBugger)
 
-const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
-const tips = [];
-const totals = [];
+const calculate = function (a, o, b) {
+  const result = null;
 
+  if (o === "+") {
+    return a + b;
+  } else if (o === "-") {
+    return a - b;
+  } else if (o === "/" && b !== 0) {
+    return a / b;
+  } else if (o === "*") {
+    return a * b;
+  }
 
-function calcTip(bill) {
-    if (bill >= 50 && bill <= 300) {
-        return (bill * 0.15); // this is the tip
-    }
+  return result;
+};
 
-    return (bill * 0.2);
-}
-
-for (let index = 0; index < bills.length; ++index) {
-    tips.push(calcTip(bills[index])); // adds tips to the array
-    totals.push(tips[index] + bills[index]); // is applicable since tips at the index is defined
-}
-
-console.log(bills, tips, totals);
-
-// Bonus
-
-function calcAverage(arr) // has an array argument 
-{
-    let sum = 0;
-    for (let index = 0; index < arr.length; ++index) {
-        sum += arr[index];
-    }
-
-    const average = (sum / arr.length);
-    return average;
-
-}
-
-console.log(calcAverage(totals));
+console.log(calculate(2, "+", 4)); //Should return 6
+console.log(calculate(8, "m", 2)); //Should return null
+console.log(calculate(4, "/", 0)); // null
+console.log(calculate(6, "-", 1.5)); // 4.5
+console.log(calculate(-4, "*", 8)); // -32
+console.log(calculate(49, "/", -7)); // -7

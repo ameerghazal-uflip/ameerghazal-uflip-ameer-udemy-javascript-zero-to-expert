@@ -196,7 +196,12 @@ While Loops
 - they only need conditions, no counters. If we have counters, define outside and inside. 
 - Go for no known iterations. (rolling a dice)
 
-
+Bug Checker
+- console.warn: displays warning
+- console.error: displays error
+- console.table: returns a nice formatted table of an object
+- in the source tab under inspect, we can set a breakpoint at the time. (red dot on the left) from there we can dug up until the red point. 
+- we can import a line of code: debugger; to tell js to stop at that point.
 
 
 
