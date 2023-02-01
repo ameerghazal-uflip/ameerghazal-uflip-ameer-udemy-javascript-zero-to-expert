@@ -1,24 +1,15 @@
-// Section 5 Lesson 61 (DeBugger)
+// Section 5 Coding Challenge 1
 
-const calculate = function (a, o, b) {
-  const result = null;
-
-  if (o === "+") {
-    return a + b;
-  } else if (o === "-") {
-    return a - b;
-  } else if (o === "/" && b !== 0) {
-    return a / b;
-  } else if (o === "*") {
-    return a * b;
+function printForecast(arr) {
+  let output = "";
+  for (let index = 0; index < arr.length; ++index) {
+    output += `${arr[index]} degrees celsuis in ${index + 1} days ... `;
   }
 
-  return result;
-};
+  return output;
+}
 
-console.log(calculate(2, "+", 4)); //Should return 6
-console.log(calculate(8, "m", 2)); //Should return null
-console.log(calculate(4, "/", 0)); // null
-console.log(calculate(6, "-", 1.5)); // 4.5
-console.log(calculate(-4, "*", 8)); // -32
-console.log(calculate(49, "/", -7)); // -7
+const data1 = [17, 21, 23]; // works for both
+const array = [12, 5, -5, 0, 4];
+let output = printForecast(array);
+console.log("... " + output);
