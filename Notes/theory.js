@@ -204,8 +204,18 @@ Bug Checker
 - we can import a line of code: debugger; to tell js to stop at that point.
 
 
+HTML & CSS
+--------------------
 
-
-
+- under the <head> sections, we put things that describe the webpage, (descriptions, titles, etc.), styles (css)
+- under <body> is what is visible 
+- <h1> describes a heading (<h1> - <h6> fts.)
+- <p> describes a paragraoh.
+- auto close & rename tag are useful extensions for html
+- we can write a skeleton structure with ! (Tab) to get html skel.
+-
+-
+-
+-
 
 */
