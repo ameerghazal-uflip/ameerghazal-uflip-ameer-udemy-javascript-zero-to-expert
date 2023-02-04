@@ -17,6 +17,7 @@ console.log(document.querySelector('.guess').textContent);
 
 let score = 20; // inital score, state variable
 let secretNumber = Math.trunc(Math.random() * 20) + 1; // gets random number
+let highScore = 0;
 
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
@@ -31,6 +32,11 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.number').textContent = secretNumber; // displays the random number they guessed
     document.querySelector('body').style.backgroundColor = '#60b347'; //changes the screen to green
     document.querySelector('.number').style.width = '30rem';
+
+    if (score > highScore) {
+      highScore = score; // if the score is greater, it becomes the new highscore
+      document.querySelector('.highscore').textContent = highScore; // displays to the user
+    }
   } else if (guess > secretNumber) {
     // too high
     if (score > 1) {
@@ -66,3 +72,5 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('.number').style.width = '15rem'; // restores width & background
   document.querySelector('body').style.backgroundColor = '#222';
 });
+
+// Highscore challenge

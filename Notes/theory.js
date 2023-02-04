@@ -280,7 +280,7 @@ DOM & DOM Manipulation
 (e.g. document.querySelector('.message').textContent = 'Correct Number';)
 - Need an Event Listner(when something is clicked, hovered, etc.)
 - addEventListener('click',) with an argument saying what to do (watching for a click) then a function expression defing what to so if something happen
-- 
+Example: ocument.querySelector('.check').addEventListener('click', function () { ... });
 
 
 
