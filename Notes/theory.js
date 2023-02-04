@@ -287,4 +287,33 @@ Example: ocument.querySelector('.check').addEventListener('click', function () {
 
 
 
+
+Project 2 Notes
+- Working with classes.
+- To select item with the same class name, use querySelectorAll. Use it the same way. Returns a Node list
+- We can treat the items in the node (post-queralSelectorAll) as an Array and loop through an array the same way.
+- Use the .textContent to display the data.
+- ex:console.log(btnsOpenModel[index].textContent);
+- we can use .classList to remove, add , contatins a class, = etc. things from the output. E.g. modal.classList.remove('hidden', ...). We DO NOT use the dot operator in this case. 
+- we can define a function like normal with a name. From there, we can use it in the addEventListener arguements. 
+e.g. 
+- const closeModel = function () {
+  modal.classList.add('hidden'); // hides the modal
+  overlay.classList.add('hidden'); // hides the overally
+};
+
+btnCloseModel.addEventListener('click', closeModel); 
+- if code is reusable / in need of a function. 
+- document.addEventListener(), not query specfic, is for anything selected (searches the entire thing)
+- when an event happens we have acess to that event with the event handeler function.
+- we can define a parameter inside the function of addEventListener, and from there, use operatrions to find values of the 'objects'. For example, event.key.
+-
+-
+
+
+
+
+
+
+
 */
