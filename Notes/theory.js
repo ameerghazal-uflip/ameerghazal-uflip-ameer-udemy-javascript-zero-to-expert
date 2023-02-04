@@ -238,8 +238,19 @@ CSS Styling
 - for ID's we use a #idname  for the styles
 - we can use the ref name from html to code styles in css (e.g. <p></p>, we use p { })
 
-
-
+CSS Box Model
+- content: text, images, etc.
+- padding: translarent area around the content, inside of the box;
+- border: goes around the padding and the content;
+- margin: space between boxes;
+- fill area: area that gets filled with backgorund color or background images. 
+- global reset: reset all margins
+- use a * { } to change all elements
+-padding creates space from the borders
+- we can seperate with with commas (input, bottom { })
+- selectors work similar in java script
+- we can go to the id we want, put a space, and implement the the selector under that id (e.g. #your-name h2) goes to the h2 heading under yourname id.
+- box-sizing: border-box gurantees the content box shrinks to make space for the padding and borders. If width is set to a specific number (e.g. 200)
 
 
 
