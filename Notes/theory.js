@@ -254,6 +254,34 @@ CSS Box Model
 
 
 
+Notes from Project 1
+- document.querySelector('') // links the js with the html
+- write similary to css (id: #, class: .). We can use more dot operators from left to right.(e.g. .textContent)
+- Event Listener for when button is clicked
+- Output from user is usually a string. So, cast a Number becasue we will need to compare later on
+- We can use similar Math operations like in java. 
+- Similar statments (if, else if, etc.)
+- Declare a let variable for a counter and use querySelector to display score.    
+(e.g. document.querySelector('.score').textContent = score;)
+- we can also do the element name just like css. (e.g. 'body)
+- JavaScript adopts the camel case for property names with multiple words in CSS
+-* whenever manipulating a style, we need to use a string. -Also use .style after the ('').style.background = '...';
+(e.g.  document.querySelector('.number').style.width = '30rem';)
+
+
+
+
+DOM & DOM Manipulation
+- Document Object Model (DOM) - structured rep of html docs. Allows js to access html elements and styles to manipulate them.
+- DOM tree structured like html file. Document, head, body, etc. all with sub trees.
+- Start with a document.querySelector() to acesses
+- DOM is part of web api's. Which are libraries written in Js, which is avaliable for us to use. 
+- We can set a line by using an equal sign / change
+(e.g. document.querySelector('.message').textContent = 'Correct Number';)
+- Need an Event Listner(when something is clicked, hovered, etc.)
+- addEventListener('click',) with an argument saying what to do (watching for a click) then a function expression defing what to so if something happen
+- 
+
 
 
 

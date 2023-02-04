@@ -4,23 +4,19 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: aqua;
-  padding: 100px;
-}
-
 h1 {
   font-size: 40px;
   text-align: center;
-  color: #555;
+  color: rgb(rgba(92, 84, 84, 0.568), rgb(51, 54, 51), rgb(49, 49, 53));
 }
 
 .feedback {
   font-size: 18px;
   font-family: Arial;
-  background-color: aliceblue;
+  background-color: white;
   margin-top: 25px;
   margin-bottom: 25px;
+  margin-left: 25px;
 }
 
 button {
@@ -31,14 +27,11 @@ button {
 }
 
 form {
-  display: block;
-  background-color: aqua;
-  border: 5px solid black;
-  padding: 10px;
   width: 600px;
+  border: 5px solid black;
 }
 
-#input {
+input {
   font-size: 16px;
   padding: 10px;
   width: 400px;
