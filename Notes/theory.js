@@ -267,6 +267,8 @@ Notes from Project 1
 - JavaScript adopts the camel case for property names with multiple words in CSS
 -* whenever manipulating a style, we need to use a string. -Also use .style after the ('').style.background = '...';
 (e.g.  document.querySelector('.number').style.width = '30rem';)
+- Use the (?) ternary operator to simplify code.
+- we can also use functions 
 
 
 
