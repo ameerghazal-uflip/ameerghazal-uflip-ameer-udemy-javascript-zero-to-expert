@@ -307,6 +307,24 @@ btnCloseModel.addEventListener('click', closeModel);
 - document.addEventListener(), not query specfic, is for anything selected (searches the entire thing)
 - when an event happens we have acess to that event with the event handeler function.
 - we can define a parameter inside the function of addEventListener, and from there, use operatrions to find values of the 'objects'. For example, event.key.
+
+
+
+Project 3 Notes 
+- <section></section> for each player.
+- make a flow chart to help out scenarios
+- select elements by id instead of specfic class name if applicable 
+- use a # for a id. Use a dot for classes.
+- if we use document.getElementById(), we do not need to use the hash
+- do not use . when using the classList methods
+- we can manipulate src from java script
+ex:   diceEl.src = `dice-${dice}.png`; // we can dynamically load
+- make use of the ``.
+- make use of the textContent to display things.
+- toggle will add a class if it is not there and it will remove a class if it is there
+- if we add a class or remove it, and it is there or not there, js will not do anything.
+-
+-
 -
 -
 

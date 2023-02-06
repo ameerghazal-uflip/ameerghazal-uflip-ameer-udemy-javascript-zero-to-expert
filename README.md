@@ -2,4 +2,4 @@
 
 // Section 7 Project 3 Pig Game
 
-- Allow the user to guess a number 1-20. Inputs out of range or incorrect are either too high or too low. Also, if the score is under 1 (0), the user fails the challenge, prompted to try again. Modals come up for each attempt (high, low, 0, correct). The game functions the same way with a click and an enter key.
+2-player game. Player 1 rolls the dice and choses when to hold his points. If either user holds their points, they get added to their total count and move to the next player. If either player rolls a 1, then their current points goes to 0 and it is the other players turn. The first player to 100 points wins.
