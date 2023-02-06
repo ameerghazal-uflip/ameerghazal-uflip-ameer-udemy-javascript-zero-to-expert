@@ -94,7 +94,7 @@ buttonCloser.addEventListener('click', closeModel); // closes based on the x
 document.addEventListener('keydown', function (event) {
   //if enter is pressed, it functions the same way
   if (event.key === 'Enter') {
-    if (!modal.classList.contains('.hidden')) {
+    if (modal.classList.contains('hidden')) {
       const guess = Number(document.querySelector('.guess').value);
       score = checkGuess(guess, score, highScore, secretNumber);
     }
