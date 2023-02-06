@@ -9,6 +9,7 @@ const overlay = document.querySelector('.overlay'); // same for all
 const modal = document.querySelector('.modal'); // same for all
 const buttonCloser = document.querySelector('.close-modal'); // for the x
 
+// functions
 const openModel = function (guess, secretNumber, score) {
   // which model to open
   if (guess === secretNumber) {
@@ -36,31 +37,7 @@ const closeModel = function () {
   overlay.classList.add('hidden');
 };
 
-overlay.addEventListener('click', closeModel); // closes the pop-up on click
-buttonCloser.addEventListener('click', closeModel); // closes based on the x
-
-const displayMessage = function (message) {
-  // displays message
-  document.querySelector('.message').textContent = message;
-};
-
-document.addEventListener('keydown', function (event) {
-  // if enter is pressed, it functions the same way
-  if (event.key === 'Enter' && !modal.classList.contains('.hidden')) {
-    const guess = Number(document.querySelector('.guess').value);
-    checkGuess(guess, score, highScore, secretNumber);
-  }
-});
-
-document.querySelector('.check').addEventListener('click', function () {
-  // if click is pressed, it runs
-  const guess = Number(document.querySelector('.guess').value);
-  checkGuess(guess, score, highScore, secretNumber);
-});
-
 const checkGuess = function (guess, score, highScore, secretNumber) {
-  // seperate into a function
-
   if (!guess) {
     // if no guess, print no number using the function ref.
     displayMessage('No Number!');
@@ -81,8 +58,8 @@ const checkGuess = function (guess, score, highScore, secretNumber) {
     if (score > 1) {
       // checks to make sure the score is not failure status
       displayMessage(guess > secretNumber ? 'Too high!' : 'Too low!');
-      openModel(guess, secretNumber, score); // opens the modal with the correct output
       score--;
+      openModel(guess, secretNumber, score); // opens the modal with the correct output
       document.querySelector('.score').textContent = score;
     } else {
       displayMessage('You lost the game!');
@@ -90,16 +67,42 @@ const checkGuess = function (guess, score, highScore, secretNumber) {
       document.querySelector('.score').textContent = 0; // sets score to 0
     }
   }
+
+  // Makes the again functionable
+  document.querySelector('.again').addEventListener('click', function () {
+    score = 20; // resets the score
+    secretNumber = Math.trunc(Math.random() * 20) + 1; // resets
+    document.querySelector('.score').textContent = score;
+    document.querySelector('.message').textContent = 'Start guessing...'; // fucntion call*
+    document.querySelector('.number').textContent = '?'; // changes back to hide number
+    document.querySelector('.guess').value = ''; // sets it to empty
+    document.querySelector('.number').style.width = '15rem'; // restores width & background
+    document.querySelector('body').style.backgroundColor = '#222';
+  });
+
+  return score;
 };
 
-// Makes the again functionable
-document.querySelector('.again').addEventListener('click', function () {
-  score = 20; // resets the score
-  secretNumber = Math.trunc(Math.random() * 20) + 1; // resets
-  document.querySelector('.score').textContent = score;
-  document.querySelector('.message').textContent = 'Start guessing...'; // fucntion call*
-  document.querySelector('.number').textContent = '?'; // changes back to hide number
-  document.querySelector('.guess').value = ''; // sets it to empty
-  document.querySelector('.number').style.width = '15rem'; // restores width & background
-  document.querySelector('body').style.backgroundColor = '#222';
+const displayMessage = function (message) {
+  // displays message
+  document.querySelector('.message').textContent = message;
+};
+
+overlay.addEventListener('click', closeModel); // closes the pop-up on click
+buttonCloser.addEventListener('click', closeModel); // closes based on the x
+
+document.addEventListener('keydown', function (event) {
+  //if enter is pressed, it functions the same way
+  if (event.key === 'Enter') {
+    if (!modal.classList.contains('.hidden')) {
+      const guess = Number(document.querySelector('.guess').value);
+      score = checkGuess(guess, score, highScore, secretNumber);
+    }
+  }
+});
+
+document.querySelector('.check').addEventListener('click', function () {
+  // if click is pressed, it runs
+  const guess = Number(document.querySelector('.guess').value);
+  score = checkGuess(guess, score, highScore, secretNumber);
 });
