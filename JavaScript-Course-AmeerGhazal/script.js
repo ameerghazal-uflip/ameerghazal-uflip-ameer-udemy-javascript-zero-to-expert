@@ -4,17 +4,30 @@
 
 let score = 20; // inital score, state variable
 let secretNumber = Math.trunc(Math.random() * 20) + 1; // gets random number
-let highScore = 0;
-let modal; //changes per situation
+let highScore = 0; // counter
 const overlay = document.querySelector('.overlay'); // same for all
-const buttonCloser = document.querySelectorAll('.close-modal');
+const modal = document.querySelector('.modal'); // same for all
+const buttonCloser = document.querySelector('.close-modal'); // for the x
 
-const displayMessage = function (message) {
-  document.querySelector('.message').textContent = message; // displays messages
-};
+const openModel = function (guess, secretNumber, score) {
+  // which model to open
+  if (guess === secretNumber) {
+    document.querySelector('.modal-header').textContent = 'You win!'; // changes text on the modal
+    document.querySelector('.modal-text').textContent = 'Great Job!';
+    document.querySelector('.modal-header').style.color = '#60b347'; // changes the header to green
+  } else if (guess !== secretNumber && score > 1) {
+    guess > secretNumber
+      ? (document.querySelector('.modal-text').textContent = 'Too High') // similar approach as prev.
+      : (document.querySelector('.modal-text').textContent = 'Too Low');
+    document.querySelector('.modal-header').textContent = 'Try Again';
+    document.querySelector('.modal-header').style.color = 'red';
+  } else {
+    document.querySelector('.modal-header').textContent = 'You Lost!';
+    document.querySelector('.modal-text').textContent =
+      'Better Luck Next Time!';
+  }
 
-const openModel = function () {
-  modal.classList.remove('hidden'); // opens the model
+  modal.classList.remove('hidden'); // opens the model for all
   overlay.classList.remove('hidden');
 };
 
@@ -23,64 +36,63 @@ const closeModel = function () {
   overlay.classList.add('hidden');
 };
 
-document.querySelector('.check').addEventListener('click', function () {
-  const guess = Number(document.querySelector('.guess').value);
+overlay.addEventListener('click', closeModel); // closes the pop-up on click
+buttonCloser.addEventListener('click', closeModel); // closes based on the x
+
+const displayMessage = function (message) {
+  // displays message
+  document.querySelector('.message').textContent = message;
+};
+
+document.addEventListener('keydown', function (event) {
+  // if enter is pressed, it functions the same way
+  if (event.key === 'Enter' && !modal.classList.contains('.hidden')) {
+    const guess = Number(document.querySelector('.guess').value);
+    checkGuess(guess, score, highScore, secretNumber);
+  }
 });
 
-for (let index = 0; index < buttonCloser.length; ++index) {
-  buttonCloser[index].addEventListener('click', closeModel); // closes with x
-}
+document.querySelector('.check').addEventListener('click', function () {
+  // if click is pressed, it runs
+  const guess = Number(document.querySelector('.guess').value);
+  checkGuess(guess, score, highScore, secretNumber);
+});
 
-overlay.addEventListener('click', closeModel); // closes the pop-up on click
+const checkGuess = function (guess, score, highScore, secretNumber) {
+  // seperate into a function
 
-// document.addEventListener('keydown', function (event) {
-//   if (event.key === 'Enter' && !modal.classList.contains('.check')) {
-//     const guess = Number(document.querySelector('.guess').value);
-//     closeModel();
-//   }
-// });
+  if (!guess) {
+    // if no guess, print no number using the function ref.
+    displayMessage('No Number!');
+  } else if (guess === secretNumber) {
+    // if correct number is selected, print correct number to message html
+    displayMessage('Correct Number');
+    document.querySelector('.number').textContent = secretNumber; // displays the random number they guessed
+    document.querySelector('body').style.backgroundColor = '#60b347'; //changes the screen to green
+    document.querySelector('.number').style.width = '30rem';
+    openModel(guess, secretNumber, score);
 
-if (!guess) {
-  // if no guess, print no number using the function ref.
-  displayMessage('No Number!');
-} else if (guess === secretNumber) {
-  // if correct number is selected, print correct number to message html
-  displayMessage('Correct Number');
-  document.querySelector('.number').textContent = secretNumber; // displays the random number they guessed
-  document.querySelector('body').style.backgroundColor = '#60b347'; //changes the screen to green
-  document.querySelector('.number').style.width = '30rem';
-  modal = document.querySelector('.modal-win'); // specifices
-  openModel(); // opens
-
-  if (score > highScore) {
-    highScore = score; // if the score is greater, it becomes the new highscore
-    document.querySelector('.highscore').textContent = highScore; // displays to the user
-  }
-} else if (guess !== secretNumber) {
-  // Wrong number
-  if (score > 1) {
-    // checks to make sure the score is not failure status
-    if (guess > secretNumber) {
-      displayMessage('Too high!');
-      modal = document.querySelector('.modal-high');
-      openModel();
-    } else {
-      // don't need to specifiy from previous code
-      displayMessage('Too low!');
-      modal = document.querySelector('.modal-low');
-      openModel();
+    if (score > highScore) {
+      highScore = score; // if the score is greater, it becomes the new highscore
+      document.querySelector('.highscore').textContent = highScore; // displays to the user
     }
-    score--;
-    document.querySelector('.score').textContent = score;
-  } else {
-    displayMessage('You lost the game!');
-    document.querySelector('.score').textContent = 0; // sets score to 0
-    modal = document.querySelector('.modal-loss');
-    openModel();
+  } else if (guess !== secretNumber) {
+    // Wrong number
+    if (score > 1) {
+      // checks to make sure the score is not failure status
+      displayMessage(guess > secretNumber ? 'Too high!' : 'Too low!');
+      openModel(guess, secretNumber, score); // opens the modal with the correct output
+      score--;
+      document.querySelector('.score').textContent = score;
+    } else {
+      displayMessage('You lost the game!');
+      openModel(guess, secretNumber, score);
+      document.querySelector('.score').textContent = 0; // sets score to 0
+    }
   }
-}
+};
 
-// Makes the again button functionable
+// Makes the again functionable
 document.querySelector('.again').addEventListener('click', function () {
   score = 20; // resets the score
   secretNumber = Math.trunc(Math.random() * 20) + 1; // resets
@@ -91,17 +103,3 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('.number').style.width = '15rem'; // restores width & background
   document.querySelector('body').style.backgroundColor = '#222';
 });
-
-/*
-
-
-
-
-
-  if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
-    // if the key is escape, and the modal does not contain the hidden class.
-    closeModel();
-  }
-}); // checks everywhere for the event listener, not just the query
-
-*/

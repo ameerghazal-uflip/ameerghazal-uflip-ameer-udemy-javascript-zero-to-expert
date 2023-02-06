@@ -49,11 +49,6 @@ main {
 h1 {
   font-size: 4rem;
   text-align: center;
-  position: absolute;
-  width: 100%;
-  top: 52%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .number {
@@ -135,10 +130,7 @@ h1 {
   display: none;
 }
 
-.modal-win,
-.modal-loss,
-.modal-high,
-.modal-low {
+.modal {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -161,4 +153,15 @@ h1 {
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(3px);
   z-index: 5;
+}
+
+.modal-header {
+  color: red;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.modal-text {
+  color: black;
+  font-size: 1.8rem;
 }
