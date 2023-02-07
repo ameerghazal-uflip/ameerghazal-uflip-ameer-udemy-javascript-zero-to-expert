@@ -14,9 +14,14 @@ const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
-// Starting Conditons
+// ADDED BY ME
+// const btnCloseModal = document.querySelector('.close-modal');
+// const overlay = document.querySelector('.overlay');
+const modal = document.querySelector('.modal');
 
-// User-defined functions
+// Starting Conditons & User-defined functions
+let scores, currentScore, activePlayer, playing, newMaxScore; // redefined later
+
 const switchPlayer = function () {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
   currentScore = 0; // resets it
@@ -25,13 +30,11 @@ const switchPlayer = function () {
   player1El.classList.toggle('player--active'); // it will remove or add one or the other.
 };
 
-let scores, currentScore, activePlayer, playing;
-
 const inital = function () {
-  diceEl.classList.add('hidden');
+  diceEl.classList.add('hidden'); // hide the dice
   scores = [0, 0]; // these are final scores which accumulate (0 on both sides)
-  currentScore = 0;
-  activePlayer = 0;
+  currentScore = 0; // reset to 0
+  activePlayer = 0; // reset player to 1
   playing = true; // at the beginning we are playing.
 
   score0El.textContent = 0;
@@ -44,7 +47,17 @@ const inital = function () {
   player1El.classList.remove('player--active');
 };
 
-inital();
+inital(); // calls function
+
+const closeModal = function () {
+  modal.classList.add('hidden');
+  // overlay.classList.add('hidden');
+};
+
+const openModal = function () {
+  modal.classList.remove('hidden');
+  //overlay.classList.remove('hidden');
+};
 
 // Rolling dice function
 btnRoll.addEventListener('click', function () {
@@ -56,8 +69,8 @@ btnRoll.addEventListener('click', function () {
     diceEl.classList.remove('hidden');
     diceEl.src = `Images/dice-${dice}.png`; // we can dynamically load
 
-    // 3. Check for rolled 1: if true, swtich to next player
-    if (dice !== 1) {
+    // 3. Check for rolled 1 or 5: if true, swtich to next player
+    if (dice !== 1 && dice !== 5) {
       // add the dice to current score
       currentScore += dice;
       document.getElementById(`current--${activePlayer}`).textContent =
@@ -80,7 +93,7 @@ btnHold.addEventListener('click', function () {
       scores[activePlayer]; // displays the total score of the active player.
 
     // 2. Check if player's score is >= 100
-    if (scores[activePlayer] >= 100) {
+    if (scores[activePlayer] >= newMaxScore) {
       playing = false; // not playing anymore
       // 2. Display dice
       diceEl.classList.add('hidden'); // hides the dice.
@@ -97,7 +110,23 @@ btnHold.addEventListener('click', function () {
   }
 });
 
-btnNew.addEventListener('click', inital);
+btnNew.addEventListener('click', function () {
+  inital(); // calls function to reset variables
+  openModal(); // displays the modal
+
+  document.querySelector('.check').addEventListener('click', function () {
+    // this makes the submit button functionable
+    newMaxScore = parseInt(document.querySelector('.guess').value); // saves the user max & makes covnerts it to an integer.
+    console.log(newMaxScore);
+
+    if (newMaxScore > 0) {
+      closeModal();
+    } else {
+      document.querySelector('.user').textContent =
+        'Try again, that value is invalid!';
+    }
+  });
+});
 
 /*  PERSONAL SOLUTION
 
