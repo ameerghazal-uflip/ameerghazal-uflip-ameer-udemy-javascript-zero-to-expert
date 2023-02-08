@@ -8,8 +8,12 @@
     <title>Pig Game</title>
   </head>
   <body>
+    <div class="max">
+      Max Score:
+      <span class="val"></span>
+    </div>
     <main>
-      <section class="player player--0 player--active">
+      <section class="player player--0">
         <h2 class="name" id="name--0">Player 1</h2>
         <p class="score" id="score--0">43</p>
         <div class="current">
@@ -32,9 +36,10 @@
         <input
           type="number"
           class="guess"
+          required
           placeholder="Fill the new max in here."
         />
-        <button class="btn check">Submit!</button>
+        <button class="btn check">submit!</button>
       </div>
       <div class="overlay hidden"></div>
       <img src="Images/dice-5.png" alt="Playing dice" class="dice" />

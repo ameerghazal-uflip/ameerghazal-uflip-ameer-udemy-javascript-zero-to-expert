@@ -14,13 +14,22 @@ const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
-// ADDED BY ME
-// const btnCloseModal = document.querySelector('.close-modal');
-// const overlay = document.querySelector('.overlay');
+// ADDED BY USER
+const overlay = document.querySelector('.overlay');
 const modal = document.querySelector('.modal');
 
 // Starting Conditons & User-defined functions
 let scores, currentScore, activePlayer, playing, newMaxScore; // redefined later
+
+const closeModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
+const openModal = function () {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
 
 const switchPlayer = function () {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
@@ -30,11 +39,13 @@ const switchPlayer = function () {
   player1El.classList.toggle('player--active'); // it will remove or add one or the other.
 };
 
+debugger;
 const inital = function () {
   diceEl.classList.add('hidden'); // hide the dice
   scores = [0, 0]; // these are final scores which accumulate (0 on both sides)
   currentScore = 0; // reset to 0
-  activePlayer = 0; // reset player to 1
+  activePlayer = Math.round(Math.random()); // reset player to random player
+  console.log(activePlayer);
   playing = true; // at the beginning we are playing.
 
   score0El.textContent = 0;
@@ -43,21 +54,23 @@ const inital = function () {
   current1El.textContent = 0;
   player0El.classList.remove('player--winner');
   player1El.classList.remove('player--winner');
-  player0El.classList.add('player--active');
-  player1El.classList.remove('player--active');
+
+  if (activePlayer === 0) {
+    // depends on above
+    player0El.classList.add('player--active');
+    player1El.classList.remove('player--active');
+  } else {
+    player0El.classList.remove('player--active');
+    player1El.classList.add('player--active');
+  }
+
+  document.querySelector('.user').textContent = 'Choose a new MAX score!'; // resets for the next input
+  newMaxScore = document.querySelector('.guess').value = ''; // set the value equal to an empty String
+  document.querySelector('.val').textContent = ''; // makes the max score header empty
+  openModal();
 };
 
 inital(); // calls function
-
-const closeModal = function () {
-  modal.classList.add('hidden');
-  // overlay.classList.add('hidden');
-};
-
-const openModal = function () {
-  modal.classList.remove('hidden');
-  //overlay.classList.remove('hidden');
-};
 
 // Rolling dice function
 btnRoll.addEventListener('click', function () {
@@ -82,6 +95,7 @@ btnRoll.addEventListener('click', function () {
   }
 });
 
+// Hold button function
 btnHold.addEventListener('click', function () {
   if (playing) {
     // if we are able to play, we run the code; otherwise, we do not make the buttons functionable.
@@ -100,9 +114,9 @@ btnHold.addEventListener('click', function () {
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.add('player--winner');
-      document.querySelector(
-        `.player--${activePlayer}`.classList.remove('player--active') // finishes the game. If the winner is toggled, all the players are inactive.
-      );
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.remove('player--active'); // finishes the game. If the winner is toggled, all the players are inactive.
     } else {
       // Switch to next player
       switchPlayer(); // calls method
@@ -110,52 +124,19 @@ btnHold.addEventListener('click', function () {
   }
 });
 
+//Submit button functionable
+document.querySelector('.check').addEventListener('click', function () {
+  newMaxScore = parseInt(document.querySelector('.guess').value); // saves the user max & makes covnerts it to an integer.
+  if (newMaxScore > 0) {
+    closeModal(); // closes the modal & resets values
+    document.querySelector('.val').textContent = newMaxScore; // displays the score
+  } else {
+    document.querySelector('.user').textContent =
+      'Try again, that value is invalid!';
+  }
+});
+
 btnNew.addEventListener('click', function () {
   inital(); // calls function to reset variables
-  openModal(); // displays the modal
-
-  document.querySelector('.check').addEventListener('click', function () {
-    // this makes the submit button functionable
-    newMaxScore = parseInt(document.querySelector('.guess').value); // saves the user max & makes covnerts it to an integer.
-    console.log(newMaxScore);
-
-    if (newMaxScore > 0) {
-      closeModal();
-    } else {
-      document.querySelector('.user').textContent =
-        'Try again, that value is invalid!';
-    }
-  });
+  // openModal(); // displays the modal
 });
-
-/*  PERSONAL SOLUTION
-
-btnNew.addEventListener('click', function () {
-  // 1A. Reset all scores
-  player0El.classList.remove('player--winner');
-  player1El.classList.remove('player--winner');
-
-  // 1. Display and change currentScore to 0.
-  currentScore = 0;
-  document.getElementById(`current--${activePlayer}`).textContent =
-    currentScore;
-  // 2. Display and change totalScore to 0.
-  scores = [0, 0]; // changed to let above.
-  document.getElementById(`score--${0}`).textContent = scores[0];
-  document.getElementById(`score--${1}`).textContent = scores[1];
-
-  // 3. Hide the dice.
-  diceEl.classList.add('hidden'); // hides the dice
-
-  // 4. Set Player 1 to start
-  if (activePlayer === 1) {
-    // resets the activePlayer to player 1 (0) and removes player 1 from active.
-    activePlayer = 0;
-    player1El.classList.remove('player--active');
-    player0El.classList.add('player--active'); // makes the player 0 (1) active if true.
-  } //
-
-  // if the statement is false, then active player is already 0, meaning we don't have to do anything.
-});
-
-*/
