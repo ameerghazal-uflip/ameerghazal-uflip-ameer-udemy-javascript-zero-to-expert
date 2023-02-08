@@ -128,7 +128,6 @@ main {
 .btn::first-letter {
   font-size: 2.4rem;
   display: inline-block;
-  margin-right: 0.7rem;
 }
 
 .btn--new {
@@ -200,28 +199,22 @@ main {
   transition: all 0.2s;
 }
 
-.close-modal {
-  position: absolute;
-  top: 1.2rem;
-  right: 2rem;
-  font-size: 5rem;
-  color: #333;
-  cursor: pointer;
-  border: none;
-  background: none;
-}
-
 .modal h1 {
   font-size: 25px;
   text-align: center;
+  color: black;
+  background-color: white;
 }
 
 p.user {
-  font-size: small;
+  font-size: medium;
 }
 
 .check {
   font-size: 18px;
+  background-color: #c7365f;
+  color: black;
+  font-family: inherit;
 }
 
 .max {

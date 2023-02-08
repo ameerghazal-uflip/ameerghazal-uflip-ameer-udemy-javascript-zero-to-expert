@@ -39,7 +39,6 @@ const switchPlayer = function () {
   player1El.classList.toggle('player--active'); // it will remove or add one or the other.
 };
 
-debugger;
 const inital = function () {
   diceEl.classList.add('hidden'); // hide the dice
   scores = [0, 0]; // these are final scores which accumulate (0 on both sides)
