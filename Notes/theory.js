@@ -323,15 +323,60 @@ ex:   diceEl.src = `dice-${dice}.png`; // we can dynamically load
 - make use of the textContent to display things.
 - toggle will add a class if it is not there and it will remove a class if it is there
 - if we add a class or remove it, and it is there or not there, js will not do anything.
+
+
+Section 8
+- High-level languages: developers do not have to manage resources compared to C. Programs, though, will never be as fast.
+- Garbage-collected: unused objects are garbaged up to free up space. (Js special)
+- Interpred or just-in-time complied: all in all, we cconvert into machine code (0's, 1's). Computer processor only understands 0's and 1's. So we write human readable javascript code. From there, we complie.
+- Multi-paradigm: procedural programming, object oriented programming, functional programms. Imperative vs. Declarative. Js can do all three. 
+- Prototype-based Object-Oriented: Array prototype contains all the array methods, and the arrays in our code, inherit these methods.
+- First-class functions: functions are treated just as variables. Not the same as java. (e.g. const closeModal = function () {})
+- Dynamic language: we do not have to specify data types. Variables are auto changed. (let, const, etc., not similar to js).
+- Event loop: takes long running tasks,  excutes them in the "background", and puts them back in the main thread once they are finished. 
+
+JS Engine and Runtime
+- engine executes js. code
+- all engines contain a call stack and a heap. 
+- objects are stored in the heap similar to java.
+- Compilation: entire code is converted into machine code at once, and written to a binary file that can be executed by a computer.
+(built, then executed in the processor)
+- Interpretation: runs through the source code and executes it line by line. (javascript used to be used like this; however, this is very very slow.)
+- Just-in-time (JIT) compliation" entire code is converrted into machine code at once, then executed immediatley.
+- Parsing: the code is parsed to check syntax errors. Then complies the ASTt via compilation, and it executes (changes into 0's and 1's). Optimiazed during execution. 
+- Runtime is a box that contains all the js. things we need (e.g. heap, stack, web API's, callback queue)
+
+
+
+Execution Contexts and the Call Stack
+- after compliation, creation global exectuvie context is created for the top-level code. These are not inside of a function. ONLY ONE.
+- exectuion context - a piece of javascript is executed. Stores all the necessary information for some code to be executed.
+- then, top level code is ecevuted. Then, exectuion of functions and waiting for callbacks. 
+- what is inside an exectuion context: 
+1. variuable enviroment: let, const, var, functions, arguments object.
+2. Scope chain: consists of refernces to variables that are located outside of the function.
+3. this keyword. 
+These are all generated during the creation phase, right before execution.
+note: arrow functions do not have an arguments objects or this keyword, which is extrmeley important to remember (they share with their closest parent).
+- we get a globalc exectuion context for each function. e.g. 
+name = 'JONAS'  
+first = <function>
+second = <function>
+x = <unknown></unknown>
+
+
+- Call-stack: execution context that is stacked. Once it is finished running it will be removed from the stack. 
+- they stack each other in the call-stack. From top, howev
+- once a return is called, the execution context is removed "popped off", and we go down to the previous thing in the stack.
+ex: we hae our glob ex., then function ex., etc. we follow the code along (methods called, etc.). This is similar to tracing code in java. 
 -
 -
 -
 -
+-
+-
+-
+-
+-
+-
 
-
-
-
-
-
-
-*/
