@@ -37,7 +37,7 @@ const closeModel = function () {
   overlay.classList.add('hidden');
 };
 
-const checkGuess = function (guess, score, highScore, secretNumber) {
+const checkGuess = function (guess, highScore, score, secretNumber) {
   if (!guess) {
     // if no guess, print no number using the function ref.
     displayMessage('No Number!');
@@ -70,6 +70,7 @@ const checkGuess = function (guess, score, highScore, secretNumber) {
 
   // Makes the again functionable
   document.querySelector('.again').addEventListener('click', function () {
+    console.log(score);
     score = 20; // resets the score
     secretNumber = Math.trunc(Math.random() * 20) + 1; // resets
     document.querySelector('.score').textContent = score;
@@ -79,8 +80,6 @@ const checkGuess = function (guess, score, highScore, secretNumber) {
     document.querySelector('.number').style.width = '15rem'; // restores width & background
     document.querySelector('body').style.backgroundColor = '#222';
   });
-
-  return score;
 };
 
 const displayMessage = function (message) {
@@ -96,7 +95,7 @@ document.addEventListener('keydown', function (event) {
   if (event.key === 'Enter') {
     if (modal.classList.contains('hidden')) {
       const guess = Number(document.querySelector('.guess').value);
-      score = checkGuess(guess, score, highScore, secretNumber);
+      checkGuess(guess, highScore, secretNumber);
     }
   }
 });
@@ -104,5 +103,5 @@ document.addEventListener('keydown', function (event) {
 document.querySelector('.check').addEventListener('click', function () {
   // if click is pressed, it runs
   const guess = Number(document.querySelector('.guess').value);
-  score = checkGuess(guess, score, highScore, secretNumber);
+  checkGuess(guess, highScore, secretNumber);
 });
