@@ -392,10 +392,37 @@ Variable Enviroment: Hoisting and The TDZ
     - let & const: not hoisted, inital val is <uninitalized>, TDZ (temporal deadzone), block scoped.
     - function expressions and arrows: these are simply variables, so they follow the same var & let/const rules as above. 
 - If we try to access a tdz, we get a ref error. Each and every let & const variable have a TDZ. TDZ helps us avoid errors when accessing values before decleration. Also, it makes const variables work properly. 
+- Good practice to just create functions first and call them later.
+- let & const variables do not create properties on the window object.
+
+
+This keyword
+- special variable that is created for every execution context (for every function). 
+- takes the value / points to the owner of the function in which the this keyword is used.
+- this is NOT static. It depends on HOW the function is called, and its value is only assigned when the function is acutally called. 
+    - Method: this = <Object that is calling the method>. example (this.year) is (jonas.year)
+    - Simple function call this = undefined (only in strict mode)
+    - Arrow functions this = <this of surrounding function (lexical this)>. They do not get their own this keyword! They look around for the nearest!
+    - Event listener: this = <DOM element that the handler is attached to>
+    - new, call, apply, bind are used later in the course. 
+- this will never point to the function itself, and variable enviroment. 
+
+This keyword in practice
 -
 -
 -
 -
+-
+
+Regular functions vs. Arrow functions (this keyword)
+- Objects do not create a "block" / their own scope. The arrow example has the parent scope as the global scope.
+- Never use an arrow function as a method.
+- Simlar this calling when using a function call. It has the this keyword as undefined. 
+- to preserve the this keyword, we can define a variable (ex. const self or that = this).
+- Arrow functions defined in other functions are very useful for this specfic things. 
+- Arguments keyword: returns an array of the parameters. We can even use more arguments than the parameters. 
+- The arrow function, however, do not recicive an arugments keyword.  
+- Arguments keyword is not used as much. 
 
 
 */
