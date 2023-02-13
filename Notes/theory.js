@@ -382,3 +382,9 @@ Scope and Scope Chain
 - Every scope has access to the variables from the parent scopes. For example, if a function is deffined in a function, the second function can call on all parent scopes. This does not work the other way around. Only Parent scopes can be used, but no child scopes. 
 - var is function scoped, meaning they ebd up in the closest function scope. let and const are block scoped.  
 - Scope Chain vs. Call Stack: the scope chain has nothing to do with the order in which the functions were called in the call-stack. Scope chain in a certain scope is equal to adding all the variable enviroments of the parent scopes.
+- Code in the function is only implemented once it is called; therefore, we can use it anywhere as long as the "main" is in the correct order.
+
+
+
+
+*/
