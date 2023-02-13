@@ -1,9 +1,32 @@
 # ameer-udemy-javascript-zero-to-expert
 
-// Section 7 Project 3 Pig Game - Advanced Features
+// Section 9 Coding Challenge 1
 
-Orignial: 2-player game. Player 1 rolls the dice and choses when to hold his points. If either user holds their points, they get added to their total count and move to the next player. If either player rolls a 1, then their current points goes to 0 and it is the other players turn. The first player to 100 points wins.
+Data Structures, Modern Operators and Strings
+Coding Challenge #1
+We're building a football betting app (soccer for my American friends �)!
+Suppose we get data from a web service about a certain game ('game' variable on
+next page). In this challenge we're gonna work with that data.
+Your tasks:
 
-Extra features: when a 1 OR a 5 is rolled, the score is reset to 0 and the player is switched. Modal is displayed which asks players what the MAX score instead of pre-set. The game begins by randonmly selecting which player goes first. Also, the game now displays the max score, while asking for the max score before the first game.
-
-Flowchart: attached in the file.
+1. Create one player array for each team (variables 'players1' and
+   'players2')
+2. The first player in any player array is the goalkeeper and the others are field
+   players. For Bayern Munich (team 1) create one variable ('gk') with the
+   goalkeeper's name, and one array ('fieldPlayers') with all the remaining 10
+   field players
+3. Create an array 'allPlayers' containing all players of both teams (22
+   players)
+4. During the game, Bayern Munich (team 1) used 3 substitute players. So create a
+   new array ('players1Final') containing all the original team1 players plus
+   'Thiago', 'Coutinho' and 'Perisic'
+5. Based on the game.odds object, create one variable for each odd (called
+   'team1', 'draw' and 'team2')
+6. Write a function ('printGoals') that receives an arbitrary number of player
+   names (not an array) and prints each of them to the console, along with the
+   number of goals that were scored in total (number of player names passed in)
+7. The team with the lower odd is more likely to win. Print to the console which
+   team is more likely to win, without using an if/else statement or the ternary
+   operator.
+   Test data for 6.: First, use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'.
+   Then, call the function again with players from game.scored
