@@ -385,12 +385,13 @@ Scope and Scope Chain
 - Code in the function is only implemented once it is called; therefore, we can use it anywhere as long as the "main" is in the correct order.
 
 Variable Enviroment: Hoisting and The TDZ
--
--
--
--
--
--
+- Hoisting: Makes some types of variables accessible/usable in the code before they are actually declared. "Variable lifted to the top of their scope".
+- Code is scanned for variable decleratons before execution. For each variable found, a new property is created in the variable enviorment object.
+    - function declerations are hoisted, inital values are actual functions, and are block scoped.
+    - var variables: hoisted, inital val is undefined, function scoped.
+    - let & const: not hoisted, inital val is <uninitalized>, TDZ (temporal deadzone), block scoped.
+    - function expressions and arrows: these are simply variables, so they follow the same var & let/const rules as above. 
+- If we try to access a tdz, we get a ref error. Each and every let & const variable have a TDZ. TDZ helps us avoid errors when accessing values before decleration. Also, it makes const variables work properly. 
 -
 -
 -
