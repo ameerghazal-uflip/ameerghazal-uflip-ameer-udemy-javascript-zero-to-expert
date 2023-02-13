@@ -471,15 +471,29 @@ we can change the names of the nested varibales by using the colon again.
 
 
 The Spread Operator 
--
--
--
--
--
--
--
--
--
+- expands the array elements all into one
+- ...arrayName manually gets all the elements and prints them.
+    const newArr = [1, 2, ...arr];
+    console.log(newArr);
+
+- spread operator takes all elements from the array without creating new variables. It is only useable in places where we would write values seperated by commas. 
+- we can use the spread operator to copy and join arrays, for example: 
+    const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+
+- only use the spread opeator when building an array, or passing values into a function.
+- We can escape when writing a console.log or a string but using a backslash (\) when wanting to use more quotes. 
+- we can use the prompt method to display to the user. 
+- Iterables: arrays, string, maps, sets. Not objects.
+- the spread operator extends to objects even though the are not iterable: 
+    const newResturant = { foundingYear: 1998, ...restaurant, founder: 'Jess' };
+    console.log(newResturant);
+where resutrant is an object, and we use the curly braces {}
+- we can also make shallow copies similar to arrays be doing the following: 
+    const resturantCopy = { ...restaurant };
+    resturantCopy.name = 'Piazzzera';
+    console.log(restaurant.name);
+    console.log(resturantCopy.name);
+- note that when we make copies and change a property insinde of the copy object, it does NOT affect the main. 
 
 
 
