@@ -435,4 +435,52 @@ Primitves Vs. Objects (Primitve vs. Reference Types)
 - we can use Object.assign({}, object2) to copy over an object. This only creates a shallow copy, not a deep clone. 
 - for an object within an object, Object.assign(...) does not help much. 
 
+
+// Section 9: Data Structures, Modern Operators, and Strings
+
+Destructuring Arrays
+- unpacking values from an array or object into seperate variables. Breaking down a complex variable into smaller variables. 
+- example:  "const [x, y, z] = arr;" creates variables x, y, z, and assigns them accordingly.
+- to skip over an element, we simply leave a hole. For example, const [first, , third] = resturant.categories. 
+- we can switch values with destructring: [main, secondary] = [secondary, main];
+- for this, functions inside of methods work, but if they are nested in a function, they do not work!
+- we can do nested destructuing, which is basically destructring inside of destructuing. For example, 
+    const [one, , [three, four]] = nested;
+    console.log(one, three, four);
+- we can also pre-assign values for testing:
+    const [p = 1, q = 1, r = 1] = [8, 9];
+    console.log(p, q, r);
+
+Destructuring Objects
+- to destructure objects, we use the curly breaces. Very similar to des. arrays, but instead we use curly braces.
+    const { name, openingHours, categories } = restaurant;
+    console.log(name, openingHours, categories);=
+- we can change the names of the variables inside of the object by doing (name: newName, ...)
+- we can also use the same setting equal logic as the arrays, for example:
+    const { menu = [], starterMenu: starters = [] } = restaurant;
+    console.log(menu, starters);
+- we can mutate data by wrapping it in parenthesis
+    const obj = { a: 23, b: 7, c: 14 };
+    ({ a, b } = obj);
+    console.log(a, b);
+- for nested objects, we can access the data by using curly braces, a colon, then more curly braces to access the excess data. For example: 
+    const { fri: {open, close} } = openingHours;
+    console.log(open, close);
+we can change the names of the nested varibales by using the colon again.
+- we can create destructing methods inside the objects. See code * for example.
+
+
+The Spread Operator 
+-
+-
+-
+-
+-
+-
+-
+-
+-
+
+
+
 */
