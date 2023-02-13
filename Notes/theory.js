@@ -328,7 +328,7 @@ ex:   diceEl.src = `dice-${dice}.png`; // we can dynamically load
 Section 8
 - High-level languages: developers do not have to manage resources compared to C. Programs, though, will never be as fast.
 - Garbage-collected: unused objects are garbaged up to free up space. (Js special)
-- Interpred or just-in-time complied: all in all, we cconvert into machine code (0's, 1's). Computer processor only understands 0's and 1's. So we write human readable javascript code. From there, we complie.
+- Interpred or just-in-time complied: all in all, we convert into machine code (0's, 1's). Computer processor only understands 0's and 1's. So we write human readable javascript code. From there, we complie.
 - Multi-paradigm: procedural programming, object oriented programming, functional programms. Imperative vs. Declarative. Js can do all three. 
 - Prototype-based Object-Oriented: Array prototype contains all the array methods, and the arrays in our code, inherit these methods.
 - First-class functions: functions are treated just as variables. Not the same as java. (e.g. const closeModal = function () {})
@@ -342,7 +342,7 @@ JS Engine and Runtime
 - Compilation: entire code is converted into machine code at once, and written to a binary file that can be executed by a computer.
 (built, then executed in the processor)
 - Interpretation: runs through the source code and executes it line by line. (javascript used to be used like this; however, this is very very slow.)
-- Just-in-time (JIT) compliation" entire code is converrted into machine code at once, then executed immediatley.
+- Just-in-time (JIT) compliation" entire code is converted into machine code at once, then executed immediatley.
 - Parsing: the code is parsed to check syntax errors. Then complies the ASTt via compilation, and it executes (changes into 0's and 1's). Optimiazed during execution. 
 - Runtime is a box that contains all the js. things we need (e.g. heap, stack, web API's, callback queue)
 
@@ -369,14 +369,16 @@ x = <unknown></unknown>
 - they stack each other in the call-stack. From top, howev
 - once a return is called, the execution context is removed "popped off", and we go down to the previous thing in the stack.
 ex: we hae our glob ex., then function ex., etc. we follow the code along (methods called, etc.). This is similar to tracing code in java. 
--
--
--
--
--
--
--
--
--
--
 
+Scope and Scope Chain
+- each exectution content has a varibale enviroment, scope chain, and this keyword
+- scoping: controls how our programs variables are orgainzed and accessed ("Where do variables live").
+- Lexical scoping: scoping is controlled ny placement of functions and blocks in the code. 
+- Scope: space or enviorment in which  a certain variable is declared. There is a global scope, function scope, and block scope.
+- Scope of a variable: region of our code where a certain variable can be accessed. (not the same as scope)
+- Global scope: for top level code. For variables declared outside of any functions or blocks. These are accessible everywhere. SImilar to java.
+- Function Scope: Local variables, only accesible inside the function. Similar rules to java. If a variable is defined outside, however, it would work to mutate them.
+- Block scope (ES6): anything in curly braces, if defined inside of the block, have their own local variables. Loops, conditionals, etc. This only applies to let and const variables, however, we could use var (this is because of the old rules). Functions are also block scoped, so functions declared inside a block, are only asscessible in that block. Very similar to java. 
+- Every scope has access to the variables from the parent scopes. For example, if a function is deffined in a function, the second function can call on all parent scopes. This does not work the other way around. Only Parent scopes can be used, but no child scopes. 
+- var is function scoped, meaning they ebd up in the closest function scope. let and const are block scoped.  
+- Scope Chain vs. Call Stack: the scope chain has nothing to do with the order in which the functions were called in the call-stack. Scope chain in a certain scope is equal to adding all the variable enviroments of the parent scopes.
