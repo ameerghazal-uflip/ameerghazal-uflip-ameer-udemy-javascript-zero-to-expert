@@ -384,7 +384,17 @@ Scope and Scope Chain
 - Scope Chain vs. Call Stack: the scope chain has nothing to do with the order in which the functions were called in the call-stack. Scope chain in a certain scope is equal to adding all the variable enviroments of the parent scopes.
 - Code in the function is only implemented once it is called; therefore, we can use it anywhere as long as the "main" is in the correct order.
 
-
+Variable Enviroment: Hoisting and The TDZ
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
 
 
 */
