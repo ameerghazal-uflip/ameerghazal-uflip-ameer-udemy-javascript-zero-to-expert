@@ -425,4 +425,14 @@ Regular functions vs. Arrow functions (this keyword)
 - Arguments keyword is not used as much. 
 
 
+Primitves Vs. Objects (Primitve vs. Reference Types) 
+- 
+-
+-
+-
+-
+-
+-
+-
+
 */
