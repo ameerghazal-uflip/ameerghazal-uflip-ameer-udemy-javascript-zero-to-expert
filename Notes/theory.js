@@ -426,13 +426,13 @@ Regular functions vs. Arrow functions (this keyword)
 
 
 Primitves Vs. Objects (Primitve vs. Reference Types) 
-- 
--
--
--
--
--
--
--
+- Referecnes work similar to java. If an object is defined, then another object is initilazed with object1, it is given the same refernce; therefore, an change to either object affects both the objects. 
+- Reference types: Objects: Object literal, arrays, functions, etc.
+- Primitve types: Number, Boolean, Null, etc.., String
+- Primitve types are stored in the call stack, and refernce types are stored in the heap.
+- Identifed points toward the memory address. This works the same in java.  
+- changning something in the heap has nothing to do with const or let. Redeclaring the object is a different story. 
+- we can use Object.assign({}, object2) to copy over an object. This only creates a shallow copy, not a deep clone. 
+- for an object within an object, Object.assign(...) does not help much. 
 
 */
