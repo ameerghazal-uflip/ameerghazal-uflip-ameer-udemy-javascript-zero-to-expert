@@ -497,4 +497,43 @@ where resutrant is an object, and we use the curly braces {}
 
 
 
+Rest pattern & parameters
+- spread operator is to unpack elements of an array, while the rest operator is to pack elements into an array.
+- same syntax, but if it is on the left side of the (=) sign, it is a rest. 
+- alawys must be the last element in the destructure. 
+- objects & arrays have the same syntax as prev. ([]) vs. ({})
+- we can do this inside a function parameter as well
+    const add = function (...numbers) {
+  console.log(numbers);
+    };
+- this makes it so any arbitrary group of numbers is possible, not limited. 
+- takes eveything and packs it into an array, which is the opposite from a spread operator.
+- we can write the function parameters as a certain varibale, with a rest of the remaining.
+- rest serves to collect all of the unused parameters into an array.
+- spread is used when we want values sep. by commas, while rest is used when we want to use variables sep. by commas. 
+
+
+
+
+Short circuting (&& and ||)
+- They can use any data type, they can return any data type, and they short circuit. 
+- it will always return the truthy value. If the value is fallacy, it will check the next element.
+- for example: const guests2 = restaurant.numGuests || 10; This frees up space from ternary, if-else, etc.
+- there is a bug, though when using 0's
+- && operators: short-circuts / ends when the value is falsy and returns that falsy. 
+- When the && is truthy, then it checks all the values and returns the last operant. This is similar to the current definition.
+- No need in doing extra work if at least 1 is false. 
+- if truthy, the second value... will be evalualtes 
+- Summary:
+    || will return the first truthy value found or the last value if all are falsy.
+    && will return the first falsy value or the last value if all are truthy.
+
+The Nullish Coalescing Operator (??)
+- denoted by ?? and operators very similar to the ||
+- the difference is that it works with nullish values.
+Nullish: null, undefined.
+- It does NOT include the empty string '' or 0.
+
+
+
 */
