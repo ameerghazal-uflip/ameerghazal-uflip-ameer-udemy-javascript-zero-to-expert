@@ -642,15 +642,40 @@ Maps: Fundementals
 -
 
 Maps: Iteration
--
--
--
--
--
--
--
+- Instead of using the set method and stacking them each time we want to add something, we can just pass in an array as argument for the Map constrcutor, from there we can have many arrays inisde of the array for the function.
+    const question = new Map([
+    ['questiom', 'what is the best prog. lanuage in the world'],
+    [1, 'C'],
+    [2, 'Java'],
+    [3, 'JavaScript'],
+    ['correct', 3],
+    [true, 'Correct!'],
+    [false, 'Try Again'],
+    ]);
+- This speeds up the process.
+- Very similar to the Object.entries structure.
+- Convert an object to a map: We can pass in Object.entries(objectName) in the Map(..) argument to convert an object into a map.
+- we can loop over maps the same. If there is a specifc type we want to check, we can use the typeof method.
+- we can check by opening the map with the mapName.get(field we want)
+- we can convert a map to an array. Form array brackets around the map, and then use the spread operator
+    console.log([...question]) where question is a MAP.
 
 
+Which Data Structure to Use?
+- Data can be written within the source code (status messages), from the user interface (tasks in an app), external sources (webA API).
+- We store collections of data in Data Stuctures
+- Simple lists: Arrays or Sets
+- Key/Value pairs: Objects or Maps (allows us to describle values). If we want to describe data, it is better to use these.
+-Creating an array of objects is extremely common in JavaScript
+- There are more data structures.
+
+- Arrays vs. Sets
+    - Arrays are when we need an ordered ;ist of values and we need to manipulat the data
+    - Sets are when we need unique values. It is better when high-performance is very important. Also, removing duplicates from an array compliments.
+
+- Objects vs. Maps
+    - Objects have been the traditional key/value store. They are also easier to write and access with . & []. Use objects when we need to include functions (methods) & JSON.
+    - Maps have better performance, keys can have any data type, they are easy to iterate, and easy to compute the size. Using maps is better when we need map simple key/value data. Also, it is better when we have keys that are not string (for ref: [key, value]) form. So, ['task', 'Coding'!], etc.
 
 
 
