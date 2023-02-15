@@ -518,7 +518,7 @@ Rest pattern & parameters
 
 Short circuting (&& and ||)
 - They can use any data type, they can return any data type, and they short circuit. 
-- it will always return the truthy value. If the value is fallacy, it will check the next element.
+- ( || ) it will always return the truthy value. If the value is fallacy, it will check the next element.
 - for example: const guests2 = restaurant.numGuests || 10; This frees up space from ternary, if-else, etc.
 - there is a bug, though when using 0's
 - && operators: short-circuts / ends when the value is falsy and returns that falsy. 
@@ -527,6 +527,7 @@ Short circuting (&& and ||)
 - if truthy, the second value... will be evalualtes 
 - Summary:
     || will return the first truthy value found or the last value if all are falsy.
+
     && will return the first falsy value or the last value if all are truthy.
 
 The Nullish Coalescing Operator (??)
@@ -537,10 +538,11 @@ Nullish: null, undefined.
 
 
 Logical Assignment Operators
-- 
--
--
--
+- 3 new logical assignment operators in the new ES2020
+- ||= assigns a value to a variable if the current variable is falsy. This is the OR assignment operator. 
+- ??= is the nullish assignment operator to deal with falsy values.
+- we can also use the && operator to change an object's contents,
+- &&= assigns a value to a current variable if it is currently truthy.  
 -
 -
 

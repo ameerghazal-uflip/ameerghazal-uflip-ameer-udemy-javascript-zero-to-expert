@@ -53,3 +53,39 @@ const restaurant = {
 };
 
 // SOl.
+
+const rest1 = {
+  name: 'Capri',
+  numGuests: 20,
+};
+
+const rest2 = {
+  name: 'La pizzera',
+  owner: 'Giovanni Rossi',
+};
+
+// if the first val (rest2=rest1 numGuests) the it is truthy and it will be retunred; otherwise, the 10 will be returned.
+rest1.numGuests = rest1.numGuests || 10;
+rest2.numGuests = rest2.numGuests || 10;
+
+console.log(rest1, rest2);
+
+// OR assignment operator
+
+rest1.numGuests ||= 10;
+rest2.numGuests ||= 10;
+console.log(rest1, rest2);
+
+// Nullish assignment operator
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+console.log(rest1, rest2);
+
+// And operator
+rest2.owner = rest2.owner && '<ANYNOMUS>';
+
+rest1.owner &&= '<ANYNOMUS>';
+rest2.owner &&= '<ANYNOMUS>';
+
+console.log(rest1, rest2);
