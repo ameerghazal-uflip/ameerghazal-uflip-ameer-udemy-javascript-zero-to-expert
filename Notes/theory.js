@@ -605,4 +605,53 @@ Looping Objects: Object Keys, Values, and Entries
 - watch for the indicies. 
 
 
+Sets 
+- A set is a collection of unqiue values, meaning they can never be duplicated.
+- Similar styles to arrays, and they are iterables. Different from an array. Element order is irrelevant.
+- Creating a set: const variableName = new Set([...]);
+- if there are duplicates in the set, they will be removed in the output.
+- .size gives the size of the set. NOT .length
+- we can also pass in a String instead of a bracket item. The set will simply just split it up.
+- .has method checks if the set contains the data. This is similar to the includes method for arrays is javaScript. 
+- .add and .delete methods do exactly what they should. If added twice it only adds once, etc. due to the no duplicate rules. These add methods are similar to ArrayList functions in Java.
+- There are no index's in sets. There is no way of getting values out of a set. This makes sense, though because the values are all unique and we would not need to use them. (Just use an array)
+- .clear() clears the entire set of the elements
+- we can loop over sets like normal
+- we can pass in an array since it is an iterable as an argument for a set.
+    const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+    const staffUnique = new Set(staff);
+- we can use the spread operator (...) which takes all the elements outside of the set. 
+- to find the total number of unique posiions, we can do the array.size
+
+
+
+Maps: Fundementals
+- Much more useful than a set.
+- In maps, we can have any type of keys (Objects, arrays, etc.)
+- Similar construction to set: const rest = new Map();
+- we can add elements into the map by using .set(...)
+- we can stack / chain together .set methods
+- we can use the .get(...) method to get the output at the certain object.
+- .has() checks if a map has a value. 
+- .delete(key) removes a key from the map.
+- .size is the size of the map. .clear() clears the elements. Similar to sets.
+- we can access other arrays, etc. but we need to be weary of the reference/memory in the heap. Best to create some sort of copy.
+- can be used for DOM elements:
+    rest.set(document.querySelector('h1'), 'heading');
+- each map needs 2 arguments - from what it seems like. It needs what it will be called, and a value. Watch the order here, it can get confusing. 
+-
+
+Maps: Iteration
+-
+-
+-
+-
+-
+-
+-
+
+
+
+
+
 */

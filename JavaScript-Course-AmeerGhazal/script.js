@@ -1,130 +1,8 @@
 'use strict';
 
 /* 
-// Section 9 Lesson 111: For-Of-Loop
 
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
-
-  order: function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-
-  // ** this destructres for us & we added starter values incase of failure
-  orderDelivery: function ({
-    starterIndex = 1,
-    mainIndex = 0,
-    address,
-    time = 20,
-  }) {
-    console.log(
-      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
-    );
-  },
-
-  orderPasta: function (ing1, ing2, ing3) {
-    console.log(
-      `Here is your amazing pasta with ${ing1}, ${ing2}, and ${ing3}`
-    );
-  },
-
-  orderPizza: function (mainIngredient, ...otherIngredients) {
-    console.log(mainIngredient);
-    console.log(otherIngredients);
-  },
-};
-
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-
-for (const item of menu) console.log(item);
-
-for (const [i, element] of menu.entries()) {
-  console.log(`${i + 1}: ${element}`);
-}
-
-console.log([...menu.entries()]); // checker of what .entries() does.
-
-
-
-// Section 9 Lesson 112: Enhanced Object Literals
-
-const weekdays = ['mon', 'tue', 'wed', 'thur', 'fri', 'sat', 'sun'];
-
-const openingHours = {
-  [weekdays[3]]: {
-    open: 12,
-    close: 22,
-  },
-  [weekdays[4]]: {
-    open: 11,
-    close: 23,
-  },
-  [`day-${2 + 4}`]: {
-    open: 0, // Open 24 hours
-    close: 24,
-  },
-};
-
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-
-  // ES6 Enchanced object literals
-  openingHours,
-
-  // we can erase the function and colon aspect to just keep it like this.
-  order(starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-
-  // ** this destructres for us & we added starter values incase of failure
-  orderDelivery: function ({
-    starterIndex = 1,
-    mainIndex = 0,
-    address,
-    time = 20,
-  }) {
-    console.log(
-      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
-    );
-  },
-
-  orderPasta: function (ing1, ing2, ing3) {
-    console.log(
-      `Here is your amazing pasta with ${ing1}, ${ing2}, and ${ing3}`
-    );
-  },
-
-  orderPizza: function (mainIngredient, ...otherIngredients) {
-    console.log(mainIngredient);
-    console.log(otherIngredients);
-  },
-};
-
-// Section 9 Lesson 113: Optional Chaining
-
+// Section 9 Lesson 116: Sets
 const openingHours = {
   fri: {
     open: 12,
@@ -181,116 +59,82 @@ const restaurant = {
   },
 };
 
-console.log(restaurant.openingHours.fri.open);
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
 
-if (restaurant.openingHours && restaurant.openingHours.mon) {
-  console.log(restaurant.openingHours.mon.open);
+console.log(ordersSet);
+
+console.log(new Set('Jonas'));
+
+console.log(ordersSet.size);
+
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+console.log(ordersSet);
+
+ordersSet.delete('Risotto');
+console.log(ordersSet);
+
+for (const order of ordersSet) {
+  console.log(order);
 }
 
-// WITH OPTIONAL CHAINING
-console.log(restaurant.openingHours.mon?.open);
-console.log(restaurant.openingHours?.fri?.open);
+// Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
 
-const days = ['mon', 'tue', 'wed', 'thur', 'fri', 'sat', 'sun'];
-
-for (const day of days) {
-  const open = restaurant.openingHours[day]?.open ?? 'closed';
-  console.log(`On ${day}, we open at ${open}`);
-}
-
-// Methods Optional Chaining
-console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
-console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
-
-// Arrays Optional Chaining
-
-//const users = [];
-const users = [{ name: 'Jonas', email: 'Hello@Jonas.io' }];
-console.log(users[0]?.name ?? 'User array empty');
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
 
 */
 
-// Section 9 Lesson 114: Looping Objects: Object Keys, Values, and Entries
+// Section 9 Lesson 177: Maps: Fundementals
 
-const openingHours = {
-  fri: {
-    open: 12,
-    close: 22,
-  },
+const rest = new Map(); // contructs the Map
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze, Italy');
+rest.set(2, 'Lisbon, Portugal');
+rest
+  .set('categories', [
+    'Italian',
+    'Organic',
+    'Pizzeria',
+    'Vegetarian',
+    'Organic',
+  ])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open') // stacks the set methods
+  .set(false, 'We are closed');
 
-  sat: {
-    open: 11,
-    close: 23,
-  },
+console.log(rest.get('name'));
+console.log(rest.get(true)); // prints out the correct value to the console
+console.log(rest.get(1));
 
-  sun: {
-    open: 0, // Open 24 hours
-    close: 24,
-  },
-};
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close'))); // the result is true or false, which will map to once of the values above
 
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+console.log(rest.has('categories'));
+rest.delete(2); // deletes the element at the key
+console.log(rest);
+console.log(rest.size);
 
-  // ES6 Enchanced object literals
-  openingHours,
+const arr = [1, 2];
+rest.set(arr, 'Test');
+console.log(rest);
 
-  // we can erase the function and colon aspect to just keep it like this.
-  order(starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
+console.log(rest.get(arr)); // will not work, they are not the same object in the heap. Needs to be the exact same object in memory
 
-  // ** this destructres for us & we added starter values incase of failure
-  orderDelivery: function ({
-    starterIndex = 1,
-    mainIndex = 0,
-    address,
-    time = 20,
-  }) {
-    console.log(
-      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
-    );
-  },
-
-  orderPasta: function (ing1, ing2, ing3) {
-    console.log(
-      `Here is your amazing pasta with ${ing1}, ${ing2}, and ${ing3}`
-    );
-  },
-
-  orderPizza: function (mainIngredient, ...otherIngredients) {
-    console.log(mainIngredient);
-    console.log(otherIngredients);
-  },
-};
-
-// Property Names
-const properties = Object.keys(openingHours);
-console.log(properties);
-
-let openStr = `We are open on ${properties.length} days: `;
-
-for (const day of properties) {
-  openStr += `${day}, `;
-}
-
-console.log(openStr);
-
-// Property Values
-const values = Object.values(openingHours);
-console.log(values);
-
-// Entire Object, difference between array
-const entires = Object.entries(openingHours);
-console.log(entires);
-
-// if it was a simple object, all we would have to do is [key, value], but since value contains objects within it, we can go furthur and destrucutre more.
-
-for (const [key, { open, close }] of entires) {
-  // first index is the data, then the innner 0 & 1 are the open close times. Look at the console.log
-  console.log(`On ${key} we open at ${open} and close at ${close}.`);
-}
+rest.set(document.querySelector('h1'), 'heading');
+console.log(rest);
