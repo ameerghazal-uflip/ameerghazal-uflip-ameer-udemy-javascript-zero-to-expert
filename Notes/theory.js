@@ -543,9 +543,66 @@ Logical Assignment Operators
 - ??= is the nullish assignment operator to deal with falsy values.
 - we can also use the && operator to change an object's contents,
 - &&= assigns a value to a current variable if it is currently truthy.  
--
--
 
+For-of-Loop
+- automatically loops over the entire array
+- we create a variable (e.g. const item), then we use 'of', then we use the variable wanting the be loop over 'menu
+    for (const item of menu) {
+        console.log(item);
+    }
+- we can use the variableName.entries() to return an seperate array for each index at which each index contains a smaller array.
+     for (const item of menu.entires()) {
+        console.log(item);
+    }
+- we can also destructue inside the for-of statement
+    for (const [i, element] of menu.entries()) {
+    console.log(`${i + 1}: ${element}`);
+    }
+
+
+Enchanced Object Literals
+- we can use these literals for implelmenting other objects into objects. For example, two seperate objects openingHourd & Resturant. We can implement openHours into Resturant by doing 
+    objectName, (in this case openHours) followed by a comma.
+- also, for methods, we can erase the colon and function and just keep the object name. For example, 
+orderPasta: function (ing1, ing2, ing3) -> orderPasta(ing1, ing2, ing3)
+- we can change and compute property names aswell ** review this in the notes if needed (112)
+
+
+Optional Chaining
+- we can use the dot operator to continoulsy access object fields. For example, the resturant object implements an openHours object, and in there is has a day, which has a open-close, which we can acess that data: restaurant.openingHours.fri.open.
+- we can use the optional chaining method by use a '?' in front of the area we are unsure of checking. If the value is not-applicable, undefined is returned. Otherwise, it returns the correct value.
+    ex: restaurant.openingHours.mon?.open
+- follows the nullish logic as well.
+- The next operation after the '?' only happens if the statement leading up to it is true.
+- we can stack the chaining: restaurant.openingHours?.fri?.open
+- when using it in a for-of loop, use the brack notation for checking at each element.
+
+    e.g. for (const day of days) {
+    restaurant.openingHours[day]?.open;
+    }
+- use the Nullish operator when compaing values that may contain a falsy value.
+*- we can use the optional chain operator with methods (object functions basically) as well. For example, 
+    resturant.order?.(0,1) ?? 'No method'. This will check if the order method is defined inside of the resturant object, if so, it passes in an argument to run the method, if false, it prints out 'No method'.
+- it can also be used for arrays. For example, checking if an element is empty or null, etc. 
+    const users = [{ name: 'Jonas', email: 'Hello@Jonas.io' }];
+    console.log(users[0]?.name ?? 'User array empty');
+- we use both the ?? & ? operators in many situations just incase our value is false.  
+
+
+Looping Objects: Object Keys, Values, and Entries
+- Property Names
+    - we can loop over objects indirectly. 
+    - Use the Object.keys(objectName) to do so, it returns an array of the objects, which we can then loop over.
+    - we can do fancy things with template literals for these sitautions.
+    
+- Property Values & Entries
+- Use the Object.values(objectName) for the values of each index.
+- Use the Object.entries(objectName) to get all the infromation of the object
+- we can destructure an object inside of the for-of loop. For example: 
+    for (const [key, { open, close }] of entires) {
+  console.log(`On ${key} we open at ${open} and close at ${close}.`);
+}
+- watch for the indicies. 
 
 
 */
