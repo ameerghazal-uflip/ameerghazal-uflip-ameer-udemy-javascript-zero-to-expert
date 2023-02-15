@@ -442,7 +442,8 @@ Destructuring Arrays
 - unpacking values from an array or object into seperate variables. Breaking down a complex variable into smaller variables. 
 - example:  "const [x, y, z] = arr;" creates variables x, y, z, and assigns them accordingly.
 - to skip over an element, we simply leave a hole. For example, const [first, , third] = resturant.categories. 
-- we can switch values with destructring: [main, secondary] = [secondary, main];
+- we can switch values with destructring:
+     [main, secondary] = [secondary, main];
 - for this, functions inside of methods work, but if they are nested in a function, they do not work!
 - we can do nested destructuing, which is basically destructring inside of destructuing. For example, 
     const [one, , [three, four]] = nested;
@@ -536,7 +537,7 @@ Nullish: null, undefined.
 
 
 Logical Assignment Operators
--
+- 
 -
 -
 -
