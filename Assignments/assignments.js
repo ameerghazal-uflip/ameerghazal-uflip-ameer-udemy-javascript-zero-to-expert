@@ -1,156 +1,43 @@
-// Section 9 Coding Challenge 2
+// Section 9 Coding Challenge 3
 
-/*
+const gameEvents = new Map([
+  [17, "⚽ GOAL"], // left side is the key, value [key, value]
+  [36, "� Substitution"],
+  [47, "⚽ GOAL"],
+  [61, "� Substitution"],
+  [64, "� Yellow card"],
+  [69, "� Red card"],
+  [72, "� Substitution"],
+  [72, "� Substitution"],
+  [76, "⚽ GOAL"],
+  [80, "⚽ GOAL"],
+  [92, "� Yellow card"],
+]);
 
-const game = {
-  team1: "Bayern Munich",
-  team2: "Borrussia Dortmund",
-  players: [
-    [
-      "Neuer",
-      "Pavard",
-      "Martinez",
-      "Alaba",
-      "Davies",
-      "Kimmich",
-      "Goretzka",
-      "Coman",
-      "Muller",
-      "Gnarby",
-      "Lewandowski",
-    ],
-    [
-      "Burki",
-      "Schulz",
-      "Hummels",
-      "Akanji",
-      "Hakimi",
-      "Weigl",
-      "Witsel",
-      "Hazard",
-      "Brandt",
-      "Sancho",
-      "Gotze",
-    ],
-  ],
-  score: "4:0",
-  scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
-  date: "Nov 9th, 2037",
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
-};
+// #1 creates an array of all the different events
+const tester = gameEvents.values();
+const set = new Set(tester);
+const events = [...set]; // this is the array containing the different events with no duplicates
 
-// #1. Goes into the players field, renames the variables at each index & assigns them.
-const [players1, players2] = game.players;
-console.log(players1, players2);
+console.log(events);
 
-// 2
-const [gk, ...fieldPlayers] = players1;
-console.log(gk, fieldPlayers);
+// #2 removes the key from the map
+gameEvents.delete(64);
+console.log(gameEvents);
 
-// 3 spread op
-const allPlayers = [...players1, ...players2];
-console.log(allPlayers);
-
-// 4. stores the team1 with extra subs.
-const players1final = [...players1, "Thiago", "Coutinho", "Perisic"];
-console.log(players1final);
-
-// 5. nested object creating a variable with a name change for x.
-const {
-  odds: { team1, x: draw, team2 },
-} = game;
-console.log(team1, draw, team2);
-
-// 6. create a function that recives a re arb. number of player names
-
-function printGoals(...playerNames) {
-  for (let index = 0; index < playerNames.length; ++index) {
-    console.log(playerNames[index]);
-  }
-  console.log(playerNames.length); // this prints out the number of goals
-}
-
-printGoals("Davis", "Muller", "Leo", "Kimmich");
-printGoals(game.scored);
-
-// 7. which team is more likley to win.
-team1 < team2 && console.log("Team 1 has better odds");
-team1 > team2 && console.log("Team 2 has better odds");
-
-*/
-
-const game = {
-  team1: "Bayern Munich",
-  team2: "Borrussia Dortmund",
-  players: [
-    [
-      "Neuer",
-      "Pavard",
-      "Martinez",
-      "Alaba",
-      "Davies",
-      "Kimmich",
-      "Goretzka",
-      "Coman",
-      "Muller",
-      "Gnarby",
-      "Lewandowski",
-    ],
-    [
-      "Burki",
-      "Schulz",
-      "Hummels",
-      "Akanji",
-      "Hakimi",
-      "Weigl",
-      "Witsel",
-      "Hazard",
-      "Brandt",
-      "Sancho",
-      "Gotze",
-    ],
-  ],
-  score: "4:0",
-  scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
-  date: "Nov 9th, 2037",
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
-};
-
-// 1.
-let count = 1; // starts at 1 for logical purposes
-for (const goal of game.scored) {
-  console.log(`Goal ${count}: ${goal}`);
-  ++count;
-}
-
-// 2.
 let average = 0;
-for (const odd of Object.values(game.odds)) {
-  average += odd;
-}
-console.log(average / Object.values(game.odds).length); // makes it reusable
-
-// 3.
-for (const [team, score] of Object.entries(game.odds)) {
-  const result = team === "x" ? `draw` : `victory ${game[team]}`; // using game[team] we can access the correct team
-  console.log(`Odd of ${result}: ${score}.`);
+for (const [time, event] of gameEvents) {
+  // destructing the array & using a for-of loop.
+  average += time; // gets the time from each key
 }
 
-// 4. BONUS, VERY CONFUSING
+average /= gameEvents.size; // divides by the size for the average
+average /= 90; // for the 90 minute rule.
+console.log(`An event happened, on average every ${average} minutes.`);
 
-const hoopers = {};
-for (const player of game.scored) {
-  console.log(player);
-  console.log(hoopers[player]);
-  hoopers[player] ? hoopers[player]++ : (hoopers[player] = 1);
-}
-
-console.log(hoopers);
+// #4 print the half
+for (const [key, value] of gameEvents) {
+  key < 45
+    ? console.log(`[FIRST HALF] ${key}: ${value}`)
+    : console.log(`[SECOND HALF] ${key}: ${value}`);
+} // if the key is less than 45 mins, it is the first half, vice versa.
