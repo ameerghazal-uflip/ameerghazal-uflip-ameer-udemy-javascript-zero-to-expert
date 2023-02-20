@@ -677,5 +677,43 @@ Which Data Structure to Use?
     - Maps have better performance, keys can have any data type, they are easy to iterate, and easy to compute the size. Using maps is better when we need map simple key/value data. Also, it is better when we have keys that are not string (for ref: [key, value]) form. So, ['task', 'Coding'!], etc.
 
 
+Working With String (P1-P3) 
+- we can find an element at the index of a string using the [] notation. .length is the length of the string.
+- indexOf(letter) method returns the index of the element given. lastInecOf(letter) searches for the last index and returns it. We can also search for entire strings/words, but it is case sensitive.
+- .slice splits a string and returns a new string starting from the given index. We can specifiy an ending as well. (e.g. console.log(airline.slice(4, 7));). The last index is exlusive, while the first index is included. We can use negative arguments, the method will just start from the end of the string. 
+- when we use new String (...) it creates a String object, and once the run is done, itis changed down to a primitve. 
+- .toLowerCase() and .toUpperCase() change the case of the strings. (Similar to java)
+- we can get a letter at a specific index and use the toLowerCase() & upper methods. 
+e.g.    const passengerCorrect =
+        passengerLower[0].toUpperCase() + passengerLower.slice(1);
+- .trim removes all the white space. (new lines, spaces, etc.)
+- we can also stack the methods with the dot operator: const normalizedEmail = loginEmail.toLowerCase().trim();
+- Also, trimStart() and trimEnd() we trim from certain points.
+- We can also replace things in a string using the .replace method. Specify two arguments (replace, replacedWith).
+- .replace works for one value. replaceAll(same parameters) replaces all instances of the word. Case sensative 
+- We can use, for the word to be replaced, /word/g for global. 
+- .includes returns a boolean if the value is in the string.
+- .startsWith(val) returns a boolean, and endsWith() returns a boolean. 
+- split: splits a string into multiple parts based on a divider string. 
+e.g. 'Jonas Schemedtmann'.split(' ') returns an array. This is similar to java.
+- we can implement destructuring when using the split method.
+- .join method joins the array. This is the opposite from split
+e.g. ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+- we can pad data for the string to be a certain length. For example .padStart(numberOfCharacters, added);
+e.g. console.log(message.padStart(25, '+').length); 
+- .padEnds also works the exact same, but it is at the end (total number of character will be the first argument).
+- .repeat(numberOfTimes) re-writes the string as many times as expressed. 
+
+
+
+
+
+
+
+
+
+
+
+
 
 */

@@ -1,235 +1,168 @@
 'use strict';
 
-/* 
+/*
 
-// Section 9 Lesson 116: Sets
-const openingHours = {
-  fri: {
-    open: 12,
-    close: 22,
-  },
+// Section 9 Lesson 121 (Working with Strings )
 
-  sat: {
-    open: 11,
-    close: 23,
-  },
+const airline = 'Tap Air Portugal';
+const plane = 'A320';
 
-  sun: {
-    open: 0, // Open 24 hours
-    close: 24,
-  },
+// getting an element
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B23b'[0]); // will return B
+
+// length
+console.log(airline.length);
+console.log('B232'.length);
+
+// indexOf
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('Portugal'));
+
+// slice
+console.log(airline.slice(4)); // splits the string and starts at this index
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+// we can specifcy a neegative end
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  // B & E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') {
+    console.log('You got a middle seat.');
+  } else {
+    console.log('You got lucky');
+  }
 };
 
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+checkMiddleSeat('11B');
+checkMiddleSeat('23BC');
+checkMiddleSeat('3BE');
 
-  // ES6 Enchanced object literals
-  openingHours,
 
-  // we can erase the function and colon aspect to just keep it like this.
-  order(starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
+// Section 9 Lesson 122 Working With Strings (P2)
 
-  // ** this destructres for us & we added starter values incase of failure
-  orderDelivery: function ({
-    starterIndex = 1,
-    mainIndex = 0,
-    address,
-    time = 20,
-  }) {
-    console.log(
-      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
-    );
-  },
+const airline = 'Tap Air Portugal';
 
-  orderPasta: function (ing1, ing2, ing3) {
-    console.log(
-      `Here is your amazing pasta with ${ing1}, ${ing2}, and ${ing3}`
-    );
-  },
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
 
-  orderPizza: function (mainIngredient, ...otherIngredients) {
-    console.log(mainIngredient);
-    console.log(otherIngredients);
-  },
-};
+// Capitalization
+const passenger = 'jOnAs';
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1); // gets the letter at the index and converts it to uppercase.
 
-const ordersSet = new Set([
-  'Pasta',
-  'Pizza',
-  'Pizza',
-  'Risotto',
-  'Pasta',
-  'Pizza',
-]);
+console.log(passengerCorrect);
 
-console.log(ordersSet);
+// Comparing Emails
+const email = 'hello@jonas.io';
+const loginEmail = '  Hello@Jonas.io \n';
 
-console.log(new Set('Jonas'));
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+// console.log(trimmedEmail);
 
-console.log(ordersSet.size);
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(normalizedEmail === email);
 
-console.log(ordersSet.has('Pizza'));
-console.log(ordersSet.has('Bread'));
+// replacing
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.'); // we can stack these
+console.log(priceUS);
 
-ordersSet.add('Garlic Bread');
-ordersSet.add('Garlic Bread');
-console.log(ordersSet);
+const annoncement = 'All passenger come to barding door 23. Boarding door 23!';
 
-ordersSet.delete('Risotto');
-console.log(ordersSet);
+console.log(annoncement.replace('door', 'gate')); // replaces only one occurence.
+console.log(annoncement.replaceAll('door', 'gate')); // replaces all of the instances.
 
-for (const order of ordersSet) {
-  console.log(order);
+console.log(annoncement.replace(/door/g, 'gate')); // replaces all occurences.
+
+// Booleans
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.startsWith('A'));
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('Part of the NEW ARirbus family');
 }
 
-// Example
-const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
-const staffUnique = [...new Set(staff)];
-console.log(staffUnique);
+// Practice exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase(); // converts to string to all lowercase since the includes is case sensative.
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are not allowed on board');
+  } else {
+    console.log('Welcome aboard!');
+  }
+};
 
-console.log(
-  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
-);
-
-// Section 9 Lesson 117: Maps: Fundementals
-
-const rest = new Map(); // contructs the Map
-rest.set('name', 'Classico Italiano');
-rest.set(1, 'Firenze, Italy');
-rest.set(2, 'Lisbon, Portugal');
-rest
-  .set('categories', [
-    'Italian',
-    'Organic',
-    'Pizzeria',
-    'Vegetarian',
-    'Organic',
-  ])
-  .set('open', 11)
-  .set('close', 23)
-  .set(true, 'We are open') // stacks the set methods
-  .set(false, 'We are closed');
-
-console.log(rest.get('name'));
-console.log(rest.get(true)); // prints out the correct value to the console
-console.log(rest.get(1));
-
-const time = 21;
-console.log(rest.get(time > rest.get('open') && time < rest.get('close'))); // the result is true or false, which will map to once of the values above
-
-console.log(rest.has('categories'));
-rest.delete(2); // deletes the element at the key
-console.log(rest);
-console.log(rest.size);
-
-const arr = [1, 2];
-rest.set(arr, 'Test');
-console.log(rest);
-
-console.log(rest.get(arr)); // will not work, they are not the same object in the heap. Needs to be the exact same object in memory
-
-rest.set(document.querySelector('h1'), 'heading');
-console.log(rest);
+checkBaggage('I have a laptop, some food and a Pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks ands a gun for protection');
 
 */
 
-// Section 9 Lesson 118: Maps: Iterations
+// Section 9 Lesson 123 Working With Strings (P3)
 
-const openingHours = {
-  fri: {
-    open: 12,
-    close: 22,
-  },
+// Split & Join
+console.log('a+very+nice+string'.split('+')); // splits us the string into a new array
+console.log('Jonas Schemedtmann'.split(' '));
 
-  sat: {
-    open: 11,
-    close: 23,
-  },
+// with destructuring
+const [firstName, lastName] = 'Jonas Schemdtmann'.split(' '); // the split method splits it into an array, the the two values are assigned to the two variables in the destrucutre.
+console.log(firstName, lastName);
 
-  sun: {
-    open: 0, // Open 24 hours
-    close: 24,
-  },
-};
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
 
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
 
-  // ES6 Enchanced object literals
-  openingHours,
+  for (const n of names) {
+    //namesUpper.push(n[0].toUpperCase() + n.slice(1)); // converts the first letter to upper case and joins it with the remaining string
 
-  // we can erase the function and colon aspect to just keep it like this.
-  order(starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-
-  // ** this destructres for us & we added starter values incase of failure
-  orderDelivery: function ({
-    starterIndex = 1,
-    mainIndex = 0,
-    address,
-    time = 20,
-  }) {
-    console.log(
-      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
-    );
-  },
-
-  orderPasta: function (ing1, ing2, ing3) {
-    console.log(
-      `Here is your amazing pasta with ${ing1}, ${ing2}, and ${ing3}`
-    );
-  },
-
-  orderPizza: function (mainIngredient, ...otherIngredients) {
-    console.log(mainIngredient);
-    console.log(otherIngredients);
-  },
-};
-
-const question = new Map([
-  ['question', 'What is the best prog. lanuage in the world?'],
-  [1, 'C'],
-  [2, 'Java'],
-  [3, 'JavaScript'],
-  ['correct', 3],
-  [true, 'Correct!'],
-  [false, 'Try Again'],
-]);
-
-console.log(question);
-
-// Convert object to a map
-console.log(Object.entries(openingHours));
-const hoursMap = new Map(Object.entries(openingHours));
-console.log(hoursMap);
-
-// Quiz app
-console.log(question.get('question')); // prints out the question to the user
-for (const [key, value] of question) {
-  // each question contains a key and a value. Very similar for the objects, but we just had to use object.entries. Therefore, we destructure it.
-
-  if (typeof key === 'number') {
-    console.log(`Answer ${key}: ${value}`);
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase())); // replaces the first letter with the upper case version
   }
-}
 
-const answer = Number(prompt('Your answer'));
-console.log(answer);
+  console.log(namesUpper.join(' ')); // combines the array into a string.
+};
 
-answer !== question.get('correct')
-  ? console.log(question.get(false))
-  : console.log(question.get(true)); // this will check if the answer is correct of not
+capitalizeName('jessica ann smith davis'); // better to use inisde of an array to make the first letter of each word capital
+capitalizeName('jonas schmedtmann');
 
-// Convert map to array
-console.log([...question]);
+// Padding
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+').length);
+
+console.log(message.padStart(25, '+').padEnd(35, '+')); // adds the extra characters.
+
+const maskCreditCard = function (number) {
+  const str = number + ''; // concat, number but as a string
+  const last = str.slice(-4); // this gets the last four character
+  return last.padStart(str.length, '*'); // so this pads the start of the last 4 numbers with stars just like a credit card number and it is the total length of the inputed string.
+};
+
+console.log(maskCreditCard(31313251321321));
+console.log(maskCreditCard('33032032030320320320'));
+
+// Repeat
+const message2 = 'Bad weather... All departuers delayed...';
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'planes'.repeat(n)}`);
+};
+
+planesInLine(3);
+planesInLine(4);
