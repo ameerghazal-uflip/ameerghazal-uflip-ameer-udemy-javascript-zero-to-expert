@@ -515,7 +515,6 @@ Rest pattern & parameters
 
 
 
-
 Short circuting (&& and ||)
 - They can use any data type, they can return any data type, and they short circuit. 
 - ( || ) it will always return the truthy value. If the value is fallacy, it will check the next element.
@@ -524,7 +523,7 @@ Short circuting (&& and ||)
 - && operators: short-circuts / ends when the value is falsy and returns that falsy. 
 - When the && is truthy, then it checks all the values and returns the last operant. This is similar to the current definition.
 - No need in doing extra work if at least 1 is false. 
-- if truthy, the second value... will be evalualtes 
+- if truthy, the second value... will be evalualted 
 - Summary:
     || will return the first truthy value found or the last value if all are falsy.
 
@@ -546,7 +545,7 @@ Logical Assignment Operators
 
 For-of-Loop
 - automatically loops over the entire array
-- we create a variable (e.g. const item), then we use 'of', then we use the variable wanting the be loop over 'menu
+- we create a variable (e.g. const item), then we use 'of', then we use the variable wanting the be loop over 'menu'
     for (const item of menu) {
         console.log(item);
     }
@@ -644,7 +643,7 @@ Maps: Fundementals
 Maps: Iteration
 - Instead of using the set method and stacking them each time we want to add something, we can just pass in an array as argument for the Map constrcutor, from there we can have many arrays inisde of the array for the function.
     const question = new Map([
-    ['questiom', 'what is the best prog. lanuage in the world'],
+    ['question', 'what is the best prog. lanuage in the world'],
     [1, 'C'],
     [2, 'Java'],
     [3, 'JavaScript'],
@@ -670,7 +669,7 @@ Which Data Structure to Use?
 - There are more data structures.
 
 - Arrays vs. Sets
-    - Arrays are when we need an ordered ;ist of values and we need to manipulat the data
+    - Arrays are when we need an ordered ;ist of values and we need to manipulate the data
     - Sets are when we need unique values. It is better when high-performance is very important. Also, removing duplicates from an array compliments.
 
 - Objects vs. Maps

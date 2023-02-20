@@ -7,7 +7,7 @@ const gameEvents = new Map([
   [61, "� Substitution"],
   [64, "� Yellow card"],
   [69, "� Red card"],
-  [72, "� Substitution"],
+  [70, "� Substitution"],
   [72, "� Substitution"],
   [76, "⚽ GOAL"],
   [80, "⚽ GOAL"],
@@ -19,21 +19,26 @@ const tester = gameEvents.values();
 const set = new Set(tester);
 const events = [...set]; // this is the array containing the different events with no duplicates
 
+// we can combine in one line: const events = [...new Set(gameEvents.values())];
+
 console.log(events);
 
 // #2 removes the key from the map
 gameEvents.delete(64);
 console.log(gameEvents);
 
-let average = 0;
-for (const [time, event] of gameEvents) {
-  // destructing the array & using a for-of loop.
-  average += time; // gets the time from each key
-}
+// 3. average per event.
+console.log(
+  `An event happened, on average, every ${90 / gameEvents.size} minutes.`
+);
 
-average /= gameEvents.size; // divides by the size for the average
-average /= 90; // for the 90 minute rule.
-console.log(`An event happened, on average every ${average} minutes.`);
+// if we wanted to be even more specifc (92 mins)
+const time = [...gameEvents.keys()].pop(); // creates an array of the keys. From there, it removes the element from the array and returns it
+console.log(time);
+
+console.log(
+  `An event happened, on average, every ${time / gameEvents.size} minutes.`
+);
 
 // #4 print the half
 for (const [key, value] of gameEvents) {
