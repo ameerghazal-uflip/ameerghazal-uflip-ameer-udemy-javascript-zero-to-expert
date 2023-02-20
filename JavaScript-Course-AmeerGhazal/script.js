@@ -1,30 +1,36 @@
 'use strict';
 
-// Section 10 Lesson 129 How Passing Arguments Works: Value vs. Reference
+// Section 10 Lesson 131 Functions Accepting Callback Functions
 
-const flight = 'LH234';
-const jonas = {
-  name: 'Jonas Schem',
-  passport: 24329830928,
+// takes a string, returns lowercase w/ no space.
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
 };
 
-const checkIn = function (flightNum, passenger) {
-  flightNum = 'LH999'; // this is completley diff from the other flight.
-  passenger.name = 'Mr. ' + passenger.name;
-
-  if (passenger.passport === 24329830928) {
-    alert('Checked in');
-  } else {
-    alert('Wrong Passport');
-  }
+// de
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' '); // destructure
+  return [first.toUpperCase(), ...others].join(' '); //first word upper case in array then join.
 };
 
-checkIn(flight, jonas); // we passed in a refernce type. In which they point to towards the same object (so, passenger.name === jonas.name)
-console.log(flight, jonas);
+// Higher order function: it takes in a function. This is more important than the low-level functions above.
+const transformer = function (str, fn) {
+  console.log(`Original string: ${str}`);
+  console.log(`Transformerd string: ${fn(str)}`);
 
-const newPassport = function (person) {
-  person.passport = Math.trunc(Math.random() * 100000000);
+  console.log(`Transformed by: ${fn.name}`);
 };
 
-newPassport(jonas); // interacts with the same object as checkIn (jonas) which can be dangerous
-checkIn(flight, jonas);
+// transforms the string using the function
+transformer('JavaScript is the best!', upperFirstWord);
+transformer('JavaScript is the best!', oneWord);
+
+// JS uses call-backs all the time.
+const high5 = function () {
+  console.log('hi');
+};
+
+// addEvent is the higher order, while high% is the lower.
+document.body.addEventListener('click', high5);
+
+['Jonas', 'Martha'].forEach(high5); // for each of them, the method will be called

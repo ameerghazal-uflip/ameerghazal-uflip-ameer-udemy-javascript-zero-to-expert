@@ -750,6 +750,13 @@ First-Class and Higher-Order Functions
         - There are actually higher-order functions. 
 
 
+Functions Accepting Callback Functions
+- every function has a .name property.
+- the method call-back's are very very common.
+- Call-backs allow use to create abstraction. 
+- These are very very important 
+-
+
 
 
 
