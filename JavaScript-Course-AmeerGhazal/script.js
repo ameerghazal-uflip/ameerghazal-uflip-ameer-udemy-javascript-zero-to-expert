@@ -1,28 +1,31 @@
 'use strict';
 
-/*
- */
+// Section 10 Lesson 128 Default Parameters
 
-// Section 9 Lesson 125 String Methods Practice
+const bookings = [];
 
-const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+const createBooking = function (
+  flightNum,
+  numPassengers = 1,
+  price = 199 * numPassengers
+) {
+  // ES5 way before default assing
+  // numPassengers = numPassengers || 1; // if the value is falsie, then it will be 1.
+  // price = price || 199;
 
-// 🔴 Delayed Departure from FAO to TXL (11h25)
-//              Arrival from BRU to FAO (11h45)
-//   🔴 Delayed Arrival from HEL to FAO (12h05)
-//            Departure from FAO to LIS (12h30)
+  const booking = {
+    flightNum,
+    numPassengers,
+    price,
+  };
 
-const getCode = str => str.slice(0, 3).toUpperCase(); // used for later.
+  console.log(booking);
+  bookings.push(booking);
+};
 
-for (const flight of flights.split('+')) {
-  // watch the s
-  const [type, from, to, time] = flight.split(';'); // splits it up and assigns each variable.
-  const output = `${type.startsWith('_Delayed') ? '🔴' : ''}${type.replaceAll(
-    '_',
-    ' '
-  )} ${getCode(from)} ${getCode(to)} (${time.replace(':', 'h')})`.padStart(36);
-  console.log(output);
-}
+createBooking('LH123');
+createBooking('LH123', 2, 800);
+createBooking('LH123', 2);
+createBooking('LH123', 5);
 
-// replace the colon with an h. We replace all of the underscorers with a space, then we replace the first empty space with an empty string.
+createBooking('LH123', undefined, 1000);

@@ -704,10 +704,21 @@ e.g. console.log(message.padStart(25, '+').length);
 - .padEnds also works the exact same, but it is at the end (total number of character will be the first argument).
 - .repeat(numberOfTimes) re-writes the string as many times as expressed. 
 
-String Methods Practice
--
--d
--
+
+
+
+
+
+
+// SECTION 10
+
+Default Parameters
+- for functions we can set default values. Also, we can use parameters that were defined before the variable:
+    const createBooking = function (flightNum, numPassengers = 1, price = 199 * numPassengers)
+
+- Also, we cannot skip the parameter. But if we want to leave it as default, we can pass an argumebt as undefined. This is a way to skip a default parameter and keep it at its default value.
+`createBooking('LH123', undefined, 1000); In this case, numPassenger would stay = 1.
+
 -
 -
 
