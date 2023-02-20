@@ -719,8 +719,36 @@ Default Parameters
 - Also, we cannot skip the parameter. But if we want to leave it as default, we can pass an argumebt as undefined. This is a way to skip a default parameter and keep it at its default value.
 `createBooking('LH123', undefined, 1000); In this case, numPassenger would stay = 1.
 
--
--
+
+How Passing Arguments Works: Values vs. Reference
+- Passing a primitve type to a function means the value is just copied.
+- Passing a refernce type will make that object changeable (same space in the heap). Need to be careful.
+- Passing by value only for javascript.
+
+
+First-Class and Higher-Order Functions
+    First-Class Functions
+        - JavaScript treats functions as values. Functions are another "type" of object. 
+        - We can pass functions as arguments. Done before in the addEventListener.
+        - We can store functions in variables or properties.
+        - We can return functions FROM functions.
+        - We can call on function method; for example, using the bind method.
+        - Not in practice, this is just a concept. 
+    
+    Higher-Order Functions
+        - A function that receives another function as an argument, that returns a new function, or both. For example, 
+        btnClose.addEventListener('click', greet). where greet is the call-back function.
+
+        - There are also functions that return other functions; for example, 
+        function count() }
+        let counter = 0
+        return function () {
+            counter++
+            };
+        }
+
+        - There are actually higher-order functions. 
+
 
 
 

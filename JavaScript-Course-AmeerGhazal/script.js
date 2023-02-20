@@ -1,31 +1,30 @@
 'use strict';
 
-// Section 10 Lesson 128 Default Parameters
+// Section 10 Lesson 129 How Passing Arguments Works: Value vs. Reference
 
-const bookings = [];
-
-const createBooking = function (
-  flightNum,
-  numPassengers = 1,
-  price = 199 * numPassengers
-) {
-  // ES5 way before default assing
-  // numPassengers = numPassengers || 1; // if the value is falsie, then it will be 1.
-  // price = price || 199;
-
-  const booking = {
-    flightNum,
-    numPassengers,
-    price,
-  };
-
-  console.log(booking);
-  bookings.push(booking);
+const flight = 'LH234';
+const jonas = {
+  name: 'Jonas Schem',
+  passport: 24329830928,
 };
 
-createBooking('LH123');
-createBooking('LH123', 2, 800);
-createBooking('LH123', 2);
-createBooking('LH123', 5);
+const checkIn = function (flightNum, passenger) {
+  flightNum = 'LH999'; // this is completley diff from the other flight.
+  passenger.name = 'Mr. ' + passenger.name;
 
-createBooking('LH123', undefined, 1000);
+  if (passenger.passport === 24329830928) {
+    alert('Checked in');
+  } else {
+    alert('Wrong Passport');
+  }
+};
+
+checkIn(flight, jonas); // we passed in a refernce type. In which they point to towards the same object (so, passenger.name === jonas.name)
+console.log(flight, jonas);
+
+const newPassport = function (person) {
+  person.passport = Math.trunc(Math.random() * 100000000);
+};
+
+newPassport(jonas); // interacts with the same object as checkIn (jonas) which can be dangerous
+checkIn(flight, jonas);
