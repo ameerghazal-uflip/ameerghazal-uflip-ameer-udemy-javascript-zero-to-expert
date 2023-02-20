@@ -1,48 +1,47 @@
-// Section 9 Coding Challenge 3
+// Section 9 Coding Challenge 4
 
-const gameEvents = new Map([
-  [17, "⚽ GOAL"], // left side is the key, value [key, value]
-  [36, "� Substitution"],
-  [47, "⚽ GOAL"],
-  [61, "� Substitution"],
-  [64, "� Yellow card"],
-  [69, "� Red card"],
-  [70, "� Substitution"],
-  [72, "� Substitution"],
-  [76, "⚽ GOAL"],
-  [80, "⚽ GOAL"],
-  [92, "� Yellow card"],
-]);
+document.body.append(document.createElement("textarea"));
+document.body.append(document.createElement("button"));
+const btn = document.querySelector("button");
 
-// #1 creates an array of all the different events
-const tester = gameEvents.values();
-const set = new Set(tester);
-const events = [...set]; // this is the array containing the different events with no duplicates
+btn.addEventListener("click", function () {
+  // makes the button functionable
+  const input = document.querySelector("textarea").value.split("\n"); // stores the userinput and splits it into an array for each newline.
 
-// we can combine in one line: const events = [...new Set(gameEvents.values())];
+  const camelCase = []; // array that will store the data.
+  for (const word of input) {
+    // loops through the array
+    if (!word.includes("_")) {
+      continue; // skips the word if it does not have an underscorer and moves the next iteration in the loop.
+    }
 
-console.log(events);
+    let copy = word.toLowerCase().replaceAll(" ", ""); // basically creates a copy.
+    const dash = copy.indexOf("_");
+    copy = copy.replace("_", ""); // gets rid of the space & underscorer.
 
-// #2 removes the key from the map
-gameEvents.delete(64);
-console.log(gameEvents);
+    let slicer = copy.slice(dash);
+    slicer = slicer.replace(slicer[0], slicer[0].toUpperCase()); // slices at the correct index, and makes the first val a capital. Indexs the check before the print since it starts at 0. makes the index that was next to the underscorer a capital letter (we removed the "_" so staying at this index works.).
 
-// 3. average per event.
-console.log(
-  `An event happened, on average, every ${90 / gameEvents.size} minutes.`
-);
+    const combined = copy.slice(0, dash) + slicer; // fully combined and working word
 
-// if we wanted to be even more specifc (92 mins)
-const time = [...gameEvents.keys()].pop(); // creates an array of the keys. From there, it removes the element from the array and returns it
-console.log(time);
+    camelCase.push(
+      combined.padEnd(20) + " " + "✅".repeat(input.indexOf(word) + 1)
+    ); // adds the camel case version to the array. Also, it uses the repeat method to determine how many times it should print the check (it checks the indexOf the word in the larger array) and adds one for the starter. We pad to get the same format.
+  }
 
-console.log(
-  `An event happened, on average, every ${time / gameEvents.size} minutes.`
-);
+  console.log(camelCase.join("\n"));
+});
 
-// #4 print the half
-for (const [key, value] of gameEvents) {
-  key < 45
-    ? console.log(`[FIRST HALF] ${key}: ${value}`)
-    : console.log(`[SECOND HALF] ${key}: ${value}`);
-} // if the key is less than 45 mins, it is the first half, vice versa.
+// JONAS SOLUTION
+/*
+for (const [i, row] of rows.entries()) {
+  const [first, second] = row.toLowerCase().trim().split('_');
+
+  const output = `${first}${second.replace(
+    second[0],
+    second[0].toUpperCase()
+  )}`;
+  console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+}
+
+*/

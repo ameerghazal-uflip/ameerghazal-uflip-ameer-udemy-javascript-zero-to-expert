@@ -133,6 +133,7 @@ const capitalizeName = function (name) {
     //namesUpper.push(n[0].toUpperCase() + n.slice(1)); // converts the first letter to upper case and joins it with the remaining string
 
     namesUpper.push(n.replace(n[0], n[0].toUpperCase())); // replaces the first letter with the upper case version
+    console.log(namesUpper);
   }
 
   console.log(namesUpper.join(' ')); // combines the array into a string.
