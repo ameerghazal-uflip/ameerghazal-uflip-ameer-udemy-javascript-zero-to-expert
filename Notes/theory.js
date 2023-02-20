@@ -704,7 +704,12 @@ e.g. console.log(message.padStart(25, '+').length);
 - .padEnds also works the exact same, but it is at the end (total number of character will be the first argument).
 - .repeat(numberOfTimes) re-writes the string as many times as expressed. 
 
-
+String Methods Practice
+-
+-d
+-
+-
+-
 
 
 
