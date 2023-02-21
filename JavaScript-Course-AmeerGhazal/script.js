@@ -1,36 +1,20 @@
 'use strict';
 
-// Section 10 Lesson 131 Functions Accepting Callback Functions
+// Section 10 Lesson 132 Functions Returning Functions
 
-// takes a string, returns lowercase w/ no space.
-const oneWord = function (str) {
-  return str.replace(/ /g, '').toLowerCase();
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`); // greeting comes from greet function
+  };
 };
 
-// de
-const upperFirstWord = function (str) {
-  const [first, ...others] = str.split(' '); // destructure
-  return [first.toUpperCase(), ...others].join(' '); //first word upper case in array then join.
-};
+const greeterHey = greet('Hey'); // assigns greeterHey the function returned from greet.
+greeterHey('jonas'); // we can then use the function.
+greeterHey('steven');
 
-// Higher order function: it takes in a function. This is more important than the low-level functions above.
-const transformer = function (str, fn) {
-  console.log(`Original string: ${str}`);
-  console.log(`Transformerd string: ${fn(str)}`);
+greet('Hello')('Jonas'); // we don't have to decalre a variable to use it. Pass in the greeting, then - seperatly - pass in the name.
 
-  console.log(`Transformed by: ${fn.name}`);
-};
+// Rewritten with an arrow function
+const greetArrow = greeting => name => console.log(`${greeting} ${name}`);
 
-// transforms the string using the function
-transformer('JavaScript is the best!', upperFirstWord);
-transformer('JavaScript is the best!', oneWord);
-
-// JS uses call-backs all the time.
-const high5 = function () {
-  console.log('hi');
-};
-
-// addEvent is the higher order, while high% is the lower.
-document.body.addEventListener('click', high5);
-
-['Jonas', 'Martha'].forEach(high5); // for each of them, the method will be called
+greetArrow('Hey')('Jonas'); // this calls it.

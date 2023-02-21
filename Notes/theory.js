@@ -755,6 +755,27 @@ Functions Accepting Callback Functions
 - the method call-back's are very very common.
 - Call-backs allow use to create abstraction. 
 - These are very very important 
+
+Functions Returning Functions
+- We can return a function inside a function. From there, we can declare a variable and assing it to a function call. Then it returns a function and we can call that returned method like normal
+        const greet = function (greeting) {
+            return function (name) {
+             console.log(`${greeting} ${name}`); // greeting comes from greet function
+                };
+            };
+
+        const greeterHey = greet('Hey');
+        greeterHey('jonas'); // t
+
+
+- We can combine this if we do not want to declare a variable:
+    greet('Hello')('Jonas');
+- we can rewrite this as an arrow function: 
+ex:  const greetArrow = greeting => name => console.log(`${greeting} ${name}`);
+
+- this works since we are returning the name. 
+
+        greet1('Hey')('Jonas'); // this calls it
 -
 
 
