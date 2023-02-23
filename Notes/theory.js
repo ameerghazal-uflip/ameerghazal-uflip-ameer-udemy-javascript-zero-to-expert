@@ -868,4 +868,18 @@ ex: const secureBooking = function () {
 - We can access the variable environment by using (console.dir(variableName)). If it has double brackets, it is something that we cannot access in our code. 
 
 
+More Closure Examples
+- we can set timers, in which they call the program calls the function later-literally.
+- setTimeout(functionExecuted, certainTime)
+ex: setTimeout(function () {
+    console.log(`We are now boarding all ${n} passengers`);
+    console.log(`There are 3 groups, each with ${perGroup} passengers`);
+  }, wait * 1000);
+
+- Anything under a timer will not wait until the timer is done to run. It will compile, then once the timer is ready, the data inside of it will also run. 
+- Closure also includes the arguments. 
+
+
+
+
 */
