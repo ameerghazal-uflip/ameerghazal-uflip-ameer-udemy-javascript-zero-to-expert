@@ -893,6 +893,16 @@ Simple Array Methods & The New At Method
 - .join() joins all the array elements and seperates them by the seperator specififed (returns a string) e.g. (join('-')). 
 - .at(index) returns the element at the index. We can also start backwards to find the last element, for example, arr.at(-1). This and the brack notation function the same way, it is just prefernce. The at method is much better than bracket notation when wanting to use chaining. This method also works on strings!
 
+Looping Arrays: forEach
+- .forEach(function ()) in each iteration, it should do what is in the function. We can provide the loop with parameters as well 
+-
+-
+-
+-
+-
+-
+-
+
 
 
 */
