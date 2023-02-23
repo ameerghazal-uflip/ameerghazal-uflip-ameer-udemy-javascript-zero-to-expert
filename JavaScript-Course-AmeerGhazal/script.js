@@ -1,15 +1,20 @@
 'use strict';
 
-// Section 10 Lesson 136: Imediatley Invoked Function Expressions (IIFE)
+// Section 10 Lesson 137: Closuers
 
-// const runoce = function () {
-//   console.log('This will never run again.');
-// };
+const secureBooking = function () {
+  let passengerCount = 0;
 
-// Makes it so this method is for one time use only.
-(function () {
-  console.log('This will never run again.');
-})();
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
 
-// arrow ex.
-(() => console.log('This 2 will never run again'))();
+const booker = secureBooking(); // this returns the new function and saves it in the booker variable.
+
+booker(); // it is still able to access the passengerCount variable in the secureBooking function
+booker();
+booker();
+
+console.dir(booker);

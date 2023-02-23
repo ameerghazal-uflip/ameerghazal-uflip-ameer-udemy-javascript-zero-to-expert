@@ -842,13 +842,30 @@ ex: arrow: (() => console.log('This 2 will never run again'))();
 
 
 Closures: Hard concept!
--
--
--
--
--
--
--
+- Not explicity used like array's and functions, they happen normally. 
+- Closure makes function remember all the variables that existed at the functons birthplace, by the time it was created.
+
+ex: const secureBooking = function () {
+    let passengerCount = 0;
+
+    return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+    };
+    };
+
+    const booker = secureBooking(); // this returns the new function and saves it in the booker variable.
+
+    booker(); // it is still able to access the passengerCount variable in the secureBooking function
+- A function has access to the variable enviroment (VE) of the execution contect in which it was created even after it is gone. 
+- Closure: VE attached to the function, exactly as it was at the time and place the function was created. 
+- Thanks to closure, a function does not lose access to the variables that were defined during its birthplace. 
+- JS will look at the closure before looking at the scope-chain.
+- A closure gives a function access to all the variables of its parent function, even after the parent function has returned. The function keep a reference to its outer scope,, which preserves the scope chain throughout time. 
+- A closure makes sure that a function doesn't lose connection to the variables that existed at the function's birthplace. 
+- Best anology: closure is like a backpack that a function carries around wherever it goes. This backpack has all the variables that were present in the environment where the function was created. Then, whenever a varibale cannot be found in a function scope, JS will check the backpack and get the variable from there. 
+- Again, we do not create these manually. Also, there is no way to explicity access these variables. 
+- We can access the variable environment by using (console.dir(variableName)). If it has double brackets, it is something that we cannot access in our code. 
 
 
 */
