@@ -827,6 +827,28 @@ ex: const addTaxFunction = function (rate) {
 
 
 
+Imediatley Invoked Function Expressions (IIFE)
+- We want to be able to execute a function for one time use, and never use it again.
+- Wrap the function is parantheses are call it before the semi colon. It turns the function into an expression.
+
+ex: (function () {
+  console.log('This will never run again.');
+})();
+
+ex: arrow: (() => console.log('This 2 will never run again'))();
+
+- data is encapsulated in these functions. They are not accessible outside of the function. It is important to hide variables, and scopes are helpful for this. 
+- let & const variables declared in a scope are also not accessible outside of the block (var does not matter tho).
+
+
+Closures: Hard concept!
+-
+-
+-
+-
+-
+-
+-
 
 
 */
