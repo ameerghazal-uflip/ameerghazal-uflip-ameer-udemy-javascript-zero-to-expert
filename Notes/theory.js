@@ -679,7 +679,7 @@ Which Data Structure to Use?
 
 Working With String (P1-P3) 
 - we can find an element at the index of a string using the [] notation. .length is the length of the string.
-- indexOf(letter) method returns the index of the element given. lastInecOf(letter) searches for the last index and returns it. We can also search for entire strings/words, but it is case sensitive.
+- indexOf(letter) method returns the index of the element given. lastIndexOf(letter) searches for the last index and returns it. We can also search for entire strings/words, but it is case sensitive.
 - .slice splits a string and returns a new string starting from the given index. We can specifiy an ending as well. (e.g. console.log(airline.slice(4, 7));). The last index is exlusive, while the first index is included. We can use negative arguments, the method will just start from the end of the string. 
 - when we use new String (...) it creates a String object, and once the run is done, itis changed down to a primitve. 
 - .toLowerCase() and .toUpperCase() change the case of the strings. (Similar to java)
@@ -754,7 +754,7 @@ Functions Accepting Callback Functions
 - every function has a .name property.
 - the method call-back's are very very common.
 - Call-backs allow use to create abstraction. 
-- These are very very important 
+- These are very very important. 
 
 Functions Returning Functions
 - We can return a function inside a function. From there, we can declare a variable and assing it to a function call. Then it returns a function and we can call that returned method like normal
@@ -769,20 +769,61 @@ Functions Returning Functions
 
 
 - We can combine this if we do not want to declare a variable:
-    greet('Hello')('Jonas');
+    greet('Hello')('Jonas'); // calls the function inside of the function.
 - we can rewrite this as an arrow function: 
 ex:  const greetArrow = greeting => name => console.log(`${greeting} ${name}`);
 
 - this works since we are returning the name. 
 
         greet1('Hey')('Jonas'); // this calls it
--
+
+
+
+The Call and Apply Methods
+- this keyword makes a return.
+- In a regular function call, the this keyword points to undefined. (in-strict mode)
+- Call, apply, and bind help us to explicity point the this keyword to an object
+- Call
+    - We can use the call method to manually set the this keyword. For example, book is a function, eurowings is an object, and the remaining arguments are parameters:
+
+ ex:    functionName.call(objectThis, arguments, ...);
+        book.call(eurowings, 23, 'Sarah'); 
+- These call methods set the this keyword for whatever we pass as the first arguement. 
+- The objects the extend the function must be structured the same with the same value names inside due to the this calling. (if needed)
+- Apply
+- The apply method does the exact same thing as the call method. However, instead of receiving a list of arugments, it takes an array of the arguments. 
+ ex: const fligthData = [583, 'George Cooper'];
+     book.apply(swiss, fligthData);
+- we can use the spread operator in the call method which will unpack the elements from the object. (in ways, this is easier to do than using the apply method):
+ ex:        book.call(swiss, ...fligthData);
 
 
 
 
+ The Bind Method
+ - Using the .bind method will not call the function attached to it. Instead, it will return a new function with the this keyword inside the parameter always attached to it. 
+    ex: const bookEW = book.bind(eurowings); 
+        bookEW(23, 'Steven');
+    returns a new function with bookEW function always attached to the eurowings this keyword. From there, we can go back to the original parameters since the function is the same this keyword
+ - Formatting: const newFunction = objectFunction.bind(object);
+ - We can also use the bind method to create a function for one,...,n specifc things. For example if the objectFunction has two parameters, we can define one of the aruguements in the bind method, and when it is called, only one more arguement will be need since the first one is set. 
+            ex: const bookEW23 = book.bind(eurowings, 23);
+                bookEW23('Jonas Schem');
+ - Allows use to set in stone certain arguments (like a flight number, for example).
+ - This is a pattern of partial application: which means some of the value are already set / pre-defined. 
+ - In an event listener function, the this keyword always points to the element of which the event handler is attached to. 
+- Do this instead: 
+    document.querySelector('.buy').addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
 
-
+- Partial Application: presetting parameters.
+- The first argument in the bind, apply, and call methods is the this keyword, so if we do not care about it and want to preset values, fill the space with 'null'.
+- We can return a function that returns a value, inside of a function:
+ex: const addTaxFunction = function (rate) {
+    return function (value) {
+    return value + value * rate;
+  };
+};
+- But, using the bind method makes this easier. 
 
 
 
