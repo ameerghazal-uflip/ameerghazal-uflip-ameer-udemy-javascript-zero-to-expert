@@ -1,7 +1,5 @@
 'use strict';
 
-// Section 11 Lesson 142 Simple Array Methods
-
 const currencies = new Map([
   ['USD', 'United States Dollar'],
   ['EUR', 'Euro'],
@@ -10,31 +8,14 @@ const currencies = new Map([
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-//////////
+// Section 11 Lesson 143: The new at method
+const arr = [23, 11, 64];
+console.log(arr[0]); // orginal way
+console.log(arr.at(0)); // new way
 
-// Slice array method
-let arr = ['a', 'b', 'c', 'd', 'e'];
-console.log(arr.slice(2)); // returns a copy
-console.log(arr.slice(2, 4)); // 4 is exclusive, similar to strings
-console.log(arr.slice(-1)); // starts from the last index.
-console.log(arr.slice(1, -2)); // does not include 1, or the last 2 elements, it is only from the middle: [b, c]
-console.log(arr.slice()); // creates a copy.
+console.log(arr[arr.length - 1]); // gets the last element
+console.log(arr.slice(-1)[0]); // diff. gets the last element
 
-// Splice array method
-console.log(arr.splice(2)); // mutates the original array and returns the val mutated.
-arr.splice(-1); // removes the last element from the original array.
-arr.splice(1, 2); // starts from the index 1, and then removes 2 elements after.
-console.log(arr);
+console.log(arr.at(-1)); // new version that starts counting at the end of the array.
 
-// Reverse array method
-arr = ['a', 'b', 'c', 'd', 'e'];
-const arr2 = ['j', 'i', 'h', 'g', 'f'];
-console.log(arr2.reverse());
-
-// Concat array method
-const letters = arr.concat(arr2);
-console.log(letters);
-console.log([...arr, ...arr2]); // this is the exact same thing.
-
-// Join array method
-console.log(letters.join('-')); // returns a string of all the array elements seperated by the -.
+console.log('jonas'.at(0)); // also works on strings.

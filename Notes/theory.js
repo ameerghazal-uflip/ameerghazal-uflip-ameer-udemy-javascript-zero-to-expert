@@ -884,14 +884,14 @@ ex: setTimeout(function () {
 
 // SECTION 11: Working with Arrays
 
-Simple Array Methods
+Simple Array Methods & The New At Method
 - Arrays are also objects. 
 - .slice(to, from) or just to. This returns a new array, which is a copy, not the original array. We can use a negative argument to start from the end of the array. We can also create a shallow copy with this: slice() with no arguments. 
 - .splice() mutates the original array. It will return the elements in the range argument in a seperate array; however, it will also remove the elements in that range from the original array. Functions similary to .slice, but this method actually edits the array. If there is a certain range, it is formatted as follows: (index, deleteCount) where index is the starting element and deleteCount is the number of indices to eliminate after the index. 
 - .reverse() reverse the array, but it does mutate the array. This means that it actually changes the array, it does not return a copy. (Important)
 - .concat() simply concatinates the array with another array. e.g. arr = [1,2,3] and arr2 = [4,5,6]. arr.concat(arr2) returns [1,2,3,4,5,6]. This method does not mutate the array, it creates a copy. We can use either the concat method, or the spread operator, both function the exact same.
 - .join() joins all the array elements and seperates them by the seperator specififed (returns a string) e.g. (join('-')). 
--
+- .at(index) returns the element at the index. We can also start backwards to find the last element, for example, arr.at(-1). This and the brack notation function the same way, it is just prefernce. The at method is much better than bracket notation when wanting to use chaining. This method also works on strings!
 
 
 
