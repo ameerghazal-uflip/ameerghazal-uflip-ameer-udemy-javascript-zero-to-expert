@@ -975,13 +975,13 @@ For example: const totalDepositsUSD = movements
 
 
 The find Method
--
--
--
--
--
--
--
+- .find() accepts a conditon, call-back function as the method loops over the array. 
+- Just like he filter method, the find method needs a call-back function that returns a boolean. 
+- Using the filter method returns the first element found satisfying the confition. 
+- only returns the element itself. On the other hand, the filter method returns the array.
+- using find we can find an object in thearray,
+- it can return an entire object!!
+- goal is to find exactly one element. 
 -
 
 

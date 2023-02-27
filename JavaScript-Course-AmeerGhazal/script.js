@@ -138,19 +138,15 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
 /////////////////////////////////////////////////
 
 // Section 11 Lesson 157: The find Method
 
-const eurToUsd = 1.1;
-// As long as they return new array or are the last chain, we can chain these. PIPELINE
-const totalDepositsUSD = movements
-  .filter(mov => mov > 0)
-  .map((mov, i, arr) => mov * eurToUsd)
-  .reduce((accum, mov) => accum + mov, 0);
-console.log(totalDepositsUSD);
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-// we can check the current array for debugging by:
-// .map((mov, i, arr) => { console.log(arr) }...
+const firstWithDrawl = movements.find(mov => mov < 0);
+console.log(movements, firstWithDrawl);
+
+console.log(accounts);
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(account);
