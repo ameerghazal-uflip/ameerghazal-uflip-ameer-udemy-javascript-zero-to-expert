@@ -1,6 +1,7 @@
 'use strict';
 
-/*
+// Section 11 Lesson 151: Computing Usernames
+
 // Data
 const account1 = {
   owner: 'Jonas Schmedtmann',
@@ -81,7 +82,19 @@ const displayMovements = function (movements) {
 };
 
 displayMovements(account1.movements);
-//console.log(containerMovements.innerHTML);
+
+// not returning a val, it just mutates the array.
+const createUserName = function (accs) {
+  accs.forEach(function (acc) {
+    acc.userName = acc.owner //  we get the name and manipulate the element.
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0]) // same as function(name) { return name[0];}
+      .join(''); // split returns an array and we can call the map method on
+  });
+};
+createUserName(accounts);
+console.log(accounts);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -96,35 +109,3 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
-
-*/
-
-// Section 11 Lesson 150: Map Method
-
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
-// MAP Method: functionable programming
-const eurToUsd = 1.1;
-const movementsUsd = movements.map(function (mov) {
-  return mov * eurToUsd;
-});
-
-// Arrow Version
-const movementsUsdArrow = movements.map(mov => mov * eurToUsd);
-
-console.log(movements, movementsUsd, movementsUsdArrow);
-
-// for of version: different paradarigram
-const movUsdForOf = [];
-for (const mov of movements) {
-  movUsdForOf.push(mov * eurToUsd);
-}
-
-const movementsDescriptons = movements.map(
-  (mov, i) =>
-    `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
-      mov
-    )}`
-);
-
-console.log(movementsDescriptons);

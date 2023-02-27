@@ -925,6 +925,23 @@ For example: const eurToUsd = 1.1;
 - More in line with functional programming. 
 - Important to ackowledge that the arrow does return the value after. 
 - Two return statements is fine because only one will run.
+- Arrows activley return. 
+For example: 
+const userName = user.toLowerCase().split(' ')
+  .map(name => name[0]) // same as function(name) { return name[0];}
+  .join(''); // split returns an array and we can call the map method on t
+
+- When looping over something and just wanting the element/val, just use forEach, no reason to return a copy with the Map method. 
+
+
+
+Filter Method
+- 
+-
+-
+-
+-
+-
 
 
 
@@ -936,7 +953,7 @@ Project-Bankist
 - .insertAdjacentHTML(position, text). It has before/after-begin and before/after-end (check mdn api).
 - .innerHTML returns everything including the html tags (similar to textcontent) w/ extra stuff. 
 - beforeend, each new element would be inverted / after the prev.
--
+- 
 -
 -
 -
