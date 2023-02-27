@@ -5,9 +5,9 @@ const calcAverageHumanAgeArrow = function (ages) {
   const humanAgesAverage = ages
     .map((age) => (age <= 2 ? 2 * age : 16 + age * 4))
     .filter((age) => age >= 18)
-    .reduce((accum, age) => (accum + age), 0);
+    .reduce((accum, age, i, arr) => accum + age / arr.length, 0);
 
-  return humanAgesAverage / ;
+  return humanAgesAverage;
 };
 
 console.log(calcAverageHumanAgeArrow([5, 2, 4, 1, 15, 8, 3]));
