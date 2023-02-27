@@ -962,7 +962,18 @@ For example:
 - We can use the arrow method with these again.
 - Don't forget that the first argument in the reduce method is the counter/ 
 
-
+The Magic of Chaining Methods
+- We can chain methods, like others, using the dot operator.
+For example: const totalDepositsUSD = movements
+  .filter(mov => mov > 0)
+  .map(mov => mov * eurToUsd)
+  .reduce((accum, mov) => accum + mov, 0);
+- We can check current arr.
+- Do not overuse chaining. It can cause performace issues if the array is huge.
+- Also, it is a bad practice to chain a method that mutates an array.
+-
+-
+-
 
 
 

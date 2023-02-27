@@ -71,7 +71,7 @@ const displayMovements = function (movements) {
     <div class="movements__row">
     <div class="movements__type
      movements__type--${type}">${i + 1} ${type}</div>
-    <div class="movements__value">${mov}</div>
+    <div class="movements__value">${mov}€</div>
     </div>`;
 
     // want to insert new child element right after the beginning element. (after-begin)
@@ -96,10 +96,37 @@ createUserName(accounts);
 // lesson 153
 const calcDisplayBalance = function (movements) {
   const balance = movements.reduce((accum, mov) => accum + mov, 0);
-  labelBalance.textContent = `${balance} EUR`;
+  labelBalance.textContent = `${balance}€`;
 };
-
 calcDisplayBalance(account1.movements);
+
+// lesson 155
+const calcDisplaySummary = function (movements) {
+  const incomes = movements
+    .filter(mov => mov > 0)
+    .reduce((accum, mov) => accum + mov, 0);
+
+  labelSumIn.textContent = `${incomes}€`;
+
+  const out = movements
+    .filter(mov => mov < 0)
+    .reduce((accum, mov) => accum + mov, 0);
+
+  labelSumOut.textContent = `${Math.abs(out)}€`;
+
+  const interest = movements
+    .filter(mov => mov > 0) // filters out negatives
+    .map(deposit => (deposit * 1.2) / 100) // edits the values
+    .filter((interest, index, array) => {
+      // filters out less than 1
+      console.log(array);
+      return interest >= 1;
+    })
+    .reduce((accum, interest) => accum + interest, 0); // gets the total
+
+  labelSumInterest.textContent = `${interest}€`;
+};
+calcDisplaySummary(account1.movements);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -115,36 +142,15 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
-// Section 11 Lesson 153: The Reduce Method
+// Section 11 Lesson 155: The Magic of Chaining Methods
 
-const balance = movements.reduce(function (accum, curr, i, arr) {
-  console.log(`Iteration ${i}: ${accum}`);
-  return accum + curr;
-}, 0);
-console.log(balance);
+const eurToUsd = 1.1;
+// As long as they return new array or are the last chain, we can chain these. PIPELINE
+const totalDepositsUSD = movements
+  .filter(mov => mov > 0)
+  .map((mov, i, arr) => mov * eurToUsd)
+  .reduce((accum, mov) => accum + mov, 0);
+console.log(totalDepositsUSD);
 
-// arrow version
-const balanceArrow = movements.reduce((accum, curr) => accum + curr, 0);
-console.log(balanceArrow);
-
-// for of version
-let balance2 = 0;
-for (const mov of movements) balance2 += mov;
-console.log(balance2);
-
-// Maximun Value
-const max = movements.reduce((acc, mov) => {
-  if (acc > mov) {
-    return acc; // only changes if the acc is greater
-  } else {
-    return mov; // if the accum is smaller, we return the new max.
-  }
-}, movements[0]);
-console.log(max);
-
-// Simpler form, but still confusing.
-const maxSimple = movements.reduce(
-  (acc, mov) => (acc > mov ? acc : mov),
-  movements[0]
-);
-console.log(maxSimple);
+// we can check the current array for debugging by:
+// .map((mov, i, arr) => { console.log(arr) }...
