@@ -894,7 +894,16 @@ Simple Array Methods & The New At Method
 - .at(index) returns the element at the index. We can also start backwards to find the last element, for example, arr.at(-1). This and the brack notation function the same way, it is just prefernce. The at method is much better than bracket notation when wanting to use chaining. This method also works on strings!
 
 Looping Arrays: forEach
-- .forEach(function ()) in each iteration, it should do what is in the function. We can provide the loop with parameters as well 
+- .forEach(function ()) in each iteration, it should do what is in the function. We can provide the loop with parameters as well. 
+- for each method requires a call back function in order to tell it what to do (it is a higher order).
+- loops over the array and calls the call back function for each iteraton
+- we can also put parameters in the forEach function: arrayName.fiorEach(function(param)) {}
+- the forEach function passes in the current element, index, and the array/
+- first param: element, second: index, third: array looped over. 
+- break and continue statements do not work using forEach loops. 
+
+
+forEach with Maps & Sets
 -
 -
 -
