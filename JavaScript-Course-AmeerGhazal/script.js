@@ -1,8 +1,5 @@
 'use strict';
 
-/*
-
-
 // Data
 const account1 = {
   owner: 'Jonas Schmedtmann',
@@ -95,7 +92,14 @@ const createUserName = function (accs) {
   });
 };
 createUserName(accounts);
-console.log(accounts);
+
+// lesson 153
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((accum, mov) => accum + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+
+calcDisplayBalance(account1.movements);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -111,28 +115,36 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
-*/
+// Section 11 Lesson 153: The Reduce Method
 
-// Section 11 Lesson 152: The Filter Method
+const balance = movements.reduce(function (accum, curr, i, arr) {
+  console.log(`Iteration ${i}: ${accum}`);
+  return accum + curr;
+}, 0);
+console.log(balance);
 
-// we want to filter out negative values
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-const deposits = movements.filter(function (mov) {
-  return mov > 0; // condition. If it passes the test, it will be added into the new array
-});
-console.log(deposits);
+// arrow version
+const balanceArrow = movements.reduce((accum, curr) => accum + curr, 0);
+console.log(balanceArrow);
 
-// for-of version
-const depositsFor = [];
-for (const mov of movements) if (mov > 0) depositsFor.push(mov);
-console.log(depositsFor);
+// for of version
+let balance2 = 0;
+for (const mov of movements) balance2 += mov;
+console.log(balance2);
 
-// for the negative numbers
-const withdrawals = movements.filter(function (mov) {
-  return mov < 0;
-});
+// Maximun Value
+const max = movements.reduce((acc, mov) => {
+  if (acc > mov) {
+    return acc; // only changes if the acc is greater
+  } else {
+    return mov; // if the accum is smaller, we return the new max.
+  }
+}, movements[0]);
+console.log(max);
 
-// Arrow version
-const withdrawalsArrow = movements.filter(mov => mov < 0);
-
-console.log(withdrawals, withdrawalsArrow);
+// Simpler form, but still confusing.
+const maxSimple = movements.reduce(
+  (acc, mov) => (acc > mov ? acc : mov),
+  movements[0]
+);
+console.log(maxSimple);

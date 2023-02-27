@@ -945,11 +945,22 @@ For example: const withdrawals = movements.filter(function (mov) {
         // Arrow version
         const withdrawalsArrow = movements.filter(mov => mov < 0);
 
--
--
--
 
 
+
+Reduce Method
+- will return 1 value.
+- Similar logic to a function inside of the reduce method; however, it has an extra param for the first one. This extra param. is an accumulatr. 
+- In each loop iteration, we return the updated accum. 
+- Also, the reduce method has a second paramter. First is the function, second is the counter starting value (e.g. 0)
+- .reduce(function () {}, countStart)
+For example: 
+    const balance = movements.reduce(function (accum, curr, i, arr) {
+    return accum + curr;         
+      }, 0);
+- When wanting to use a for loop, we need to use external variables for sum. Using these new methods, though, eliminate these extra variables. 
+- We can use the arrow method with these again.
+- Don't forget that the first argument in the reduce method is the counter/ 
 
 
 
