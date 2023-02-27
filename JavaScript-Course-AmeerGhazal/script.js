@@ -1,7 +1,6 @@
 'use strict';
 
-// Section 11 Lesson 147 BANKIST APP: Dom Elements
-
+/*
 // Data
 const account1 = {
   owner: 'Jonas Schmedtmann',
@@ -97,3 +96,35 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+
+*/
+
+// Section 11 Lesson 150: Map Method
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// MAP Method: functionable programming
+const eurToUsd = 1.1;
+const movementsUsd = movements.map(function (mov) {
+  return mov * eurToUsd;
+});
+
+// Arrow Version
+const movementsUsdArrow = movements.map(mov => mov * eurToUsd);
+
+console.log(movements, movementsUsd, movementsUsdArrow);
+
+// for of version: different paradarigram
+const movUsdForOf = [];
+for (const mov of movements) {
+  movUsdForOf.push(mov * eurToUsd);
+}
+
+const movementsDescriptons = movements.map(
+  (mov, i) =>
+    `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+      mov
+    )}`
+);
+
+console.log(movementsDescriptons);

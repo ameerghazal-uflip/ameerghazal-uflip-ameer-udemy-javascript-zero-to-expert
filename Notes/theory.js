@@ -908,6 +908,30 @@ forEach with Maps & Sets
 - sets do not have a key/index. Therefore, we still use the 3 params., but we just use an _. 
 
 
+Data Transformations: map, filter, reduce
+- Map method: creates a brand new array based on the original array. Loops over like the forEach method, but also creates a copy after an operation.
+- Filter method: returns a new array containing the array elements that passed a specifed test conditon.
+- Reduce method: boils/reduces all elements down to one single value (e.g. adding all the elements together) which is then returned. 
+
+Map Method
+- Very similar to the forEach method.
+- It will return a brand new array.
+- We have to return for each iteration in the callback method. 
+For example: const eurToUsd = 1.1;
+            const movementsUsd = movements.map(function (mov) {
+            return mov * eurToUsd;
+        });
+        - this will return a new array of the elements modifed. 
+- More in line with functional programming. 
+- Important to ackowledge that the arrow does return the value after. 
+- Two return statements is fine because only one will run.
+
+
+
+
+
+
+
 Project-Bankist
 - .insertAdjacentHTML(position, text). It has before/after-begin and before/after-end (check mdn api).
 - .innerHTML returns everything including the html tags (similar to textcontent) w/ extra stuff. 
@@ -917,6 +941,7 @@ Project-Bankist
 -
 -
 -
+
 
 
 */
