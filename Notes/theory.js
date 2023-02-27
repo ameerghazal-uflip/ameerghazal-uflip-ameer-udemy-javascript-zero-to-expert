@@ -974,6 +974,17 @@ For example: const totalDepositsUSD = movements
 - Need to use the arr.length last param. effectivly. 
 
 
+The find Method
+-
+-
+-
+-
+-
+-
+-
+-
+
+
 Project-Bankist
 - .insertAdjacentHTML(position, text). It has before/after-begin and before/after-end (check mdn api).
 - .innerHTML returns everything including the html tags (similar to textcontent) w/ extra stuff. 

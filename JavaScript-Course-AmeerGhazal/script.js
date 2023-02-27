@@ -142,7 +142,7 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
-// Section 11 Lesson 155: The Magic of Chaining Methods
+// Section 11 Lesson 157: The find Method
 
 const eurToUsd = 1.1;
 // As long as they return new array or are the last chain, we can chain these. PIPELINE
