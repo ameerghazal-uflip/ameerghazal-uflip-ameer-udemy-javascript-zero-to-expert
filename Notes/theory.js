@@ -904,14 +904,19 @@ Looping Arrays: forEach
 
 
 forEach with Maps & Sets
--
--
--
--
--
--
--
+- Maps: same logic as before (value, key, map) inside of the forEach function.
+- sets do not have a key/index. Therefore, we still use the 3 params., but we just use an _. 
 
+
+Project-Bankist
+-
+-
+-
+-
+-
+-
+-
+-
 
 
 */
