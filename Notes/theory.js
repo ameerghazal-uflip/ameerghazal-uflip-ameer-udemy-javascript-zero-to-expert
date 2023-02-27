@@ -971,10 +971,6 @@ For example: const totalDepositsUSD = movements
 - We can check current arr.
 - Do not overuse chaining. It can cause performace issues if the array is huge.
 - Also, it is a bad practice to chain a method that mutates an array.
--
--
--
-
 
 
 Project-Bankist
