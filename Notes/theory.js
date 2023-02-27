@@ -909,9 +909,9 @@ forEach with Maps & Sets
 
 
 Project-Bankist
--
--
--
+- .insertAdjacentHTML(position, text). It has before/after-begin and before/after-end (check mdn api).
+- .innerHTML returns everything including the html tags (similar to textcontent) w/ extra stuff. 
+- beforeend, each new element would be inverted / after the prev.
 -
 -
 -
