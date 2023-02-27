@@ -1,6 +1,7 @@
 'use strict';
 
-// Section 11 Lesson 151: Computing Usernames
+/*
+
 
 // Data
 const account1 = {
@@ -109,3 +110,29 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+
+*/
+
+// Section 11 Lesson 152: The Filter Method
+
+// we want to filter out negative values
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const deposits = movements.filter(function (mov) {
+  return mov > 0; // condition. If it passes the test, it will be added into the new array
+});
+console.log(deposits);
+
+// for-of version
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+console.log(depositsFor);
+
+// for the negative numbers
+const withdrawals = movements.filter(function (mov) {
+  return mov < 0;
+});
+
+// Arrow version
+const withdrawalsArrow = movements.filter(mov => mov < 0);
+
+console.log(withdrawals, withdrawalsArrow);

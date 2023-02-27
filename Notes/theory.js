@@ -936,9 +936,15 @@ const userName = user.toLowerCase().split(' ')
 
 
 Filter Method
-- 
--
--
+- We structure it the same as a forEach and Map method; however, all we do is return a condtion. From there, a new array is filled with the elements that passed the test. 
+- We can use arrows the same way. 
+For example: const withdrawals = movements.filter(function (mov) {
+            return mov < 0;
+            });
+
+        // Arrow version
+        const withdrawalsArrow = movements.filter(mov => mov < 0);
+
 -
 -
 -
