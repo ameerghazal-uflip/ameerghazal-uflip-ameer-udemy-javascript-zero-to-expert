@@ -982,15 +982,16 @@ The find Method
 - using find we can find an object in thearray,
 - it can return an entire object!!
 - goal is to find exactly one element. 
--
+ex: const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+
 
 
 Project-Bankist
 - .insertAdjacentHTML(position, text). It has before/after-begin and before/after-end (check mdn api).
 - .innerHTML returns everything including the html tags (similar to textcontent) w/ extra stuff. 
 - beforeend, each new element would be inverted / after the prev.
-- 
--
+- We can use .preventDefault from submitting.
+- We can use an equal to an equal to assign two values the same thing(    inputLoginUsername = inputLoginPin.value = '';)
 -
 -
 -

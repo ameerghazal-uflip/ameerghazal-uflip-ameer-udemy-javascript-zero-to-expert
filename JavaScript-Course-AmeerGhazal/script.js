@@ -79,8 +79,6 @@ const displayMovements = function (movements) {
   });
 };
 
-displayMovements(account1.movements);
-
 // not returning a val, it just mutates the array.
 const createUserName = function (accs) {
   accs.forEach(function (acc) {
@@ -91,32 +89,31 @@ const createUserName = function (accs) {
       .join(''); // split returns an array and we can call the map method on
   });
 };
-createUserName(accounts);
+createUserName(accounts); // creates the nickname for all the accounts.
 
 // lesson 153
 const calcDisplayBalance = function (movements) {
   const balance = movements.reduce((accum, mov) => accum + mov, 0);
   labelBalance.textContent = `${balance}€`;
 };
-calcDisplayBalance(account1.movements);
 
 // lesson 155
-const calcDisplaySummary = function (movements) {
-  const incomes = movements
+const calcDisplaySummary = function (acc) {
+  const incomes = acc.movements
     .filter(mov => mov > 0)
     .reduce((accum, mov) => accum + mov, 0);
 
   labelSumIn.textContent = `${incomes}€`;
 
-  const out = movements
+  const out = acc.movements
     .filter(mov => mov < 0)
     .reduce((accum, mov) => accum + mov, 0);
 
   labelSumOut.textContent = `${Math.abs(out)}€`;
 
-  const interest = movements
+  const interest = acc.movements
     .filter(mov => mov > 0) // filters out negatives
-    .map(deposit => (deposit * 1.2) / 100) // edits the values
+    .map(deposit => (deposit * acc.interestRate) / 100) // edits the values
     .filter((interest, index, array) => {
       // filters out less than 1
       console.log(array);
@@ -126,7 +123,40 @@ const calcDisplaySummary = function (movements) {
 
   labelSumInterest.textContent = `${interest}€`;
 };
-calcDisplaySummary(account1.movements);
+
+// lesson 158
+let currentAccount;
+btnLogin.addEventListener('click', function (event) {
+  event.preventDefault();
+
+  // gets the current account input from the user.
+  currentAccount = accounts.find(
+    acc => acc.userName === inputLoginUsername.value
+  );
+
+  // we can use optional chaining to check if feasible .
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    // Display UI and Welcome message
+    labelWelcome.textContent = `Welcome back, ${
+      currentAccount.owner.split(' ')[0]
+    }.`;
+
+    containerApp.style.opacity = 100; // gets rid of the opacity if logged in
+
+    // Clear input fields
+    inputLoginUsername = inputLoginPin.value = '';
+    inputLoginPin.blur();
+
+    // Display Movements
+    displayMovements(currentAccount.movements);
+
+    // Display balance
+    calcDisplayBalance(currentAccount);
+
+    // Display Summary
+    calcDisplaySummary(currentAccount);
+  }
+});
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -140,13 +170,4 @@ const currencies = new Map([
 
 /////////////////////////////////////////////////
 
-// Section 11 Lesson 157: The find Method
-
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
-const firstWithDrawl = movements.find(mov => mov < 0);
-console.log(movements, firstWithDrawl);
-
-console.log(accounts);
-const account = accounts.find(acc => acc.owner === 'Jessica Davis');
-console.log(account);
+// Section 11 Lesson 158: Implementing the Login
