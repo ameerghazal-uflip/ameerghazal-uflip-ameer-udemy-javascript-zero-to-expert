@@ -999,9 +999,16 @@ some and every
 - .every() only returns true if every element passes the test in the call-back function.    
       console.log(account4.movements.every(mov => mov > 0));
 - only returns true if all the elements in the array satisfay the conditon.
--
--
 
+
+flat and flatMap
+- arrayName.flat() flattens the array, but it only goes one level deep. 
+- So, if the array has a nested array, it will flatten the entire array to one single array.
+- We can edit how deep the flat method goes (1 nested, 2, etc.) by adding it in the argument. For example, arrayName.flat(2) goes two array's deep.
+- .flatMap combines a flat and a map method into one method, which is better for performence.
+- Note: flatMap() only goes one level deep, so if we need to go deeper, we still need to use the .flat() method.
+-
+-
 
 
 

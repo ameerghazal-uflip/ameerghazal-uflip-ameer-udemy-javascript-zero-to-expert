@@ -245,27 +245,36 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-/////////////////////////////////////////////////
-
-// Section 11 Lesson 160: findIndex Method
-
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-console.log(movements);
+/////////////////////////////////////////////////
 
-// EQUALITY
-console.log(movements.includes(-130));
+// Section 11 Lesson 162: flat & flatMap
 
-// SOME: CONDITION
-const anydeposits = movements.some(mov => mov > 0); // if there is any value for which the function is true, then it returns true.
-console.log(anydeposits);
+const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
+console.log(arr.flat()); // no call-back function, it just removes the nested array
 
-// EVERY
-console.log(movements.every(mov => mov > 0)); // only returns true if all the elements in the array satisfay the conditon
-console.log(account4.movements.every(mov => mov > 0));
+const arrDeep = [[[1, 3], 3], [[4, 5], 4], 7, 5];
+console.log(arrDeep.flat());
 
-// Seperate callback
-const deposit = mov => mov > 0;
-console.log(movements.some(deposit));
-console.log(movements.every(deposit));
-console.log(movements.filter(deposit));
+// // so we have a nested structure
+// const accountMovements = accounts.map(acc => acc.movements);
+// console.log(accountMovements);
+
+// const allMovements = accountMovements.flat();
+// console.log(allMovements);
+// const overallBalanc = allMovements.reduce((accum, mov) => accum + mov, 0);
+// console.log(overallBalanc);
+
+// do it in one go with chaining
+const overallBalance = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((accum, mov) => accum + mov, 0);
+console.log(overallBalance);
+
+// flatMap
+const overallBalance2 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overallBalance2);
