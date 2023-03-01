@@ -1,13 +1,7 @@
 # ameer-udemy-javascript-zero-to-expert
 
-// Section 10 Coding Challenge 2
+// Section 11 Project Bankist
 
-This is more of a thinking challenge than a coding challenge �
-Your tasks:
+The bankist application mirrors an ATM/bank like structure. The app features a money transfer, loan acceptance, and account an closer. This structure is similar to real life banks without the specifices, of course. So far, the application can sort transactions, keeps track of interest-withdrawals-deposits, and features a login mechanism (username, pin). With that said, the application is still being worked on an requires minor tweaks (idle timer, different curriencies, etc.)
 
-1. Take the IIFE below and at the end of the function, attach an event listener that
-   changes the color of the selected h1 element ('header') to blue, each time
-   the body element is clicked. Do not select the h1 element again!
-2. And now explain to yourself (or someone around you) why this worked! Take all
-   the time you need. Think about when exactly the callback function is executed,
-   and what that means for the variables involved in this example
+Images:

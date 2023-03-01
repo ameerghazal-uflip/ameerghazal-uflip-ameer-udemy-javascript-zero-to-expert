@@ -1,6 +1,6 @@
 'use strict';
 
-// Section 11 Lesson 147 BANKIST APP: Dom Elements
+// Section 11: Project Bankist (Updated)
 
 // Data
 const account1 = {
@@ -60,12 +60,15 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 // new info that is added or deleted
-const displayMovements = function (movements) {
+const displayMovements = function (movements, sort = false) {
   // remove extra elements from start
   containerMovements.innerHTML = 0;
   // .textContent = 0;
 
-  movements.forEach(function (mov, i) {
+  // sorts the array.
+  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+
+  movs.forEach(function (mov, i) {
     // for deposit or withdrawl
     const type = mov > 0 ? 'deposit' : 'withdrawal';
 
@@ -73,7 +76,7 @@ const displayMovements = function (movements) {
     <div class="movements__row">
     <div class="movements__type
      movements__type--${type}">${i + 1} ${type}</div>
-    <div class="movements__value">${mov}</div>
+    <div class="movements__value">${mov}€</div>
     </div>`;
 
     // want to insert new child element right after the beginning element. (after-begin)
@@ -81,8 +84,171 @@ const displayMovements = function (movements) {
   });
 };
 
-displayMovements(account1.movements);
-//console.log(containerMovements.innerHTML);
+// not returning a val, it just mutates the array.
+const createUserName = function (accs) {
+  accs.forEach(function (acc) {
+    acc.userName = acc.owner //  we get the name and manipulate the element.
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0]) // same as function(name) { return name[0];}
+      .join(''); // split returns an array and we can call the map method on
+  });
+};
+createUserName(accounts); // creates the nickname for all the accounts.
+
+// lesson 153: reduce method
+const calcDisplayBalance = function (acc) {
+  acc.balance = acc.movements.reduce((accum, mov) => accum + mov, 0);
+  labelBalance.textContent = `${acc.balance}€`;
+};
+
+// lesson 155: methhod chaining
+const calcDisplaySummary = function (acc) {
+  const incomes = acc.movements
+    .filter(mov => mov > 0)
+    .reduce((accum, mov) => accum + mov, 0);
+
+  labelSumIn.textContent = `${incomes}€`;
+
+  const out = acc.movements
+    .filter(mov => mov < 0)
+    .reduce((accum, mov) => accum + mov, 0);
+
+  labelSumOut.textContent = `${Math.abs(out)}€`;
+
+  const interest = acc.movements
+    .filter(mov => mov > 0) // filters out negatives
+    .map(deposit => (deposit * acc.interestRate) / 100) // edits the values
+    .filter((interest, index, array) => {
+      // filters out less than 1
+      return interest >= 1;
+    })
+    .reduce((accum, interest) => accum + interest, 0); // gets the total
+
+  labelSumInterest.textContent = `${interest}€`;
+};
+
+// lesson 159: updates the UI
+const updateUI = function (acc) {
+  // Display Movements
+  displayMovements(acc.movements);
+
+  // Display Balance
+  calcDisplayBalance(acc);
+
+  // Display Summary
+  calcDisplaySummary(acc);
+};
+
+// lesson 158: implementing login
+let currentAccount;
+btnLogin.addEventListener('click', function (event) {
+  // Prevents form from submitting
+  event.preventDefault();
+
+  // gets the current account input from the user.
+  currentAccount = accounts.find(
+    acc => acc.userName === inputLoginUsername.value
+  );
+
+  // we can use optional chaining to check if feasible .
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    // if the pin is correct,
+
+    // Display UI and Welcome message
+    labelWelcome.textContent = `Welcome back, ${
+      currentAccount.owner.split(' ')[0]
+    }.`;
+
+    containerApp.style.opacity = 100; // gets rid of the opacity if logged in
+
+    // Clear input fields
+    inputLoginUsername.value = inputLoginPin.value = '';
+    inputLoginPin.blur();
+
+    // Updates the UI
+    updateUI(currentAccount);
+  }
+});
+
+// lesson 159: implementing transfers
+btnTransfer.addEventListener('click', function (event) {
+  event.preventDefault(); // prevents the default reload behavior
+  const amount = Number(inputTransferAmount.value);
+  const receiverAcc = accounts.find(
+    acc => acc.userName === inputTransferTo.value
+  ); // looks if the usernames match
+
+  // clears the input field
+  inputTransferAmount.value = inputTransferTo.value = '';
+  inputTransferAmount.blur();
+
+  // checks if the money is positive, the balance can suffize the transfer, and that a user cannot send money to themselves (if the receiver is valid)
+  if (
+    amount > 0 &&
+    receiverAcc &&
+    currentAccount.balance >= amount &&
+    receiverAcc?.userName !== currentAccount.userName
+  ) {
+    // transfers the money.
+    currentAccount.movements.push(-amount); // negative account to the transfer
+    receiverAcc.movements.push(amount);
+
+    // updates UI
+    updateUI(currentAccount);
+  }
+});
+
+// lesson 161: some & every / requesting a loan
+btnLoan.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  const amount = Number(inputLoanAmount.value); // the user loan request
+  // loan is only granted if any deposit is > 10% if the request
+
+  // uses the some method: if any of the values of dep. is >= 10% of loan
+  if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+    // Add Movement
+    currentAccount.movements.push(amount);
+
+    // Update UI
+    updateUI(currentAccount);
+  }
+
+  inputLoanAmount.value = '';
+});
+
+// lesson 160: findIndex method / closing an account
+btnClose.addEventListener('click', function (e) {
+  e.preventDefault();
+  if (
+    inputCloseUsername.value === currentAccount.userName &&
+    Number(inputClosePin.value) === currentAccount.pin
+  ) {
+    const index = accounts.findIndex(
+      acc => acc.userName === currentAccount.userName
+    );
+    console.log(index);
+
+    // Delete Account
+    accounts.splice(index, 1); // the spiice method is fomratted as: (index, deleteCounter)
+
+    // Hide UI & Clear Fields
+    containerApp.style.opacity = 0;
+  }
+
+  inputCloseUsername.value = inputClosePin.value = ''; // clears the fields
+});
+
+// lesson 163: sorting the data
+let sorted = false; // in the begin. our array is not-sorted
+btnSort.addEventListener('click', function (e) {
+  e.preventDefault();
+  console.log('kbkjb');
+  displayMovements(currentAccount.movements, !sorted); // we do the opposite of each;
+  sorted = !sorted; // flips it back
+  console.log('kbkjb');
+});
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
