@@ -262,42 +262,59 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
-// Section 11 Lesson 164: More Ways of Creating and Filling Arrays
+// Section 11 Lesson 166: Array Methods Practice
 
-// Creating arrays so far.
-console.log([1, 2, 3, 4]);
-console.log(new Array(1, 2, 3, 4));
+const bankDepositSum = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov > 0)
+  .reduce((sum, cur) => sum + cur, 0);
 
-// new way to create an empty array with a size.
-// Empty Arrays + Fill Method
-const x = new Array(7);
-console.log(x);
+console.log(bankDepositSum);
 
-// fill method
-x.fill(1, 3, 5); // (value, from, to), but we do not have to specifity from and to.
-console.log(x);
+// 2.
+// const numDeposits1000 = accounts
+//   .flatMap(acc => acc.movements)
+//   .filter(movements >= 1000).length;
 
-// Array.from
-const y = Array.from({ length: 7 }, () => 1);
-console.log(y);
+// more soph. way
+const numDeposits1000_ = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((count, curr) => (curr >= 1000 ? ++count : count), 0);
 
-const z = Array.from({ length: 7 }, (_, index) => index + 1);
-console.log(z);
+console.log(numDeposits1000_);
 
-// personal challenge
-const randomDice = Array.from({ length: 100 }, () =>
-  parseInt(Math.random() * 6 + 1)
-);
-console.log(randomDice);
+// pre-fixed opertors
+let a = 0;
+console.log(++a);
 
-labelBalance.addEventListener('click', function () {
-  const movementsUI = Array.from(
-    document.querySelectorAll('.movements__value'),
-    ele => Number(ele.textContent.replace('€', ''))
+// 3. Create an object that contains the sum of the deposits and the withdrawals
+const { deposits, withdraws } = accounts
+  .flatMap(acc => acc.movements)
+  .reduce(
+    (sums, val) => {
+      val > 0 ? (sums.deposits += val) : (sums.withdraws += val);
+      // bracket notation: sums[val > 0 ? 'deposits : 'withdrawals'] += val
+      return sums; // we need to return the accumulator in the end.
+    },
+    { deposits: 0, withdraws: 0 } // creates an object as initial and enters inside of it using the accum (this works since the right param is the initial for the accm)
   );
 
-  console.log(movementsUI);
+console.log(deposits, withdraws);
 
-  // seperate way, but we would have to map it seperatly.
-  const movementsUI2 = [...document.querySelectorAll('.movements__value')]; // fro
-});
+// 4. title case challenge
+
+// ex: this is a nice title ->> This Is a Nice Title.
+const convertTitleCase = function (title) {
+  const capitalize = str => str[0].toUpperCase() + str.slice(1);
+
+  const exceptions = ['a', 'an', 'and', 'the', 'but', 'or', 'on', 'in', 'with'];
+  const titleCase = title
+    .toLowerCase()
+    .split(' ')
+    .map(word => (exceptions.includes(word) ? word : capitalize(word)))
+    .join(' '); //converts the string to lowercase and splits it into an array. If the current word is in exceptions array, then simply return the word
+  return capitalize(titleCase);
+};
+console.log(convertTitleCase('this is a nice title'));
+console.log(convertTitleCase('this is a LONG title but not too long'));
+console.log(convertTitleCase('and here is another title with an EXAMPLE'));

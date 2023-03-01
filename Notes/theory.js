@@ -1060,7 +1060,32 @@ Summary: Which Array Method to Use?
 - Includes: .includes() [value], .some(), .every() [condition]
 - String: .join()
 - Transform: .reduce() [accumulator]
-- Loop: .forEach (no new array, just loops over it)
+- Loop: .forEach (no new array, just loops over it).
+
+Array Methods Practice 
+- ++ suffix returns the previous value and then increments (count++)
+- ++ prefix increments the value then returns it (++count).
+- This is similar to java and similar with other operaotrs (--)
+- We can go in-depth and create an object as the inital accum; from there, we can enter the object using the accumlatorName.property. We can destructure to get the values seperatley aswell. 
+For example: 
+
+    const { deposits, withdraws } = accounts
+    .flatMap(acc => acc.movements)
+    .reduce(
+        (sums, val) => {
+        val > 0 ? (sums.deposits += val) : (sums.withdraws += val);
+        // bracket notation: sums[val > 0 ? 'deposits : 'withdrawals'] += val
+        return sums; // we need to return the accumulator in the end.
+        },
+        { deposits: 0, withdraws: 0 } // creates an object as initial and enters inside of it using the accum (this works since the right param is the initial for the accm)
+    );
+
+-
+-
+-
+-
+-
+-
 
 
 Project-Bankist
