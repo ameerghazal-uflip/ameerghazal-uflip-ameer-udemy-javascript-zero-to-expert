@@ -960,7 +960,8 @@ For example:
       }, 0);
 - When wanting to use a for loop, we need to use external variables for sum. Using these new methods, though, eliminate these extra variables. 
 - We can use the arrow method with these again.
-- Don't forget that the first argument in the reduce method is the counter/ 
+- Don't forget that the first argument in the reduce method is the counter.
+
 
 The Magic of Chaining Methods
 - We can chain methods, like others, using the dot operator.
@@ -972,6 +973,7 @@ For example: const totalDepositsUSD = movements
 - Do not overuse chaining. It can cause performace issues if the array is huge.
 - Also, it is a bad practice to chain a method that mutates an array.
 - Need to use the arr.length last param. effectivly. 
+
 
 The find Method
 - .find() accepts a conditon, call-back function as the method loops over the array. 
@@ -992,7 +994,7 @@ The findIndex method
 - this is similar to the indexOf method. The difference is that it returns a simple thing. On the other hand, for the .findIndex() method, we can pass in a function of what to check more specifically. 
 
 
-some and every
+Some and Every
 - .includes(value) returns true or false. This tests for equality
 - .some(higher order function) we can specify a condtion to check instead of strcit equality. For example, 
       const anydeposits = movements.some(mov => mov > 0); // checks if any of the deposited values are positve
@@ -1001,12 +1003,13 @@ some and every
 - only returns true if all the elements in the array satisfay the conditon.
 
 
-flat and flatMap
+Flat and FlatMap
 - arrayName.flat() flattens the array, but it only goes one level deep. 
 - So, if the array has a nested array, it will flatten the entire array to one single array.
 - We can edit how deep the flat method goes (1 nested, 2, etc.) by adding it in the argument. For example, arrayName.flat(2) goes two array's deep.
 - .flatMap combines a flat and a map method into one method, which is better for performence.
 - Note: flatMap() only goes one level deep, so if we need to go deeper, we still need to use the .flat() method.
+
 
 Sorting Arrays
 - .sort() method mutates the array. It also does the sort method based on strings. So, it makes everything a string then sorts it. This is confusing when attempting to sort numbers. 
@@ -1031,14 +1034,33 @@ Sorting Arrays
 
 
 More Ways of Creating and Filling Arrays
--
--
--
--
--
--
+- We can create an empty array with a certain length. This is similar to java. 
+    const x = new Array(size);
+- .fill() fills the array with the value given. Like other methods, it has a range if needed: .fill(value, from, to);
+- Using the .fill() method will mutate the array.
+- we can use the Array.from method, which calls the Array constructor
+- if we do not want to initliaze an array size and then use the fill method, we can use:
+    Array.from( {length: lengthWanted}, () => value); we can use indices similar to the map method, etc. 
+    const z = Array.from({ length: 7 }, (_, index) => index + 1);
+- Use an underscorer if the variable is not used.
+- document.querySelectorAll returns an array like structure. 
+- Again, the Array.from starts with the length or array like strcture, then we can add call-back function if we want as the next parameter. For example,
+    const movementsUI = Array.from(
+        document.querySelectorAll('.movements__value'),
+        ele => Number(ele.textContent.replace('€', ''))
+    );
 
 
+Summary: Which Array Method to Use?
+- Ask the question, what do I want: mutate the original, new array, index, element, included, new string, new value, loop over, etc.
+- Mutating: .push(), .unshift(), .pop(), .shift(), .splice(), .reverse(), .sort(), .fill()
+- New Array: .map(), .fliter(), .slice(), .concat(), .flat(), .flatMap()
+- Index: .indexOf() [value], .findIndex() [condition]
+- Element: .find() [conditon]
+- Includes: .includes() [value], .some(), .every() [condition]
+- String: .join()
+- Transform: .reduce() [accumulator]
+- Loop: .forEach (no new array, just loops over it)
 
 
 Project-Bankist

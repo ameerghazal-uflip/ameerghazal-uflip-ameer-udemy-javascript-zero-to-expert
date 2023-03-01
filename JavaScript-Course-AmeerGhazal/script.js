@@ -262,36 +262,42 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
-// Section 11 Lesson 163: Sorting Arrays
+// Section 11 Lesson 164: More Ways of Creating and Filling Arrays
 
-// Strings
-const owners = ['Jonas', 'Zachm', 'Adam', 'Matha'];
-console.log(owners.sort());
+// Creating arrays so far.
+console.log([1, 2, 3, 4]);
+console.log(new Array(1, 2, 3, 4));
 
-// Numbers
+// new way to create an empty array with a size.
+// Empty Arrays + Fill Method
+const x = new Array(7);
+console.log(x);
 
-// return < 0, A, B
-// return > B, A
+// fill method
+x.fill(1, 3, 5); // (value, from, to), but we do not have to specifity from and to.
+console.log(x);
 
-// Ascending Order
-// movements.sort((a,b)_ => {
-//   if (a > b) return 1; // switches order
-//   if (a < b) return -1; // keep order
+// Array.from
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y);
 
-// });
+const z = Array.from({ length: 7 }, (_, index) => index + 1);
+console.log(z);
 
-// if a > b, the it is a positve number (conf.)
-movements.sort((a, b) => a - b);
+// personal challenge
+const randomDice = Array.from({ length: 100 }, () =>
+  parseInt(Math.random() * 6 + 1)
+);
+console.log(randomDice);
 
-console.log(movements);
+labelBalance.addEventListener('click', function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value'),
+    ele => Number(ele.textContent.replace('€', ''))
+  );
 
-movements.sort((a, b) => b - a);
+  console.log(movementsUI);
 
-// // Descending Order
-// movements.sort((a,b)_ => {
-//   if (a > b) return -1; // switches order
-//   if (a < b) return 1; // keep order
-
-// });
-
-console.log(movements);
+  // seperate way, but we would have to map it seperatly.
+  const movementsUI2 = [...document.querySelectorAll('.movements__value')]; // fro
+});
