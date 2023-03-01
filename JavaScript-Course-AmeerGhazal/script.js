@@ -127,6 +127,7 @@ const calcDisplaySummary = function (acc) {
 // lesson 158
 let currentAccount;
 btnLogin.addEventListener('click', function (event) {
+  // Prevents form from submitting
   event.preventDefault();
 
   // gets the current account input from the user.
@@ -136,6 +137,8 @@ btnLogin.addEventListener('click', function (event) {
 
   // we can use optional chaining to check if feasible .
   if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    // if the pin is correct,
+
     // Display UI and Welcome message
     labelWelcome.textContent = `Welcome back, ${
       currentAccount.owner.split(' ')[0]
@@ -144,14 +147,14 @@ btnLogin.addEventListener('click', function (event) {
     containerApp.style.opacity = 100; // gets rid of the opacity if logged in
 
     // Clear input fields
-    inputLoginUsername = inputLoginPin.value = '';
+    inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
 
     // Display Movements
     displayMovements(currentAccount.movements);
 
-    // Display balance
-    calcDisplayBalance(currentAccount);
+    // Display Balance
+    calcDisplayBalance(currentAccount.movements);
 
     // Display Summary
     calcDisplaySummary(currentAccount);

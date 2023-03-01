@@ -950,7 +950,7 @@ For example: const withdrawals = movements.filter(function (mov) {
 
 Reduce Method
 - will return 1 value.
-- Similar logic to a function inside of the reduce method; however, it has an extra param for the first one. This extra param. is an accumulatr. 
+- Similar logic to a function inside of the reduce method; however, it has an extra param for the first one. This extra param. is an accumulator. 
 - In each loop iteration, we return the updated accum. 
 - Also, the reduce method has a second paramter. First is the function, second is the counter starting value (e.g. 0)
 - .reduce(function () {}, countStart)
@@ -980,7 +980,7 @@ The find Method
 - Using the filter method returns the first element found satisfying the confition. 
 - only returns the element itself. On the other hand, the filter method returns the array.
 - using find we can find an object in thearray,
-- it can return an entire object!!
+*- it can return an entire object!!
 - goal is to find exactly one element. 
 ex: const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 
@@ -992,7 +992,7 @@ Project-Bankist
 - beforeend, each new element would be inverted / after the prev.
 - We can use .preventDefault from submitting.
 - We can use an equal to an equal to assign two values the same thing(    inputLoginUsername = inputLoginPin.value = '';)
--
+- We can use optional chaining (Nullish.. Operator) (?) to check if the value even exits 
 -
 -
 
