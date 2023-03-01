@@ -194,6 +194,28 @@ btnTransfer.addEventListener('click', function (event) {
   }
 });
 
+// lesson 160: findIndex method / closing an account
+btnClose.addEventListener('click', function (e) {
+  e.preventDefault();
+  if (
+    inputCloseUsername.value === currentAccount.userName &&
+    Number(inputClosePin.value) === currentAccount.pin
+  ) {
+    const index = accounts.findIndex(
+      acc => acc.userName === currentAccount.userName
+    );
+    console.log(index);
+
+    // Delete Account
+    accounts.splice(index, 1); // the spiice method is fomratted as: (index, deleteCounter)
+
+    // Hide UI & Clear Fields
+    containerApp.style.opacity = 0;
+  }
+
+  inputCloseUsername.value = inputClosePin.value = ''; // clears the fields
+});
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -206,4 +228,4 @@ const currencies = new Map([
 
 /////////////////////////////////////////////////
 
-// Section 11 Lesson 159: Implementing Transfers
+// Section 11 Lesson 160: findIndex Method

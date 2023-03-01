@@ -984,7 +984,12 @@ The find Method
 ex: const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 
 
-
+The findIndex method
+- Works very similar to find, but instead it returns the index of the found element, and not the element itself.
+- To delete something from an array, we use the splice method. But to find the index, we use the findIndex method.
+- It functions the same: .findIndex(higher function) but instead it returns the index that satifies the statement inside, while the .find() method returns the element. 
+- It will return the first index in the array that satisfies the conditonal.
+- this is similar to the indexOf method. The difference is that it returns a simple thing. On the other hand, for the .findIndex() method, we can pass in a function of what to check more specifically. 
 
 
 
@@ -1001,6 +1006,11 @@ Project-Bankist
 - We can use .preventDefault from submitting.
 - We can use an equal to an equal to assign two values the same thing(    inputLoginUsername = inputLoginPin.value = '';)
 - We can use optional chaining (Nullish.. Operator) (?) to check if the value even exits 
+- use the .value method to get the value inputed (like normal). 
+- Convert things to numbers by casting. 
+- use eventListeners for btns.
+-
+-
 -
 -
 
