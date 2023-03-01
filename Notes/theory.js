@@ -1080,13 +1080,6 @@ For example:
         { deposits: 0, withdraws: 0 } // creates an object as initial and enters inside of it using the accum (this works since the right param is the initial for the accm)
     );
 
--
--
--
--
--
--
-
 
 Project-Bankist
 - .insertAdjacentHTML(position, text). It has before/after-begin and before/after-end (check mdn api).
