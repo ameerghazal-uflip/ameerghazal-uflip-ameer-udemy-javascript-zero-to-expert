@@ -1007,9 +1007,36 @@ flat and flatMap
 - We can edit how deep the flat method goes (1 nested, 2, etc.) by adding it in the argument. For example, arrayName.flat(2) goes two array's deep.
 - .flatMap combines a flat and a map method into one method, which is better for performence.
 - Note: flatMap() only goes one level deep, so if we need to go deeper, we still need to use the .flat() method.
--
--
 
+Sorting Arrays
+- .sort() method mutates the array. It also does the sort method based on strings. So, it makes everything a string then sorts it. This is confusing when attempting to sort numbers. 
+- We can sort numbers by using a call-back function (similar to map and those).
+      arrayName.sort((firstNum, secondNum) => {
+        // return < 0, A, B (keep order)
+        // return > B, A (switches order) });
+
+    // Ascending Order
+    movements.sort((a,b)_ => {
+    if (a > b) return 1; // switches order
+    if (a < b) return -1; // keep order
+
+    });
+
+    // Descending Order
+    movements.sort((a,b)_ => {
+    if (a > b) return -1; // switches order
+    if (a < b) return 1; // keep order
+
+    });
+
+
+More Ways of Creating and Filling Arrays
+-
+-
+-
+-
+-
+-
 
 
 

@@ -58,12 +58,15 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 // new info that is added or deleted
-const displayMovements = function (movements) {
+const displayMovements = function (movements, sort = false) {
   // remove extra elements from start
   containerMovements.innerHTML = 0;
   // .textContent = 0;
 
-  movements.forEach(function (mov, i) {
+  // sorts the array.
+  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+
+  movs.forEach(function (mov, i) {
     // for deposit or withdrawl
     const type = mov > 0 ? 'deposit' : 'withdrawal';
 
@@ -235,6 +238,16 @@ btnClose.addEventListener('click', function (e) {
   inputCloseUsername.value = inputClosePin.value = ''; // clears the fields
 });
 
+// lesson 163: sorting the data
+let sorted = false; // in the begin. our array is not-sorted
+btnSort.addEventListener('click', function (e) {
+  e.preventDefault();
+  console.log('kbkjb');
+  displayMovements(currentAccount.movements, !sorted); // we do the opposite of each;
+  sorted = !sorted; // flips it back
+  console.log('kbkjb');
+});
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -249,32 +262,36 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
-// Section 11 Lesson 162: flat & flatMap
+// Section 11 Lesson 163: Sorting Arrays
 
-const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
-console.log(arr.flat()); // no call-back function, it just removes the nested array
+// Strings
+const owners = ['Jonas', 'Zachm', 'Adam', 'Matha'];
+console.log(owners.sort());
 
-const arrDeep = [[[1, 3], 3], [[4, 5], 4], 7, 5];
-console.log(arrDeep.flat());
+// Numbers
 
-// // so we have a nested structure
-// const accountMovements = accounts.map(acc => acc.movements);
-// console.log(accountMovements);
+// return < 0, A, B
+// return > B, A
 
-// const allMovements = accountMovements.flat();
-// console.log(allMovements);
-// const overallBalanc = allMovements.reduce((accum, mov) => accum + mov, 0);
-// console.log(overallBalanc);
+// Ascending Order
+// movements.sort((a,b)_ => {
+//   if (a > b) return 1; // switches order
+//   if (a < b) return -1; // keep order
 
-// do it in one go with chaining
-const overallBalance = accounts
-  .map(acc => acc.movements)
-  .flat()
-  .reduce((accum, mov) => accum + mov, 0);
-console.log(overallBalance);
+// });
 
-// flatMap
-const overallBalance2 = accounts
-  .flatMap(acc => acc.movements)
-  .reduce((acc, mov) => acc + mov, 0);
-console.log(overallBalance2);
+// if a > b, the it is a positve number (conf.)
+movements.sort((a, b) => a - b);
+
+console.log(movements);
+
+movements.sort((a, b) => b - a);
+
+// // Descending Order
+// movements.sort((a,b)_ => {
+//   if (a > b) return -1; // switches order
+//   if (a < b) return 1; // keep order
+
+// });
+
+console.log(movements);
