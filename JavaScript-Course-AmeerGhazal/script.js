@@ -194,6 +194,25 @@ btnTransfer.addEventListener('click', function (event) {
   }
 });
 
+// lesson 161: some & every / requesting a loan
+btnLoan.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  const amount = Number(inputLoanAmount.value); // the user loan request
+  // loan is only granted if any deposit is > 10% if the request
+
+  // uses the some method: if any of the values of dep. is >= 10% of loan
+  if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+    // Add Movement
+    currentAccount.movements.push(amount);
+
+    // Update UI
+    updateUI(currentAccount);
+  }
+
+  inputLoanAmount.value = '';
+});
+
 // lesson 160: findIndex method / closing an account
 btnClose.addEventListener('click', function (e) {
   e.preventDefault();
@@ -229,3 +248,24 @@ const currencies = new Map([
 /////////////////////////////////////////////////
 
 // Section 11 Lesson 160: findIndex Method
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+console.log(movements);
+
+// EQUALITY
+console.log(movements.includes(-130));
+
+// SOME: CONDITION
+const anydeposits = movements.some(mov => mov > 0); // if there is any value for which the function is true, then it returns true.
+console.log(anydeposits);
+
+// EVERY
+console.log(movements.every(mov => mov > 0)); // only returns true if all the elements in the array satisfay the conditon
+console.log(account4.movements.every(mov => mov > 0));
+
+// Seperate callback
+const deposit = mov => mov > 0;
+console.log(movements.some(deposit));
+console.log(movements.every(deposit));
+console.log(movements.filter(deposit));

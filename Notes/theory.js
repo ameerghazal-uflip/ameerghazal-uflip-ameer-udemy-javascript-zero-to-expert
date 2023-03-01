@@ -992,7 +992,15 @@ The findIndex method
 - this is similar to the indexOf method. The difference is that it returns a simple thing. On the other hand, for the .findIndex() method, we can pass in a function of what to check more specifically. 
 
 
-
+some and every
+- .includes(value) returns true or false. This tests for equality
+- .some(higher order function) we can specify a condtion to check instead of strcit equality. For example, 
+      const anydeposits = movements.some(mov => mov > 0); // checks if any of the deposited values are positve
+- .every() only returns true if every element passes the test in the call-back function.    
+      console.log(account4.movements.every(mov => mov > 0));
+- only returns true if all the elements in the array satisfay the conditon.
+-
+-
 
 
 
