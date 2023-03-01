@@ -91,13 +91,13 @@ const createUserName = function (accs) {
 };
 createUserName(accounts); // creates the nickname for all the accounts.
 
-// lesson 153
-const calcDisplayBalance = function (movements) {
-  const balance = movements.reduce((accum, mov) => accum + mov, 0);
-  labelBalance.textContent = `${balance}€`;
+// lesson 153: reduce method
+const calcDisplayBalance = function (acc) {
+  acc.balance = acc.movements.reduce((accum, mov) => accum + mov, 0);
+  labelBalance.textContent = `${acc.balance}€`;
 };
 
-// lesson 155
+// lesson 155: methhod chaining
 const calcDisplaySummary = function (acc) {
   const incomes = acc.movements
     .filter(mov => mov > 0)
@@ -116,7 +116,6 @@ const calcDisplaySummary = function (acc) {
     .map(deposit => (deposit * acc.interestRate) / 100) // edits the values
     .filter((interest, index, array) => {
       // filters out less than 1
-      console.log(array);
       return interest >= 1;
     })
     .reduce((accum, interest) => accum + interest, 0); // gets the total
@@ -124,7 +123,19 @@ const calcDisplaySummary = function (acc) {
   labelSumInterest.textContent = `${interest}€`;
 };
 
-// lesson 158
+// lesson 159: updates the UI
+const updateUI = function (acc) {
+  // Display Movements
+  displayMovements(acc.movements);
+
+  // Display Balance
+  calcDisplayBalance(acc);
+
+  // Display Summary
+  calcDisplaySummary(acc);
+};
+
+// lesson 158: implementing login
 let currentAccount;
 btnLogin.addEventListener('click', function (event) {
   // Prevents form from submitting
@@ -150,14 +161,36 @@ btnLogin.addEventListener('click', function (event) {
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
 
-    // Display Movements
-    displayMovements(currentAccount.movements);
+    // Updates the UI
+    updateUI(currentAccount);
+  }
+});
 
-    // Display Balance
-    calcDisplayBalance(currentAccount.movements);
+// lesson 159: implementing transfers
+btnTransfer.addEventListener('click', function (event) {
+  event.preventDefault(); // prevents the default reload behavior
+  const amount = Number(inputTransferAmount.value);
+  const receiverAcc = accounts.find(
+    acc => acc.userName === inputTransferTo.value
+  ); // looks if the usernames match
 
-    // Display Summary
-    calcDisplaySummary(currentAccount);
+  // clears the input field
+  inputTransferAmount.value = inputTransferTo.value = '';
+  inputTransferAmount.blur();
+
+  // checks if the money is positive, the balance can suffize the transfer, and that a user cannot send money to themselves (if the receiver is valid)
+  if (
+    amount > 0 &&
+    receiverAcc &&
+    currentAccount.balance >= amount &&
+    receiverAcc?.userName !== currentAccount.userName
+  ) {
+    // transfers the money.
+    currentAccount.movements.push(-amount); // negative account to the transfer
+    receiverAcc.movements.push(amount);
+
+    // updates UI
+    updateUI(currentAccount);
   }
 });
 
@@ -173,4 +206,4 @@ const currencies = new Map([
 
 /////////////////////////////////////////////////
 
-// Section 11 Lesson 158: Implementing the Login
+// Section 11 Lesson 159: Implementing Transfers

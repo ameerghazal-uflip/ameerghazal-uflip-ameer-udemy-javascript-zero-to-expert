@@ -973,7 +973,6 @@ For example: const totalDepositsUSD = movements
 - Also, it is a bad practice to chain a method that mutates an array.
 - Need to use the arr.length last param. effectivly. 
 
-
 The find Method
 - .find() accepts a conditon, call-back function as the method loops over the array. 
 - Just like he filter method, the find method needs a call-back function that returns a boolean. 
@@ -983,6 +982,15 @@ The find Method
 *- it can return an entire object!!
 - goal is to find exactly one element. 
 ex: const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+
+
+
+
+
+
+
+
+
 
 
 
