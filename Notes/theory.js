@@ -1081,7 +1081,7 @@ For example:
     );
 
 
-Project-Bankist
+Project-Bankist (Section 11)
 - .insertAdjacentHTML(position, text). It has before/after-begin and before/after-end (check mdn api).
 - .innerHTML returns everything including the html tags (similar to textcontent) w/ extra stuff. 
 - beforeend, each new element would be inverted / after the prev.
@@ -1091,10 +1091,11 @@ Project-Bankist
 - use the .value method to get the value inputed (like normal). 
 - Convert things to numbers by casting. 
 - use eventListeners for btns.
--
--
--
--
+
+// SECTION 12
+
+
+
 
 
 
