@@ -1224,6 +1224,15 @@ How the DOM Really Works
 - A node gets element, text, comment, doucment type. Each element will be represtned as an object, and from there that class has subclasses (check the tree). 
 - Inherticance: all the child types have access to the parent types and its current type. This is similar to OPI java. 
 - Any HTML element has acesses to .addEventListener(), .cloneNode() or .closest() methods. 
+
+Selecting, Creating, and Deleting Elements
+-
+-
+-
+-
+-
+-
+-
 -
 
 
