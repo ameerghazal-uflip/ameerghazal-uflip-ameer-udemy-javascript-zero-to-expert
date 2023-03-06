@@ -1214,6 +1214,19 @@ ex:  setInterval(function () {
     }, 3000);
 
 
+// SECTION 13 ADVANCED DOM & EVENTS
+
+How the DOM Really Works
+- DOM is an interface of the browser & JS.
+- It allows us to make JS interactive with the browser. This stems from the DOM tree.
+- DOM is a very complex API full of nodes.
+- Every node is represented as an object in js. 
+- A node gets element, text, comment, doucment type. Each element will be represtned as an object, and from there that class has subclasses (check the tree). 
+- Inherticance: all the child types have access to the parent types and its current type. This is similar to OPI java. 
+- Any HTML element has acesses to .addEventListener(), .cloneNode() or .closest() methods. 
+-
+
+
 
 
 Project Bankist Website 
