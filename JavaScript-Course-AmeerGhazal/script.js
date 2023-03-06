@@ -276,31 +276,37 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
-// Section 12 Lesson 174: Working with BigInt
+// Section 12 Lesson 175: Creating Dates
 
-console.log(2 ** 53 - 1);
-console.log(Number.MAX_SAFE_INTEGER);
+// Create a date
 
-console.log(2 ** 53 + 1);
-console.log(2 ** 53 + 2);
+const now = new Date();
+console.log(now);
 
-console.log(6665165165165165165151651651651n);
-console.log(BigInt(6665165165165165165151651651651n)); // hit or miss on accuracy.
+console.log(new Date('December 24, 2015'));
+console.log(new Date(account1.movementsDates[0]));
+console.log(new Date(2037, 10, 19, 15, 23, 5));
+console.log(new Date(2037, 10, 31));
 
-// Operations
-console.log(10000n + 10000n);
-console.log(6868566848685212165156161651651n * 100000000n);
+console.log(new Date(0));
+console.log(new Date(3 * 24 * 60 * 60 * 1000));
 
-const huge = 1265165165165165165151651561n;
-const num = 23;
-console.log(huge * BigInt(num));
+// Working with dates
+const future = new Date(2037, 10, 19, 15, 23);
+console.log(future);
+console.log(future.getFullYear()); // year
+console.log(future.getMonth()); // month
+console.log(future.getDay()); // day
+console.log(future.getDate());
+console.log(future.getHours());
+console.log(future.getMinutes());
+console.log(future.getSeconds());
+console.log(future.toISOString());
+console.log(future.getTime()); // returns the number of milliseconds that have passed since the creation of unix time (jan. 1970)
 
-// Exceptions
-console.log(20n > 15);
-console.log(20n === 20); // fails, diff types
-console.log(typeof 20n); // type of bigint
-console.log(20n == 20); // this works due to the loose operator.
+console.log(new Date('2142278580000')); // creates a date based off the milli passed.
 
-// Divisons
-console.log(10n / 3n);
-console.log(10 / 3);
+console.log(Date.now()); // returns the amount of current million seconds that have passed.
+
+future.setFullYear(2040);
+console.log(future);

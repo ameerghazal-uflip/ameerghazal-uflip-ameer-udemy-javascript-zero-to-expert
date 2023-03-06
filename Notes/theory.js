@@ -1138,7 +1138,19 @@ Working with BigInt
 - We cannot mix and match int with bigInts
 - Exceptions of this are relation operators (> ==, ===, etc.)
 - Divisons: 10n /3n rounds to the nearest bigint e.g. 3n.
-- Not used that much in practice, but it is good to know about. Also, 
+- Not used that much in practice, but it is good to know about. Also, we cannot use Math operations on them.
+
+Creating Dates 
+- We can use the new Date() constrcutor, and we can pass in an argument to Date('...') & JS use it.
+- Javascript autocorrects to the next day if our input is wrong. For example Feburary 31st will change to a day in march...
+ex: const future = new Date(2037, 10, 19, 15, 23);
+- We can pass in the year, month, daY, time sep in hours, mins, secs, etc.
+- We can pass in the amount of millisecs after unix time wzs created (1970)
+- Months are zero index; e.g. November is displayed as 10 instead of 11. 
+- Also, getDay() returns the day of the week number (mon: 0 sun: 7).
+- getters & setter methods inside the notes: this means the data is mutatable. 
+
+
 
 
 
