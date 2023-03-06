@@ -1156,13 +1156,29 @@ Adding Dates to Banksit
 Operations With Dates
 - We can cast a number or + to a date to get it in milli seconds. 
 - We can subtract dates and with proper hour coversion, we can get the difference in days: (1000 * 60 * 60 * 24)
--
--
--
--
--
 
+Internationalizing Dates
+- We can use the Intl object to edit the date. new Intl.DateTimeFormant('lang-region').format(dateWeProvide). Using this will format the dates to match the region (e.g. U.S. vs. G.B)
+- Use the ISO Language codes.
+- For the second argument we can put the options object in the specificces the time, day, year, etc.
+- for the month we can change it from numeric, longName, 2-digit.
 
+ex:
+    const now = new Date();
+    const options = {
+    hour: 'numeric',
+    minute: 'numeric',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    weekday: 'long',
+    };
+    labelDate.textContent = new Intl.DateTimeFormat('ar-SY', options).format(now);
+
+- We can use navigator.language to get the language from the users' browser.
+- we can define a users language as a locale.
+- Use the Intl class in the mdn.
+-
 
 
 */

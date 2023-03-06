@@ -71,8 +71,8 @@ const inputClosePin = document.querySelector('.form__input--pin');
 
 // Functions
 
-// Lesson 177: Dates, fomrat
-const formatMovementsDate = function (date) {
+// Lesson 177 - 178: Dates, fomrat
+const formatMovementsDate = function (date, locale) {
   const calcDaysPassed = (date1, date2) =>
     Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
 
@@ -84,13 +84,13 @@ const formatMovementsDate = function (date) {
   if (daysPassed <= 7) return `${daysPassed} days ago`;
 
   // if the ones above fail, we run this code.
-  const day = `${date.getDate()}`.padStart(2, 0); // pads it with 2 0's.
-  const month = `${date.getMonth() + 1}`.padStart(2, 0);
-  const year = date.getFullYear();
+  // const day = `${date.getDate()}`.padStart(2, 0); // pads it with 2 0's.
+  // const month = `${date.getMonth() + 1}`.padStart(2, 0);
+  // const year = date.getFullYear();
 
-  return `${day}/${month}/${year}`;
+  // return `${day}/${month}/${year}`;
 
-  // Day/Month/Year, time:mins
+  return new Intl.DateTimeFormat(locale).format(date);
 };
 
 // new info that is added or deleted
@@ -109,7 +109,7 @@ const displayMovements = function (account, sort = false) {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
     const now = new Date(account.movementsDates[i]);
     // Day/Month/Year, time:mins
-    const displayDate = formatMovementsDate(now);
+    const displayDate = formatMovementsDate(now, account.locale);
 
     const html = `
     <div class="movements__row">
@@ -184,9 +184,9 @@ const updateUI = function (acc) {
 let currentAccount;
 
 // Fake Always Logged In
-// currentAccount = account1;
-// updateUI(currentAccount);
-// containerApp.style.opacity = 100; // gets rid of the opacity if logged in
+currentAccount = account1;
+updateUI(currentAccount);
+containerApp.style.opacity = 100; // gets rid of the opacity if logged in
 
 btnLogin.addEventListener('click', function (event) {
   // Prevents form from submitting
@@ -209,17 +209,29 @@ btnLogin.addEventListener('click', function (event) {
     containerApp.style.opacity = 100; // gets rid of the opacity if logged in
 
     // Creates the current date and time: lesson 176
-    const now = new Date();
-    const day = `${now.getDate()}`.padStart(2, 0); // pads it with 2 0's.
-    const month = `${now.getMonth() + 1}`.padStart(2, 0);
-    const year = now.getFullYear();
-    const hours = `${now.getHours()}`.padStart(2, 0);
-    const mins = `${now.getMinutes()}`.padStart(2, 0);
 
-    console.log(now);
+    const now = new Date();
+    const options = {
+      hour: 'numeric',
+      minute: 'numeric',
+      day: 'numeric',
+      month: 'numeric',
+      year: 'numeric',
+    };
+    labelDate.textContent = new Intl.DateTimeFormat(
+      currentAccount.locale,
+      options
+    ).format(now);
+
+    // const day = `${now.getDate()}`.padStart(2, 0); // pads it with 2 0's.
+    // const month = `${now.getMonth() + 1}`.padStart(2, 0);
+    // const year = now.getFullYear();
+    // const hours = `${now.getHours()}`.padStart(2, 0);
+    // const mins = `${now.getMinutes()}`.padStart(2, 0);
+
     // Day/Month/Year, time:mins
-    labelDate.textContent = `${day}/${month}/${year}, ${hours}:${mins}`;
-    console.log(labelDate.value);
+    // labelDate.textContent = `${day}/${month}/${year}, ${hours}:${mins}`;
+    // console.log(labelDate.value);
 
     // Clear input fields
     inputLoginUsername.value = inputLoginPin.value = '';
@@ -330,15 +342,18 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
-// Section 12 Lesson 177: Operations With Dates
-const future = new Date(2037, 10, 19, 15, 23);
-console.log(+future);
+// Section 12 Lesson 178: Internationlizing Dates (Intl)
 
-const calcDaysPassed = (date1, date2) =>
-  Math.abs(date2 - date1) / (1000 * 60 * 60 * 24);
-const days1 = calcDaysPassed(
-  new Date(2037, 3, 14, 10, 8),
-  new Date(2037, 3, 4)
-);
+// const now = new Date();
+// const options = {
+//   hour: 'numeric',
+//   minute: 'numeric',
+//   day: 'numeric',
+//   month: 'long',
+//   year: 'numeric',
+//   weekday: 'long',
+// };
 
-console.log(days1);
+// const locale = navigator.language;
+// console.log(locale);
+// labelDate.textContent = new Intl.DateTimeFormat(locale, options).format(now);
