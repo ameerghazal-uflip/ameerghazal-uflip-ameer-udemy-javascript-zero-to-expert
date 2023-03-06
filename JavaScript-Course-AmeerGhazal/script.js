@@ -1,11 +1,23 @@
 'use strict';
 
-// Data
 const account1 = {
   owner: 'Jonas Schmedtmann',
-  movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+  movements: [200, 455.23, -306.5, 25000, -642.21, -133.9, 79.97, 1300],
   interestRate: 1.2, // %
   pin: 1111,
+
+  movementsDates: [
+    '2019-11-18T21:31:17.178Z',
+    '2019-12-23T07:42:02.383Z',
+    '2020-01-28T09:15:04.904Z',
+    '2020-04-01T10:17:24.185Z',
+    '2020-05-08T14:11:59.604Z',
+    '2020-05-27T17:01:17.194Z',
+    '2020-07-11T23:36:17.929Z',
+    '2020-07-12T10:51:36.790Z',
+  ],
+  currency: 'EUR',
+  locale: 'pt-PT', // de-DE
 };
 
 const account2 = {
@@ -13,24 +25,24 @@ const account2 = {
   movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
   interestRate: 1.5,
   pin: 2222,
+
+  movementsDates: [
+    '2019-11-01T13:15:33.035Z',
+    '2019-11-30T09:48:16.867Z',
+    '2019-12-25T06:04:23.907Z',
+    '2020-01-25T14:18:46.235Z',
+    '2020-02-05T16:33:06.386Z',
+    '2020-04-10T14:43:26.374Z',
+    '2020-06-25T18:49:59.371Z',
+    '2020-07-26T12:01:20.894Z',
+  ],
+  currency: 'USD',
+  locale: 'en-US',
 };
 
-const account3 = {
-  owner: 'Steven Thomas Williams',
-  movements: [200, -200, 340, -300, -20, 50, 400, -460],
-  interestRate: 0.7,
-  pin: 3333,
-};
+const accounts = [account1, account2];
 
-const account4 = {
-  owner: 'Sarah Smith',
-  movements: [430, 1000, 700, 50, 90],
-  interestRate: 1,
-  pin: 4444,
-};
-
-const accounts = [account1, account2, account3, account4];
-
+/////////////////////////////////////////////////
 // Elements
 const labelWelcome = document.querySelector('.welcome');
 const labelDate = document.querySelector('.date');
@@ -56,6 +68,8 @@ const inputTransferAmount = document.querySelector('.form__input--amount');
 const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
+
+// Functions
 
 // new info that is added or deleted
 const displayMovements = function (movements, sort = false) {
@@ -262,59 +276,33 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
-// Section 11 Lesson 166: Array Methods Practice
+// Section 12 Lesson 170: Converting and Checking Numbers
 
-const bankDepositSum = accounts
-  .flatMap(acc => acc.movements)
-  .filter(mov => mov > 0)
-  .reduce((sum, cur) => sum + cur, 0);
+// Base 10: 0-9
+// Binary base 2: 0-1
 
-console.log(bankDepositSum);
+// Conversion: casting a number or + sign
+console.log(Number('23'));
+console.log(+'23');
 
-// 2.
-// const numDeposits1000 = accounts
-//   .flatMap(acc => acc.movements)
-//   .filter(movements >= 1000).length;
+// Parsing
+console.log(Number.parseInt('20px')); // returns 20
+console.log(Number.parseInt('e23', 10)); //error
 
-// more soph. way
-const numDeposits1000_ = accounts
-  .flatMap(acc => acc.movements)
-  .reduce((count, curr) => (curr >= 1000 ? ++count : count), 0);
+console.log(Number.parseInt('2.5rem')); // similar rule for java trunc.
+console.log(Number.parseFloat('2.5rem')); // returns 2.5
 
-console.log(numDeposits1000_);
+// Check if a value is non a number
+console.log(Number.isNaN(20));
+console.log(Number.isNaN('20'));
+console.log(Number.isNaN(+'20px'));
+console.log(Number.isNaN(23 / 0));
 
-// pre-fixed opertors
-let a = 0;
-console.log(++a);
+//Checking if a value is a number
+console.log(Number.isFinite(20));
+console.log(Number.isFinite('20'));
+console.log(Number.isFinite(+'20px'));
+console.log(Number.isFinite(23 / 0));
 
-// 3. Create an object that contains the sum of the deposits and the withdrawals
-const { deposits, withdraws } = accounts
-  .flatMap(acc => acc.movements)
-  .reduce(
-    (sums, val) => {
-      val > 0 ? (sums.deposits += val) : (sums.withdraws += val);
-      // bracket notation: sums[val > 0 ? 'deposits : 'withdrawals'] += val
-      return sums; // we need to return the accumulator in the end.
-    },
-    { deposits: 0, withdraws: 0 } // creates an object as initial and enters inside of it using the accum (this works since the right param is the initial for the accm)
-  );
-
-console.log(deposits, withdraws);
-
-// 4. title case challenge
-
-// ex: this is a nice title ->> This Is a Nice Title.
-const convertTitleCase = function (title) {
-  const capitalize = str => str[0].toUpperCase() + str.slice(1);
-
-  const exceptions = ['a', 'an', 'and', 'the', 'but', 'or', 'on', 'in', 'with'];
-  const titleCase = title
-    .toLowerCase()
-    .split(' ')
-    .map(word => (exceptions.includes(word) ? word : capitalize(word)))
-    .join(' '); //converts the string to lowercase and splits it into an array. If the current word is in exceptions array, then simply return the word
-  return capitalize(titleCase);
-};
-console.log(convertTitleCase('this is a nice title'));
-console.log(convertTitleCase('this is a LONG title but not too long'));
-console.log(convertTitleCase('and here is another title with an EXAMPLE'));
+// Checks for an integer
+console.log(Number.isInteger(23));

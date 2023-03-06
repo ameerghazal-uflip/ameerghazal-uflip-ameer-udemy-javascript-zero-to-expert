@@ -1094,6 +1094,26 @@ Project-Bankist (Section 11)
 
 // SECTION 12
 
+Converting and Checking Numbers
+- All numbers in js are displayed as floating point numbers. 
+- Some errors in js for some fractions; for example, 0.1 + 0.2 = 0.30004...
+- Casting with Number or a + sign does type conversion (changes a string to a number)
+- We can use parsing similar to java: Number.parseInt or Number.parseFloat
+- We pass in 2 arguments (e.g. 10 for base or 2 for binary)
+- We could also just do parseInt for example because it is a globAL FUNCTINN
+- Also, we can put other letters in the parse & js will try to depict the nmber. 
+- Number.isNan checks if a value is a number or not
+- Number.isFinite is great for checking if a value is a number
+- Number.isInteger() checks for a number.
+
+Math & Rounding
+- 
+-
+-
+-
+-
+-
+-
 
 
 
