@@ -205,13 +205,43 @@ const updateUI = function (acc) {
   calcDisplaySummary(acc);
 };
 
-// lesson 158: implementing login
-let currentAccount;
+const startLogOutTimer = function () {
+  // Set time to 5 mins
 
-// Fake Always Logged In
-currentAccount = account1;
-updateUI(currentAccount);
-containerApp.style.opacity = 100; // gets rid of the opacity if logged in
+  const tick = function () {
+    const min = String(Math.trunc(time / 60)).padStart(2, 0);
+    const secs = String(time % 60).padStart(2, 0);
+
+    // In each call, print the remaining time to UI
+    labelTimer.textContent = `${min}:${secs}`;
+
+    // When 0 seconds, stop timer & log out user.
+    if (time === 0) {
+      clearInterval(timer);
+      labelWelcome.textContent = 'Log in to get started';
+
+      containerApp.style.opacity = 0; // gets rid of the opacity if logged in
+    }
+
+    // decrease 1 second
+    time--;
+  };
+
+  let time = 120;
+
+  // Call the timer every second
+  tick(); // gets called right away then after every one second
+  const timer = setInterval(tick, 1000);
+  return timer;
+};
+
+// lesson 158: implementing login
+let currentAccount, timer;
+
+// // Fake Always Logged In
+// currentAccount = account1;
+// updateUI(currentAccount);
+// containerApp.style.opacity = 100; // gets rid of the opacity if logged in
 
 btnLogin.addEventListener('click', function (event) {
   // Prevents form from submitting
@@ -262,6 +292,10 @@ btnLogin.addEventListener('click', function (event) {
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
 
+    // Timer
+    if (timer) clearInterval(timer);
+    timer = startLogOutTimer();
+
     // Updates the UI
     updateUI(currentAccount);
   }
@@ -296,6 +330,10 @@ btnTransfer.addEventListener('click', function (event) {
 
     // updates UI
     updateUI(currentAccount);
+
+    // Reset timer
+    clearInterval(timer); // if the user is active, the timer is reset.
+    timer = startLogOutTimer();
   }
 });
 
@@ -318,6 +356,10 @@ btnLoan.addEventListener('click', function (e) {
 
       // Update UI
       updateUI(currentAccount);
+
+      // Reset timer
+      clearInterval(timer); // if the user is active, the timer is reset.
+      timer = startLogOutTimer();
     }, 2500);
   }
 
@@ -369,39 +411,4 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
-// Section 12 Lesson 180: Timers: setTimeout and setInterval
-
-const ingr = ['olives', 'spinach'];
-
-// setTimeout: callback function is only run once.
-setTimeout(() => console.log('Here is your pizza'), 3000);
-console.log('watubg'); // does not wait.
-
-// we can pass in more arguments and they can be used as arguments for the callback function:
-const pizzatime = setTimeout(
-  (ing1, ing2) =>
-    console.log(`${ing1} are my fav topping, but ${ing2} is really good too!`),
-  3000,
-  ...ingr
-);
-
-if (ingr.includes('spinach')) {
-  clearTimeout(pizzatime);
-}
-
-// setInterval
-setInterval(function () {
-  const now = new Date();
-  console.log(now);
-}, 1000000000);
-
-// Challenge: implementing a timer that only displays the time
-setInterval(function () {
-  const now = new Date();
-  console.log(
-    `${('' + now.getHours()).padStart(2, 0)}:${('' + now.getMinutes()).padStart(
-      2,
-      0
-    )}:${('' + now.getSeconds()).padStart(2, 0)}`
-  );
-}, 1000);
+// Section 12 Lesson 181: Implementing a Countdown Timer

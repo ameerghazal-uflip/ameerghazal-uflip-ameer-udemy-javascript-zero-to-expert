@@ -1213,8 +1213,19 @@ ex:  setInterval(function () {
     console.log(now);
     }, 3000);
 
+
+Implementing a countdown timer
+- 
 -
 -
 -
+-
+-
+-
+-
+
+
+
+
 
 */
