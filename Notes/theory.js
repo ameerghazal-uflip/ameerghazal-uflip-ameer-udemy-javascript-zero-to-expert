@@ -1178,7 +1178,22 @@ ex:
 - We can use navigator.language to get the language from the users' browser.
 - we can define a users language as a locale.
 - Use the Intl class in the mdn.
--
 
+
+Internationalizing Numbers
+- Basic formatting: new Intl.NumberFormat(locale / lang chosen).format(numberToFormat).
+- We can also, like dates, define an options object and specifiy things inside. For example: {
+    style: 'currency' / units / percent
+    unit: type of unit
+    currency: type of money (not defined by the locale).
+}
+- The options object we defined previously is the second arugment to the Intl.NumberFormat(arg, arg2) call and using the.format we can format the data. 
+- We can check out the MDN doucmentation for things we can change & set in the options obejct. 
+example: 
+    const formattedMov = new Intl.NumberFormat(account.locale, {
+      style: 'currency',
+      currency: account.currency,
+    }).format(mov);
+- Lots of potential in the api. Check MDN.
 
 */

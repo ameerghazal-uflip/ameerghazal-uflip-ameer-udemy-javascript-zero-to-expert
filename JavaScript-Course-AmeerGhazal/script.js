@@ -93,6 +93,14 @@ const formatMovementsDate = function (date, locale) {
   return new Intl.DateTimeFormat(locale).format(date);
 };
 
+const formatCurrencies = function (value, locale, currency) {
+  // lesson 179: Number formatting
+  return new Intl.NumberFormat(locale, {
+    style: 'currency',
+    currency: currency,
+  }).format(value);
+};
+
 // new info that is added or deleted
 const displayMovements = function (account, sort = false) {
   // remove extra elements from start
@@ -110,13 +118,18 @@ const displayMovements = function (account, sort = false) {
     const now = new Date(account.movementsDates[i]);
     // Day/Month/Year, time:mins
     const displayDate = formatMovementsDate(now, account.locale);
+    const formattedMov = formatCurrencies(
+      mov,
+      account.locale,
+      account.currency
+    );
 
     const html = `
     <div class="movements__row">
     <div class="movements__type
     movements__type--${type}">${i + 1} ${type}</div>
     <div class="movements__date">${displayDate}</div>
-    <div class="movements__value">${mov.toFixed(2)}€</div>
+    <div class="movements__value">${formattedMov}</div>
     </div>`;
 
     // want to insert new child element right after the beginning element. (after-begin)
@@ -139,7 +152,11 @@ createUserName(accounts); // creates the nickname for all the accounts.
 // lesson 153: reduce method
 const calcDisplayBalance = function (acc) {
   acc.balance = acc.movements.reduce((accum, mov) => accum + mov, 0);
-  labelBalance.textContent = `${acc.balance.toFixed(2)}€`;
+  labelBalance.textContent = formatCurrencies(
+    acc.balance,
+    acc.locale,
+    acc.currency
+  );
 };
 
 // lesson 155: methhod chaining
@@ -148,13 +165,17 @@ const calcDisplaySummary = function (acc) {
     .filter(mov => mov > 0)
     .reduce((accum, mov) => accum + mov, 0);
 
-  labelSumIn.textContent = `${incomes.toFixed(2)}€`;
+  labelSumIn.textContent = formatCurrencies(incomes, acc.locale, acc.currency);
 
   const out = acc.movements
     .filter(mov => mov < 0)
     .reduce((accum, mov) => accum + mov, 0);
 
-  labelSumOut.textContent = `${Math.abs(out).toFixed(2)}€`;
+  labelSumOut.textContent = formatCurrencies(
+    Math.abs(out),
+    acc.locale,
+    acc.currency
+  );
 
   const interest = acc.movements
     .filter(mov => mov > 0) // filters out negatives
@@ -165,7 +186,11 @@ const calcDisplaySummary = function (acc) {
     })
     .reduce((accum, interest) => accum + interest, 0); // gets the total
 
-  labelSumInterest.textContent = `${interest.toFixed(2)}€`;
+  labelSumInterest.textContent = formatCurrencies(
+    interest,
+    acc.locale,
+    acc.currency
+  );
 };
 
 // lesson 159: updates the UI
@@ -342,18 +367,22 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
-// Section 12 Lesson 178: Internationlizing Dates (Intl)
+// Section 12 Lesson 179: Internationlizing Numbers (Intl)
 
-// const now = new Date();
-// const options = {
-//   hour: 'numeric',
-//   minute: 'numeric',
-//   day: 'numeric',
-//   month: 'long',
-//   year: 'numeric',
-//   weekday: 'long',
-// };
+const num = 323232.23;
 
-// const locale = navigator.language;
-// console.log(locale);
-// labelDate.textContent = new Intl.DateTimeFormat(locale, options).format(now);
+const options = {
+  style: 'currency',
+  unit: 'celsius',
+  currency: 'EUR',
+  useGrouping: true,
+};
+
+console.log('US:   ', new Intl.NumberFormat('en-US', options).format(num));
+
+console.log(
+  'Germanty:   ',
+  new Intl.NumberFormat('de-DE', options).format(num)
+);
+
+console.log('Sy:   ', new Intl.NumberFormat('ar-SY', options).format(num));
