@@ -1152,6 +1152,12 @@ ex: const future = new Date(2037, 10, 19, 15, 23);
 
 Adding Dates to Banksit
 - when padding, we implement the final amount of characters followed by the value if the character are not fullifed. If the current string is equal to the pad specifier, nothing happens. 
+
+Operations With Dates
+- We can cast a number or + to a date to get it in milli seconds. 
+- We can subtract dates and with proper hour coversion, we can get the difference in days: (1000 * 60 * 60 * 24)
+-
+-
 -
 -
 -

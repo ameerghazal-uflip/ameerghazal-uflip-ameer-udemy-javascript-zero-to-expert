@@ -12,9 +12,9 @@ const account1 = {
     '2020-01-28T09:15:04.904Z',
     '2020-04-01T10:17:24.185Z',
     '2020-05-08T14:11:59.604Z',
-    '2020-05-27T17:01:17.194Z',
-    '2020-07-11T23:36:17.929Z',
-    '2020-07-12T10:51:36.790Z',
+    '2023-02-27T17:01:17.194Z',
+    '2023-03-05T23:36:17.929Z',
+    '2023-03-06T10:51:36.790Z',
   ],
   currency: 'EUR',
   locale: 'pt-PT', // de-DE
@@ -71,6 +71,28 @@ const inputClosePin = document.querySelector('.form__input--pin');
 
 // Functions
 
+// Lesson 177: Dates, fomrat
+const formatMovementsDate = function (date) {
+  const calcDaysPassed = (date1, date2) =>
+    Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
+
+  const daysPassed = calcDaysPassed(new Date(), date);
+  console.log(daysPassed);
+
+  if (daysPassed === 0) return 'Today';
+  if (daysPassed === 1) return 'Yesterday';
+  if (daysPassed <= 7) return `${daysPassed} days ago`;
+
+  // if the ones above fail, we run this code.
+  const day = `${date.getDate()}`.padStart(2, 0); // pads it with 2 0's.
+  const month = `${date.getMonth() + 1}`.padStart(2, 0);
+  const year = date.getFullYear();
+
+  return `${day}/${month}/${year}`;
+
+  // Day/Month/Year, time:mins
+};
+
 // new info that is added or deleted
 const displayMovements = function (account, sort = false) {
   // remove extra elements from start
@@ -86,13 +108,8 @@ const displayMovements = function (account, sort = false) {
     // for deposit or withdrawl
     const type = mov > 0 ? 'deposit' : 'withdrawal';
     const now = new Date(account.movementsDates[i]);
-
-    const day = `${now.getDate()}`.padStart(2, 0); // pads it with 2 0's.
-    const month = `${now.getMonth() + 1}`.padStart(2, 0);
-    const year = now.getFullYear();
-
     // Day/Month/Year, time:mins
-    const displayDate = `${day}/${month}/${year}`;
+    const displayDate = formatMovementsDate(now);
 
     const html = `
     <div class="movements__row">
@@ -313,4 +330,15 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
-// Section 12 Lesson 176: Adding Dates to "Bankist" App
+// Section 12 Lesson 177: Operations With Dates
+const future = new Date(2037, 10, 19, 15, 23);
+console.log(+future);
+
+const calcDaysPassed = (date1, date2) =>
+  Math.abs(date2 - date1) / (1000 * 60 * 60 * 24);
+const days1 = calcDaysPassed(
+  new Date(2037, 3, 14, 10, 8),
+  new Date(2037, 3, 4)
+);
+
+console.log(days1);
