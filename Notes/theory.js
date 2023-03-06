@@ -1123,11 +1123,15 @@ Remainder Operator
 - Even number: number % num = 0
 - Odd Num: number % 2 != 0
 - good for every n-th time.
--
--
--
--
 
+Numeric Seperators
+- We can place underscores within our number to make it easier to understand.
+For example: const diameter = 287_460_000_000;
+- We can not place an underscorer at the beginning, end, and after or before a decimal. Also, we cannot place two in a row.
+- We cannot convert Strings to numbers if they have an underscorer / numeric seperator. 
+-
+-
+-
 
 
 

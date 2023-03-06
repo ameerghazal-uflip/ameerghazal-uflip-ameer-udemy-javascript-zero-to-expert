@@ -276,30 +276,19 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
-// Section 12 Lesson 172: The Remainder Operator
+// Section 12 Lesson 173: Numeric Seperators
 
-console.log(5 % 2);
-console.log(5 / 2); // (5 = 2 * 2 + 1 (so, 1 is the rem))
+// 287,460,000,000
+const diameter = 287_460_000_000;
+console.log(diameter);
 
-console.log(8 % 3);
-console.log(8 / 3); // 8 = 2 * 3 + 2
+const priceCents = 345_99;
+console.log(priceCents);
 
-// Even Numbers: divisible by 2, so the remainder is 0.
-const isEven = n => n % 2 === 0;
-console.log(8);
-console.log(isEven(23));
-console.log(isEven(514));
+const transferFee = 15_00;
+const transferFe = 1_500; // both of these are the same number
 
-labelBalance.addEventListener('click', function () {
-  [...document.querySelectorAll('.movements__row')].forEach(function (row, i) {
-    // 0, 2, 4, 6
-    if (i % 2 === 0) {
-      row.style.backgroundColor = 'orangered';
-    }
+// - We can not place an underscorer at the beginning, end, and after or before a decimal. Also, we cannot place two in a row.
+// - We cannot convert Strings to numbers if they have an underscorer / numeric seperator.
 
-    // 0, 3, 6, 9
-    if (i % 3 === 0) row.style.backgroundColor = 'blue';
-  });
-});
-
-// Good to use for every nth time.
+//const PI = 3.145_15_;
