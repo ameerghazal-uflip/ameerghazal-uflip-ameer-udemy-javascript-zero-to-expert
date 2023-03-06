@@ -1119,10 +1119,10 @@ ex:    Math.trunc(Math.random() * 6) + 1)
 - check out the mdm documentation.
 
 Remainder Operator
--
--
--
--
+- Same operator as java: % symbol/
+- Even number: number % num = 0
+- Odd Num: number % 2 != 0
+- good for every n-th time.
 -
 -
 -
