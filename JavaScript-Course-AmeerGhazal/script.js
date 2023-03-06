@@ -309,14 +309,16 @@ btnLoan.addEventListener('click', function (e) {
 
   // uses the some method: if any of the values of dep. is >= 10% of loan
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
-    // Add Movement
-    currentAccount.movements.push(amount);
+    setTimeout(function () {
+      // Add Movement
+      currentAccount.movements.push(amount);
 
-    // Add loan date
-    currentAccount.movementsDates.push(new Date().toISOString());
+      // Add loan date
+      currentAccount.movementsDates.push(new Date().toISOString());
 
-    // Update UI
-    updateUI(currentAccount);
+      // Update UI
+      updateUI(currentAccount);
+    }, 2500);
   }
 
   inputLoanAmount.value = '';
@@ -367,22 +369,28 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
-// Section 12 Lesson 179: Internationlizing Numbers (Intl)
+// Section 12 Lesson 180: Timers: setTimeout and setInterval
 
-const num = 323232.23;
+const ingr = ['olives', 'spinach'];
 
-const options = {
-  style: 'currency',
-  unit: 'celsius',
-  currency: 'EUR',
-  useGrouping: true,
-};
+// setTimeout: callback function is only run once.
+setTimeout(() => console.log('Here is your pizza'), 3000);
+console.log('watubg'); // does not wait.
 
-console.log('US:   ', new Intl.NumberFormat('en-US', options).format(num));
-
-console.log(
-  'Germanty:   ',
-  new Intl.NumberFormat('de-DE', options).format(num)
+// we can pass in more arguments and they can be used as arguments for the callback function:
+const pizzatime = setTimeout(
+  (ing1, ing2) =>
+    console.log(`${ing1} are my fav topping, but ${ing2} is really good too!`),
+  3000,
+  ...ingr
 );
 
-console.log('Sy:   ', new Intl.NumberFormat('ar-SY', options).format(num));
+if (ingr.includes('spinach')) {
+  clearTimeout(pizzatime);
+}
+
+// setInterval
+setInterval(function () {
+  const now = new Date();
+  console.log(now);
+}, 1000000000);

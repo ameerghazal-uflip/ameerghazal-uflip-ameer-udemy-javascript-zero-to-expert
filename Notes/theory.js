@@ -1196,4 +1196,25 @@ example:
     }).format(mov);
 - Lots of potential in the api. Check MDN.
 
+
+Timers: setTimeout & setInterval
+- setTimeout() takes in 2 argumnets. First, a callback function telling set what to do when called, and second the time in milliseconds it should wait to be called. 
+- For example, setTimeout(() => console.log("Hello"), 3000 (3 secs in real time)).
+- For things run after this line, they will like normal, and after the timespan, the setTimeout() call will also run. The things after do not wait for the set... to run before they run. 
+- Any argument after the delay can be used in the inner function.
+ex: setTimeout((ing1, ing2) =>
+    console.log(`${ing1} are my fav topping, but ${ing2} is really good too!`), 3000, 'Olives','Spinach');
+
+- We can use the spread operator the exact same way to unpack the array.
+- We can use the clearTimeout(timer) to stop and clear the data that should be displayed. 
+- setInterval takesa callback function with a dely, but it runs it nonstop
+ex:  setInterval(function () {
+    const now = new Date();
+    console.log(now);
+    }, 3000);
+
+-
+-
+-
+
 */
