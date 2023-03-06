@@ -276,19 +276,31 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
-// Section 12 Lesson 173: Numeric Seperators
+// Section 12 Lesson 174: Working with BigInt
 
-// 287,460,000,000
-const diameter = 287_460_000_000;
-console.log(diameter);
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
 
-const priceCents = 345_99;
-console.log(priceCents);
+console.log(2 ** 53 + 1);
+console.log(2 ** 53 + 2);
 
-const transferFee = 15_00;
-const transferFe = 1_500; // both of these are the same number
+console.log(6665165165165165165151651651651n);
+console.log(BigInt(6665165165165165165151651651651n)); // hit or miss on accuracy.
 
-// - We can not place an underscorer at the beginning, end, and after or before a decimal. Also, we cannot place two in a row.
-// - We cannot convert Strings to numbers if they have an underscorer / numeric seperator.
+// Operations
+console.log(10000n + 10000n);
+console.log(6868566848685212165156161651651n * 100000000n);
 
-//const PI = 3.145_15_;
+const huge = 1265165165165165165151651561n;
+const num = 23;
+console.log(huge * BigInt(num));
+
+// Exceptions
+console.log(20n > 15);
+console.log(20n === 20); // fails, diff types
+console.log(typeof 20n); // type of bigint
+console.log(20n == 20); // this works due to the loose operator.
+
+// Divisons
+console.log(10n / 3n);
+console.log(10 / 3);

@@ -1129,9 +1129,15 @@ Numeric Seperators
 For example: const diameter = 287_460_000_000;
 - We can not place an underscorer at the beginning, end, and after or before a decimal. Also, we cannot place two in a row.
 - We cannot convert Strings to numbers if they have an underscorer / numeric seperator. 
--
--
--
+
+
+Working with BigInt
+- Anything past (Number.MAX_SAFE_INTEGER) may be wrong. This is why we use bigint.
+- adding an 'n' to the end of a larger than max int number makes it work.
+- Constrcutor BigInt() should mainly be used with small functions.
+- We cannot mix and match int with bigInts
+- Exceptions of this are relation operators (> ==, ===, etc.)
+- Divisons: 10n /3n rounds to the nearest bigint e.g. 3n.
 
 
 
