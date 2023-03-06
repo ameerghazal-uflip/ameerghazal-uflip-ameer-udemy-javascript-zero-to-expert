@@ -1216,5 +1216,11 @@ ex:  setInterval(function () {
 
 
 
+Project Bankist Website 
+- Node list is not an array, but it has a forEach method.
+-
+-
+-
+-
 
 */
