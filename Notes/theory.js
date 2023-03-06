@@ -1150,6 +1150,11 @@ ex: const future = new Date(2037, 10, 19, 15, 23);
 - Also, getDay() returns the day of the week number (mon: 0 sun: 7).
 - getters & setter methods inside the notes: this means the data is mutatable. 
 
+Adding Dates to Banksit
+- when padding, we implement the final amount of characters followed by the value if the character are not fullifed. If the current string is equal to the pad specifier, nothing happens. 
+-
+-
+-
 
 
 
