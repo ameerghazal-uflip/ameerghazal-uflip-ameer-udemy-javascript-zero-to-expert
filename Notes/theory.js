@@ -1107,14 +1107,26 @@ Converting and Checking Numbers
 - Number.isInteger() checks for a number.
 
 Math & Rounding
-- 
--
--
--
--
--
--
+- Math.sqrt() calculates the sqaure root of a function (or, we could use the ** operator).
+- Math.max() & Math.min * Math.PI do their respective jobs. 
+- Math.random() outputs a value between 0 & 0.999, but we can change this with constants. For example, adding one, mulipling by 6, etc.
+ex:    Math.trunc(Math.random() * 6) + 1)
+- Math.trunc truncates a value down similar to java.
+- Math.round() rounds to the nearest integers.
+- Math.ceil() rounds up, Math.floor() rounds down.
+- Floor works better than trunc with negative numbers. E.g. -23.3 in trunc rounds to -23 while in floor it is -24.
+- .toFixed(decimalMoves) returns a string of the decimal. The argument specifies what to round to.
+- check out the mdm documentation.
 
+Remainder Operator
+-
+-
+-
+-
+-
+-
+-
+-
 
 
 

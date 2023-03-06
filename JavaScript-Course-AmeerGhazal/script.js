@@ -88,7 +88,7 @@ const displayMovements = function (movements, sort = false) {
     <div class="movements__row">
     <div class="movements__type
      movements__type--${type}">${i + 1} ${type}</div>
-    <div class="movements__value">${mov}€</div>
+    <div class="movements__value">${mov.toFixed(2)}€</div>
     </div>`;
 
     // want to insert new child element right after the beginning element. (after-begin)
@@ -111,7 +111,7 @@ createUserName(accounts); // creates the nickname for all the accounts.
 // lesson 153: reduce method
 const calcDisplayBalance = function (acc) {
   acc.balance = acc.movements.reduce((accum, mov) => accum + mov, 0);
-  labelBalance.textContent = `${acc.balance}€`;
+  labelBalance.textContent = `${acc.balance.toFixed(2)}€`;
 };
 
 // lesson 155: methhod chaining
@@ -120,13 +120,13 @@ const calcDisplaySummary = function (acc) {
     .filter(mov => mov > 0)
     .reduce((accum, mov) => accum + mov, 0);
 
-  labelSumIn.textContent = `${incomes}€`;
+  labelSumIn.textContent = `${incomes.toFixed(2)}€`;
 
   const out = acc.movements
     .filter(mov => mov < 0)
     .reduce((accum, mov) => accum + mov, 0);
 
-  labelSumOut.textContent = `${Math.abs(out)}€`;
+  labelSumOut.textContent = `${Math.abs(out).toFixed(2)}€`;
 
   const interest = acc.movements
     .filter(mov => mov > 0) // filters out negatives
@@ -137,7 +137,7 @@ const calcDisplaySummary = function (acc) {
     })
     .reduce((accum, interest) => accum + interest, 0); // gets the total
 
-  labelSumInterest.textContent = `${interest}€`;
+  labelSumInterest.textContent = `${interest.toFixed(2)}€`;
 };
 
 // lesson 159: updates the UI
@@ -215,7 +215,8 @@ btnTransfer.addEventListener('click', function (event) {
 btnLoan.addEventListener('click', function (e) {
   e.preventDefault();
 
-  const amount = Number(inputLoanAmount.value); // the user loan request
+  const amount = Math.floor(inputLoanAmount.value); // rounds any value down and does type conversion to return a number.
+  // the user loan request
   // loan is only granted if any deposit is > 10% if the request
 
   // uses the some method: if any of the values of dep. is >= 10% of loan
@@ -256,7 +257,6 @@ btnClose.addEventListener('click', function (e) {
 let sorted = false; // in the begin. our array is not-sorted
 btnSort.addEventListener('click', function (e) {
   e.preventDefault();
-  console.log('kbkjb');
   displayMovements(currentAccount.movements, !sorted); // we do the opposite of each;
   sorted = !sorted; // flips it back
   console.log('kbkjb');
@@ -276,33 +276,41 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
-// Section 12 Lesson 170: Converting and Checking Numbers
+// Section 12 Lesson 171: Math & Rounding
 
-// Base 10: 0-9
-// Binary base 2: 0-1
+// Square Root
+console.log(Math.sqrt(25));
+console.log(25 ** (1 / 2));
 
-// Conversion: casting a number or + sign
-console.log(Number('23'));
-console.log(+'23');
+// Maximum Values
+console.log(Math.max(5, 18, 11, 12, 3)); // more than one argument. Different than java.
+console.log(Math.max(5, '18', 11, 12, 3));
 
-// Parsing
-console.log(Number.parseInt('20px')); // returns 20
-console.log(Number.parseInt('e23', 10)); //error
+// Minimum Values
+console.log(Math.min(5, 18, 11, 12, 3));
+console.log(Math.min('5', 18, 11, 12, 3));
 
-console.log(Number.parseInt('2.5rem')); // similar rule for java trunc.
-console.log(Number.parseFloat('2.5rem')); // returns 2.5
+// Pi
+console.log(Math.PI * Number.parseFloat('10px') ** 2);
 
-// Check if a value is non a number
-console.log(Number.isNaN(20));
-console.log(Number.isNaN('20'));
-console.log(Number.isNaN(+'20px'));
-console.log(Number.isNaN(23 / 0));
+// Random & trunc
+console.log(Math.floor(Math.random() * 6) + 1);
 
-//Checking if a value is a number
-console.log(Number.isFinite(20));
-console.log(Number.isFinite('20'));
-console.log(Number.isFinite(+'20px'));
-console.log(Number.isFinite(23 / 0));
+// function that stays between the min & max random number.
+const randomInt = (min, max) =>
+  Math.trunc(Math.random() * (max - min) + 1) + min;
+// 0...1 -> 0...(max - min) -> min...max
+console.log(randomInt(10, 20));
 
-// Checks for an integer
-console.log(Number.isInteger(23));
+// Rounding Integers
+console.log(Math.trunc(23.3));
+console.log(Math.ceil(23.2));
+console.log(Math.floor(23.9));
+
+console.log(Math.floor(-23.4));
+console.log(Math.trunc(-23.2));
+
+// Rounding Decimals
+console.log((2.7).toFixed(0));
+console.log((2.345).toFixed(2));
+console.log(+(2.345).toFixed(2));
