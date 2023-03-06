@@ -1138,6 +1138,7 @@ Working with BigInt
 - We cannot mix and match int with bigInts
 - Exceptions of this are relation operators (> ==, ===, etc.)
 - Divisons: 10n /3n rounds to the nearest bigint e.g. 3n.
+- Not used that much in practice, but it is good to know about. Also, 
 
 
 
