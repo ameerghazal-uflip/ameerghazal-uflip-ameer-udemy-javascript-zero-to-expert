@@ -1214,17 +1214,6 @@ ex:  setInterval(function () {
     }, 3000);
 
 
-Implementing a countdown timer
-- 
--
--
--
--
--
--
--
-
-
 
 
 

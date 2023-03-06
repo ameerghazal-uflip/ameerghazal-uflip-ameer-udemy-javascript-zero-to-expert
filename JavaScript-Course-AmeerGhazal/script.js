@@ -1,5 +1,7 @@
 'use strict';
 
+// Section 12 PROJECT BANKIST
+
 const account1 = {
   owner: 'Jonas Schmedtmann',
   movements: [200, 455.23, -306.5, 25000, -642.21, -133.9, 79.97, 1300],
@@ -410,5 +412,3 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
-
-// Section 12 Lesson 181: Implementing a Countdown Timer
