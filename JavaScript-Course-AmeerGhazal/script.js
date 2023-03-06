@@ -394,3 +394,14 @@ setInterval(function () {
   const now = new Date();
   console.log(now);
 }, 1000000000);
+
+// Challenge: implementing a timer that only displays the time
+setInterval(function () {
+  const now = new Date();
+  console.log(
+    `${('' + now.getHours()).padStart(2, 0)}:${('' + now.getMinutes()).padStart(
+      2,
+      0
+    )}:${('' + now.getSeconds()).padStart(2, 0)}`
+  );
+}, 1000);
