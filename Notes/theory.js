@@ -1254,8 +1254,31 @@ Styles, Attributes, and Classes
 - Sometimes, using the getAttribute() is the safer and better method to use due to relative vs. absolute links. SOme return abs. link, while the relative is exaclty how it is written in the html.
 - For data attributes, they begin with data-name-of-value. With data attributes, we can use selector.dataset.variableName to get the value. Note, we use camelCase even if the variable name uses dashes similar to what is shown above. 
 - Use classList because they allow us to add and remove classes by there names with interfering with classes that are already there. 
--
--
+
+
+Implementing Smooth Scrolling
+- selector.getBoudingClientRect() returns the current portion of the page with a Dom object (x, y, width, top, etc/)
+- pageXOffset & pageYOffset are the x & y scroll coords
+-  document.documentElement.clientHeight,
+    document.documentElement.clientWidth
+- window.scrollTo(from, to) this is relative to the viewport, though.
+- To combat this, add the xOffset to the left & the y offset from the top. Therefore, it will not depend on the viewport. 
+- To make it scroll smoothly, we need to do the same thing, but pass in an object instead with a behavior: 
+    
+  window.scrollTo({
+    left: s1coords.left + window.pageXOffset,
+    top: s1coords.top + window.pageYOffset,
+    behavior: 'smooth',
+  });
+});
+
+- For simpler standards - only applicable in modern browsers - use .scrollIntoView({behavior: ...})
+
+
+
+
+
+
 
 Project Bankist Website 
 - Node list is not an array, but it has a forEach method.
