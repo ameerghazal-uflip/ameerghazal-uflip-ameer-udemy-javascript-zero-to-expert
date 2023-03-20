@@ -1326,11 +1326,21 @@ document.querySelector('.nav').addEventListener(
 - listens for events as it travels down from the DOM, rather than traveling up from the DOM.
 
 
+Event Delegation: Implementing Page Navigation
+- anchors automatically move the page in html
+- alot better and more efficent.
+- We simply added one big eventlistener, then we determined where the clicks came from.
+- NEED TO REVIEW.
+-
+-
+-
+
+
 
 
 Project Bankist Website 
 - Node list is not an array, but it has a forEach method.
--
+- The better solution is to use event delegation. This uses the logic of bubbling.
 -
 -
 -

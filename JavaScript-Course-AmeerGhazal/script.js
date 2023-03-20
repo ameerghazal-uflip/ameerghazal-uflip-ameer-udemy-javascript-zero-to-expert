@@ -7,6 +7,8 @@ const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
 
 const openModal = function (e) {
   e.preventDefault();
@@ -30,11 +32,7 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-// Lesson 188: Smooth Scrolling
-
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1');
-
+// Button Scrolling
 btnScrollTo.addEventListener('click', function (e) {
   const s1coords = section1.getBoundingClientRect();
   console.log(s1coords);
@@ -64,39 +62,25 @@ btnScrollTo.addEventListener('click', function (e) {
   section1.scrollIntoView({ behavior: 'smooth' });
 });
 
-// Lesson 191: Event Propagation in Practice
-// rgb(255,255,255)
+// Lesson 192 Event Delegation: Implementing Page Navigation
 
-const randomInt = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1) + min);
+// document.querySelectorAll('.nav__link').forEach(function (element) {
+//   element.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     const id = this.getAttribute('href');
+//     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+//     console.log(id);
+//   });
+// });
 
-const randomColor = () =>
-  `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+// 1. Add event listener to common parent element.
+// 2. Determine what element originated the event
 
-console.log(randomColor());
-
-// this is the lowest on the parent scope, so it runs then bubbles up. Due to bubbling, it is run more than once.
-document.querySelector('.nav__link').addEventListener('click', function (e) {
-  this.style.backgrondColor = randomColor();
-  console.log('LINK', e.target, e.currentTarget);
-  console.log(e.currentTarget === this);
-
-  // Stop propagration
-  e.stopPropagation();
-});
-
-// at this point, this is higher on the parent scope.
 document.querySelector('.nav__links').addEventListener('click', function (e) {
-  this.style.backgrondColor = randomColor();
-  console.log('LINK', e.target, e.currentTarget);
+  e.preventDefault();
+  // Matching Strategy
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
 });
-
-document.querySelector('.nav').addEventListener(
-  'click',
-  function (e) {
-    this.style.backgrondColor = randomColor();
-    console.log('LINK', e.target, e.currentTarget);
-  },
-  true
-);
-// using the third param flips it to the capturing phase.
