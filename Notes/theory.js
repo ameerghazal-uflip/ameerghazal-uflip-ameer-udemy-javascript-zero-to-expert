@@ -1295,16 +1295,14 @@ Types of Events and Event Handlers
 
 
 
-
-
 Event Propagation: Bubbling And Capturing
--
--
--
--
--
--
--
+- First, it starts with a capturing phase from the doc, to the html, to the body, ... down the class ladder.
+- Once it gets to the correct element, the targeting phase beings & an eventListener is run.
+- From there, once the click is run, there is a bubbling phase which passes through all the parent elements but not the child ones. 
+- As the event bubbles through the parent elements, it is as if the event happened in that parent element: this means that if we attached something to a parent of the lower parent, it would be run twice. Therefore, this is very important for patterns.
+- We have capturing specific events. 
+- Also, not all events have capturing and bubbling.
+- We call this propogration.
 -
 -
 -
