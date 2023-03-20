@@ -1242,15 +1242,20 @@ Selecting, Creating, and Deleting Elements
 - .remove() removes the element & the old way is .parentElement.removeChild(...);
 
 Styles, Attributes, and Classes
+- We can change CSS styles by using .style.certainCSS (such as width, backgroundColor, etc.)
+- We cannot get a style that we did not manually set ourselves in the js file. For example, we cannot print a style that may be hidden in a css class or may not even exist.
+- getComputedStyle(Selector.elementNeeded); can access the css file and return the element needed if not set in the js file.
+- .setProperty we can pass in the name of the value and the property 
+- We can also use .setProperty to all propertes (color, width, etc.)
+- If we select a logo for example, we can access the properties if they are standards (e.g. src, alt, className. etc.) -> we can do logo.src, ...
+- We can also set these values / edit them. For example, logo.alt = ...
+- If we want to select non-standard properties, we have to use the getAttribute(propName) method. 
+- To set / create these types of attributes, use selectedElement.setAttribute('propName', 'What it should be set to')
+- Sometimes, using the getAttribute() is the safer and better method to use due to relative vs. absolute links. SOme return abs. link, while the relative is exaclty how it is written in the html.
+- For data attributes, they begin with data-name-of-value. With data attributes, we can use selector.dataset.variableName to get the value. Note, we use camelCase even if the variable name uses dashes similar to what is shown above. 
+- Use classList because they allow us to add and remove classes by there names with interfering with classes that are already there. 
 -
 -
--
--
--
--
--
--
-
 
 Project Bankist Website 
 - Node list is not an array, but it has a forEach method.
