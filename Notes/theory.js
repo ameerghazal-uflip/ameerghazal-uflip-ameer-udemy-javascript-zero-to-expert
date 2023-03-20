@@ -1340,8 +1340,12 @@ DOM Traversing
 - using h1.childern gives us a live html collection of the direct children.
 - .closest is very important.
 - We can think of closest as the opposite of query selector. Query looks as deep as it can for the child, while closest looks at high as it needs for parents.
--
--
+
+Building a Tabbed Component
+- remove active.
+- active tabs & content area.
+- Guard clauses.
+- Event delegation.
 
 
 

@@ -71,31 +71,29 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
   }
 });
 
-// Lesson 193 DOM Traversing
-const h1 = document.querySelector('h1');
+// Lesson 194: Building a Tabbed Component
 
-// Going downwards: child elements
-console.log(h1.querySelectorAll('.highlight')); // which is the two green. They are direct children of h1, but either way it would go as deep as it needs
-console.log(h1.childNodes);
-console.log(h1.children);
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContainer = document.querySelector('.operations__tab-container');
+const tabsContent = document.querySelectorAll('.operations__content');
 
-h1.firstElementChild.style.color = 'white';
-h1.lastElementChild.style.color = 'orangered';
+// use event delegation: attach event handler to common parent
+tabsContainer.addEventListener('click', function (e) {
+  const clicked = e.target.closest('.operations__tab'); // finds the closest parent with the class name.
 
-// Going upwards: parents
-console.log(h1.parentNode);
-console.log(h1.parentElement);
+  // Guard clause: nothing clicked (clicking outside)
+  if (!clicked) return;
+  // we could also say that if (true) { do the code }, but above is simpler.
 
-h1.closest('.header').style.background = 'var( --gradient-secondary)';
+  // Remove active classes
+  tabs.forEach(t => t.classList.remove('operations__tab--active')); // removes the current
+  tabsContent.forEach(c => c.classList.remove('operations__content--active'));
 
-// Going sideways: siblings
-console.log(h1.previousElementSibling);
-console.log(h1.nextElementSibling);
+  // Activate tab
+  clicked.classList.add('operations__tab--active');
 
-console.log(h1.previousSibling);
-console.log(h1.nextSibling);
-
-console.log(h1.parentElement.children);
-[...h1.parentElement.children].forEach(function (el) {
-  if (el !== h1) el.style.transform = 'scale(0.5)';
+  // Activate Content Area
+  document
+    .querySelector(`.operations__content--${clicked.dataset.tab}`)
+    .classList.add('operations__content--active');
 });
