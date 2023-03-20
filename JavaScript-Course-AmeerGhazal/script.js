@@ -64,19 +64,39 @@ btnScrollTo.addEventListener('click', function (e) {
   section1.scrollIntoView({ behavior: 'smooth' });
 });
 
-// Lesson 189: Types of Events & Event Handlers
+// Lesson 191: Event Propagation in Practice
+// rgb(255,255,255)
 
-const h1 = document.querySelector('h1');
-const alerth1 = function (e) {
-  alert('addEventListener: Great! You are reading the heading ;)');
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
 
-  h1.removeEventListener('mouseenter', alerth1);
-};
+const randomColor = () =>
+  `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
 
-h1.addEventListener('mouseenter', alerth1);
-setTimeout(() => h1.removeEventListener('mouseenter', alerth1), 5000);
+console.log(randomColor());
 
-// this is an old school method
-// h1.onmouseenter = function (e) {
-//   alert('addEventListener: Great! You are reading the heading ;)');
-// };
+// this is the lowest on the parent scope, so it runs then bubbles up. Due to bubbling, it is run more than once.
+document.querySelector('.nav__link').addEventListener('click', function (e) {
+  this.style.backgrondColor = randomColor();
+  console.log('LINK', e.target, e.currentTarget);
+  console.log(e.currentTarget === this);
+
+  // Stop propagration
+  e.stopPropagation();
+});
+
+// at this point, this is higher on the parent scope.
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  this.style.backgrondColor = randomColor();
+  console.log('LINK', e.target, e.currentTarget);
+});
+
+document.querySelector('.nav').addEventListener(
+  'click',
+  function (e) {
+    this.style.backgrondColor = randomColor();
+    console.log('LINK', e.target, e.currentTarget);
+  },
+  true
+);
+// using the third param flips it to the capturing phase.

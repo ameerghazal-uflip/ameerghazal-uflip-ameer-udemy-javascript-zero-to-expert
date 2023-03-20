@@ -1302,10 +1302,29 @@ Event Propagation: Bubbling And Capturing
 - As the event bubbles through the parent elements, it is as if the event happened in that parent element: this means that if we attached something to a parent of the lower parent, it would be run twice. Therefore, this is very important for patterns.
 - We have capturing specific events. 
 - Also, not all events have capturing and bubbling.
-- We call this propogration.
--
--
--
+- We call this propogation.
+
+Event Propagation in Practice
+- We can apply the random integer in range method to many different scenarios; for example, selecting a random color.
+- Bubbling logic: so we first capture down to the lowest call, then we bubble back up. When we bubble back up, it is as if the event happened in the parent element.
+- In this case, the links side header is run twice becasue the link event listener already indirectly calls it once. 
+- This is the same logic for the entire nav, which would be run 3 times in this case. 
+- If we check the target with event.targer (from the function) we can see that they are all from the lowest in the scope due to bubbling. 
+If we use e.currentTarget, we can find the actual one called, which is equal to the this keyword.
+- currentTarget === this keyword in any event handler.
+- we can use e.stopPropagation() to stop the bubbling and capturing; however, this is not a good idea to do, typically. 
+- Capturing phase is usually irrelevant, but if do want it, we can set a third parameter in the addEventListener set to true to check for capturing events instead of bubbling events. 
+
+document.querySelector('.nav').addEventListener(
+  'click',
+  function (e) {
+    this.style.backgrondColor = randomColor();
+    console.log('LINK', e.target, e.currentTarget);
+  },
+  true
+);
+- listens for events as it travels down from the DOM, rather than traveling up from the DOM.
+
 
 
 
