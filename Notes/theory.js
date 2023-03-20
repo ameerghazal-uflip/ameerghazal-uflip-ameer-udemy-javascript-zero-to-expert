@@ -1226,16 +1226,30 @@ How the DOM Really Works
 - Any HTML element has acesses to .addEventListener(), .cloneNode() or .closest() methods. 
 
 Selecting, Creating, and Deleting Elements
+- We can do document.documentElement (head, body, etc.) to get the html things.
+- To select more than one html element, use document.querlySelectorAll. This returns a node list of the the elements matching the selector. 
 -
--
--
--
--
--
--
--
+- document.getElementsByTagName(...); returns a live HTML collection, which is different from a node list. It updates automatically, which does not happen in a node list.
+- document.getElementsByClassName(...) functions simialry to the others and returns a live collection. These are nice, but the query selctor does the job similary. 
+- .insertAdjacentHTML is a quick and easy way to create elements. Check notes & MDN
+- document.createElement('tagName') creates and returns a dom element that we can save somewhere. It is not yet in the DOM itself, but can use it. IF we want it on the page, we must manually insert it. 
+- We can use .classList.add(cssElement), etc. to add, remove, etc. something to the DOM element. 
+- header.prepend(..) inserts the element as the first child of the outer element. 
+- .append(..) inserts the element as the last child of the outer element.
+- The element can not be at two places at once, the most recent one is used. DOM element can be use at one place at one time.
+- we can use header.append(message.cloneNode(true)) to display the DOM element more than onde (use .cloneNode(true), this creates a copy).
+- .before() & .after() display as noted.
+- .remove() removes the element & the old way is .parentElement.removeChild(...);
 
-
+Styles, Attributes, and Classes
+-
+-
+-
+-
+-
+-
+-
+-
 
 
 Project Bankist Website 
