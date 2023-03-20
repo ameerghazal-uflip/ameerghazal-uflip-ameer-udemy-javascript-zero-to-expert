@@ -1331,9 +1331,6 @@ Event Delegation: Implementing Page Navigation
 - alot better and more efficent.
 - We simply added one big eventlistener, then we determined where the clicks came from.
 - NEED TO REVIEW.
--
--
--
 
 DOM Traversing
 - Query selector & queryselctorall go as deep as they need to be.
@@ -1347,7 +1344,13 @@ Building a Tabbed Component
 - Guard clauses.
 - Event delegation.
 
-
+Passing Arguments to Event Handlers
+-
+-
+-
+-
+-
+-
 
 
 Project Bankist Website 
