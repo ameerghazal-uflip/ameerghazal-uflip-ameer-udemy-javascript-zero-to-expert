@@ -1275,8 +1275,39 @@ Implementing Smooth Scrolling
 - For simpler standards - only applicable in modern browsers - use .scrollIntoView({behavior: ...})
 
 
+Types of Events and Event Handlers
+- mouseenter is similer to the hover in css. When a user hovers over the spot, the event listener is run.
+- There are many event handlers in mdn.
+- Old school method: we can use onNameOfEvent (onmouseenter) & set it equal to the function.
+- Benifits of using an addEventListeners: 1. does not override other prop callings. 2. We can remove eventListeners with .removeEventListner() but we have to export the function
+- the remove does not need to be in the exported function. 
+- Also, the remove can be within a timer.
+- we can also just edit within the html file (e.g. <h1 onclick ="alert('ccc)"></h1>), but this should not be done.
+
+        const h1 = document.querySelector('h1');
+        const alerth1 = function (e) {
+        alert('addEventListener: Great! You are reading the heading ;)');
+
+        h1.removeEventListener('mouseenter', alerth1);
+        };
+
+        h1.addEventListener('mouseenter', alerth1);
 
 
+
+
+
+Event Propagation: Bubbling And Capturing
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
 
 
 
