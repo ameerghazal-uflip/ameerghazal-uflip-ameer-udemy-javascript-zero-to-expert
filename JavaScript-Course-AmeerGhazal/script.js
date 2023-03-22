@@ -306,8 +306,14 @@ const slider = function () {
 
 slider(); // calls the function.
 
-// Lesson 202: Lifecycle DOM Events
+// Lesson 203: Efficent Script Loading: Defer and Async
 
 document.addEventListener('DOMContentLoaded', function (e) {
   console.log('HTML parsed and DOM tree built!', e);
+});
+
+window.addEventListener('beforeunload', function (e) {
+  e.preventDefault();
+  console.log(e);
+  e.returnValue = '';
 });

@@ -1419,12 +1419,12 @@ window.addEventListener('beforeunload', function (e) {
 
 Efficent Script Loading: Defer and Async
 - Up until now, we have used regular script tag: <script src =...></script>
-- There are new features now, though. 
--
--
--
--
--
+- There are new features now, though: async & defer
+<sript async src></sript> & <script defer src></script>
+- Regular tag in the end: Parsed, fetched, executed (DOMContentLoaded)
+- Async head: Scripts are feteched asyncrongly and exectued immenidatly. DOMContentLoaded does not wait for an async script. Scripts not guranteed to execute in order. When order does not matter, this may be the best
+- Defer head: scripts are fetched asybcibsky and exceuted after HTML is compleyely parsed. DOMContentLoaded event fires after defer script is exectued. Scripts are executed in order. This is the best overall solution.
+- Async & Defer do not make sense at the end. 
 
 
 Project Bankist Website 
