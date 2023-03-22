@@ -1347,6 +1347,12 @@ Building a Tabbed Component
 Passing Arguments to Event Handlers
 - mouseenter does not bubble, while mouseover does. 
 - Opposite of mouseover is mouseout, opp. of mouseenter is mouseleave
+- .closest().
+- for call back functions when we want to use another method, use .bind and pass in the "argument", which is techinally setting the this keyword.
+-ex: nav.addEventListener('mouseover', handleHover.bind(0.5)); // this is set to 0.5 or 1 based on the argument
+
+Implementing a Sticky Navigatin: The Scroll Event
+- Scroll is event is not very efficent and should usually be avoidded. 
 -
 -
 -
@@ -1356,8 +1362,7 @@ Passing Arguments to Event Handlers
 Project Bankist Website 
 - Node list is not an array, but it has a forEach method.
 - The better solution is to use event delegation. This uses the logic of bubbling.
--
--
--
+- we can use the window.scrollY to add a sticky class.
+- selector.getBoudingClientRect() returns the current portion of the page with a Dom object (x, y, width, top, etc/)-
 
 */

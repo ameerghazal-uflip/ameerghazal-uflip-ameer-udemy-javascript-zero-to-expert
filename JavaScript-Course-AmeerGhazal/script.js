@@ -9,6 +9,10 @@ const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContainer = document.querySelector('.operations__tab-container');
+const tabsContent = document.querySelectorAll('.operations__content');
+const nav = document.querySelector('.nav');
 
 const openModal = function (e) {
   e.preventDefault();
@@ -72,9 +76,6 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 });
 
 //Building a Tabbed Component
-const tabs = document.querySelectorAll('.operations__tab');
-const tabsContainer = document.querySelector('.operations__tab-container');
-const tabsContent = document.querySelectorAll('.operations__content');
 
 // use event delegation: attach event handler to common parent
 tabsContainer.addEventListener('click', function (e) {
@@ -114,10 +115,21 @@ const handleHover = function (e) {
   }
 };
 
-const nav = document.querySelector('.nav');
-
 // Js expects an actual function. We can do better by using the bind method.
 nav.addEventListener('mouseover', handleHover.bind(0.5)); // this is set to 0.5 or 1 based on the argument
 
 // passing "argument" into handler
 nav.addEventListener('mouseout', handleHover.bind(1));
+
+// Lesson 196 Implementing a Sticky Navigatin: The Scroll Event
+
+const initalCoords = section1.getBoundingClientRect();
+console.log(initalCoords);
+window.addEventListener('scroll', function () {
+  console.log(window.scrollY);
+  if (window.scrollY > initalCoords.top) {
+    nav.classList.add('sticky');
+  } else {
+    nav.classList.remove('sticky');
+  }
+});
