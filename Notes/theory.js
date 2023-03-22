@@ -1461,6 +1461,23 @@ e.g. Array.prototype.map(), in which Array.prototype has access to all. So, tech
 
 
 
+Constructor functions and the new operator
+- Constructor is used with the new operator. Similar to java.
+- Arrow functions do not work as their own constructor due to no this keyword.
+- calling it we use the new operator
+- A new empty object is created. The this keyword = empty object. We initalize the values given (similar to java), as the object is linked to a prototype. From there, the function automatically returns the new object. 
+- The Person is basically the prototype which creates the objects. This is similar to js. Also, the argument with the new keyword input is also similar to js. Kind of like a constructor.
+- the instanceof method is similar to the one in OOP java.
+- We should never create a method inside a construcutor function.
+- e.g.:  const Person = function (firstName, birthYear) {
+         // Instance Properties: they will be avaliable for all
+        this.firstName = firstName;
+        this.birthYear = birthYear;
+        };
+     const matilda = new Person('Matil', '2018');
+
+
+
 Project Bankist Website 
 - Node list is not an array, but it has a forEach method.
 - The better solution is to use event delegation. This uses the logic of bubbling.
