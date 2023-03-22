@@ -1417,6 +1417,15 @@ window.addEventListener('beforeunload', function (e) {
 - There is also the load and DOMContentLoaded features.
 - Check the notes
 
+Efficent Script Loading: Defer and Async
+- Up until now, we have used regular script tag: <script src =...></script>
+- There are new features now, though. 
+-
+-
+-
+-
+-
+
 
 Project Bankist Website 
 - Node list is not an array, but it has a forEach method.
