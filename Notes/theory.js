@@ -1391,8 +1391,14 @@ ex:
             });
 
 
+Lazy Loading Images
+- The idea is to put a very small "lazy" image in the src under the img tab, and once scrolled to, replace this with the real image under the data-src. We hide the lazy with a CSS blur, and replace it when the time comes. 
+- We can specifally query select something under a tab by, for example, 'img[data-src]' or whatever name is spec. needed.
+-
+-            
 
-            
+
+
 Project Bankist Website 
 - Node list is not an array, but it has a forEach method.
 - The better solution is to use event delegation. This uses the logic of bubbling.
