@@ -1394,8 +1394,18 @@ ex:
 Lazy Loading Images
 - The idea is to put a very small "lazy" image in the src under the img tab, and once scrolled to, replace this with the real image under the data-src. We hide the lazy with a CSS blur, and replace it when the time comes. 
 - We can specifally query select something under a tab by, for example, 'img[data-src]' or whatever name is spec. needed.
+- to access data-sets, we need to use .dataset: 
+e.g.  entry.target.src = entry.target.dataset.src;
+- for rootMargin, just mess with it.
+
+Building a Slider Component, Part 1 & 2
+- using the <slider></slider>, <slide></slide> is very useful for future projects.
+- we can use the translateX(..)% for translating / moving the data left or right.
+e.g.: slide.style.transform = `translateX(${100 * (index - currentSlide)}%)`)
+- beforeend, adds it as the last child for the insertAdjacentHTM
+- insertingAdjacentHTML() can insert new HTML elements.
 -
--            
+-
 
 
 
