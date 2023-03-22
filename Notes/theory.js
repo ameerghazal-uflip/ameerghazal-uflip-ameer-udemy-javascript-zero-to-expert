@@ -1427,6 +1427,21 @@ Efficent Script Loading: Defer and Async
 - Async & Defer do not make sense at the end. 
 
 
+SECTION 14
+
+What is Object-Oriented Programming?
+-
+-
+-
+-
+-
+-
+-
+
+
+
+
+
 Project Bankist Website 
 - Node list is not an array, but it has a forEach method.
 - The better solution is to use event delegation. This uses the logic of bubbling.
