@@ -1427,18 +1427,37 @@ Efficent Script Loading: Defer and Async
 - Async & Defer do not make sense at the end. 
 
 
-SECTION 14
+SECTION 14 ----------
 
-What is Object-Oriented Programming?
--
--
--
--
--
--
--
+What is Object-Oriented Programming? (OOP)
+- Programming paradigm (basedon style) based on the concept of objects
+- We use objects to mdel real-world or abstract fts.
+- Objects may contain data (prop.) and code (methods). By using objects, we pack data and the correpsonding behavior into one block.
+- Objects are self-contained pieces of code.
+- Building blocks of applications and they interact with one another
+- Interactions happen through public interface (API): methods that the code outside of the object can access and use to communicate with the object.
+- Developed to organize code and make it more flexible and easier to maintain (avoiding spag. code).
+- Class is a blueprint to create new objects based on the rules designed in the class (abstract set of rules). For example, a blue print. Abstract class, similar to java.
+- Instance: real object used in the code, which is created from the class. For example, a house created from the abstract blueprint.
+- Abstraction, Encapsulation, Inheritance, Polymorphism are ways to create a class blue print.
+- Abstraction: ignoring details that don't matter, allowing us to overview. For example, creating a class about a phone with only the important details (screen, home btn, etc.)
+- Encapsulation: keeping some properties and methods private inside the class. So, they are no accessible from outside the class. (private ..., similar to java). Prevents external code from accidently manipulating data. Methods can also be private. Very similar rules to java.
+- Inheritance: Parent class and child class that extends the parent class. So, the child class inherites all the properties and methods from the parent class, but can also have its own methods & data. This is also similar to java. 
+- Polymorpihsm: Child classes can inherit and still override methods (using the same name, etc.)
 
 
+OOP in JavaScript
+- Objects are instantiated from a class.
+- Prototypes: all objects are linked to a prototype object.
+- Prototypal Inheritance: all objects that are linked to a prototype can access all the methods and behaviors linked to that prototype. Different from normal.
+- Behavior is delegated to the linked prototypes. Delegation.
+- Normally, in classical OOP, methods are copied from class to all instances, which is different from oop.
+- We have seen this already through, for example, the map method for arays.
+e.g. Array.prototype.map(), in which Array.prototype has access to all. So, technically, the map method is accessible to any array.
+- How to implement OOP:
+    - Constructor function: create objects from a function, similar to Arrays, Maps, Sets, etc.
+    - ES6 Class: Modern alternative, work exactly like constructor functions, do not behave like classical oop (nicer syntax).
+    - Object.create(): easiest and most straightforward way of linking an object to a prototype object. 
 
 
 
