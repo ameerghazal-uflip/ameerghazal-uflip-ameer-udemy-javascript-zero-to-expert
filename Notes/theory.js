@@ -1345,8 +1345,8 @@ Building a Tabbed Component
 - Event delegation.
 
 Passing Arguments to Event Handlers
--
--
+- mouseenter does not bubble, while mouseover does. 
+- Opposite of mouseover is mouseout, opp. of mouseenter is mouseleave
 -
 -
 -

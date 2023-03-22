@@ -98,3 +98,26 @@ tabsContainer.addEventListener('click', function (e) {
 });
 
 // Lesson 195: Passing Arguments to Event Handlers
+
+// Menu fade animation
+const handleHover = function (e) {
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    // instead of moving up manually, we can search for a parent that matches the query
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
+
+    siblings.forEach(el => {
+      if (el !== link) el.style.opacity = this;
+    });
+    logo.style.opacity = this;
+  }
+};
+
+const nav = document.querySelector('.nav');
+
+// Js expects an actual function. We can do better by using the bind method.
+nav.addEventListener('mouseover', handleHover.bind(0.5)); // this is set to 0.5 or 1 based on the argument
+
+// passing "argument" into handler
+nav.addEventListener('mouseout', handleHover.bind(1));
