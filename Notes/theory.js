@@ -1404,9 +1404,14 @@ Building a Slider Component, Part 1 & 2
 e.g.: slide.style.transform = `translateX(${100 * (index - currentSlide)}%)`)
 - beforeend, adds it as the last child for the insertAdjacentHTM
 - insertingAdjacentHTML() can insert new HTML elements.
--
--
 
+
+Lifecycle DOM Events
+-
+-
+-
+-
+-
 
 
 Project Bankist Website 

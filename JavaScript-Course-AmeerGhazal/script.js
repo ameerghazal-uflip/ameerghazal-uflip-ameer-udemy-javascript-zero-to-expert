@@ -192,7 +192,6 @@ const imgTargets = document.querySelectorAll('img[data-src]');
 
 const loadImg = function (entries, observer) {
   const [entry] = entries;
-  console.log(entry);
 
   if (!entry.isIntersecting) return;
 
@@ -306,3 +305,9 @@ const slider = function () {
 };
 
 slider(); // calls the function.
+
+// Lesson 202: Lifecycle DOM Events
+
+document.addEventListener('DOMContentLoaded', function (e) {
+  console.log('HTML parsed and DOM tree built!', e);
+});
