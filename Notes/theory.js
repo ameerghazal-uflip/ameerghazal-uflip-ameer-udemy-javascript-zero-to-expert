@@ -1407,11 +1407,15 @@ e.g.: slide.style.transform = `translateX(${100 * (index - currentSlide)}%)`)
 
 
 Lifecycle DOM Events
--
--
--
--
--
+- we can use beforeunload to ask the user if they are sure they want to leave the site.
+e.g. 
+window.addEventListener('beforeunload', function (e) {
+  e.preventDefault();
+  console.log(e);
+  e.returnValue = '';
+});
+- There is also the load and DOMContentLoaded features.
+- Check the notes
 
 
 Project Bankist Website 
