@@ -1353,16 +1353,21 @@ Passing Arguments to Event Handlers
 
 Implementing a Sticky Navigatin: The Scroll Event
 - Scroll is event is not very efficent and should usually be avoidded. 
--
--
--
--
+- we can use the window.scrollY to add a sticky class.
+- selector.getBoudingClientRect() returns the current portion of the page with a Dom object (x, y, width, top, etc/)-
+
+The Intersection Observer API
+- IntersectionObserver requires a call back function and an options object.
+- we call it using the .observe()
+- Whenever the target (section1) is intersecting the viewport (root) at (threshold percent), the callback function is called with two arguements (entries, observer)
+- We can have multiple thresholds. So the entries argument is an array of the thresholds
+- So, when calling .observe, we used section1 as our parameter; therefore, IntersectionObserverEntry is only run during that section. Also, through the thresehold's given. 
+- root: null, since we are intereseted in the entire viewport,
+- rootMargin: pixels that 
 
 
 Project Bankist Website 
 - Node list is not an array, but it has a forEach method.
 - The better solution is to use event delegation. This uses the logic of bubbling.
-- we can use the window.scrollY to add a sticky class.
-- selector.getBoudingClientRect() returns the current portion of the page with a Dom object (x, y, width, top, etc/)-
 
 */
