@@ -1426,6 +1426,10 @@ Efficent Script Loading: Defer and Async
 - Defer head: scripts are fetched asybcibsky and exceuted after HTML is compleyely parsed. DOMContentLoaded event fires after defer script is exectued. Scripts are executed in order. This is the best overall solution.
 - Async & Defer do not make sense at the end. 
 
+Project Bankist Website 
+- Node list is not an array, but it has a forEach method.
+- The better solution is to use event delegation. This uses the logic of bubbling.
+
 
 SECTION 14 ----------
 
@@ -1478,8 +1482,13 @@ Constructor functions and the new operator
 
 
 
-Project Bankist Website 
-- Node list is not an array, but it has a forEach method.
-- The better solution is to use event delegation. This uses the logic of bubbling.
+
+Prototypes
+-
+-
+-
+-
+-
+
 
 */
