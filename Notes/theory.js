@@ -1368,12 +1368,31 @@ The Intersection Observer API
 Revealing Elements on Scroll
 - .unobserve is the opposite of observe, which is good for pereformence. 
 - .classList, like previously, can remove and add hidden sections.
--
--
--
--
+- Another used case of the Intersection Observer APi
+ex: 
+            const allSections = document.querySelectorAll('.section');
+            const revealSection = function (entries, observer) {
+            const [entry] = entries;
+            console.log(entry);
+
+            if (!entry.isIntersecting) return; // if not intersecting, it fails
+            entry.target.classList.remove('section--hidden');
+            observer.unobserve(entry.target);
+            };
+
+            const sectionObserver = new IntersectionObserver(revealSection, {
+            root: null,
+            threshold: 0.15,
+            });
+
+            allSections.forEach(section => {
+            sectionObserver.observe(section);
+            section.classList.add('section--hidden');
+            });
 
 
+
+            
 Project Bankist Website 
 - Node list is not an array, but it has a forEach method.
 - The better solution is to use event delegation. This uses the logic of bubbling.
