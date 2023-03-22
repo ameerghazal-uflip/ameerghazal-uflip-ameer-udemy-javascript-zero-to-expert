@@ -1363,7 +1363,15 @@ The Intersection Observer API
 - We can have multiple thresholds. So the entries argument is an array of the thresholds
 - So, when calling .observe, we used section1 as our parameter; therefore, IntersectionObserverEntry is only run during that section. Also, through the thresehold's given. 
 - root: null, since we are intereseted in the entire viewport,
-- rootMargin: pixels that 
+- rootMargin: pixels that...
+
+Revealing Elements on Scroll
+- .unobserve is the opposite of observe, which is good for pereformence. 
+- .classList, like previously, can remove and add hidden sections.
+-
+-
+-
+-
 
 
 Project Bankist Website 
