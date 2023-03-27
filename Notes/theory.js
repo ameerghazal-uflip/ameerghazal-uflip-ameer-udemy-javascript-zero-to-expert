@@ -1616,7 +1616,16 @@ Inheritance Between "Classes": Object.create
 
 Another Class Example
 - Internal methods are something we need, but it also means we need data privacy.
+- This is similar to java and other programming languages.
 
 
+Encapsulation: Protected Properties and Methods
+- Means to keep some properties private in the class.
+- Prevents code from being manipulated.
+- Javascript classes do not yet support real data privacy / encapsulation
+- Use a convention underscorer to mark a protected property
+- Accessible data if we an underscorer outside; however, people with furthur know to not touch that data outside of the class. 
+- Create a getter or a getMovements of some sort.
+- "_.propName" deems the data "protected."
 
 */
