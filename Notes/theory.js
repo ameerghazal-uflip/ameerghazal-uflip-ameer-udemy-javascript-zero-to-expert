@@ -1591,8 +1591,28 @@ Inheritance Between "Classes": ES6 Classes
 - In the constructor use the super keyword with the parameter. 
 - Also, we do not need to have another parameter, we could simply just add new specific methods for the class.
 - If the parameters were the same, we would not need to define a constrcutor as the default would already call the parent constructor (this is similar to java when defining constructors with parameters)
--
--
+- All of it was very similar to Java.
 
+Inheritance Between "Classes": Object.create
+- Starts with the PersonProto object. With the const StudentProto = Object.create(PersonProto); and const jay = Object.create(StudentProto);
+- Student inherits from the Person, and Jay inherits from the student which inherits from the person.
+- In this version, we link objects.
+- Also, we can define methods within: ex:
+
+        const StudentProto = Object.create(PersonProto);
+        StudentProto.init = function (firstName, birthYear, course) {
+        PersonProto.init.call(this, firstName, birthYear);
+        this.course = course;
+        };
+
+        StudentProto.introduce = function () {
+        console.log(`My name is ${this.firstName}, and I study ${this.course}.`);
+        };
+        const jay = Object.create(StudentProto);
+        jay.init('Jay', 2010, 'CS');
+        jay.introduce();
+        jay.calcAge();
+-
+-
 
 */
