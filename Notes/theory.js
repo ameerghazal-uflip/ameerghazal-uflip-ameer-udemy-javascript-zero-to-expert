@@ -1545,12 +1545,16 @@ ES6 Classes
 }
 
 Setters & Getters
--
--
--
--
--
--
+- We can use getters and setters like in java. We can make them the same name differed by get, set. With that said, setters need parameters. 
+- Need to use get or set keywords following by the functionName.
+- Everytime we pass in, for example, a full name the setter is called but to avoid bugs, we use a _ before the variable we are trying to assign and we use a getter.
+- We don't need to user getter or setters, but they are helpful.
 
+Static Methods 
+-
+-
+-
+-
+-
 
 */
