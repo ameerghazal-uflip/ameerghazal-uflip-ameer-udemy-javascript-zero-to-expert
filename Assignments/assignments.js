@@ -1,42 +1,65 @@
 "use strict";
 
-// Section 14 Coding Challenge 3
+// Section 14 Coding Challenge 4
 
-const Car = function (make, speed) {
-  this.make = make;
-  this.speed = speed;
-};
+class CarCl {
+  // Parent Class
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+  }
 
-Car.prototype.accelerate = function () {
-  this.speed += 10;
-};
+  accelerate() {
+    this.speed += 10;
+    console.log(this.speed);
+  }
 
-Car.prototype.brake = function () {
-  this.speed -= 5;
-  console.log(this.speed);
-};
+  brake() {
+    this.speed -= 5;
+    console.log(this.speed);
+    return this; // chainable
+  }
 
-// New Stud
-const EV = function (make, speed, charge) {
-  Car.call(this, make, speed);
-  this.charge = charge;
-};
+  get speedUS() {
+    return this.speed / 1.6; // in mi/h
+  }
 
-EV.prototype = Object.create(Car.prototype); // makes the EV class a chlid.
+  set speedUS(speed) {
+    this.speed = speed * 1.6; // km/h conversion
+  }
+}
 
-EV.prototype.chargeBattery = function (chargeTo) {
-  this.charge = chargeTo;
-};
+class EVCl extends CarCl {
+  // Child Class
+  // extends makes it a child
+  #charge; // private field
 
-EV.prototype.accelerate = function () {
-  this.speed += 20;
-  this.charge -= 1; // percent
-  console.log(
-    `${this.make} going at ${this.speed} km/h, with a charge of ${this.charge}.`
-  );
-};
+  constructor(make, speed, charge) {
+    super(make, speed); // calls the parent
+    this.#charge = charge; // initialzes the private
+  }
 
-const electric = new EV("Tesla", 120, 23);
-electric.chargeBattery(90);
-electric.accelerate();
-electric.brake();
+  chargeBattery(chargeTo) {
+    this.#charge = chargeTo;
+    return this;
+  }
+
+  accelerate() {
+    this.speed += 20;
+    this.#charge--;
+    console.log(
+      `${this.make} going at ${this.speed} km/h, with a charge of ${
+        this.#charge
+      }.`
+    );
+    return this; // makes it chainable.
+  }
+}
+
+const electric = new EVCl("Rivian", 120, 23);
+console.log(electric.accelerate());
+console.log(electric.brake());
+console.log(electric.chargeBattery(90));
+
+// chain testing
+console.log(electric.accelerate().brake().chargeBattery(78));
