@@ -1,67 +1,85 @@
 'use strict';
 
-// Lesson 225: Chaining Methods
+// Lesson 226: ES6 Class Summary
 
-// 1) Public fields
-// 2) Private fields
-// 3) Public Methods
-// 4) Private methods
-// 5 - 8) Static versions
-
-class Account {
-  // 1) Public Fields (Instances)
-  locale = navigator.language;
-
-  // 2) Private fields
-  #movements = []; // protected
-  #pin; // empty and redefined later
-
-  constructor(owner, currency, pin) {
-    this.owner = owner;
-    this.currency = currency;
-    this.#pin = pin;
-    console.log(`Thanks for opening an account, ${owner}`);
-    // this.locale = navigator.language; // putting it here is the same as about
-    // this._movements = [];
+class Person {
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
+    this.birthYear = birthYear;
   }
 
-  // Public Methods
-  // Public interface of the objects.
-  getMovements() {
-    return this.#movements;
+  // Methods will be added to .prototype property: Instance Methods.
+  calcAge() {
+    console.log(2037 - this.birthYear);
   }
 
-  deposit(val) {
-    this.#movements.push(val);
-    return this;
+  greet() {
+    console.log(`Hey ${this.firstName}`);
   }
 
-  withdraw(val) {
-    this.deposit(-val);
-    return this;
+  get age() {
+    return 2037 - this.birthYear;
   }
 
-  requestLoan(val) {
-    if (this._approveLoan(val)) {
-      this.deposit(val);
-      console.log(`Loan approved`);
-      return this;
-    }
+  // Setting a property that already exits
+  set fullName(name) {
+    if (name.includes(' ')) this._fullName = name;
+    else alert(`${name} is not a full name!`);
   }
 
-  // Static method
-  static helper() {
-    console.log('help');
+  get fullName() {
+    return this._fullName;
   }
 
-  // Private methods (put a #)
-  _approveLoan(val) {
-    return true;
+  // Static Methods
+  static hey() {
+    console.log('Hey there');
+    console.log(this);
+  }
+} // Parent Class
+
+class Student extends Person {
+  // Child / Sub-class
+  university = 'University of Houston'; // public field
+  #studyHours = 0; // private field
+  #course; // private & initialized later
+  static numSubjects = 10; // static field
+
+  // constrcutor
+  constructor(fullName, birthYear, startYear, course) {
+    super(fullName, birthYear); // calls the parent constructor
+    this.startYear = startYear;
+    this.#course = course;
+  }
+
+  // public methods
+  introduce() {
+    console.log(`I study ${this.#course} at ${this.university}`);
+  }
+
+  study(h) {
+    this.#makeCoffee();
+    this.#studyHours += h;
+  }
+
+  // private method
+  #makeCoffee() {
+    return `Here is a coffee for you!`;
+  }
+
+  // getters & setters
+  get testScore() {
+    return this._testScore; // protected field
+  }
+
+  set testScore(score) {
+    this._testScore = score < 20 ? score : 0;
+  }
+
+  // static method
+  static printCurriculum() {
+    console.log(`There are ${this.numSubjects} subjects`);
   }
 }
 
-const acc1 = new Account('Jonas', 'EUR', 1111);
-// Chaining
-Account.helper(); // must use the acutal class
-acc1.deposit(300).deposit(500).withdraw(35).requestLoan(25000).withdraw(4000);
-console.log(acc1.getMovements());
+const student = new Student('Jonas', 2020, 2037, 'Medicine');

@@ -1642,6 +1642,13 @@ Encapsulation: Private Class Fields and Methods
 Chaining Methods
 - Returning this will make the method chainable.
 
-
+ES6 Class Summary
+- public fields are available on created object. Common to all the objects
+- private fields are no accessible outside of class.
+- static public fields are avaiable only on class
+- constrcutor method can be ommited if defualt with the same parameters
+- Instance property in constrcutor is uniqe to the object.
+- getters & setters: use "_" to set property with the same name as method and add it to the getter.
+- static methods: only on class, cannot access instance properites nor methods, only static ones.
 
 */
