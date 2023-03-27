@@ -1434,8 +1434,8 @@ Project Bankist Website
 SECTION 14 ----------
 
 What is Object-Oriented Programming? (OOP)
-- Programming paradigm (basedon style) based on the concept of objects
-- We use objects to mdel real-world or abstract fts.
+- Programming paradigm (basedon style) based on the concept of objects.
+- We use objects to model real-world or abstract fts.
 - Objects may contain data (prop.) and code (methods). By using objects, we pack data and the correpsonding behavior into one block.
 - Objects are self-contained pieces of code.
 - Building blocks of applications and they interact with one another
@@ -1484,6 +1484,21 @@ Constructor functions and the new operator
 
 
 Prototypes
+- All objects created thoguh the same constructor, they have access to all the methods defined on the prototpye propery/.
+- So, for example, we can use the className.prototype.propName = ...
+EX: Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
+- This is much better than redefining it many times.
+- Any object has access to its prototype. This is very similar to classes in a way. For example, a Person class in java where a instance can use the clas methods.
+- Person.prototype.isPrototypeof(...)
+- .__proto__ proto property value is set to the prototype property of the contructor function.
+- We can also add a property of some sort. For example, species: Person.prototype.species = 'Dog'.
+- This would go under the .__proto__ object so it wouldn't directly inside of the jonas object. It has access to it by jonas.species , but if we use the
+.hasOwnProperty, we see that it returns false.
+
+Prototypal Inheritance and The Prototype Chain
+-
 -
 -
 -
