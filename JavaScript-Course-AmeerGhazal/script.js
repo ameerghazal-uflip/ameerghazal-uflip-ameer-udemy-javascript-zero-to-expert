@@ -1,6 +1,6 @@
 'use strict';
 
-// Lesson 214: Setters & Getters
+// Lesson 215: Static Methods
 
 class PersonC1 {
   constructor(fullName, birthYear) {
@@ -8,7 +8,7 @@ class PersonC1 {
     this.birthYear = birthYear;
   }
 
-  // Methods will be added to .prototype property.
+  // Methods will be added to .prototype property: Instance Methods.
   calcAge() {
     console.log(2037 - this.birthYear);
   }
@@ -30,28 +30,19 @@ class PersonC1 {
   get fullName() {
     return this._fullName;
   }
+
+  // Static Methods
+  static hey() {
+    console.log('Hey there');
+    console.log(this);
+  }
 }
+
+PersonC1.hey();
 
 const jessica = new PersonC1('Jessica Davis', 1996);
 jessica.calcAge();
 console.log(jessica.age);
 console.log(jessica.__proto__ == PersonC1.prototype);
 
-const walter = new PersonC1('Walter', 1956);
-
-const account = {
-  owwner: 'Jonas',
-  movements: [200, 5340, 30, 30, 400],
-
-  get latest() {
-    return this.movements.slice(-1).pop();
-  },
-
-  set latest(mov) {
-    this.movements.push(mov);
-  },
-};
-
-console.log(account.latest); // uses the getter.
-account.latest = 50; // sets / adds the last element
-console.log(account.movements);
+//const walter = new PersonC1('Walter', 1956);

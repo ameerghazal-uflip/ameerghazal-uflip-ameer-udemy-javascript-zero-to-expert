@@ -1551,10 +1551,14 @@ Setters & Getters
 - We don't need to user getter or setters, but they are helpful.
 
 Static Methods 
--
--
--
--
--
+- Certain methods are attached to a constructor itself rather than to the prototype. For example, Array.from, or Number.parseInt().
+- These are very similar to java.
+- For the following example, we could not do jonas.hey() because it is not defined in the prototype
+Person.hey = function () {
+  console.log();
+};
+Person.hey();
+- for implementing static functions in a class, use the static keyword. When calling it, use the className.theFunctionName()
+- Instance methods are not static 
 
 */
