@@ -1572,4 +1572,19 @@ Object.create
 - We need Object.create() to link classes.
 - Object.create() creates a new object with the prototype object we pass in.
 
+Inheritance Between "Classes": Constructor Functions
+- Next up, we will be doing real inheritance between "classes".
+- For example, Person class, student class. Where the person is a parent class (generic) and the student class is a child class (specific).
+- Can be done with all 3 inheritance methods.
+- For subclasses we use the same parameters, but we add extra items for the specific case.
+- To call the parent constructor for these types of functions, we need to use the .call method to specifiy the this keyword:  
+        Person.call(this, firstName, birthYear);
+- For inheritance purposes, we want to set the underscorer prototype property for the student to the Person prototype (manual connection).
+- Student.prototype = Object.create(Person.prototype); this is how we set the prototype as Object.create creates such. From there, just note that the Object.prototype will sit on top of the Person.prototype.
+- This works very similar to java.
+- instanceof for similar prototypes returns true for many.
+- make sure to check that the constructor is being the normal class, not the parent. Student.prototype.constructor = Student;
+
+
+
 */

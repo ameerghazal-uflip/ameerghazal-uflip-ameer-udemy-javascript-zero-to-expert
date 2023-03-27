@@ -1,70 +1,32 @@
 'use strict';
 
-// Lesson 216: Object.Create
+// Lesson 218: Inheritance Between "Classes": Constructor Functions (1)
 
-class PersonC1 {
-  constructor(fullName, birthYear) {
-    this.fullName = fullName;
-    this.birthYear = birthYear;
-  }
-
-  // Methods will be added to .prototype property: Instance Methods.
-  calcAge() {
-    console.log(2037 - this.birthYear);
-  }
-
-  greet() {
-    console.log(`Hey ${this.firstName}`);
-  }
-
-  get age() {
-    return 2037 - this.birthYear;
-  }
-
-  // Setting a property that already exits
-  set fullName(name) {
-    if (name.includes(' ')) this._fullName = name;
-    else alert(`${name} is not a full name!`);
-  }
-
-  get fullName() {
-    return this._fullName;
-  }
-
-  // Static Methods
-  static hey() {
-    console.log('Hey there');
-    console.log(this);
-  }
-}
-
-PersonC1.hey();
-
-const jessica = new PersonC1('Jessica Davis', 1996);
-jessica.calcAge();
-console.log(jessica.age);
-console.log(jessica.__proto__ == PersonC1.prototype);
-
-//const walter = new PersonC1('Walter', 1956);
-
-const PersonProto = {
-  calcAge() {
-    console.log(2037 - this.birthYear);
-  },
-
-  init(firstName, birthYear) {
-    this.firstName = firstName;
-    this.birthYear = birthYear;
-  },
+// Constructor function
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
 };
 
-const steven = Object.create(PersonProto);
-steven.name = 'Steven';
-steven.birthYear = 2002;
-steven.calcAge();
+Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
 
-console.log(steven.__proto__ == PersonProto);
+const Student = function (firstName, birthYear, course) {
+  Person.call(this, firstName, birthYear);
+  this.course = course;
+};
+// Linking Prototypes
+Student.prototype = Object.create(Person.prototype); // this connects the student class with the person class.
 
-const sarah = Object.create(PersonProto);
-sarah.init('Sarah', 1979);
-sarah.calcAge();
+Student.prototype.introduce = function () {
+  console.log(`My name is ${this.firstName}, and I study ${this.course}.`);
+};
+
+const mike = new Student('Mike', 2020, 'Computer Science');
+mike.introduce();
+mike.calcAge();
+
+console.log(mike.__proto__);
+Student.prototype.constructor = Student;
+console.dir(Student.prototype.constructor);
