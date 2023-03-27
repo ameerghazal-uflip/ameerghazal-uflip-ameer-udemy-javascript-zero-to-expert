@@ -1,6 +1,6 @@
 'use strict';
 
-// Lesson 215: Static Methods
+// Lesson 216: Object.Create
 
 class PersonC1 {
   constructor(fullName, birthYear) {
@@ -46,3 +46,25 @@ console.log(jessica.age);
 console.log(jessica.__proto__ == PersonC1.prototype);
 
 //const walter = new PersonC1('Walter', 1956);
+
+const PersonProto = {
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  },
+
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+
+const steven = Object.create(PersonProto);
+steven.name = 'Steven';
+steven.birthYear = 2002;
+steven.calcAge();
+
+console.log(steven.__proto__ == PersonProto);
+
+const sarah = Object.create(PersonProto);
+sarah.init('Sarah', 1979);
+sarah.calcAge();

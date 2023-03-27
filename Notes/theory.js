@@ -1559,6 +1559,17 @@ Person.hey = function () {
 };
 Person.hey();
 - for implementing static functions in a class, use the static keyword. When calling it, use the className.theFunctionName()
-- Instance methods are not static 
+- Instance methods are not static (the other methods).
+
+
+Object.create 
+- No constructor or new operator.
+- Links to the prototype that we pass in. 
+- We are basically defing the prototype and using object.create to make it an object in ways.
+- We manually set the prototypes of objects to whatever we want.
+- Same prototype chain (.__proto__)
+- This is the least used way.
+- We need Object.create() to link classes.
+- Object.create() creates a new object with the prototype object we pass in.
 
 */
