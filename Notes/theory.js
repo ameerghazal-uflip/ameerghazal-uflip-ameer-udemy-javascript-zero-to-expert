@@ -1628,4 +1628,23 @@ Encapsulation: Protected Properties and Methods
 - Create a getter or a getMovements of some sort.
 - "_.propName" deems the data "protected."
 
+
+Encapsulation: Private Class Fields and Methods
+- Part of a bigger proposal. It is currently at stage 3, thus we are studying it.
+- Certain items will always be added to the instances; therefore, they can be deemed public fields. 
+- public fields are referenceable by the this keyword.
+- private fields & methods: '#' symbol before the variable. Makes it private and non-accessible.
+- Private method are not yet implemented fully by js
+- Static versions are the same with the syntax.
+- Similar logic to java oop.
+
+Chaining Methods
+-
+-
+-
+-
+-
+
+
+
 */
