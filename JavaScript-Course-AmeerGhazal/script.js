@@ -1,6 +1,6 @@
 'use strict';
 
-// Lesson 222: Another Class Example
+// Lesson 223: Encapsulation: Protected Properties and Methods
 
 class Account {
   constructor(owner, currency, pin) {
