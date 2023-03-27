@@ -1612,7 +1612,11 @@ Inheritance Between "Classes": Object.create
         jay.init('Jay', 2010, 'CS');
         jay.introduce();
         jay.calcAge();
--
--
+
+
+Another Class Example
+- Internal methods are something we need, but it also means we need data privacy.
+
+
 
 */

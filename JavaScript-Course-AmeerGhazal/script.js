@@ -1,30 +1,40 @@
 'use strict';
 
-// Lesson 221: Inheritance Between "Classes": Object.create (3)
+// Lesson 222: Another Class Example
 
-const PersonProto = {
-  calcAge() {
-    console.log(2037 - this.birthYear);
-  },
+class Account {
+  constructor(owner, currency, pin) {
+    this.owner = owner;
+    this.currency = currency;
+    this.pin = pin;
+    this.movements = [];
+    this.locale = navigator.language;
+    console.log(`Thanks for opening an account, ${owner}`);
+  }
 
-  init(firstName, birthYear) {
-    this.firstName = firstName;
-    this.birthYear = birthYear;
-  },
-};
+  // Public interface of the objects.
+  deposit(val) {
+    this.movements.push(val);
+  }
 
-const steven = Object.create(PersonProto);
+  withdraw(val) {
+    this.deposit(-val);
+  }
 
-const StudentProto = Object.create(PersonProto);
-StudentProto.init = function (firstName, birthYear, course) {
-  PersonProto.init.call(this, firstName, birthYear);
-  this.course = course;
-};
+  approveLoan(val) {
+    return true;
+  }
 
-StudentProto.introduce = function () {
-  console.log(`My name is ${this.firstName}, and I study ${this.course}.`);
-};
-const jay = Object.create(StudentProto);
-jay.init('Jay', 2010, 'CS');
-jay.introduce();
-jay.calcAge();
+  requestLoan(val) {
+    if (this.approveLoan(val)) {
+      this.deposit(val);
+      console.log(`Loan approved`);
+    }
+  }
+}
+
+const acc1 = new Account('Jonas', 'EUR', 1111);
+console.log(acc1);
+acc1.deposit(250);
+acc1.withdraw(140);
+acc1.requestLoan(1000);
