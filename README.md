@@ -5,9 +5,8 @@ Object Oriented Programming (OOP)
 Section 14 Coding Challenge #3
 Your tasks:
 
-1. Use a constructor function to implement an Electric Car (called 'EV') as a child
-   "class" of 'Car'. Besides a make and current speed, the 'EV' also has the
-   current battery charge in % ('charge' property)
+1. Use a constructor function to implement an Electric Car (called 'EV') as a child "class" of 'Car'. Besides a make and current speed, the 'EV' also has the
+   current battery charge in % ('charge' property).
 2. Implement a 'chargeBattery' method which takes an argument
    'chargeTo' and sets the battery charge to 'chargeTo'
 3. Implement an 'accelerate' method that will increase the car's speed by 20,

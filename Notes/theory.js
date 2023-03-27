@@ -1584,7 +1584,7 @@ Inheritance Between "Classes": Constructor Functions
 - This works very similar to java.
 - instanceof for similar prototypes returns true for many.
 - make sure to check that the constructor is being the normal class, not the parent. Student.prototype.constructor = Student;
-
+- we can override methods similar to java (polymorphism).
 
 
 */

@@ -1,40 +1,42 @@
 "use strict";
 
-// Section 14 Coding Challenge 2
+// Section 14 Coding Challenge 3
 
-class CarCl {
-  constructor(make, speed) {
-    this.make = make;
-    this.speed = speed;
-  }
+const Car = function (make, speed) {
+  this.make = make;
+  this.speed = speed;
+};
 
-  accelerate() {
-    this.speed += 10;
-    console.log(this.speed);
-  }
+Car.prototype.accelerate = function () {
+  this.speed += 10;
+};
 
-  brake() {
-    this.speed -= 5;
-    console.log(this.speed);
-  }
+Car.prototype.brake = function () {
+  this.speed -= 5;
+  console.log(this.speed);
+};
 
-  get speedUS() {
-    return this.speed / 1.6; // in mi/h
-  }
+// New Stud
+const EV = function (make, speed, charge) {
+  Car.call(this, make, speed);
+  this.charge = charge;
+};
 
-  set speedUS(speed) {
-    this.speed = speed * 1.6; // km/h conversion
-  }
-}
+EV.prototype = Object.create(Car.prototype); // makes the EV class a chlid.
 
-const car1 = new CarCl("Ford", 120);
+EV.prototype.chargeBattery = function (chargeTo) {
+  this.charge = chargeTo;
+};
 
-car1.accelerate();
-car1.brake();
-car1.brake(); // brake
-car1.accelerate(); // acclerate
-car1.accelerate();
+EV.prototype.accelerate = function () {
+  this.speed += 20;
+  this.charge -= 1; // percent
+  console.log(
+    `${this.make} going at ${this.speed} km/h, with a charge of ${this.charge}.`
+  );
+};
 
-console.log(car1.speedUS); // getter
-car1.speedUS = 200; // setter
-console.log(car1.speedUS);
+const electric = new EV("Tesla", 120, 23);
+electric.chargeBattery(90);
+electric.accelerate();
+electric.brake();
