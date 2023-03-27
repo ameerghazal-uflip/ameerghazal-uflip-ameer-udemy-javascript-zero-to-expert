@@ -1637,13 +1637,10 @@ Encapsulation: Private Class Fields and Methods
 - Private method are not yet implemented fully by js
 - Static versions are the same with the syntax.
 - Similar logic to java oop.
+- Coming soon: 1) Public fields, 2) Private fields, 3) Public Methods, 4) Private methods, 5 - 8) Static versions
 
 Chaining Methods
--
--
--
--
--
+- Returning this will make the method chainable.
 
 
 

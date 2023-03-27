@@ -1,6 +1,6 @@
 'use strict';
 
-// Lesson 224: Encapsulation: Private Class Fields and Methods
+// Lesson 225: Chaining Methods
 
 // 1) Public fields
 // 2) Private fields
@@ -33,17 +33,25 @@ class Account {
 
   deposit(val) {
     this.#movements.push(val);
+    return this;
   }
 
   withdraw(val) {
     this.deposit(-val);
+    return this;
   }
 
   requestLoan(val) {
     if (this._approveLoan(val)) {
       this.deposit(val);
       console.log(`Loan approved`);
+      return this;
     }
+  }
+
+  // Static method
+  static helper() {
+    console.log('help');
   }
 
   // Private methods (put a #)
@@ -53,12 +61,7 @@ class Account {
 }
 
 const acc1 = new Account('Jonas', 'EUR', 1111);
-console.log(acc1);
-acc1.deposit(250);
-acc1.withdraw(140);
-acc1.requestLoan(1000);
-// acc1.approveLoan(1000); // nothing happens, and we should not be allowed to even call this, it should be a private field.
-
-console.log(acc1.#movements);
-console.log(acc1.#pin);
-console.log(acc1.#approveLoan);
+// Chaining
+Account.helper(); // must use the acutal class
+acc1.deposit(300).deposit(500).withdraw(35).requestLoan(25000).withdraw(4000);
+console.log(acc1.getMovements());
