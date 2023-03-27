@@ -1586,5 +1586,13 @@ Inheritance Between "Classes": Constructor Functions
 - make sure to check that the constructor is being the normal class, not the parent. Student.prototype.constructor = Student;
 - we can override methods similar to java (polymorphism).
 
+Inheritance Between "Classes": ES6 Classes
+- Use the extends keyword like Java to link the classes. THis functions the same way as java, and it is much quicker than the constructor functions. 
+- In the constructor use the super keyword with the parameter. 
+- Also, we do not need to have another parameter, we could simply just add new specific methods for the class.
+- If the parameters were the same, we would not need to define a constrcutor as the default would already call the parent constructor (this is similar to java when defining constructors with parameters)
+-
+-
+
 
 */
