@@ -1517,6 +1517,38 @@ Prototypal Inheritance on Built-In Objects
 - It works the exact same as previous.
 - We can add methods to a built in object; however, this is generally not a good idea: 1. the next js. update may include a similar named function but it might work differently. 2. Bad for a team of developers. 3. can create bugs.
 - Functions have prototypes as well.
+
+
+ES6 Classes
+- class expression: const personc1 = class {}
+- class declaration: class C1 {}
+- inside the decleariton, we define a constructor() like how we did prevoisly.
+- From here, we can really define anything (functions, etc.). This makes it much easier to define methods as we don't have to randomly .prototype...
+- 1. Classes are not hoisted. We cannot use them before they are decleared.
+- 2. Classes are first-class citizens.
+- 3. Classes are executed in strict mode.
+- example: 
+- class PersonC1 {
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+
+  // Methods will be added to .prototype property.
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  }
+
+  greet() {
+    console.log(`Hey ${this.firstName}`);
+  }
+}
+
+Setters & Getters
+-
+-
+-
+-
 -
 -
 
