@@ -1498,10 +1498,25 @@ EX: Person.prototype.calcAge = function () {
 .hasOwnProperty, we see that it returns false.
 
 Prototypal Inheritance and The Prototype Chain
--
--
--
--
+- Constructor function has a prototype property.
+- There is also a .constructor which points back to the object.
+For example, if we had Person.prototype.constructor, it would point towards the constructor function
+- Prototype is not of Person, but of the objects created by Person.
+- New operator: 1. empty object is created, 2. this keyword in the constrcutor is set to the new object, 3. the new object is linked to the constructor function's prototpye property: .__proto__ (always points to an objects prototype), 4. the new object is returned from the constructor function call.
+- This is different from the object.create() method.
+- If js does not find a method in the object, it will check the objects prototype and inherit it from its prototype "parent".
+- Remember Person.prototype is an object itself, which means it has a prototype: Object.prototype which points to the Object() constructor.
+- Prototype Chain: similar to the scope chain, when Object's prototype points to null. This, in ways, is similar to java as the object prototype/class is the highest. 
+- e.g. with .hasOwnProperty() is contained within the Object.property's built in methods; therefore, we can use the methods from the object prototype aswell.
+- For example, a child class, then a parent, then the object hieracy, etc. 
+
+
+Prototypal Inheritance on Built-In Objects
+- console.dir returns at the person function with the protoypes, etc.
+- if we use the .__proto__ on arrays, we can see all the methods that are inherited.
+- It works the exact same as previous.
+- We can add methods to a built in object; however, this is generally not a good idea: 1. the next js. update may include a similar named function but it might work differently. 2. Bad for a team of developers. 3. can create bugs.
+- Functions have prototypes as well.
 -
 -
 

@@ -1,6 +1,6 @@
 'use strict';
 
-// Lesson 208: Constructor functions and the new operator
+// Lesson 211: Prototypal Inheritance on Built-In Objects
 
 const Person = function (firstName, birthYear) {
   // Instance Properties: they will be avaliable for all
@@ -46,3 +46,28 @@ Person.prototype.species = 'Homo Sapiens';
 console.log(jonas, matilda);
 
 console.log(jonas.hasOwnProperty('firstName'));
+console.log(jonas.hasOwnProperty('species'));
+
+// --------------
+
+console.log(jonas.__proto__.__proto__); // Object prototype.
+console.log(jonas.__proto__.__proto__.__proto__); // null since Object is at the top of the prototype chain
+
+console.dir(Person.prototype.constructor);
+
+const arr = [3, 6, 0, 1, 2, 6]; // new Array === []
+console.log(arr.__proto__);
+console.log(arr.__proto__ == Array.prototype);
+console.log(arr.__proto__.__proto__); // oject
+
+// not a good practice, but it is fire for personal small projects.
+Array.prototype.unique = function () {
+  return [...new Set(this)];
+};
+
+console.log(arr.unique());
+
+const h1 = document.querySelector('h1');
+console.dir(h1); // goes many levels deep
+
+console.dir(x => x + 1);
