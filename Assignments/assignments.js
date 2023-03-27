@@ -1,29 +1,40 @@
 "use strict";
 
-// Section 14 Coding Challenge 1
+// Section 14 Coding Challenge 2
 
-// 1. Constructor function
+class CarCl {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+  }
 
-const Car = function (make, speed) {
-  this.make = make;
-  this.speed = speed;
-};
+  accelerate() {
+    this.speed += 10;
+    console.log(this.speed);
+  }
 
-Car.prototype.accelerate = function () {
-  this.speed += 10;
-  console.log(this.speed);
-};
+  brake() {
+    this.speed -= 5;
+    console.log(this.speed);
+  }
 
-Car.prototype.brake = function () {
-  this.speed -= 5;
-  console.log(this.speed);
-};
+  get speedUS() {
+    return this.speed / 1.6; // in mi/h
+  }
 
-const car1 = new Car("BMW", 120);
-const car2 = new Car("Mercedes", 95);
+  set speedUS(speed) {
+    this.speed = speed * 1.6; // km/h conversion
+  }
+}
+
+const car1 = new CarCl("Ford", 120);
 
 car1.accelerate();
-car2.accelerate();
-
 car1.brake();
-car2.brake();
+car1.brake(); // brake
+car1.accelerate(); // acclerate
+car1.accelerate();
+
+console.log(car1.speedUS); // getter
+car1.speedUS = 200; // setter
+console.log(car1.speedUS);
