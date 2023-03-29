@@ -1689,11 +1689,16 @@ Project Planning
 Using the Geolocation API
 - Browser API similar to timer, etc.
 - navigator.geolocation.getCurrentPostion(function sucess, function error) uses the geolocation api with 2 callback functions.
--
--
--
--
+- We can use destructuring.
+- Use a template literal and an alert for a failure.
 
+Displaying A Map Using Leaflet Library
+- Open source external library that other devlopers wrote (third party)
+- Use the hosted version for now.
+- Watch the order in which the scripts are downloaded in the html and include a defer for the header. 
+- L namespace allows us to access certain methods from leaflet such as map.
+- We can use multiple scripts in the html file. Order matters!
+- This is plausible because as long as they are global, in ways, they are in the same package and implemented to the same html file. Thus, they are useable.
 
 
 */
