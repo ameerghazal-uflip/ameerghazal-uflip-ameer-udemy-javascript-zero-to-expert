@@ -1708,11 +1708,10 @@ Displaying a Map Marker
 
 
 Rendering Workout Input Form
--
--
--
--
--
--
+- We can assign multiple equals signs if they all equal the same value. Make sure to use .value, though. 
+- .focus() will somewhat blur the background.
+- .closest selects parents and not children. It is a reversed query selector.
+- .toggle() wlll flip one or the other. Thus, in the application, only one is visible at a time. 
+
 
 */
