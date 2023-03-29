@@ -1734,8 +1734,12 @@ Rendering Workouts
 - insertAdjacentHTML inserts HTML we want to add, but it has methods (... review them)
 - e.g. form.insertAdjacentHTML('afterend', html);
 
--
--
--
+- lots of js put togther in one project.
+
+Move to Marker On Click
+- using the .target chained with .closet means thatregardless of where something is clicked, it will move up to the parent div / element.
+- to acess data sets, use .dataset.field name we need
+- leflet setView method requires three parameters. It shifts the screen.
+
 
 */
