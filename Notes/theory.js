@@ -1699,6 +1699,15 @@ Displaying A Map Using Leaflet Library
 - L namespace allows us to access certain methods from leaflet such as map.
 - We can use multiple scripts in the html file. Order matters!
 - This is plausible because as long as they are global, in ways, they are in the same package and implemented to the same html file. Thus, they are useable.
+- There are many map designs, check the links!
+
+Displaying a Map Marker
+- .on is from the leaflet library and functions very similar to the addEventListener function as we cannot use thas in this case.
+- L.popup({object}). We can define the properties within the object for the marker. These are all avaliable through leaflet.
+- many methods return this, futhumore, making them chainable.
+-
+-
+-
 
 
 */
