@@ -1713,5 +1713,12 @@ Rendering Workout Input Form
 - .closest selects parents and not children. It is a reversed query selector.
 - .toggle() wlll flip one or the other. Thus, in the application, only one is visible at a time. 
 
+Project Architecture
+- Must decide where and how to store the data.
+- From the user story, we see we will need to store the distance, time, pace, steps/mmins, etc.
+- A good idea is to have a large parent class called workout which hold common types and two child classes (running and cycling) for the specifc types. OOP.
+- Classes are represented by a UML.
+- We can store the App inside a class with the events we have created thus far which will be aggregated, not inherited.
+- ************* img
 
 */
