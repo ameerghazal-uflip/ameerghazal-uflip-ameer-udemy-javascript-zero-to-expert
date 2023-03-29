@@ -1705,9 +1705,14 @@ Displaying a Map Marker
 - .on is from the leaflet library and functions very similar to the addEventListener function as we cannot use thas in this case.
 - L.popup({object}). We can define the properties within the object for the marker. These are all avaliable through leaflet.
 - many methods return this, futhumore, making them chainable.
--
--
--
 
+
+Rendering Workout Input Form
+-
+-
+-
+-
+-
+-
 
 */

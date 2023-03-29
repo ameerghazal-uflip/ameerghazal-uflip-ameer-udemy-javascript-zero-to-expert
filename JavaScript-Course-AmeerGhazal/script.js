@@ -54,6 +54,3 @@ if (navigator.geolocation) {
     }
   );
 }
-
-// Testing more than one script
-// console.log(tester);
