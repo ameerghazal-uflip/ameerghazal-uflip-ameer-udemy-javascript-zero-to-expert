@@ -1724,7 +1724,7 @@ Project Architecture
 Refactoring for Project Arcitecture
 - When using an eventListener, the this key points towards what it is attached to and not to the object.
 - .bind(this) is super important for these issues.
--
+- check the lecture for more info.
 -
 
 */
