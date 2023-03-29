@@ -1725,6 +1725,17 @@ Refactoring for Project Arcitecture
 - When using an eventListener, the this key points towards what it is attached to and not to the object.
 - .bind(this) is super important for these issues.
 - check the lecture for more info.
+
+** Managing Workout Data: Creating Classes
+& Creating a New Workout were script heavy, not many notes.
+
+Rendering Workouts
+- We can use the comment (// prettier-ignore) to ignore the prettier features.
+- insertAdjacentHTML inserts HTML we want to add, but it has methods (... review them)
+- e.g. form.insertAdjacentHTML('afterend', html);
+
+-
+-
 -
 
 */
