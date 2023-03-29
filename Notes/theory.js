@@ -1686,6 +1686,14 @@ Project Planning
 - 5. Develempoment steps: implementation of code.
 
 
+Using the Geolocation API
+- Browser API similar to timer, etc.
+- navigator.geolocation.getCurrentPostion(function sucess, function error) uses the geolocation api with 2 callback functions.
+-
+-
+-
+-
+
 
 
 */
