@@ -1651,4 +1651,41 @@ ES6 Class Summary
 - getters & setters: use "_" to set property with the same name as method and add it to the getter.
 - static methods: only on class, cannot access instance properites nor methods, only static ones.
 
+
+
+
+SECTION 15: Mapty App: OOP, Geolocation, External Libraries, and More.
+
+
+Project Planning
+- 1. User stoires: descrption of the applications functionality from a user's standpoint. All user stories toghther describe the entire application.
+        - Format: As a [type of user], I want [an action] so that [a benefit].
+        - e.g. As a user I want to log my running workouts with location, distance, time, pace and steps/mintes, so I can log all of my running. 
+        - e.g. I want to see all my workouts on map so I can easily check where I workout most.
+        - e.g. many more.
+
+
+- 2. From these stories, we should know the featues needed to be added.
+        - Map where user clicks to add new workout
+        - Geoloction to display map at current location (more user friendly)
+        - Form to input distance, time, pace, steps/min
+        - display items in a list and on the map.
+        - user local api.
+        - check the onenote for graphic.
+
+- 3. Flowchart: What we will build.
+        - check the featues we need to implement
+        - e.g. geolocation to dispaly map at current location, and a map where a user clicks to add a new workout: 
+            - Page loads -> get current location (async) -> render map on current location -> bind handlder -> user clicks on map -> render workout form.
+        - Keep track of events, not just features.
+        - Color coordination for certain blocks is helpful: for example, async, rendering, user action, events, etc.
+- 4. Arcithecure: how we build it, organize it, etc.
+    - Go by the flowchart and start coding.
+    - Return when things need more thinking.
+- (1-4) Planning Steps
+- 5. Develempoment steps: implementation of code.
+
+
+
+
 */
