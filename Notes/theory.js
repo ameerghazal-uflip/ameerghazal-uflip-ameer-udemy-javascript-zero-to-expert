@@ -1721,4 +1721,10 @@ Project Architecture
 - We can store the App inside a class with the events we have created thus far which will be aggregated, not inherited.
 - ************* img
 
+Refactoring for Project Arcitecture
+- When using an eventListener, the this key points towards what it is attached to and not to the object.
+- .bind(this) is super important for these issues.
+-
+-
+
 */
