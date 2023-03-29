@@ -1741,5 +1741,12 @@ Move to Marker On Click
 - to acess data sets, use .dataset.field name we need
 - leflet setView method requires three parameters. It shifts the screen.
 
+Working With Local Storage
+- localStorage an API the browser provides for us that we can use.
+- 2 parameters: the key and JSON.stringif(what we want saved)
+-JSON.parse is the opposite of stringify.
+- We need to watch where we define things due to map loading, etx.
+- When we convert objects to a string and then back to an object, we lose the prototype chain.
+- This is why workout.click() did not work.
 
 */
