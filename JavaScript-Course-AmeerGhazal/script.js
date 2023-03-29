@@ -121,9 +121,9 @@ class App {
     // prettier-ignore
     inputDistance.value = inputDuration.value = inputElevation.value = inputCadence.value = '';
 
-    form.style.dispaly = 'none';
+    form.style.display = 'none';
     form.classList.add('hidden');
-    setTimeout(() => (form.style.dispaly = 'grid'), 1000);
+    setTimeout(() => (form.style.display = 'grid'), 1000);
   }
 
   _toggleElevationField() {
