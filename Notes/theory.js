@@ -1749,4 +1749,12 @@ Working With Local Storage
 - When we convert objects to a string and then back to an object, we lose the prototype chain.
 - This is why workout.click() did not work.
 
+Final Considerations
+- Additional Features: edit, delete, or delete all workouts.
+- Sorting workouts by certain fields (distance, for example)
+- Rebuild Running & Cycling objects coming from Local Storage.
+- More realistic error and conformation messages (with fading).
+- Harder versions: position the map to show all the workouts (hard, use leaflet library). Draw lines and shapes instead of just points. 
+- After the next section: geocode location from coordinates, or display the weather data for workout time and place.
+
 */
