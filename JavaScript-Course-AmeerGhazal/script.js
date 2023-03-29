@@ -2,7 +2,6 @@
 
 // prettier-ignore
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
 const form = document.querySelector('.form');
 const containerWorkouts = document.querySelector('.workouts');
 const inputType = document.querySelector('.form__input--type');
@@ -213,6 +212,31 @@ class App {
     this._setLocalStorage();
   }
 
+  _editWorkout(e) {
+    e.preventDefault();
+    const type = inputType.value;
+
+    form.addEventListener('click', function () {
+      if (type === 'running') {
+        const values = [
+          inputDistance.value,
+          inputDuration.value,
+          inputCadence.value,
+        ];
+      }
+
+      if (type === 'cycling') {
+        const values = [
+          inputDistance.value,
+          inputDuration.value,
+          inputElevation.value,
+        ];
+      }
+    });
+
+    form.style.display = '';
+  }
+
   //Display workout marker
   _renderWorkoutMarker(workout) {
     L.marker(workout.coords)
@@ -322,3 +346,9 @@ class App {
 }
 
 const app = new App();
+
+// Ability to edit a workout
+
+// Ability to delete a workout
+// Ability to delete all workouts
+// Re-build Running and Cycling objects coming from local storage.
