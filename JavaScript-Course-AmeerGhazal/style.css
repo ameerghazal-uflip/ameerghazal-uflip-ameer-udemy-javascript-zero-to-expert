@@ -72,10 +72,13 @@ a:visited {
   padding: 1.5rem 2.25rem;
   margin-bottom: 1.75rem;
   cursor: pointer;
-
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 0.75rem 1.5rem;
+  grid-template-areas:
+    'header header edit remove'
+    'heading heading . .'
+    'km min dis speed';
 }
 .workout--running {
   border-left: 5px solid var(--color-brand--2);
@@ -87,7 +90,7 @@ a:visited {
 .workout__title {
   font-size: 1.7rem;
   font-weight: 600;
-  grid-column: 1 / -1;
+  grid-area: header;
 }
 
 .workout__details {
@@ -167,10 +170,27 @@ a:visited {
   background-color: #fff;
 }
 
-.form__btn,
-.edit_btn {
+.form__btn {
   display: none;
 }
+
+.delete_all_btn {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.delete__btn {
+  background-color: white;
+  border-radius: 50px;
+  grid-area: remove;
+}
+
+.edit__btn {
+  background-color: white;
+  border-radius: 50px;
+  grid-area: edit;
+}
+/* CUSTOM ADDED ---- */
 
 .copyright {
   margin-top: auto;

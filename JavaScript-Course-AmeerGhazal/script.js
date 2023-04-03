@@ -9,11 +9,14 @@ const inputDistance = document.querySelector('.form__input--distance');
 const inputDuration = document.querySelector('.form__input--duration');
 const inputCadence = document.querySelector('.form__input--cadence');
 const inputElevation = document.querySelector('.form__input--elevation');
+const deleteAll = document.querySelector('.delete_all_btn');
 
 class Workout {
   date = new Date();
   id = (Date.now() + '').slice(-10);
   clicks = 0;
+
+  // edit.addEventListener('click', this.edit.Bind(this));
 
   constructor(coords, distance, duration) {
     this.coords = coords; // [lat, lng]
@@ -82,6 +85,7 @@ class App {
   #mapZoomLevel = 13;
   #mapEvent;
   #workouts = [];
+  #markers = []; // stored for removing later.
 
   constructor() {
     // User's Postition
@@ -94,6 +98,7 @@ class App {
     form.addEventListener('submit', this._newWorkout.bind(this));
     inputType.addEventListener('change', this._toggleElevationField);
     containerWorkouts.addEventListener('click', this._moveToPopup.bind(this));
+    deleteAll.addEventListener('click', this._reset);
   }
 
   _getPosition() {
@@ -131,6 +136,7 @@ class App {
 
   _showForm(mapE) {
     this.#mapEvent = mapE;
+    console.log(mapE);
     form.classList.remove('hidden');
     inputDistance.focus();
   }
@@ -212,33 +218,58 @@ class App {
 
     // Set local storage to all workouts
     this._setLocalStorage();
+
+    // Enable the edit button
+    const edit = document
+      .querySelector('.edit__btn')
+      .addEventListener('click', this._editWorkout);
+
+    const remove = document
+      .querySelector('.delete__btn')
+      .addEventListener('click', this._deleteWorkout);
   }
 
-  _editWorkout(e) {
-    e.preventDefault();
-    const type = inputType.value;
+  // _deleteWorkout(e) {
+  //   // this method is only called if the remove button clicked.
+  //   const certainWorkout = e.target.closest('.workout'); // we want the closet parent
+  //   certainWorkout.remove(); // removes that workout / deletes its html from the index.
+  // }
 
-    form.addEventListener('click', function () {
-      if (type === 'running') {
-        const values = [
-          inputDistance.value,
-          inputDuration.value,
-          inputCadence.value,
-        ]; // saves the values
+  _editWorkout() {
+    const type = inputType.value; // saves the current values
+    const selector = document.querySelector(`.workout--${type}`);
+    const values = [...selector.querySelectorAll('.workout__value')]; // returns a node list. Spread into an array.
+    const inputs = [
+      inputDistance,
+      inputDuration,
+      0,
+      type === 'running' ? inputCadence : inputElevation,
+    ]; // different inputs in a list.
 
-        form.classList.add;
-      }
+    selector.style.display = 'none'; // hides the display
+    selector.classList.add('hidden');
 
-      if (type === 'cycling') {
-        const values = [
-          inputDistance.value,
-          inputDuration.value,
-          inputElevation.value,
-        ];
-      }
+    form.style.display = 'grid'; // brings back the form
+    form.classList.remove('hidden');
+
+    // gets all the values into a list.
+    values.map((val, i) => {
+      if (i == 2) return;
+      inputs[i].value = val.textContent;
     });
 
-    form.style.display = '';
+    // this.#map.removeLayer(this.#markers.get(this.#workouts.id));
+
+    // PREVIOUS
+    // values.forEach(val => {
+    //   if (index == 2) {
+    //     ++index;
+    //     return;
+    //   }
+    //   inputs[index].value = val.textContent;
+    //   console.log(inputDistance, inputDuration);
+    //   index++;
+    // });
   }
 
   //Display workout marker
@@ -256,25 +287,28 @@ class App {
       )
       .setPopupContent(
         `${workout.type === 'running' ? '🏃‍♂️' : '🚴‍♀️'} ${workout.description}`
-      )
-      .openPopup();
+      );
+
+    // this.#markers.push(marker); // stores all the markers so it makes it easy to delete them.
+    openPopup();
   }
 
   _renderWorkout(workout) {
     let html = `
     <li class="workout workout--${workout.type}" data-id="${workout.id}">
     <button class="edit__btn">Edit</button>
+    <button class="delete__btn">Remove</button>
       <h2 class="workout__title">${workout.description}</h2>
       <div class="workout__details">
         <span class="workout__icon">${
           workout.type === 'running' ? '🏃‍♂️' : '🚴‍♀️'
         }</span>
-        <span class="workout__value">${workout.distance}</span>
+        <span class="workout__value distance">${workout.distance}</span>
         <span class="workout__unit">km</span>
       </div>
       <div class="workout__details">
         <span class="workout__icon">⏱</span>
-        <span class="workout__value">${workout.duration}</span>
+        <span class="workout__value duration">${workout.duration}</span>
         <span class="workout__unit">min</span>
       </div>`;
 
@@ -344,7 +378,7 @@ class App {
     });
   }
 
-  reset() {
+  _reset() {
     localStorage.removeItem('workouts');
     location.reload();
   }
