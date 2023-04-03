@@ -33,6 +33,8 @@ class Workout {
   click() {
     this.clicks++;
   }
+
+  edit() {}
 }
 
 class Running extends Workout {
@@ -222,7 +224,9 @@ class App {
           inputDistance.value,
           inputDuration.value,
           inputCadence.value,
-        ];
+        ]; // saves the values
+
+        form.classList.add;
       }
 
       if (type === 'cycling') {
@@ -259,6 +263,7 @@ class App {
   _renderWorkout(workout) {
     let html = `
     <li class="workout workout--${workout.type}" data-id="${workout.id}">
+    <button class="edit__btn">Edit</button>
       <h2 class="workout__title">${workout.description}</h2>
       <div class="workout__details">
         <span class="workout__icon">${

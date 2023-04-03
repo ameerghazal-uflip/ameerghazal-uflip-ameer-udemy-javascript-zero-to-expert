@@ -1733,7 +1733,6 @@ Rendering Workouts
 - We can use the comment (// prettier-ignore) to ignore the prettier features.
 - insertAdjacentHTML inserts HTML we want to add, but it has methods (... review them)
 - e.g. form.insertAdjacentHTML('afterend', html);
-
 - lots of js put togther in one project.
 
 Move to Marker On Click
