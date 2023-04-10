@@ -1761,6 +1761,9 @@ Final Considerations
 
 
 SECTION 16: Asynchronous JavaScript: Promises, Async/Await, and AJAX
+
+
+Asynchronous JavaScript, AJAX, and API's
 - Synchronous Code: most of the code we have been righting. This is code that is executed line by line. Each line of code waits for the previous line to finish. This can make problems when long-running operatiors block other codes (e.g. alert)
 - Asycnhrous Code: runs in the background without stalling the main code from executing. (e.g. timer). Only executed after a task that runs in the "background" finshes. Non-blocking code, does not wait for the asycn task to finish its work. Excetued after all the other code. 
 - We need a callback function for async, but call-back functions alone do make the code async. AJAX calls are importnat used cases.
@@ -1770,5 +1773,12 @@ SECTION 16: Asynchronous JavaScript: Promises, Async/Await, and AJAX
 - DOM API, Geolocation API, Own class API, etc. are some examples of api's (similar to java).
 - "Online" API: Application running on a server, that receives requests for data, and sends data back as response. We can build our own or use thrid-parties and backend node.js.
 - No one uses XML data format. These days, we use JSON data format.
+
+Our First AJAX Call: XMLHttpRequest
+- COURS should always be set to yes or unknown.
+- we can use .open (get / send, etc.) to call to the server witj a call-back link.
+- .send() sends the request to the server.
+- JSON.parse() parses the data returns an object. (An array containing one object.)
+- user insertAjacentHTML ti add in data;
 
 */
