@@ -5,16 +5,34 @@ const countriesContainer = document.querySelector('.countries');
 
 ///////////////////////////////////////
 
-// Section 16 Lesson 258: The Event Loop in Practice
+// Section 16 Lesson 259: Building a Simple Promise
 
-console.log(`Test start`); // starts us off
-setTimeout(() => console.log(`0 sec timer`), 0); // last since it is still in the call-back queue
-Promise.resolve('Resolved promise 1').then(res => console.log(`res`)); // 3rd since it is in the microtasks queue
-
-Promise.resolve('Resolved promise 2').then(res => {
-  for (let i = 0; i < 500; i++) {
-    console.log(res);
-  }
+const lotteryPromise = new Promise(function (resolve, reject) {
+  console.log('Lottery draw is happening');
+  setTimeout(function () {
+    if (Math.random() >= 0.5) {
+      resolve('You Win'); // fullfilled
+    } else {
+      reject(new Error('You lost your money!')); // this will be for the catch, rejected state
+    }
+  }, 2000);
 });
 
-console.log(`test end`); // 2nd since it passes everything in awaiting queues
+lotteryPromise.then(res => console.log(res)).catch(err => console.error(err)); // cosumes the promise.
+
+// Promisifying setTimeout
+const wait = function (secs) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, secs * 1000);
+  });
+};
+
+wait(2)
+  .then(() => {
+    console.log('I waited for 2 secs');
+    return wait(1);
+  })
+  .then(() => console.log('I waited for 1 second'));
+
+Promise.resolve('abc').then(x => console.log(x));
+Promise.reject(new Error('abc')).catch(x => console.error(x));

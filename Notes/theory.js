@@ -1871,7 +1871,29 @@ The Event Loop In Practice
 - Promise.resolve is a way to auto get a promise and test it.
 
 
+Building a Promise
+- Promises are a speciceal kinda of object. 
+- Use the new Promise() constructor with one argument as a function with resolve and reject functions.
+- Minor example: 
+const lotteryPromise = new Promise(function (resolve, reject) {
+  if (Math.random() >= 0.5) {
+    resolve('You Win'); // fullfilled
+  } else {
+    reject('You lost your money!'); // this will be for the catch, rejected state
+  }
+});
+- creating a new error object is much better than just logging a string
+- many more examples in the lesson 259.
+- we can use the static Promise.resolve.. or Promise.reject...
 
+Promisifying the Geolocation API
+-
+-
+-
+-
+-
+-
+-
 
 
 
