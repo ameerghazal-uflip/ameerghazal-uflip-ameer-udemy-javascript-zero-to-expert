@@ -5,7 +5,7 @@ const countriesContainer = document.querySelector('.countries');
 
 ///////////////////////////////////////
 
-// Section 16 Lesson 251: Promises and the Fetch API
+// Section 16 Lesson 252: Consuming Promises
 
 // takes in some data
 const renderCountry = function (data, className = '') {
@@ -27,45 +27,56 @@ const renderCountry = function (data, className = '') {
   countriesContainer.style.opacity = 1;
 };
 
-const getCountryAndNeigbor = function (country) {
-  // AJAX call country 1
-  const request = new XMLHttpRequest(); // old way, may be needed later.
-  request.open('GET', `https://restcountries.com/v2/name/${country}`);
-  request.send();
+// const getCountryAndNeigbor = function (country) {
+//   // AJAX call country 1
+//   const request = new XMLHttpRequest(); // old way, may be needed later.
+//   request.open('GET', `https://restcountries.com/v2/name/${country}`);
+//   request.send();
 
-  request.addEventListener('load', function () {
-    const [data] = JSON.parse(this.responseText);
-    console.log(data);
+//   request.addEventListener('load', function () {
+//     const [data] = JSON.parse(this.responseText);
+//     console.log(data);
 
-    // Render country 1
-    renderCountry(data); // calls the render function.
+//     // Render country 1
+//     renderCountry(data); // calls the render function.
 
-    // Get neighbour country 2
-    const neighbor = data.borders?.[0]; // optional chaining accounts for countries with no border.
+//     // Get neighbour country 2
+//     const neighbor = data.borders?.[0]; // optional chaining accounts for countries with no border.
 
-    if (!neighbor) return; // guard clause.
+//     if (!neighbor) return; // guard clause.
 
-    // AJAX call country 2
-    const request2 = new XMLHttpRequest(); // old way, may be needed later.
-    request2.open('GET', `https://restcountries.com/v2/alpha/${neighbor}`);
-    request2.send();
+//     // AJAX call country 2
+//     const request2 = new XMLHttpRequest(); // old way, may be needed later.
+//     request2.open('GET', `https://restcountries.com/v2/alpha/${neighbor}`);
+//     request2.send();
 
-    request2.addEventListener('load', function () {
-      const data2 = JSON.parse(this.responseText); // no longer an array we search for the code rather than the name.
-      console.log(data2);
+//     request2.addEventListener('load', function () {
+//       const data2 = JSON.parse(this.responseText); // no longer an array we search for the code rather than the name.
+//       console.log(data2);
 
-      renderCountry(data2, 'neighbour');
+//       renderCountry(data2, 'neighbour');
+//     });
+//   });
+// };
+
+// getCountryAndNeigbor('pakistan'); // two ajax calls happening at the same time.
+
+const getCountryData = function (country) {
+  const request = fetch(`https://restcountries.com/v2/name/${country}`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      renderCountry(data[0]);
     });
-  });
 };
 
-getCountryAndNeigbor('pakistan'); // two ajax calls happening at the same time.
+// arrow version: shorter
+const getCountryDataArrow = function (country) {
+  const request = fetch(`https://restcountries.com/v2/name/${country}`) // fethces, we get the response, transform to json, and have the data.
+    .then(response => response.json())
+    .then(data => renderCountry(data[0]));
+};
 
-// Old way
-// const request = new XMLHttpRequest(); // old way, may be needed later.
-//   request.open('GET', `https://restcountries.com/v2/name/${country}`);
-//   request.send();'
-
-// New way by fetching
-const request = fetch(`https://restcountries.com/v2/name/usa`);
-console.log(request);
+getCountryData('portugal');
+getCountryDataArrow('usa');

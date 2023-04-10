@@ -1817,4 +1817,20 @@ Promises and the Fetch API
 - Consume a Promise: we we already have a promise.
 - Sometimes, though, we need to build promises. 
 
+
+Consuming Promises
+- on all promises we can call the .then() method and pass in a callback function.
+- inside the callback function, we input a response parameter and we use the .json method on it. 
+- From there we return the response.json() as it returns a promise. Thus, we call the then method on that call back and finally have access to the data we are looking for. 
+e.g.
+const getCountryData = function (country) {
+  const request = fetch(`https://restcountries.com/v2/name/${country}`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      renderCountry(data[0]);
+    });
+};
+-
 */
