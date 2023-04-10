@@ -5,7 +5,7 @@ const countriesContainer = document.querySelector('.countries');
 
 ///////////////////////////////////////
 
-// Section 16 Lesson 250: Welcome to Callback Hell
+// Section 16 Lesson 251: Promises and the Fetch API
 
 // takes in some data
 const renderCountry = function (data, className = '') {
@@ -61,16 +61,11 @@ const getCountryAndNeigbor = function (country) {
 
 getCountryAndNeigbor('pakistan'); // two ajax calls happening at the same time.
 
-// Call-back hell
-// setTimeout(() => {
-//   console.log('passed');
-//   setTimeout(() => {
-//     console.log('passed');
-//     setTimeout(() => {
-//       console.log('passed');
-//       setTimeout(() => {
-//         console.log('passed');
-//       }, 1000);
-//     }, 2000);
-//   }, 1000);
-// }, 2000);
+// Old way
+// const request = new XMLHttpRequest(); // old way, may be needed later.
+//   request.open('GET', `https://restcountries.com/v2/name/${country}`);
+//   request.send();'
+
+// New way by fetching
+const request = fetch(`https://restcountries.com/v2/name/usa`);
+console.log(request);

@@ -1804,4 +1804,17 @@ Welcome to Callback Hell
 - nested call backs. For example a neighbor of a neighbor, etc...
 - similar to factorial??
 - callback hell: handles loads of call-backs. It can get very messy. Promises are a combat around such.
+
+Promises and the Fetch API
+- we can use fetch we using simple get methods: const request = fetch(`https://restcountries.com/v2/name/usa`);
+- Promise: object that is used as a placeholder for a future value. For example, a response from an AJAX call. 
+- Lottery ticket examples.
+- By using promises, we do not need to rely on events and callbacks.
+- Instead of nesting callbacks, we can chain promises for a sequence of asyncronus operatiors: escaping callback hell.
+- Time sensative.
+- Promise lifecycle: pending (before the future value is avaliable) -> settled (async task has finished) -> fullfied (value ready, won the lottery) or rejected (error, loss of lottery).
+- A promise is only settled once, impossible to change that state.
+- Consume a Promise: we we already have a promise.
+- Sometimes, though, we need to build promises. 
+
 */
