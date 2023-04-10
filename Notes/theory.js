@@ -1887,13 +1887,8 @@ const lotteryPromise = new Promise(function (resolve, reject) {
 - we can use the static Promise.resolve.. or Promise.reject...
 
 Promisifying the Geolocation API
--
--
--
--
--
--
--
+- We can turn API's into promise based API's.
+- We can really promisifiy like anything.
 
 
 

@@ -5,34 +5,72 @@ const countriesContainer = document.querySelector('.countries');
 
 ///////////////////////////////////////
 
-// Section 16 Lesson 259: Building a Simple Promise
+// Section 16 Lesson 260: Promisifying the Geolocation API
 
-const lotteryPromise = new Promise(function (resolve, reject) {
-  console.log('Lottery draw is happening');
-  setTimeout(function () {
-    if (Math.random() >= 0.5) {
-      resolve('You Win'); // fullfilled
-    } else {
-      reject(new Error('You lost your money!')); // this will be for the catch, rejected state
-    }
-  }, 2000);
-});
+navigator.geolocation.getCurrentPosition(
+  postition => console.log(postition),
+  err => console.error(err)
+);
 
-lotteryPromise.then(res => console.log(res)).catch(err => console.error(err)); // cosumes the promise.
+console.log(`Getting position`);
 
-// Promisifying setTimeout
-const wait = function (secs) {
-  return new Promise(function (resolve) {
-    setTimeout(resolve, secs * 1000);
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    // navigator.geolocation.getCurrentPosition(
+    //   postition => resolve(postition),
+    //   err => reject(err)
+    // );
+
+    navigator.geolocation.getCurrentPosition(resolve, reject); // this is the same thing since both resolve and reject are call back functions.
   });
 };
 
-wait(2)
-  .then(() => {
-    console.log('I waited for 2 secs');
-    return wait(1);
-  })
-  .then(() => console.log('I waited for 1 second'));
+getPosition().then(pos => console.log(pos)); // so we turned the geolocation api into a promise based api.
 
-Promise.resolve('abc').then(x => console.log(x));
-Promise.reject(new Error('abc')).catch(x => console.error(x));
+// Refactors the Coding Challenge 1 using the geolocation API.
+const whereAmI = function () {
+  getPosition()
+    .then(pos => {
+      const { latitude: lat, longitude: lng } = pos.coords; // destructuring
+      return fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
+    })
+    .then(response => {
+      if (!response.ok)
+        throw new Error(`Problem with Geocoding ${response.status}`);
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      console.log(`You are in ${data.city}, ${data.country}`);
+
+      return fetch(`https://restcountries.com/v2/name/${data.country}`);
+    })
+    .then(response => {
+      if (!response.ok)
+        throw new Error(`Country not found. ${response.status}`);
+      return response.json();
+    })
+    .then(data => renderCountry(data[0]))
+    .catch(error => console.error(`${error.message}`));
+};
+
+document.querySelector('.btn-country').addEventListener('click', whereAmI);
+
+function renderCountry(data, className = '') {
+  const html = `
+  <article class="country ${className}">
+    <img class="country__img" src="${data.flag}" />
+    <div class="country__data">
+      <h3 class="country__name">${data.name}</h3>
+      <h4 class="country__region">${data.region}</h4>
+      <p class="country__row"><span>👫</span>${(
+        +data.population / 1000000
+      ).toFixed(1)}</p>
+      <p class="country__row"><span>🗣️</span>${data.languages[0].name}</p>
+      <p class="country__row"><span>💰</span>${data.currencies[0].name}</p>
+    </div>
+  </article>`;
+
+  countriesContainer.insertAdjacentHTML('beforeend', html);
+  countriesContainer.style.opacity = 1;
+}
