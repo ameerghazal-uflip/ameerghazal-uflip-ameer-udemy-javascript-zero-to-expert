@@ -1781,4 +1781,25 @@ Our First AJAX Call: XMLHttpRequest
 - JSON.parse() parses the data returns an object. (An array containing one object.)
 - user insertAjacentHTML ti add in data;
 
+How the WEB works, requests and responses
+- browers sends a request and the server sends a response.
+- Every URL gets a protocl (http, https), domain name, resource. 
+- Step 1 DNS: Domain Name Server lookup when the access any web server. Converts the domain name to a real IP address. (protocal, IP address, port number)
+- Step 2 TCP/IP socket connection: tranmission control protocol and internet protocol. 
+- Step 3 HTTP Request: protocol that allows clients and web servers to communicate. 
+- Get: Reqests data.
+- Post: Sends data.
+- Put & Patch: Modify data.
+= HTTPS is encypted, otherwise, the logic is the same.
+- Step 4: HTTP Response that is sent back to the clinet (start line: http version, status code, status message).
+- Step 5: index.html is the first to load, then it is scanned for assets (js, css, etc.) and the process is repeated for each file. 
+- TCP breaks the response into small chunks then reassembles them through different routes in the internet to return the fastest time.
+- Add the graphs for notes.
+
+Welcome to Callback Hell
+-
+-
+-
+-
+
 */
