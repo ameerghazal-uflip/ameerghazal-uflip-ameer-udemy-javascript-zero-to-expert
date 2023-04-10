@@ -66,7 +66,12 @@ const renderCountry = function (data, className = '') {
 // arrow version: shorter
 const getCountryDataArrow = function (country) {
   const request = fetch(`https://restcountries.com/v2/name/${country}`) // fethces, we get the response, transform to json, and have the data.
-    .then(response => response.json())
+    .then(response => {
+      console.log(response);
+      if (!response.ok)
+        throw new Error(`Country not found. ${response.status}`); // rejects the promise on purpose to catch later.
+      return response.json();
+    })
     .then(data => {
       renderCountry(data[0]);
       const neighbor = data[0].borders?.[0]; // once we get the data, check the borders via optional chaining.

@@ -1848,6 +1848,13 @@ Handling Rejected Promises
 - .finally() with a callback function parameter is always run. This will call regardless. Similar to java.
 - catch itself also returns a promise.
 
+Throwing Erros Manually
+- we can throw errors manually just like java: throw new Error(...)
+- if we throw an error somewhere, everything else immenditalty rejects and it propogates down to the catch method.
+- handling the errors is the only way to display for the user.
+- This can get tidous tho.
+-
+
 
 
 
