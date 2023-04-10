@@ -1853,7 +1853,6 @@ Throwing Erros Manually
 - if we throw an error somewhere, everything else immenditalty rejects and it propogates down to the catch method.
 - handling the errors is the only way to display for the user.
 - This can get tidous tho.
--
 
 
 

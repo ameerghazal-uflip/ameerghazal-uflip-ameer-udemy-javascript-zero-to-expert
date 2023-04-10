@@ -1,65 +1,60 @@
 "use strict";
 
-// Section 14 Coding Challenge 4
+const countriesContainer = document.querySelector(".countries");
 
-class CarCl {
-  // Parent Class
-  constructor(make, speed) {
-    this.make = make;
-    this.speed = speed;
-  }
+const whereAmI = function (lat, lng) {
+  fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`)
+    .then((response) => {
+      if (!response.ok)
+        throw new Error(`Problem with Geocoding ${response.status}`);
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+      console.log(`You are in ${data.city}, ${data.country}`);
 
-  accelerate() {
-    this.speed += 10;
-    console.log(this.speed);
-  }
+      return fetch(`https://restcountries.com/v2/name/${data.country}`);
+    })
+    .then((response) => {
+      if (!response.ok)
+        throw new Error(`Country not found. ${response.status}`);
+      return response.json();
+    })
+    .then((data) => renderCountry(data[0]))
+    .catch((error) => console.error(`${error.message}`));
+};
 
-  brake() {
-    this.speed -= 5;
-    console.log(this.speed);
-    return this; // chainable
-  }
+whereAmI(52.508, 13.381);
+whereAmI(19.037, 72.873);
+whereAmI(-33.933, 18.474);
 
-  get speedUS() {
-    return this.speed / 1.6; // in mi/h
-  }
+// FROM PREVIOUS CODE
 
-  set speedUS(speed) {
-    this.speed = speed * 1.6; // km/h conversion
-  }
+function renderError(msg) {
+  countriesContainer.insertAdjacentText("beforeend", msg);
+  countriesContainer.style.opacity = 1;
 }
 
-class EVCl extends CarCl {
-  // Child Class
-  // extends makes it a child
-  #charge; // private field
+function renderCountry(data, className = "") {
+  const html = `
+  <article class="country ${className}">
+    <img class="country__img" src="${data.flag}" />
+    <div class="country__data">
+      <h3 class="country__name">${data.name}</h3>
+      <h4 class="country__region">${data.region}</h4>
+      <p class="country__row"><span>👫</span>${(
+        +data.population / 1000000
+      ).toFixed(1)}</p>
+      <p class="country__row"><span>🗣️</span>${data.languages[0].name}</p>
+      <p class="country__row"><span>💰</span>${data.currencies[0].name}</p>
+    </div>
+  </article>`;
 
-  constructor(make, speed, charge) {
-    super(make, speed); // calls the parent
-    this.#charge = charge; // initialzes the private
-  }
-
-  chargeBattery(chargeTo) {
-    this.#charge = chargeTo;
-    return this;
-  }
-
-  accelerate() {
-    this.speed += 20;
-    this.#charge--;
-    console.log(
-      `${this.make} going at ${this.speed} km/h, with a charge of ${
-        this.#charge
-      }.`
-    );
-    return this; // makes it chainable.
-  }
+  countriesContainer.insertAdjacentHTML("beforeend", html);
+  countriesContainer.style.opacity = 1;
 }
 
-const electric = new EVCl("Rivian", 120, 23);
-console.log(electric.accelerate());
-console.log(electric.brake());
-console.log(electric.chargeBattery(90));
-
-// chain testing
-console.log(electric.accelerate().brake().chargeBattery(78));
+// Test data:
+// § Coordinates 1: 52.508, 13.381 (Latitude, Longitude)
+// § Coordinates 2: 19.037, 72.873
+// § Coordinates 3: -33.933, 18.474
