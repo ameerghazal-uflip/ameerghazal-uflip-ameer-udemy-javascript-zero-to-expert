@@ -1864,7 +1864,11 @@ Ansyncronous Behind the Scences: The Event Loop
 - in the example of an image, this is done so the other code can go first (code that will not take long) and the image can wait till the cakk-stack is empty and first inline to go.
 - For promises, they do not go to the call-back queue, they have their own queue: microtasks queue. It has priority over the call-back queue. They can cut in line. They are executed before any call-back queues. We can stack these, there is no limit.
 
-
+The Event Loop In Practice
+- anything outside of the queues are first (anything on the main stack).
+- from there, anything on the microtask queue is checked and run.
+- then, the call-back queue is checked and run.
+- Promise.resolve is a way to auto get a promise and test it.
 
 
 
