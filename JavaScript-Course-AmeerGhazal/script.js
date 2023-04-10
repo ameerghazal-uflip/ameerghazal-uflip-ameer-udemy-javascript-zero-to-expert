@@ -109,13 +109,6 @@ class App {
       );
   }
 
-  //   lat
-  // :
-  // 35.34495525936074
-  // lng
-  // :
-  // -97.54331588745117
-
   // recives the position
   _loadMap(position) {
     const { latitude } = position.coords;
@@ -287,13 +280,16 @@ class App {
     form.style.display = 'grid'; // brings back the form
     form.classList.remove('hidden');
 
-    this._deleteWorkout(e); // calls the delete workout method to delete form the global.
-
     // gets all the values into a list.
     values.map((val, i) => {
       if (i == 2) return;
       inputs[i].value = val.textContent;
     });
+
+    // e.target.addEventListener("keydown", (e) => {
+    //   if (e.e)
+    // })
+    this._deleteWorkout(e); // calls the delete workout method to delete form the global.
   }
 
   //Display workout marker
@@ -452,7 +448,6 @@ class App {
 const app = new App();
 
 // Ability to edit a workout
-
 // Ability to delete a workout
 // Ability to delete all workouts
 // Re-build Running and Cycling objects coming from local storage.
