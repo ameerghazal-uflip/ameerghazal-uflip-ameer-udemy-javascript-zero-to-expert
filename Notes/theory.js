@@ -1889,6 +1889,18 @@ const lotteryPromise = new Promise(function (resolve, reject) {
 Promisifying the Geolocation API
 - We can turn API's into promise based API's.
 - We can really promisifiy like anything.
+- remember that resolve and reject are both functions, so they are usuable.
+e.g.:
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    // navigator.geolocation.getCurrentPosition(
+    //   postition => resolve(postition),
+    //   err => reject(err)
+    // );
+
+    navigator.geolocation.getCurrentPosition(resolve, reject); // this is the same thing since both resolve and reject are call back functions.
+  });
+};
 
 
 
