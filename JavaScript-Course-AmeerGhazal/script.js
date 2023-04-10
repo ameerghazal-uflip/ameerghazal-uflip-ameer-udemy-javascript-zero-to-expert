@@ -63,7 +63,14 @@ const renderCountry = function (data, className = '') {
 
 // getCountryAndNeigbor('pakistan'); // two ajax calls happening at the same time.
 
-// arrow version: shorter
+const getJSON = function (url, errorMsg = 'Something went wrong') {
+  fetch(url).then(response => {
+    if (!response.ok) throw new Error(`${errorMsg} ${response.status}`); // rejects the promise on purpose to catch later.
+    return response.json();
+  });
+};
+
+// without simplification.
 const getCountryDataArrow = function (country) {
   const request = fetch(`https://restcountries.com/v2/name/${country}`) // fethces, we get the response, transform to json, and have the data.
     .then(response => {
@@ -92,8 +99,32 @@ const getCountryDataArrow = function (country) {
     });
 };
 
+const getCountryUpdated = function (country) {
+  getJSON(`https://restcountries.com/v2/name/${country}`, `Country not found.`)
+    .then(data => {
+      renderCountry(data[0]);
+      const neighbor = data[0].borders?.[0]; // once we get the data, check the borders via optional chaining.
+
+      if (!neighbor) throw new Error(`No neighor found!`); // fake guard clasue
+
+      // Country 2
+      return getJSON(
+        `https://restcountries.com/v2/alpha/${neighbor}`,
+        `Country not found.`
+      ); // by returing this promise, the fullfiled value of the next then method is this
+    })
+    .then(data => renderCountry(data, 'neighbour'))
+    .catch(err => {
+      console.error(err);
+      renderError(`Something went wrong ${err}`);
+    })
+    .finally(() => {
+      countriesContainer.style.opacity = 1; // this happens regardless.
+    });
+};
+
 btn.addEventListener('click', function () {
   getCountryDataArrow('afgan');
 });
 
-getCountryDataArrow('diisjidj');
+getCountryDataArrow('aust');
