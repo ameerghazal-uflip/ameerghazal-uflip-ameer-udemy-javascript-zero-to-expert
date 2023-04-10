@@ -5,18 +5,12 @@ const countriesContainer = document.querySelector('.countries');
 
 ///////////////////////////////////////
 
-// Section 16 Lesson 248: Our First AJAX Call: XMLHttpRequest
+// Section 16 Lesson 250: Welcome to Callback Hell
 
-const getCountryData = function (country) {
-  const request = new XMLHttpRequest(); // old way, may be needed later.
-  request.open('GET', `https://restcountries.com/v2/name/${country}`);
-  request.send();
-  request.addEventListener('load', function () {
-    const [data] = JSON.parse(this.responseText);
-    console.log(data);
-
-    const html = `
-  <article class="country">
+// takes in some data
+const renderCountry = function (data, className = '') {
+  const html = `
+  <article class="country ${className}">
     <img class="country__img" src="${data.flag}" />
     <div class="country__data">
       <h3 class="country__name">${data.name}</h3>
@@ -29,11 +23,54 @@ const getCountryData = function (country) {
     </div>
   </article>`;
 
-    countriesContainer.insertAdjacentHTML('beforeend', html);
-    countriesContainer.style.opacity = 1;
+  countriesContainer.insertAdjacentHTML('beforeend', html);
+  countriesContainer.style.opacity = 1;
+};
+
+const getCountryAndNeigbor = function (country) {
+  // AJAX call country 1
+  const request = new XMLHttpRequest(); // old way, may be needed later.
+  request.open('GET', `https://restcountries.com/v2/name/${country}`);
+  request.send();
+
+  request.addEventListener('load', function () {
+    const [data] = JSON.parse(this.responseText);
+    console.log(data);
+
+    // Render country 1
+    renderCountry(data); // calls the render function.
+
+    // Get neighbour country 2
+    const neighbor = data.borders?.[0]; // optional chaining accounts for countries with no border.
+
+    if (!neighbor) return; // guard clause.
+
+    // AJAX call country 2
+    const request2 = new XMLHttpRequest(); // old way, may be needed later.
+    request2.open('GET', `https://restcountries.com/v2/alpha/${neighbor}`);
+    request2.send();
+
+    request2.addEventListener('load', function () {
+      const data2 = JSON.parse(this.responseText); // no longer an array we search for the code rather than the name.
+      console.log(data2);
+
+      renderCountry(data2, 'neighbour');
+    });
   });
 };
 
-getCountryData('portugal'); // two ajax calls happening at the same time.
-getCountryData('usa');
-getCountryData('germany');
+getCountryAndNeigbor('pakistan'); // two ajax calls happening at the same time.
+
+// Call-back hell
+// setTimeout(() => {
+//   console.log('passed');
+//   setTimeout(() => {
+//     console.log('passed');
+//     setTimeout(() => {
+//       console.log('passed');
+//       setTimeout(() => {
+//         console.log('passed');
+//       }, 1000);
+//     }, 2000);
+//   }, 1000);
+// }, 2000);

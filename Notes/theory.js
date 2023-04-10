@@ -1797,9 +1797,11 @@ How the WEB works, requests and responses
 - Add the graphs for notes.
 
 Welcome to Callback Hell
--
--
--
--
-
+- attention to detail on optional chaining (?)
+- we can search by the code.
+- this keyword is what we can use toi access what is returned on the load.
+- this.responsetext returns text about the api return and we can json destrcuture it to return an array. It depends on if we need to destrcutre or not, some return as an object.
+- nested call backs. For example a neighbor of a neighbor, etc...
+- similar to factorial??
+- callback hell: handles loads of call-backs. It can get very messy. Promises are a combat around such.
 */
