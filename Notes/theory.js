@@ -1832,5 +1832,29 @@ const getCountryData = function (country) {
       renderCountry(data[0]);
     });
 };
+
+
+Chaining Promises
+- chain two seq. AJAX calls.
+- .then() method always returns a promise, regardless of the situation. If we do return something, though, it was be the fullfillment. 
+- continue the chains outside, not call back hell.
+- check examples in notes for help.
+
+Handling Rejected Promises
 -
+-
+-
+-
+-
+
+
+
+
+
+
+
+
+
+
+
 */

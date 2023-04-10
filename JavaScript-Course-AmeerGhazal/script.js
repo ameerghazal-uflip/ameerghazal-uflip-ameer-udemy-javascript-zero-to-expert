@@ -5,7 +5,7 @@ const countriesContainer = document.querySelector('.countries');
 
 ///////////////////////////////////////
 
-// Section 16 Lesson 252: Consuming Promises
+// Section 16 Lesson 253: Chaining Promises
 
 // takes in some data
 const renderCountry = function (data, className = '') {
@@ -61,22 +61,21 @@ const renderCountry = function (data, className = '') {
 
 // getCountryAndNeigbor('pakistan'); // two ajax calls happening at the same time.
 
-const getCountryData = function (country) {
-  const request = fetch(`https://restcountries.com/v2/name/${country}`)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      renderCountry(data[0]);
-    });
-};
-
 // arrow version: shorter
 const getCountryDataArrow = function (country) {
   const request = fetch(`https://restcountries.com/v2/name/${country}`) // fethces, we get the response, transform to json, and have the data.
     .then(response => response.json())
-    .then(data => renderCountry(data[0]));
+    .then(data => {
+      renderCountry(data[0]);
+      const neighbor = data[0].borders?.[0]; // once we get the data, check the borders via optional chaining.
+
+      if (!neighbor) return; // fake guard clasue
+
+      // Country 2
+      return fetch(`https://restcountries.com/v2/alpha/${neighbor}`); // by returing this promise, the fullfiled value of the next then method is this
+    })
+    .then(response => response.json())
+    .then(data => renderCountry(data, 'neighbour'));
 };
 
-getCountryData('portugal');
-getCountryDataArrow('usa');
+getCountryDataArrow('afgan');
