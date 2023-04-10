@@ -1855,6 +1855,14 @@ Throwing Erros Manually
 - This can get tidous tho.
 
 
+Ansyncronous Behind the Scences: The Event Loop 
+- One thread of ecxecution, different from java.
+- Callback queue is an ordered list of all th callback functions in line to be exectued. To do list that the call-stack must complete. 
+- callback queue uses dom things.
+- Event Loop: Looks into the call-stack to determine if it is empty or not - except for the global context. If empty, it takes the first call-back from the queue as its first tick, and it keeps going from there.
+- The event loop does the orchastation of the time.
+- in the example of an image, this is done so the other code can go first (code that will not take long) and the image can wait till the cakk-stack is empty and first inline to go.
+- For promises, they do not go to the call-back queue, they have their own queue: microtasks queue. It has priority over the call-back queue. They can cut in line. They are executed before any call-back queues. We can stack these, there is no limit.
 
 
 
