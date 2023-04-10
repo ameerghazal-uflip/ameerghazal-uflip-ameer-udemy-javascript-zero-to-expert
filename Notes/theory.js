@@ -1841,12 +1841,12 @@ Chaining Promises
 - check examples in notes for help.
 
 Handling Rejected Promises
--
--
--
--
--
-
+- promise in which an error happens is a rejected promise.
+- if we wanted to catch an error eveytime, we would have to do it as the second parametr for the then call.
+- we can chain in a .catch() method to catch an where down the chain.
+- any error in javascript contains the message property. 
+- .finally() with a callback function parameter is always run. This will call regardless. Similar to java.
+- catch itself also returns a promise.
 
 
 

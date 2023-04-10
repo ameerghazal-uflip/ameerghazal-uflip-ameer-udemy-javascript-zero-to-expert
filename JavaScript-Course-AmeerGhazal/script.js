@@ -5,9 +5,12 @@ const countriesContainer = document.querySelector('.countries');
 
 ///////////////////////////////////////
 
-// Section 16 Lesson 253: Chaining Promises
+// Section 16 Lesson 254: Handling Rejected Promises
 
 // takes in some data
+const renderError = function (msg) {
+  countriesContainer.insertAdjacentText('beforeend', msg);
+};
 const renderCountry = function (data, className = '') {
   const html = `
   <article class="country ${className}">
@@ -24,7 +27,6 @@ const renderCountry = function (data, className = '') {
   </article>`;
 
   countriesContainer.insertAdjacentHTML('beforeend', html);
-  countriesContainer.style.opacity = 1;
 };
 
 // const getCountryAndNeigbor = function (country) {
@@ -75,7 +77,18 @@ const getCountryDataArrow = function (country) {
       return fetch(`https://restcountries.com/v2/alpha/${neighbor}`); // by returing this promise, the fullfiled value of the next then method is this
     })
     .then(response => response.json())
-    .then(data => renderCountry(data, 'neighbour'));
+    .then(data => renderCountry(data, 'neighbour'))
+    .catch(err => {
+      console.error(err);
+      renderError(`Something went wrong ${err}`);
+    })
+    .finally(() => {
+      countriesContainer.style.opacity = 1; // this happens regardless.
+    });
 };
 
-getCountryDataArrow('afgan');
+btn.addEventListener('click', function () {
+  getCountryDataArrow('afgan');
+});
+
+getCountryDataArrow('diisjidj');
