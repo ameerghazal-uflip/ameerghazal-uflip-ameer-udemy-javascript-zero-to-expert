@@ -1756,4 +1756,19 @@ Final Considerations
 - Harder versions: position the map to show all the workouts (hard, use leaflet library). Draw lines and shapes instead of just points. 
 - After the next section: geocode location from coordinates, or display the weather data for workout time and place.
 
+
+---
+
+
+SECTION 16: Asynchronous JavaScript: Promises, Async/Await, and AJAX
+- Synchronous Code: most of the code we have been righting. This is code that is executed line by line. Each line of code waits for the previous line to finish. This can make problems when long-running operatiors block other codes (e.g. alert)
+- Asycnhrous Code: runs in the background without stalling the main code from executing. (e.g. timer). Only executed after a task that runs in the "background" finshes. Non-blocking code, does not wait for the asycn task to finish its work. Excetued after all the other code. 
+- We need a callback function for async, but call-back functions alone do make the code async. AJAX calls are importnat used cases.
+- AJAX: Asyncronous Java Script and XML: allows us to communitcate with remote web servers in an async way. We can request data from web servers dynamically. 
+- Browser requests from web server api and the server sends back the data.
+- API: Application Progamming Interface: allows applications to "talk to each other and exchange info".
+- DOM API, Geolocation API, Own class API, etc. are some examples of api's (similar to java).
+- "Online" API: Application running on a server, that receives requests for data, and sends data back as response. We can build our own or use thrid-parties and backend node.js.
+- No one uses XML data format. These days, we use JSON data format.
+
 */
