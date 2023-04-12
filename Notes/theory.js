@@ -2052,22 +2052,40 @@ Overview of Modules in JavaScript
 - this makes bundling and dead code elimination possible.
 - after parsing, asycn download, linking imports to exports (passing a reference similar to java when), execution.
 
+Exporting and Importing in ES6
+- we have to specify the type attribuite in the html file 
+- 
+-
+-
+-
+-
+
 
 Top-level Await (2022)
 - We can use the await keyword outside of a function in modules.
 - await keyword works outside of async function. This blocks the execution of the entire module, though.
--
--
--
--
--
--
+- HTML linking: <scrpt type="module">, <script>
+- all the code that is imported (the import scripts are run first)
+- are top level variables are private in local scoped.
+- the way to work around this is to export it.
+- we can export more than one thing, but to make it functionable, we need to explicity import it.
+- from specfic variables it has to the same with curly braces a from statement
+e.g. import {addCart} from = '/...';
+- exports must happen in top-level code.
+- we can export more than one thing at once:
+e.g. const totalPrice = 237;
+    const totalQuantity = 23;
 
+    export { totalPrice, totalQuantity };
 
-
-
-
-
+- we can also rename the variables using the original name as new name (e.g. totalPrice as price)
+- using the * operator, we can import all the exports from a module. (similar to java.)
+- the entire process works similar to a public api with access to properties.
+- default exports deal with dry things; for example, we can return a non-named function but the import call with just utlize that function.
+- we usually don't mix deafults and normals in the same module.
+- for importing default exports, we don't need to use the curly braces and can name it whatever we want.
+- not a copy, it is a live connection. 
+- imports are not copy of the exports, they point to the same place in memory and mutate.
 
 
 

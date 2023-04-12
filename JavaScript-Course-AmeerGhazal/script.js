@@ -1,25 +1,24 @@
-// Section 17: Lesson 273 Top-level Await (2022)
+// Section 17: Lesson 272 Exporting and Importing in ES6
 
-// await keyword works outside of async function. This blocks the execution of the entire module, though.
+// Importing Module
+import { addToCart, totalPrice as price, tq } from './shoppingCart.js';
+console.log('Importing');
+addToCart('bread', 5); // calls the imported module
+console.log(price, tq);
 
-// previoulsy: (async function() {})();
+// imports everything at the same time
+import * as ShoppingCart from './shoppingCart.js';
+ShoppingCart.addToCart('bread', 5);
+console.log(ShoppingCart.totalPrice);
 
-// const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-// const data = await res.json();
-// console.log(data);
+// importing default exports  (don't need curly braces, and we can name it whatever we want)
+// import add from './shoppingCart.js';
+// add('pizza', 2);
 
-const getLastPost = async function () {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-  const data = await res.json();
-  console.log(data);
+// testing the imports are not copy of exports.
+import add, { cart } from './shoppingCart.js'; // mixes default and normal exports
+add('pizza', 2);
+add('bread', 3);
+add('apples', 4);
 
-  return { title: data.at(-1).title, text: data.at(-1).body };
-};
-
-const lastPost = getLastPost();
-console.log(lastPost); // does not get us what we want. The workaround is to use regular promises.
-
-lastPost.then(last => console.log(last));
-
-const lastPost2 = await getLastPost();
-console.log(lastPost2);
+console.log(cart);
