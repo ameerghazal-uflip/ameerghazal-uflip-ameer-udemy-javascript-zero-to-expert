@@ -1904,4 +1904,25 @@ const getPosition = function () {
 
 
 
+Consuming Promises with Async/Await
+- start by using the async keyword before the function signature.
+- we can use multiple awaits.
+- await stops the code execution at the point until the promise is fulfilled.
+- stopping execution in an async function does not block main thread since it is in the background regardless. 
+- we can store what is returned from an await into a variable.
+- doing this will first return the response, which is much better than chaining .then() to every response.
+- syntax sugar over then method, but we still are using promises.
+- from there, we can also await a simple .json() call.
+e.g. 
+const res = await fetch(`https://restcountries.com/v2/name/${country}`);
+  console.log(res);
+
+  const data = await res.json();
+  renderCountry(data[0]);
+
+- this is the same as previously where we would do 2 seperate then chains.
+- await is o.p. and we can pracitcally apply it to anything that used to use .then()
+
+
+
 */
