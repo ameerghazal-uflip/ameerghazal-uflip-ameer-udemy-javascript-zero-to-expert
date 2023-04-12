@@ -1941,4 +1941,42 @@ try {
 - this function the same as java.
 - we can throw our own errors and the catch nlock will catch and format.
 
+
+
+Returning Values from Async Functions
+- async function always returns a promise.
+- If we store an async function inside of a variable and then, for example, log that variable in the main stack, that function is called and waited for, but what is in it is unknown as it just returns a promise (we don't get the fullfilment yet)
+- to combat this, we can use the.then() method
+- even if an error occurs in the async function, it can still be returned as fullfilled.
+- we can rethrow an error in the catch block we caught if we want to use it later
+- we can mix with old and new async, but it may be better just to write with one. 
+- await can only be used inside an async function.
+- IFFE's are immeditly.. functions, one time use): (async funntion () {})();
+- we can use a finally or just keep the info in under the try.
+e.g.
+
+(async function () {
+  try {
+    const response = await whereAmI2();
+    console.log(response);
+  } catch (error) {
+    console.error(error.message);
+  } finally {
+    console.log(`3. Finished getting location.`);
+  }
+})();
+
+is equivalent to this
+
+whereAmI2()
+  .then(city => console.log(city))
+  .catch(err => console.error(`${err.message}`))
+  .finally(() => console.log(`finished getting location`));
+
+
+
+
+
+
+
 */

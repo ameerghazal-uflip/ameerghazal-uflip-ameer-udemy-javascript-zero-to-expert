@@ -3,16 +3,7 @@
 const btn = document.querySelector('.btn-country');
 const countriesContainer = document.querySelector('.countries');
 
-// Section 16 Lesson 263: Error handling with try...catch
-
-// Mini-example
-// try {
-//   let x = 20;
-//   const y = 30;
-//   y = x; // reassinging fails
-// } catch (error) {
-//   alert(error.message);
-// }
+// Section 16 Lesson 264: Returning Values form Async Functions
 
 const whereAmI2 = async function (country) {
   try {
@@ -32,13 +23,36 @@ const whereAmI2 = async function (country) {
 
     const data = await res.json();
     renderCountry(data[0]);
+
+    return `You are in ${dataGeo.city}, ${dataGeo.country}`;
   } catch (error) {
     console.error(error);
     renderError(`Something went wrong ${error.message}`);
+
+    // Reject promise returned from async function
+    throw error; // rethrows error
   }
 };
 
-whereAmI2();
+console.log(`1. Get location`);
+// const key = whereAmI2();
+// console.log(key);
+// whereAmI2()
+//   .then(city => console.log(city))
+//   .catch(err => console.error(`${err.message}`))
+//   .finally(() => console.log(`finished getting location`));
+
+// IFFE Version: Immediate functions we call.
+(async function () {
+  try {
+    const response = await whereAmI2();
+    console.log(response);
+  } catch (error) {
+    console.error(error.message);
+  } finally {
+    console.log(`3. Finished getting location.`);
+  }
+})();
 
 function renderCountry(data, className = '') {
   const html = `
@@ -58,7 +72,6 @@ function renderCountry(data, className = '') {
   countriesContainer.insertAdjacentHTML('beforeend', html);
   countriesContainer.style.opacity = 1;
 }
-
 // we change the signature and don't store it for order purposes.
 function getPosition() {
   return new Promise(function (resolve, reject) {
