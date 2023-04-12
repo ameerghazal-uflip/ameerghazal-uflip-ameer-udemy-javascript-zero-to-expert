@@ -2020,16 +2020,65 @@ Other Promise Combinators: race, allSettled and any
 
     -------------------------
 
-    SECTION 17: Modern JavaScript Development: Modules, Tooling, and Functional
+SECTION 17: Modern JavaScript Development: Modules, Tooling, and Functional
 
-    Overview of Modern JS Devlopment
-    - we use multiple modules and 3-rd party packages.
-    - NPM is the code repo and installed on computer for these.
-    - Js bundle is the final file used for production. 
-    - Development: modules, 3rd-party packages, etc. (npn &*node)
-    - Build Process: bundling (join all modules), transpiring and polyfilling (covert modern js back to ES5) (made by webpack or parcel)
-    - Production: Javascript bundle.
-    
+Overview of Modern JS Devlopment
+- we use multiple modules and 3-rd party packages.
+- NPM is the code repo and installed on computer for these.
+- Js bundle is the final file used for production. 
+- Development: modules, 3rd-party packages, etc. (npn &*node)
+- Build Process: bundling (join all modules), transpiring and polyfilling (covert modern js back to ES5) (made by webpack or parcel)
+- Production: Javascript bundle.
 
+Overview of Modules in JavaScript
+- Module: reusable piece of code that encapsulates implementation details. Usually a standalone file with imports and exports.
+- Whatever we export out of a module is considered a public api.
+- we can import modules form other modules. 
+- with larger code bases, modules make it easier to compose complex applications.
+- small building blocks put together. They can be developed in isolation.
+- Isolating components is another large advantage of modules.
+- Abstract code: implement low-level code in modules and import these abstractions into other modules.
+- Organized code: reusable code.
+- ES6 Modules: stored in files, exactly one module per file.
+- ES6 v. Scrips
+    - Top-level variables: scoped to module, global
+    - default mode: strict mode, sloppy mode
+    - Top-level this: undefined, window
+    - Imports & exports: yes (can only happen at the top level, not within blocks), no.
+    - HTML linking: <scrpt type="module">, <script>
+
+- parsing means to test the code
+- modules are imported syncronosuly thanks to "static" imports, which make imports known before execution.
+- this makes bundling and dead code elimination possible.
+- after parsing, asycn download, linking imports to exports (passing a reference similar to java when), execution.
+
+
+Top-level Await (2022)
+- We can use the await keyword outside of a function in modules.
+- await keyword works outside of async function. This blocks the execution of the entire module, though.
 -
+-
+-
+-
+-
+-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 */
