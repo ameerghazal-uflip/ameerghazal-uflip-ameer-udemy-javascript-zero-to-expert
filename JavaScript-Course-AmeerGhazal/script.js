@@ -18,35 +18,14 @@ const lastPost = getLastPost();
 const lastPost2 = await getLastPost();
 // console.log(lastPost2);
 
-// old module pattern way
 
-// Start with an IFFE.
-const ShoppingCart2 = (function () {
-  const cart = [];
-  const shippingCost = 10;
-  const totalPrice = 237;
-  const totalQuantity = 23;
+// Export
+export.addToCart = function (product, quantity) {
+  cart.push({ product, quantity });
+  console.log(
+    `${product} ${quantity} added to the cart (shipping cost is ${shippingCost})`
+  );
+};
 
-  const addToCart = function (product, quantity) {
-    cart.push({ product, quantity });
-    console.log(
-      `${product} ${quantity} added to the cart (shipping cost is ${shippingCost})`
-    );
-  };
-
-  const orderStock = function (product, quantity) {
-    console.log(`${product} ${quantity} ordered from supplier`);
-  };
-
-  return {
-    addToCart,
-    cart,
-    totalPrice,
-    totalQuantity,
-  };
-})();
-
-ShoppingCart2.addToCart('apple', 4);
-ShoppingCart2.addToCart('pizza', 2);
-console.log(ShoppingCart2);
-console.log(ShoppingCart2.shippingCost);
+// Import
+const { addToCart } = require('./shoppingCart.js')

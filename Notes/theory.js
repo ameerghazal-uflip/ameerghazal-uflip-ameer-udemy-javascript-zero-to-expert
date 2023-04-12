@@ -2097,7 +2097,12 @@ console.log(ShoppingCart2);
 
 
 Common JS Modules
--
+- AMD modules & Common Js Modules.
+- Common Js ones have been used in Node.Js since the start.
+- almost all the modules in the mpm repo still use the common js.
+- now, we are basically stuck with common js.
+- it uses the: export. keyword which works in node.js. but comes up as undefined in the browser.
+- for importing, it uses the: require(moduleName).
 
 
 
