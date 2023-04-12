@@ -1985,6 +1985,7 @@ Running Promises in Parallel
 - From this, we assign the returned promise as a variable and await it.
 e.g.    
 - it recives an array and returns one. Then, loop over the array. (map, for each, etc.)
+- Short circuts as soon as one promise rejects.
 - one rejected promise forces the entire thing to reject.
 - Promise.all is a combinator function.
 
@@ -1996,5 +1997,25 @@ e.g.
 
 
 
+Other Promise Combinators: race, allSettled and any
+- Promise.all(): notes listed in the section above. (fails to return the promises if at least one rejects)
 
+- Promise.race()
+    - recives an array of promises and returns an array. The first settled promise wins the race, the others don't matter.
+    - whichever one takes the least time wins.
+    - A promise can win the race even if it gets rejected, meaning it gets shorts circuted. Short circuts as soon as one problem is resolved.
+    - does not ignore rejects.
+    - Very useful for very long promises (e.g. wifi issues).
+    - Promise.race() & Promise.all() are the two most popular Promise combinator functions.
+
+- Promise.allSettled()
+    - fairly new. Takes in an array of promises and returns an array of all the settled promises.
+    - simply never short-circuts and returns all, fullifed or rejected.
+    - does not matter if one- or many - of the promises reject, it returns all of them
+
+- Promise.any()
+    - takes in an array of multiple promises and returns the first fulfilled promise.
+    - it ignores any rejected promises.
+    - similar to .race() but this one ignores the rejects. 
+-
 */

@@ -3,18 +3,57 @@
 const btn = document.querySelector('.btn-country');
 const countriesContainer = document.querySelector('.countries');
 
-// Section 16 Lesson 265: Running Promises in Parallel
+// Section 16 Lesson 266: Other Promise Combinators: race, allSettled and any
+
+// Promise.Race
+(async function () {
+  const res = await Promise.race([
+    getJSON(`https://restcountries.com/v2/name/egypt`),
+    getJSON(`https://restcountries.com/v2/name/italy`),
+    getJSON(`https://restcountries.com/v2/name/mexico`),
+  ]);
+  console.log(res[0]);
+})();
+
+const timeout = function (s) {
+  return new Promise(function (_, reject) {
+    setTimeout(function () {
+      reject(new Error('request took too long!'));
+    }, s * 1000);
+  });
+};
+
+Promise.race([getJSON(`https://restcountries.com/v2/name/usa`), timeout(0.1)])
+  .then(res => console.log(res[0]))
+  .catch(err => console.error(err));
+
+// Promise.allSettled
+Promise.allSettled([
+  Promise.resolve('Success'),
+  Promise.reject('Success'),
+  Promise.resolve('Success'),
+]).then(res => console.log(res));
+
+// Promise.all
+Promise.all([
+  Promise.resolve('Success'),
+  Promise.reject('ERROR'),
+  Promise.resolve('Success'),
+])
+  .then(res => console.log(res))
+  .catch(err => console.error(err));
+
+// Promise.any()
+Promise.any([
+  Promise.resolve('Success'),
+  Promise.reject('ERROR'),
+  Promise.resolve('Success'),
+])
+  .then(res => console.log(res))
+  .catch(err => console.error(err));
 
 const get3Countries = async function (c1, c2, c3) {
   try {
-    // old way
-    // const [data1] = await getJSON(`https://restcountries.com/v2/name/${c1}`);
-    // const [data2] = await getJSON(`https://restcountries.com/v2/name/${c2}`);
-    // const [data3] = await getJSON(`https://restcountries.com/v2/name/${c3}`);
-
-    // console.log([data1.capital, data2.capital, data3.capital]);
-
-    // New way
     const data = await Promise.all([
       getJSON(`https://restcountries.com/v2/name/${c1}`),
       getJSON(`https://restcountries.com/v2/name/${c2}`),
