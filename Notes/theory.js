@@ -1924,5 +1924,21 @@ const res = await fetch(`https://restcountries.com/v2/name/${country}`);
 - await is o.p. and we can pracitcally apply it to anything that used to use .then()
 
 
+Error handling with try-catch
+- With async await we use a try-catch block, or whenever we need to
+- we can wrap all our code in try block and js would try to do the code.
+- from there, we use a catch block to catch the exceptions. 
+- the catch block has access to whatever error happens in the try block
+e.g.
+try {
+  let x = 20;
+  const y = 30;
+  y = x; // reassinging fails
+} catch (error) {
+  alert(error.message);
+}
+
+- this function the same as java.
+- we can throw our own errors and the catch nlock will catch and format.
 
 */
