@@ -1,4 +1,4 @@
-// Section 17: Lesson 274 The Module Pattern
+// Section 17 Lesson 276: A brief intro to the command line
 
 import * as ShoppingCart from './shoppingCart.js';
 
@@ -17,15 +17,3 @@ const lastPost = getLastPost();
 
 const lastPost2 = await getLastPost();
 // console.log(lastPost2);
-
-
-// Export
-export.addToCart = function (product, quantity) {
-  cart.push({ product, quantity });
-  console.log(
-    `${product} ${quantity} added to the cart (shipping cost is ${shippingCost})`
-  );
-};
-
-// Import
-const { addToCart } = require('./shoppingCart.js')
