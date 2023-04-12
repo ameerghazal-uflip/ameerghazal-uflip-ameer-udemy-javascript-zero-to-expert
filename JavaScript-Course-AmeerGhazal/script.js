@@ -8,6 +8,8 @@
 // const data = await res.json();
 // console.log(data);
 
+import * as ShoppingCart from './shoppingCart.js';
+
 const getLastPost = async function () {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
   const data = await res.json();
@@ -19,7 +21,7 @@ const getLastPost = async function () {
 const lastPost = getLastPost();
 console.log(lastPost); // does not get us what we want. The workaround is to use regular promises.
 
-lastPost.then(last => console.log(last));
+// lastPost.then(last => console.log(last));
 
 const lastPost2 = await getLastPost();
 console.log(lastPost2);

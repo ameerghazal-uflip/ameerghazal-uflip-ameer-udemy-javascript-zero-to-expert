@@ -2056,12 +2056,11 @@ Overview of Modules in JavaScript
 Top-level Await (2022)
 - We can use the await keyword outside of a function in modules.
 - await keyword works outside of async function. This blocks the execution of the entire module, though.
--
--
--
--
--
--
+- this can be very useful but it can be harmful as it stops the running. Use it with caution.
+- .at() from arrays gets the element using the index (we can use negative numbers)
+- for async functions, they return a promise regardless of the actual return data itself. Back then, the work around would be to simply use regular promises, but now we can simply use the await keyword. 
+- if one module imports a module using top-level await, then the importing module will wait for the imported module to finish the blocking code.
+- The code in script.js (imports shoppingCart.js) has to wait for all the blocking code in shoppingCart.js to run before it runs if we use the await.
 
 
 
