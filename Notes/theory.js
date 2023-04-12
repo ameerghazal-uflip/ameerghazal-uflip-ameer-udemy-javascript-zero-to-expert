@@ -1976,6 +1976,24 @@ whereAmI2()
 
 
 
+Running Promises in Parallel
+- for an async function, we always should wrap our code using a try catch block
+- destructure the array for the capitals.
+- trying to make calls that do not have to wait for any of them (order does not matter)
+- we want all the problems to run in parallel rather than in sequence to save loading time.
+- Promise.all([array of promise]) which returns a new promise that does all the promises in the array.
+- From this, we assign the returned promise as a variable and await it.
+e.g.    
+- it recives an array and returns one. Then, loop over the array. (map, for each, etc.)
+- one rejected promise forces the entire thing to reject.
+- Promise.all is a combinator function.
+
+ const data = await Promise.all([
+      getJSON(`https://restcountries.com/v2/name/${c1}`),
+      getJSON(`https://restcountries.com/v2/name/${c2}`),
+      getJSON(`https://restcountries.com/v2/name/${c3}`),
+    ]);
+
 
 
 

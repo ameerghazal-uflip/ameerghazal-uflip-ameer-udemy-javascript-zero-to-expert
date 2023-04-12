@@ -3,7 +3,33 @@
 const btn = document.querySelector('.btn-country');
 const countriesContainer = document.querySelector('.countries');
 
-// Section 16 Lesson 264: Returning Values form Async Functions
+// Section 16 Lesson 265: Running Promises in Parallel
+
+const get3Countries = async function (c1, c2, c3) {
+  try {
+    // old way
+    // const [data1] = await getJSON(`https://restcountries.com/v2/name/${c1}`);
+    // const [data2] = await getJSON(`https://restcountries.com/v2/name/${c2}`);
+    // const [data3] = await getJSON(`https://restcountries.com/v2/name/${c3}`);
+
+    // console.log([data1.capital, data2.capital, data3.capital]);
+
+    // New way
+    const data = await Promise.all([
+      getJSON(`https://restcountries.com/v2/name/${c1}`),
+      getJSON(`https://restcountries.com/v2/name/${c2}`),
+      getJSON(`https://restcountries.com/v2/name/${c3}`),
+    ]);
+
+    console.log(data.map(d => d[0].capital));
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+get3Countries('portugal', 'canada', 'usa');
+
+//////////////////////////////////////////////
 
 const whereAmI2 = async function (country) {
   try {
@@ -34,25 +60,17 @@ const whereAmI2 = async function (country) {
   }
 };
 
-console.log(`1. Get location`);
-// const key = whereAmI2();
-// console.log(key);
-// whereAmI2()
-//   .then(city => console.log(city))
-//   .catch(err => console.error(`${err.message}`))
-//   .finally(() => console.log(`finished getting location`));
-
 // IFFE Version: Immediate functions we call.
-(async function () {
-  try {
-    const response = await whereAmI2();
-    console.log(response);
-  } catch (error) {
-    console.error(error.message);
-  } finally {
-    console.log(`3. Finished getting location.`);
-  }
-})();
+// (async function () {
+//   try {
+//     const response = await whereAmI2();
+//     console.log(response);
+//   } catch (error) {
+//     console.error(error.message);
+//   } finally {
+//     console.log(`3. Finished getting location.`);
+//   }
+// })();
 
 function renderCountry(data, className = '') {
   const html = `
@@ -80,4 +98,11 @@ function getPosition() {
 }
 function renderError(msg) {
   countriesContainer.insertAdjacentText('beforeend', msg);
+}
+
+function getJSON(url, errorMsg = 'Something went wrong') {
+  return fetch(url).then(response => {
+    if (!response.ok) throw new Error(`${errorMsg} ${response.status}`); // rejects the promise on purpose to catch later.
+    return response.json();
+  });
 }
