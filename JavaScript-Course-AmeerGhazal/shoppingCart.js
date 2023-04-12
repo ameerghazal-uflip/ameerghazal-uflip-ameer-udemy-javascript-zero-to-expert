@@ -2,9 +2,9 @@
 console.log('Exporting');
 
 // Blocking code
-console.log('Start fetching users');
+// console.log('Start fetching users');
 await fetch('https://jsonplaceholder.typicode.com/users');
-console.log('Finish fetching');
+// console.log('Finish fetching');
 
 // are top level variables are private in local scoped.
 const shippingCost = 10;

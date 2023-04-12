@@ -2063,8 +2063,41 @@ Top-level Await (2022)
 - The code in script.js (imports shoppingCart.js) has to wait for all the blocking code in shoppingCart.js to run before it runs if we use the await.
 
 
+The Module Pattern
+- Js developers used to create an IFFE function and set the return equal to a variable, in which the returend everything from the iffe that they would've exported in a module.
+- closuers are the way this works. Functions are allowed to have access to everything at the functions birthplace. 
+e.g. const ShoppingCart2 = (function () {
+  const cart = [];
+  const shippingCost = 10;
+  const totalPrice = 237;
+  const totalQuantity = 23;
+
+  const addToCart = function (product, quantity) {
+    cart.push({ product, quantity });
+    console.log(`${product} ${quantity} added to the cart`);
+  };
+
+  const orderStock = function (product, quantity) {
+    console.log(`${product} ${quantity} ordered from supplier`);
+  };
+
+  return {
+    addToCart,
+    cart,
+    totalPrice,
+    totalQuantity,
+  };
+})();
+
+ShoppingCart2.addToCart('apple', 4);
+ShoppingCart2.addToCart('pizza', 2);
+console.log(ShoppingCart2);
+- the function can still access its birth place rights.
+- This is where module - practically - originated from.
 
 
+Common JS Modules
+-
 
 
 
