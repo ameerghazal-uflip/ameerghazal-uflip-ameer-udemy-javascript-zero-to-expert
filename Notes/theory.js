@@ -2017,5 +2017,19 @@ Other Promise Combinators: race, allSettled and any
     - takes in an array of multiple promises and returns the first fulfilled promise.
     - it ignores any rejected promises.
     - similar to .race() but this one ignores the rejects. 
+
+    -------------------------
+
+    SECTION 17: Modern JavaScript Development: Modules, Tooling, and Functional
+
+    Overview of Modern JS Devlopment
+    - we use multiple modules and 3-rd party packages.
+    - NPM is the code repo and installed on computer for these.
+    - Js bundle is the final file used for production. 
+    - Development: modules, 3rd-party packages, etc. (npn &*node)
+    - Build Process: bundling (join all modules), transpiring and polyfilling (covert modern js back to ES5) (made by webpack or parcel)
+    - Production: Javascript bundle.
+    
+
 -
 */
