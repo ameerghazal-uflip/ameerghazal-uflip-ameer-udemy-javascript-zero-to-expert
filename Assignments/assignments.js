@@ -32,7 +32,7 @@ const loadNPause = async function () {
     // try catch
     const res = await createImage("img/img-1.jpg"); // awaits
     console.log("Image 1 has been found.");
-    await wait(2); // wait
+    await wait(2); // waits
     img.style.display = "none";
 
     const next = await createImage("img/img-2.jpg"); // next await
