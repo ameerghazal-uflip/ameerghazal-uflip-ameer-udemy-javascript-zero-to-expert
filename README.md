@@ -19,7 +19,9 @@ PART 1
    image element itself. In case there is an error loading the image (listen for
    the'error' event), reject the promise
 3. If this part is too tricky for you, just watch the first part of the solution
+
    PART 2
+
 4. Consume the promise using .then and also add an error handler
 5. After the image has loaded, pause execution for 2 seconds using the 'wait'
    function we created earlier
@@ -32,3 +34,7 @@ PART 1
    Test data: Images in the img folder. Test the error handler by passing a wrong
    image path. Set the network speed to “Fast 3G” in the dev tools Network tab,
    otherwise images load too fast
+
+Test data: Images in the img folder. Test the error handler by passing a wrong
+image path. Set the network speed to “Fast 3G” in the dev tools Network tab,
+otherwise images load too fast
