@@ -1,24 +1,7 @@
-// Section 17 Lesson 276: A brief intro to the command line
+// Section 17 Lesson 278: Bundling with Parcel and NPM Scripts
 
-// import * as ShoppingCart from './shoppingCart.js';
-
-// const getLastPost = async function () {
-//   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-//   const data = await res.json();
-//   // console.log(data);
-
-//   return { title: data.at(-1).title, text: data.at(-1).body };
-// };
-
-// const lastPost = getLastPost();
-// // console.log(lastPost); // does not get us what we want. The workaround is to use regular promises.
-
-// // lastPost.then(last => console.log(last));
-
-// const lastPost2 = await getLastPost();
-// // console.log(lastPost2);
-
-import cloneDeep from '../node_modules/lodash-es/cloneDeep.js';
+// import cloneDeep from '../node_modules/lodash-es/cloneDeep.js';
+import cloneDeep from 'lodash-es';
 
 const state = {
   cart: [
@@ -39,3 +22,8 @@ const stateDeepClone = cloneDeep(state); // clones at the point where the code i
 
 state.user.loggedIn = false;
 console.log(stateClone, stateDeepClone);
+
+// will not reload parts of the page.
+if (module.hot) {
+  module.hot.accept();
+}

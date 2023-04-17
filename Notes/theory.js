@@ -2137,6 +2137,26 @@ Introduction to NPM
 - an easy way to get package back after deleting them is through npm i without a package name
 
 
+Bundling with Parcel and NPM Scripts
+- global and local instalattions
+- npm i parcel --save-dev. we could also use sudo npm i parcel. Also, we could install a specfici version (npm i parcel@code)
+- using parcel bundles the modules together.
+- npx parcel __.html (file name)
+- npm uninstall parcel: uninstalls it
+- due to parcel, we don't need to use the module part in the script anymore, we can just use the normal defer script.
+- will not reload the page.
+- if (module.hot) {
+  module.hot.accept();
+}
+- npx parcel index.html loads all the files.
+
+- we can just import what we need like this and parcel will find the path.
+import cloneDeep from 'lodash-es';
+- works with all commonJs module as well/
+- hot module replacment saves the code even after reloads.
+- we can save time rewriting the npx by writing it in the "scripts" file.
+- npm i parcel -g is the global download. We can use the global tools directly in the command lines without local download, but locally can be alot better.
+
 
 
 
