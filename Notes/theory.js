@@ -2125,7 +2125,16 @@ A Brief Introduction to the Command Line
 - ls: prints the contents.
 
 
-
+Introduction to NPM
+- Having the html load the JS is really not efficent like we previosley used.
+- npm -v: version
+- npm init: creates the json file and follow with enter buttons while changing what is needed, if needed.
+- npm install: package name installs all the packages.
+- "dependices" is updated with the library we chose.
+- Need a module bundler to use leaflet.
+- -es is becasue of es modules
+-
+-
 
 
 
