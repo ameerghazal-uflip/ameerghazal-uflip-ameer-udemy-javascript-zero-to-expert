@@ -1,4 +1,14 @@
 {
+  "name": "javascript-course-ameerghazal",
+  "version": "1.0.0",
+  "main": "clean.js",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
   "dependencies": {
     "leaflet": "^1.9.3",
     "lodash": "^4.17.21"
