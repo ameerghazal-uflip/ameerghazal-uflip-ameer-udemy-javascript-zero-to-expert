@@ -2107,12 +2107,22 @@ Common JS Modules
 
 
 A Brief Introduction to the Command Line
--
--
--
--
--
-
+- Always in a folder in the terminal.
+- dir: for windows will show us the contect for the current folder
+- cd: we can go up and down the file.
+- tab key auto completes.
+- cd .. goes up 
+- clear: clears the console.
+- cd img, etc.
+- cd ../.. goes up two .. etc.
+- mkdir with file name creates a file.
+- touch: followed by new html, js, etc. name can be created inside the file.
+- arror key will show us past commands
+- we can create multiple files at once by using touch: name one, two, etc.
+- del: removes files.
+- mv: file ../ moves to parent.
+- rmrdir: removes directory
+- ls: prints the contents.
 
 
 
