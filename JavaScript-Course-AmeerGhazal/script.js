@@ -10,7 +10,7 @@ console.log(cart);
 
 // import cloneDeep from './node_modules/lodash/cloneDeep.js';
 // import cloneDeep from '/lodash';
-import cloneDeep from './node_modules/lodash-es/fp/cloneDeep.js';
+// import cloneDeep from './node_modules/lodash-es/fp/cloneDeep.js';
 
 const state = {
   cart: [
@@ -26,11 +26,11 @@ const state = {
   user: { loggedIn: true },
 };
 
-const stateClone = Object.assign({}, state); // changes the logged in prop even after the clone
-const stateDeepClone = cloneDeep(state); // clones at the point where the code is run and not chanfed.
+// const stateClone = Object.assign({}, state); // changes the logged in prop even after the clone
+// const stateDeepClone = cloneDeep(state); // clones at the point where the code is run and not chanfed.
 
-state.user.loggedIn = false;
-console.log(stateClone, stateDeepClone);
+// state.user.loggedIn = false;
+// console.log(stateClone, stateDeepClone);
 
 // will not reload parts of the page.
 if (module.hot) {
@@ -47,5 +47,12 @@ class Person {
 
 const Jonas = new Person('Jonas');
 console.log('Jonas' ?? null);
+console.log(cart.find(el => el.quantity >= 2));
+Promise.resolve('TEST').then(x => console.log(x));
 
-console.log(cart.find);
+import 'core-js/stable';
+// import 'core-js/stable/array/find';
+// import 'core-js/stable/promise';
+
+// polyfilling async functions
+import 'regenerator-runtime/runtime';

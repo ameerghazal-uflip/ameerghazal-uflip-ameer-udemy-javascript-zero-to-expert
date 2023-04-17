@@ -2158,6 +2158,12 @@ import cloneDeep from 'lodash-es';
 - we can save time rewriting the npx by writing it in the "scripts" file.
 - npm i parcel -g is the global download. We can use the global tools directly in the command lines without local download, but locally can be alot better.
 
+Configuring with Babrl and Polyfilling
+- polyfilling: import parts of a library
+- recreates the function 
+- polyfills everything even if we don't need it.
+
+
 
 
 
