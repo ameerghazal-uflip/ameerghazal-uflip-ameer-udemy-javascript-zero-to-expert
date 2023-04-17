@@ -18,7 +18,7 @@
 // const lastPost2 = await getLastPost();
 // // console.log(lastPost2);
 
-import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+import cloneDeep from '../node_modules/lodash-es/cloneDeep.js';
 
 const state = {
   cart: [
@@ -34,5 +34,8 @@ const state = {
   user: { loggedIn: true },
 };
 
-const stateClone = Object.assign({}, state);
-console.log(stateClone);
+const stateClone = Object.assign({}, state); // changes the logged in prop even after the clone
+const stateDeepClone = cloneDeep(state); // clones at the point where the code is run and not chanfed.
+
+state.user.loggedIn = false;
+console.log(stateClone, stateDeepClone);

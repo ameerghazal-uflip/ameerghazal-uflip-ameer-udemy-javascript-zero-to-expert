@@ -2133,8 +2133,8 @@ Introduction to NPM
 - "dependices" is updated with the library we chose.
 - Need a module bundler to use leaflet.
 - -es is becasue of es modules
--
--
+- lodash is a very good api for array
+- an easy way to get package back after deleting them is through npm i without a package name
 
 
 
