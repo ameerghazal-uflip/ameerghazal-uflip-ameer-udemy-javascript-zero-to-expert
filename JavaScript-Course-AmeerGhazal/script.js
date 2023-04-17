@@ -1,7 +1,13 @@
-// Section 17 Lesson 278: Bundling with Parcel and NPM Scripts
+// Section 17 Lesson 278-279: Bundling with Parcel and NPM Scripts
 
-// import cloneDeep from '../node_modules/lodash-es/cloneDeep.js';
-import cloneDeep from 'lodash-es';
+import add, { cart } from './shoppingCart.js';
+add('pizza', 2);
+add('bread', 5);
+add('apples', 4);
+console.log(cart);
+
+import cloneDeep from '../node_modules/lodash-es/cloneDeep.js';
+// import cloneDeep from 'lodash-es';
 
 const state = {
   cart: [

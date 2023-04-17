@@ -2135,6 +2135,7 @@ Introduction to NPM
 - -es is becasue of es modules
 - lodash is a very good api for array
 - an easy way to get package back after deleting them is through npm i without a package name
+- npm i: installs everything in the dependicsl
 
 
 Bundling with Parcel and NPM Scripts
