@@ -2233,7 +2233,12 @@ The MVC Architecture
 - Components of any Architecure: business logic: solves the business problem, state: stores all the data, http library: making and reciving AJAX requests, application logic (router): implementation of the application itself & technical, presentation logic (ui layer): visible part of the application.
 - model and the view are completly isolated with instructorions from the controller. 
 - using require is the old common js was of exporting
+
+Helper and Configuration Files
+- config file contains things that are useable everywhere
 -
+-
+--
 -
 
 */
