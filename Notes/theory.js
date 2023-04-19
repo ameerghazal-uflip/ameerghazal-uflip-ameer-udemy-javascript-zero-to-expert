@@ -2223,10 +2223,15 @@ e.g. npm i core-js regenerator-runtime
 
 Listening for Load and Hashchange Events
 - window.location is the entire url, and .hash is the hasj
--
--
--
--
+
+The MVC Architecture
+- Structure: how we orgainze our cdoe.
+- Maintainability: change in the future
+- Expandablity: easily add new features
+- All the three are the perfect architecture.
+- Many web devs use framework like react, angular, vue, etc. so they don't have to worry about frameworks.
+- Components of any Architecure: business logic: solves the business problem, state: stores all the data, http library: making and reciving AJAX requests, application logic (router): implementation of the application itself & technical, presentation logic (ui layer): visible part of the application.
+- model and the view are completly isolated with instructorions from the controller. 
 -
 -
 -

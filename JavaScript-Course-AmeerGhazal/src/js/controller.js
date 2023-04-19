@@ -1,4 +1,4 @@
-// Section 18 Lesson 288-289: Loadig a Recipe from API and Rendering the Recipe
+// Section 18 Lesson 291: The MVC Architecture
 
 // import icons from '../img/icons.svg'; // Parcel `
 import icons from 'url:../img/icons.svg'; // parcel 2
