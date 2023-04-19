@@ -2186,4 +2186,19 @@ Declareative and Functional JavaScript Principles
 - we can mix imperative and declerative.
 - avoid data mutations, no side effects, mapping, reducing, filtersm etc.
 - Declarative syntax: array and object destructing, spread operator, ternary operator, template literals.
+
+Fixing Bad Code 2
+- Object.freeze(object): makes an object immutable.
+- it only freezes the first level of the object. 
+- it is not a deep freeze.
+- for example, an array with an object inside. We cannot push in a new object, but we can edit one of the object properties at an index.
+
+
+
+
+
+
+
+
+
 */
