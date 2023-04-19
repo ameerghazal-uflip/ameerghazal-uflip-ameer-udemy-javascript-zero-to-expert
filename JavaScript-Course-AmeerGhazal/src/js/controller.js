@@ -1,5 +1,3 @@
-// Section 18 Lesson 286: Project Overview and Planning (i)
-
 const recipeContainer = document.querySelector('.recipe');
 
 const timeout = function (s) {

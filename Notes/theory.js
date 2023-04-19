@@ -2198,9 +2198,21 @@ Fixing Bad Code 2
 
 Section 18: Forkify App: Building a Modern Application
 
+Project Overview and Planning
+- User Stories: "As a [user], I want [action] so that [benift]"
+  - As a user, I want to search for recipes, so that I can find new ideas for meals.
+  - As a user, I want to bookmark recipies, so I can review them later.
+  - Update number of serving, create recipes, bookmarks, etc.
+
+
+- Features: search functionality, display results, display recipies with cooking time, servings, ingredients, et.c.
+(these features differ per each user stories, check the graphics.)
+
+- Flowchart (1): user searches, load search results (async), render search results. Render pagination buttons.
+- check the flowchart.
 
 
 
-
-
+Loading a Recipe for from API
+- sass is a better way to write css. Parcel converts the sass to css. 
 */
