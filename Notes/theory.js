@@ -2136,6 +2136,8 @@ Introduction to NPM
 - lodash is a very good api for array
 - an easy way to get package back after deleting them is through npm i without a package name
 - npm i: installs everything in the dependicsl
+- we need to build everything and start it when using imports
+
 
 
 Bundling with Parcel and NPM Scripts
@@ -2162,7 +2164,7 @@ Configuring with Babrl and Polyfilling
 - polyfilling: import parts of a library
 - recreates the function 
 - polyfills everything even if we don't need it.
-
+- polyfilling recreates the function so we can use it later.
 
 
 

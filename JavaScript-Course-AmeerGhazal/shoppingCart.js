@@ -3,7 +3,7 @@ console.log('Exporting');
 
 // Blocking code
 // console.log('Start fetching users');
-await fetch('https://jsonplaceholder.typicode.com/users');
+// await fetch('https://jsonplaceholder.typicode.com/users'); // commeted out for the next lectures.
 // console.log('Finish fetching');
 
 // are top level variables are private in local scoped.

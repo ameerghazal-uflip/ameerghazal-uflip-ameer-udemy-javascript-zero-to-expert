@@ -3,14 +3,13 @@
 console.log('123');
 
 import add, { cart } from './shoppingCart.js';
-add('pizza', 2);
-add('bread', 5);
+add('pizwe', 2);
+add('berad', 5);
 add('apples', 4);
 console.log(cart);
 
-// import cloneDeep from './node_modules/lodash/cloneDeep.js';
-// import cloneDeep from '/lodash';
-// import cloneDeep from './node_modules/lodash-es/fp/cloneDeep.js';
+// import cloneDeep from './node_modules/lodash/cloneDeep.js'; / old version
+import cloneDeep from 'lodash-es';
 
 const state = {
   cart: [
@@ -26,11 +25,12 @@ const state = {
   user: { loggedIn: true },
 };
 
-// const stateClone = Object.assign({}, state); // changes the logged in prop even after the clone
-// const stateDeepClone = cloneDeep(state); // clones at the point where the code is run and not chanfed.
+const stateClone = Object.assign({}, state); // changes the logged in prop even after the clone
+const stateDeepClone = cloneDeep(state); // clones at the point where the code is run and not chanfed.
 
-// state.user.loggedIn = false;
-// console.log(stateClone, stateDeepClone);
+// state.user.loggedIn = false; // mutates the object.assign version
+console.log(stateDeepClone);
+console.log(stateClone);
 
 // will not reload parts of the page.
 if (module.hot) {
@@ -38,7 +38,7 @@ if (module.hot) {
 }
 
 class Person {
-  #greeting = 'hey';
+  greeting = 'hey';
   constructor(name) {
     this.name = name;
     console.log(`${this.greeting}, ${this.name}`);
@@ -47,12 +47,15 @@ class Person {
 
 const Jonas = new Person('Jonas');
 console.log('Jonas' ?? null);
-console.log(cart.find(el => el.quantity >= 2));
+console.log(cart.find(el => el.quantity >= 2)); // finds the first element
 Promise.resolve('TEST').then(x => console.log(x));
 
-import 'core-js/stable';
+// Polyfilling
+import 'core-js/stable'; // usually we want to import parts of the package.
+
+// we could cherry pick for the certain bundle size.
 // import 'core-js/stable/array/find';
 // import 'core-js/stable/promise';
 
-// polyfilling async functions
-import 'regenerator-runtime/runtime';
+// // polyfilling async functions
+import 'regenerator-runtime/runtime'; // hoisted anyway.
