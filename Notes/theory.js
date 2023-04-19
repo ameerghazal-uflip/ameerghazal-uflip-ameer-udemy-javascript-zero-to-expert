@@ -2175,6 +2175,15 @@ Review: Modern and Clean Code
 - Asynchronous Code: consume promises with asycn/await, run them in parallel (promises that do not depend on each other, Promise.all), and handle errors and promise rejections.
 
 
-
-
+Declareative and Functional JavaScript Principles
+- Two paradigms writing code: imperative v. declarative.
+- Imperative: programmer explains how to do things. For example, step - by - step piece of cake. Long loop, doubling.
+- Declarative: programmer tells what to do, the how gets abstracted away. Cake example is to simple give a description of the cake. Simply mapping an array.
+- Functional Programming: declarative paradigm, combining pure functions, avoding side effects and mutating data.
+- Side effects: modification of any data outside the function.
+- Pure function: function without side effects and does not depend on external variables.
+- Immutable: state is never modified, just copied and returned.
+- we can mix imperative and declerative.
+- avoid data mutations, no side effects, mapping, reducing, filtersm etc.
+- Declarative syntax: array and object destructing, spread operator, ternary operator, template literals.
 */
