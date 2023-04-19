@@ -2215,4 +2215,20 @@ Project Overview and Planning
 
 Loading a Recipe for from API
 - sass is a better way to write css. Parcel converts the sass to css. 
+- we can specify a beta parcel by doing npm i parcel@next -D
+- for any static files that are not progamming files, use url: then the path
+e.g.: import icons from 'url:../img/icons.svg';
+- we can download more than one package at once.
+e.g. npm i core-js regenerator-runtime
+
+Listening for Load and Hashchange Events
+- window.location is the entire url, and .hash is the hasj
+-
+-
+-
+-
+-
+-
+-
+
 */
