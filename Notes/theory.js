@@ -2139,7 +2139,6 @@ Introduction to NPM
 - we need to build everything and start it when using imports
 
 
-
 Bundling with Parcel and NPM Scripts
 - global and local instalattions
 - npm i parcel --save-dev. we could also use sudo npm i parcel. Also, we could install a specfici version (npm i parcel@code)
@@ -2152,7 +2151,6 @@ Bundling with Parcel and NPM Scripts
   module.hot.accept();
 }
 - npx parcel index.html loads all the files.
-
 - we can just import what we need like this and parcel will find the path.
 import cloneDeep from 'lodash-es';
 - works with all commonJs module as well/
@@ -2167,8 +2165,14 @@ Configuring with Babrl and Polyfilling
 - polyfilling recreates the function so we can use it later.
 
 
-
-
+Review: Modern and Clean Code
+- Write readable code so that others can read it and not too clever.
+- Good function and variable names.
+- General: don't use var, strong checks, refactoring code, encapsualte.
+- Functions: no more than 3 parameters, default parameter, return the same data type. Arrow functions when it makes the code more readable.
+- OOP: don't mutate data from outside the class. Method chaining, no arrow functions as methods. ES6 classes.
+- Avoid Nested Code: return (guard clasues) help, ternery operators are good, multiple ifs, array loop methods help.
+- Asynchronous Code: consume promises with asycn/await, run them in parallel (promises that do not depend on each other, Promise.all), and handle errors and promise rejections.
 
 
 
