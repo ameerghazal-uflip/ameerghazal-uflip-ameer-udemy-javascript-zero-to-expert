@@ -2194,7 +2194,9 @@ Fixing Bad Code 2
 - for example, an array with an object inside. We cannot push in a new object, but we can edit one of the object properties at an index.
 
 
+--------------------------------------
 
+Section 18: Forkify App: Building a Modern Application
 
 
 
