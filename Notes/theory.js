@@ -2243,9 +2243,9 @@ Event Handlers in the MVC: Publisher-Subscriber Pattern
 - Code that wants to react: Subscriber
 
 Implementing Error and Success Messages
--
--
--
+- False ID.
+- Real world means the handle the error in the view.
+- Make sure to kepe rethrowing errors when messing with errors and modules.
 -
 -
 -

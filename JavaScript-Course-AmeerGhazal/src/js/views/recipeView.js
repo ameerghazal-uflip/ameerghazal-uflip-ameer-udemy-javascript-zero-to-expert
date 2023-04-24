@@ -4,6 +4,8 @@ import { Fraction } from 'fractional'; // for the fractions
 class RecipeView {
   #parentElement = document.querySelector('.recipe'); // query selector
   #data;
+  #errorMessage = `We could not find that recipe. Please try again.`;
+  #message = `Found Recipe!`;
 
   render(data) {
     this.#data = data;
@@ -17,7 +19,7 @@ class RecipeView {
     this.#parentElement.innerHTML = '';
   }
 
-  renderSpinner = function () {
+  renderSpinner() {
     const markup = `
     <div class="spinner">
       <svg>
@@ -25,13 +27,43 @@ class RecipeView {
     </svg>
   </div>`;
 
-    this.#parentElement.innerHTML = '';
+    this.#clear();
     this.#parentElement.insertAdjacentHTML('afterbegin', markup);
-  };
+  }
 
   addHandlerRender(handler) {
     // loops over to add the eventListener
     ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
+  }
+
+  renderError(message = this.#errorMessage) {
+    const markup = `
+    <div class="error">
+      <div>
+        <svg>
+         <use href="${icon}#icon-alert-triangle"></use>
+       </svg>
+      </div>
+      <p>${message}</p>
+    </div>`;
+
+    this.#clear(); // clears the parent
+    this.#parentElement.insertAdjacentHTML('afterbegin', markup); // inserts it into the parent recipe class element.
+  }
+
+  renderMessage(message = this.#message) {
+    const markup = `
+    <div class="message">
+      <div>
+        <svg>
+         <use href="${icons}#icon-simile"></use>
+       </svg>
+      </div>
+      <p>${message}</p>
+    </div>`;
+
+    this.#clear(); // clears the parent
+    this.#parentElement.insertAdjacentHTML('afterbegin', markup); // inserts it into the parent recipe class element.
   }
 
   #generateMarkup() {
