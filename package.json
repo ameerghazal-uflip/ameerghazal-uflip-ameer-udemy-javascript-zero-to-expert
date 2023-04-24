@@ -1,0 +1,24 @@
+{
+  "name": "ameer-udemy-javascript-zero-to-expert",
+  "version": "1.0.0",
+  "description": "Asynchronous JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel JavaScript-Course-AmeerGhazal/index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UFLIPTraining/ameer-udemy-javascript-zero-to-expert.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UFLIPTraining/ameer-udemy-javascript-zero-to-expert/issues"
+  },
+  "homepage": "https://github.com/UFLIPTraining/ameer-udemy-javascript-zero-to-expert#readme",
+  "dependencies": {
+    "leaflet": "^1.9.3",
+    "lodash-es": "^4.17.21"
+  }
+}

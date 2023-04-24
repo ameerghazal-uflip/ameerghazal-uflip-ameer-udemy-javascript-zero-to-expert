@@ -2249,7 +2249,7 @@ Implementing Error and Success Messages
 - Make sure to kepe rethrowing errors when messing with errors and modules.
 -
 
-Implementing Search Results Part 1
+Implementing Search Results Part 1-2
 - We can have mutliple views and make sure each view is fouced (e.g. search bar vs. left side)
 - Publisher: listnes for the event in the view and pass the handler function into the method we will build. The controller method will the subsriber.
 -

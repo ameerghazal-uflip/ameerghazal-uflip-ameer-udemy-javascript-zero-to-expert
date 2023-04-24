@@ -26,7 +26,7 @@ export const loadRecipe = async function (id) {
       ingredients: recipe.ingredients,
     };
 
-    console.log(state.recipe);
+    // console.log(state.recipe);
   } catch (err) {
     // Temp error handling
     console.error(`${err} 💥💥💥💥`);
@@ -49,7 +49,7 @@ export const loadSearchResults = async function (query) {
       };
     });
 
-    console.log(state.search.results);
+    // console.log(state.search.results);
   } catch (err) {
     console.error(`${err} 💥💥💥💥`);
     throw err; // rethrows the error for the controller.
