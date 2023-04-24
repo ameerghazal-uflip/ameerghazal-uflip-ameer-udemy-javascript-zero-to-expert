@@ -1,4 +1,4 @@
-// Section 18 Lesson 299: Implementing Pagination - Part2
+// Section 18 Lesson 301: Updating Recipe Servings
 
 import * as model from './model.js'; // * imports everything exported from model.
 import recipeView from './views/recipeView.js';
@@ -65,9 +65,18 @@ const controlPagination = function (goToPage) {
   // 2) Render new pagination buttons
 };
 
+const controlServings = function (newServings) {
+  // Update the recipe servings (in state)
+  model.updateServings(newServings);
+
+  // Update the recipe view
+  recipeView.render(model.state.recipe);
+};
+
 // loops over to add the eventListener
 const init = function () {
   recipeView.addHandlerRender(controlRecipes);
+  recipeView.addHandlerUpdateServings(controlServings);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
 };

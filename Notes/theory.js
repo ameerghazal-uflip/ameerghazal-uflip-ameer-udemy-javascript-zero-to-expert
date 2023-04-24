@@ -2263,4 +2263,29 @@ Project Planning Pt.2
 - Bookmarking functionality
 - Store bookark data in the browser.
 - On page load, read saved bookmarks. 
+
+
+Updating Recipe Servings
+- control.. are simply event handlers that will run
+-
+-
+-
+-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 */
