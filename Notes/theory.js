@@ -2040,7 +2040,7 @@ Overview of Modules in JavaScript
 - Abstract code: implement low-level code in modules and import these abstractions into other modules.
 - Organized code: reusable code.
 - ES6 Modules: stored in files, exactly one module per file.
-- ES6 v. Scrips
+- ES6 v. Scripts
     - Top-level variables: scoped to module, global
     - default mode: strict mode, sloppy mode
     - Top-level this: undefined, window
@@ -2145,7 +2145,6 @@ Bundling with Parcel and NPM Scripts
 - using parcel bundles the modules together.
 - npx parcel __.html (file name)
 - npm uninstall parcel: uninstalls it
-- due to parcel, we don't need to use the module part in the script anymore, we can just use the normal defer script.
 - will not reload the page.
 - if (module.hot) {
   module.hot.accept();
@@ -2236,9 +2235,19 @@ The MVC Architecture
 
 Helper and Configuration Files
 - config file contains things that are useable everywhere
+
+Event Handlers in the MVC: Publisher-Subscriber Pattern
+- Events should be handled in the controller 
+- Events should be listend for in the view. 
+- Code that knows when to react: Publisher
+- Code that wants to react: Subscriber
+
+Implementing Error and Success Messages
 -
 -
---
+-
+-
+-
 -
 
 */
