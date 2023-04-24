@@ -2259,7 +2259,8 @@ Implementing Pagination Part 1-2
 - uses the generate markup from whatever is called. for example, the buttons for the pages. This will call that generate markup in the pagination view, while a call for the results view would call that generate markup. This is evidenet throughout the project.
 
 Project Planning Pt.2
--
---
-
+- Change servings functionality
+- Bookmarking functionality
+- Store bookark data in the browser.
+- On page load, read saved bookmarks. 
 */
