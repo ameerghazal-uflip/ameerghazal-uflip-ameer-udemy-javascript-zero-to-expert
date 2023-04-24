@@ -10,7 +10,7 @@ export default class View {
       return this.renderError(); // already has the default error message if empty. Checks if it is an array and is empty.
 
     this._data = data;
-    const markup = this._generateMarkup();
+    const markup = this._generateMarkup(); // uses the generate markup from whatever is called. for example, the buttons for the pages. This will call that generate markup in the pagination view, while a call for the results view would call that generate markup. This is evidenet throughout the project.
     this._clear();
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }

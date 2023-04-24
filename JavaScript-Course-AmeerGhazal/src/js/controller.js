@@ -4,6 +4,7 @@ import * as model from './model.js'; // * imports everything exported from model
 import recipeView from './views/recipeView.js';
 import searchView from './views/searchView.js';
 import resultsView from './views/resultsView.js';
+import paginationView from './views/paginationView.js';
 
 import icons from 'url:../img/icons.svg'; // parcel 2
 import 'core-js/stable'; // polyfilling.
@@ -46,14 +47,28 @@ const controlSearchResults = async function () {
     // 3) render results
     // resultsView.render(model.state.search.results);
     resultsView.render(model.getSearchResultsPage());
+
+    // 4) Render inital pagination buttons
+    paginationView.render(model.state.search); // pass in the entire state object.
   } catch (err) {
     console.log(err);
   }
+};
+
+const controlPagination = function (goToPage) {
+  // 1) Render new results
+  resultsView.render(model.getSearchResultsPage(goToPage)); // state.search gets updated and from there that search is edited and used the for the next pagination call.
+
+  // 4) Render inital pagination buttons
+  paginationView.render(model.state.search); // pass in the entire state object.
+
+  // 2) Render new pagination buttons
 };
 
 // loops over to add the eventListener
 const init = function () {
   recipeView.addHandlerRender(controlRecipes);
   searchView.addHandlerSearch(controlSearchResults);
+  paginationView.addHandlerClick(controlPagination);
 };
 init();

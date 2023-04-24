@@ -2252,10 +2252,11 @@ Implementing Error and Success Messages
 Implementing Search Results Part 1-2
 - We can have mutliple views and make sure each view is fouced (e.g. search bar vs. left side)
 - Publisher: listnes for the event in the view and pass the handler function into the method we will build. The controller method will the subsriber.
--
--
--
--
 
+Implementing Pagination Part 1-2
+- Need to take into account all possibilties for buttons on pages.
+- Every view that renders something to the interface needs a generate markup with the html.
+- uses the generate markup from whatever is called. for example, the buttons for the pages. This will call that generate markup in the pagination view, while a call for the results view would call that generate markup. This is evidenet throughout the project.
+- 
 
 */
