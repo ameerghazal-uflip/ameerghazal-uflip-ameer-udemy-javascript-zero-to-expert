@@ -2267,9 +2267,17 @@ Project Planning Pt.2
 
 Updating Recipe Servings
 - control.. are simply event handlers that will run
--
--
--
+- datasets are very helpful.
+- document.createRange.createContextualFragmenet(string html) converts html into real dom object.
+
+
+Devloping a DOM updating Algorithm
+- Array.from is an array method.
+- .isEqualNode checks if two nodes are equal.
+- nodeValue is returned if it is text.
+- Whenever an element changes, we also want to change the attributes. 
+- const id = window.location.hash.slice(1); gets aftet the hash
+
 -
 
 

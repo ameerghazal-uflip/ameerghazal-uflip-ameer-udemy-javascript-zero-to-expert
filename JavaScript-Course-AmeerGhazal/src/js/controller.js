@@ -22,6 +22,9 @@ const controlRecipes = async function () {
     if (!id) return; //guard clause
     recipeView.renderSpinner();
 
+    // 0) Update results view to mark selected search result
+    resultsView.update(model.getSearchResultsPage()); // would also work with render
+
     // 1) Loading Recipe
     await model.loadRecipe(id);
 
@@ -59,10 +62,8 @@ const controlPagination = function (goToPage) {
   // 1) Render new results
   resultsView.render(model.getSearchResultsPage(goToPage)); // state.search gets updated and from there that search is edited and used the for the next pagination call.
 
-  // 4) Render inital pagination buttons
-  paginationView.render(model.state.search); // pass in the entire state object.
-
   // 2) Render new pagination buttons
+  paginationView.render(model.state.search); // pass in the entire state object.
 };
 
 const controlServings = function (newServings) {
@@ -70,7 +71,8 @@ const controlServings = function (newServings) {
   model.updateServings(newServings);
 
   // Update the recipe view
-  recipeView.render(model.state.recipe);
+  // recipeView.render(model.state.recipe);
+  recipeView.update(model.state.recipe); // more efficent.
 };
 
 // loops over to add the eventListener
