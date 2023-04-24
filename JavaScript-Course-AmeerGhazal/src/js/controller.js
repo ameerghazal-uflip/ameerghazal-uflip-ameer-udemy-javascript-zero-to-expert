@@ -1,4 +1,4 @@
-// Section 18 Lesson 297: Implementing Search Results 1-2
+// Section 18 Lesson 299: Implementing Pagination - Part2
 
 import * as model from './model.js'; // * imports everything exported from model.
 import recipeView from './views/recipeView.js';
@@ -9,9 +9,9 @@ import icons from 'url:../img/icons.svg'; // parcel 2
 import 'core-js/stable'; // polyfilling.
 import 'regenerator-runtime/runtime';
 
-if (module.hot) {
-  module.hot.accept();
-}
+// if (module.hot) {
+//   module.hot.accept();
+// }
 
 const controlRecipes = async function () {
   try {
@@ -44,7 +44,8 @@ const controlSearchResults = async function () {
     await model.loadSearchResults(query); // does not return anything but manipulate the state, so we do not have to store it
 
     // 3) render results
-    resultsView.render(model.state.search.results);
+    // resultsView.render(model.state.search.results);
+    resultsView.render(model.getSearchResultsPage());
   } catch (err) {
     console.log(err);
   }
