@@ -2156,6 +2156,7 @@ import cloneDeep from 'lodash-es';
 - hot module replacment saves the code even after reloads.
 - we can save time rewriting the npx by writing it in the "scripts" file.
 - npm i parcel -g is the global download. We can use the global tools directly in the command lines without local download, but locally can be alot better.
+- npm run dev is good for testing, run build is for final build, etc.
 
 Configuring with Babrl and Polyfilling
 - polyfilling: import parts of a library
@@ -2247,7 +2248,14 @@ Implementing Error and Success Messages
 - Real world means the handle the error in the view.
 - Make sure to kepe rethrowing errors when messing with errors and modules.
 -
+
+Implementing Search Results Part 1
+- We can have mutliple views and make sure each view is fouced (e.g. search bar vs. left side)
+- Publisher: listnes for the event in the view and pass the handler function into the method we will build. The controller method will the subsriber.
 -
 -
+-
+-
+
 
 */
