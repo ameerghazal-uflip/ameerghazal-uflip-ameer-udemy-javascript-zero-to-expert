@@ -4,13 +4,16 @@ import icons from 'url:../../img/icons.svg'; // parcel 2 for the pictures
 export default class View {
   _data;
 
-  render(data) {
+  render(data, render = true) {
     console.log(data);
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError(); // already has the default error message if empty. Checks if it is an array and is empty.
 
     this._data = data;
     const markup = this._generateMarkup(); // uses the generate markup from whatever is called. for example, the buttons for the pages. This will call that generate markup in the pagination view, while a call for the results view would call that generate markup. This is evidenet throughout the project.
+
+    if (!render) return markup;
+
     this._clear();
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }

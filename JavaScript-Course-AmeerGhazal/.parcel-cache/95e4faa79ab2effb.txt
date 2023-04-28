@@ -1,4 +1,4 @@
-11406
+11407
 166C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\isEqualWith.js133262380780000000 0
 174C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\es\instance\repeat.js133264108068699031 0
 166C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\msgpackr\package.json133264065099207091 0
@@ -12,7 +12,7 @@
 165C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash-es\attempt.js133263923470000000 0
 168C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\csso\lib\replace\atrule133264065102081512 1
 171C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\fractional\array_mixins.js133264154311619817 0
-136C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist133271774463640338 1
+136C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist133271816199703384 1
 154C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\@mischnic133264065087534496 1
 183C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\modules\es.array.find-index.js133264108056158409 0
 172C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\sass\types\value\color.d.ts133264066832409128 0
@@ -43,7 +43,7 @@
 166C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash-es\conforms.js133263923470000000 0
 176C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\stable\array\reverse.js133264108069048354 0
 143C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\.prettierrc133207837341175384 0
-152C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\src\js\views\View.js133271772494902094 0
+152C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\src\js\views\View.js133271810637170967 0
 175C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\es\instance\entries.js133264108055867247 0
 163C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\invertBy.js133262380780000000 0
 171C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash-es\toSafeInteger.js133263923480000000 0
@@ -76,7 +76,7 @@
 178C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\internals\to-primitive.js133264108071845607 0
 203C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\csso\node_modules\css-tree\cjs\syntax\node\index-parse.cjs133264065101174691 0
 181C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\msgpackr\dist\unpack-no-eval.cjs.map133264065100833037 0
-144C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\src\js\views133268389063940642 1
+144C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\src\js\views133271814393417576 1
 172C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\full\global-this.js133264108062318360 0
 171C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\css-what\lib\es\types.d.ts133264065099371756 0
 162C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\fp\bind.js133262380780000000 0
@@ -138,7 +138,7 @@
 144C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\package.json133264154312198458 0
 182C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\es\number\min-safe-integer.js133264108067051213 0
 170C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\ordered-binary\index.d.ts133264065097796260 0
-152C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\src\js\controller.js133271774458710208 0
+152C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\src\js\controller.js133271816191826177 0
 175C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\source-map-support\register.js133264065096240699 0
 141C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\script.js133264024372498695 0
 159C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\take.js133262380790000000 0
@@ -283,12 +283,18 @@
 164C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\fp\equals.js133262380780000000 0
 175C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\svgo\plugins\preset-default.js133264065100034029 0
 164C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash-es\values.js133263923480000000 0
-147C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\src\js\model.js133271771676777507 0
+147C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\src\js\model.js133271792268736306 0
 178C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\features\date\set-year.js133264108069528836 0
 182C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\full\dom-collections\index.js133264108064008704 0
 184C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\es\array\virtual\copy-within.js133264108054726196 0
 173C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\timsort\build\timsort.min.js133264065097206525 0
 168C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\micromatch\package.json133264065096031911 0
+164C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\snakeCase.js133262380790000000 0
+202C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\@parcel\optimizer-svgo\node_modules\css-tree\lib\index.js133264065101617996 0
+184C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\internals\array-group-to-map.js133264108052730327 0
+165C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\fp\inRange.js133262380780000000 0
+161C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\src\js\views\bookmarksView.js133271815015804375 0
+153C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\msgpackr133264065101116042 1
 185C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\modules\esnext.map.map-values.js133264108058596985 0
 171C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\csso\cjs\replace\Value.cjs133264065100419555 0
 159C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\next.js133262380780000000 0
@@ -308,12 +314,8 @@
 164C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\type-fest\base.d.ts133264065097021010 0
 181C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\modules\es.object.has-own.js133264108056904655 0
 192C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\modules\es.object.prevent-extensions.js133264108056969739 0
-164C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\toInteger.js133262380790000000 0
-192C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\caniuse-lite\data\features\namevalue-storage.js133264065106287703 0
-157C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\browserslist133264065097796260 1
-185C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\features\symbol\async-dispose.js133264108053117653 0
 181C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\node-addon-api\tools\clang-format.js133264065098131243 0
-158C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\src\js\views\recipeView.js133271774227907223 0
+158C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\src\js\views\recipeView.js133271796465319457 0
 171C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\full\set\reduce.js133264108068563424 0
 171C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\@parcel\cache\src\types.js133264065098017474 0
 180C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\stable\reflect\construct.js133264108054451028 0
@@ -403,6 +405,10 @@
 167C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\_setCacheAdd.js133262380770000000 0
 164C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\glob-parent\LICENSE133264066830394692 0
 162C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\binary-extensions133264066830893490 1
+164C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\toInteger.js133262380790000000 0
+192C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\caniuse-lite\data\features\namevalue-storage.js133264065106287703 0
+157C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\browserslist133264065097796260 1
+185C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\features\symbol\async-dispose.js133264108053117653 0
 156C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\buffer-from133264065096218837 1
 166C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash-es\function.js133263923470000000 0
 199C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\caniuse-lite\data\features\input-autocomplete-onoff.js133264065105417090 0
@@ -753,11 +759,6 @@
 182C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\internals\weak-set-helpers.js133264108073840894 0
 159C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\tslib\tslib.js133264065096789970 0
 166C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash-es\_baseSet.js133263923470000000 0
-164C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\snakeCase.js133262380790000000 0
-202C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\@parcel\optimizer-svgo\node_modules\css-tree\lib\index.js133264065101617996 0
-184C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\internals\array-group-to-map.js133264108052730327 0
-165C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\fp\inRange.js133262380780000000 0
-153C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\msgpackr133264065101116042 1
 212C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\@parcel\optimizer-svgo\node_modules\css-select\lib\pseudo-selectors133264065100113576 1
 192C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\@parcel\transformer-posthtml\lib\loadPlugins.js133264065095833489 0
 174C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\svgo\plugins\removeDoctype.js133264065100345373 0
@@ -1397,7 +1398,7 @@
 227C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\@parcel\optimizer-svgo\node_modules\css-select\lib\pseudo-selectors\index.d.ts.map133264065098843137 0
 174C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\type-fest\source\entries.d.ts133264065098047403 0
 187C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\internals\string-pad-webkit-bug.js133264108070738013 0
-174C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\ameer-udemy-javascript-zero-to-expert\.git133268496915309752 1
+174C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\ameer-udemy-javascript-zero-to-expert\.git133271810744586278 1
 191C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\dom-serializer\node_modules\entities\readme.md133264065098306558 0
 179C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\svgo\plugins\removeStyleElement.js133264065101044663 0
 170C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\full\math\sinh.js133264108069690202 0
@@ -1967,12 +1968,6 @@
 158C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\add.js133262380770000000 0
 171C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\sass\types\value\list.d.ts133264066832496732 0
 170C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\svgo\dist\svgo.browser.js133264065101867363 0
-220C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\@parcel\optimizer-svgo\node_modules\css-tree\lib\syntax\node\Declaration.js133264065100386717 0
-173C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\source-map\lib\base64-vlq.js133264065096996987 0
-179C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\caniuse-lite\data\features\ping.js133264065106579892 0
-176C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\leaflet\src\layer\SVGOverlay.js133262380700000000 0
-157C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\sass\LICENSE133264066830858438 0
-166C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash-es\constant.js133263923470000000 0
 179C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\full\date\to-gmt-string.js133264108071549995 0
 158C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\svgo\bin\svgo133264065095813238 0
 216C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\@parcel\optimizer-htmlnano\node_modules\css-tree\lib\syntax\node\Raw.js133264065102781512 0
@@ -2069,6 +2064,12 @@
 165C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash-es\replace.js133263923480000000 0
 167C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash-es\_baseSome.js133263923470000000 0
 171C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\source-map\source-map.d.ts133264065098445195 0
+220C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\@parcel\optimizer-svgo\node_modules\css-tree\lib\syntax\node\Declaration.js133264065100386717 0
+173C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\source-map\lib\base64-vlq.js133264065096996987 0
+179C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\caniuse-lite\data\features\ping.js133264065106579892 0
+176C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\leaflet\src\layer\SVGOverlay.js133262380700000000 0
+157C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\sass\LICENSE133264066830858438 0
+166C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash-es\constant.js133263923470000000 0
 169C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\source-map\lib\base64.js133264065097206525 0
 196C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\dom-serializer\node_modules\entities\lib\index.d.ts133264065098658477 0
 154C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\index.52b1c376.js133264066844404500 0
@@ -2920,7 +2921,7 @@
 169C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash-es\_createCtor.js133263923470000000 0
 178C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\proposals\number-range.js133264108067211426 0
 174C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\features\math\cosh.js133264108054868445 0
-154C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\logo.726d37a8.png133271765265747881 0
+154C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\logo.726d37a8.png133271785717672848 0
 185C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\full\string\virtual\match-all.js133264108066730306 0
 166C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash-es\_hashSet.js133263923470000000 0
 186C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\internals\a-possible-prototype.js133264108051871345 0
@@ -3638,7 +3639,7 @@
 167C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash-es\_getValue.js133263923470000000 0
 190C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\stable\dom-exception\to-string-tag.js133264108072350231 0
 171C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\actual\typed-array133264108074065242 1
-155C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\icons.21bad73c.svg133271765219589303 0
+155C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\icons.21bad73c.svg133271785717642821 0
 167C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash-es\_baseTrim.js133263923470000000 0
 185C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\csso\lib\restructure\3-disjoinRuleset.js133264065100833037 0
 167C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash-es\_baseUniq.js133263923470000000 0
@@ -4199,7 +4200,7 @@
 167C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\_arrayFilter.js133262380770000000 0
 160C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\times.js133262380790000000 0
 209C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\csso\node_modules\css-tree\cjs\definition-syntax\SyntaxError.cjs133264065102781512 0
-159C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\index.f7626f62.css.map133271765265910208 0
+159C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\index.f7626f62.css.map133271785717723088 0
 163C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\toFinite.js133262380790000000 0
 162C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\toLower.js133262380790000000 0
 164C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\fp\create.js133262380780000000 0
@@ -4312,8 +4313,8 @@
 197C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\csso\node_modules\mdn-data\css\selectors.schema.json133264065099074185 0
 165C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\_baseIsSet.js133262380770000000 0
 166C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\_baseKeysIn.js133262380770000000 0
-166C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\_baseLodash.js133262380770000000 0
 166C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\_createWrap.js133262380770000000 0
+166C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\_baseLodash.js133262380770000000 0
 163C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\_baseMap.js133262380770000000 0
 175C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\_baseMatchesProperty.js133262380770000000 0
 163C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lodash\fp\_util.js133262380770000000 0
@@ -5197,7 +5198,7 @@
 187C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lmdb\node_modules\node-addon-api\nothing.c133264065095339186 0
 190C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lmdb\node_modules\node-addon-api\package.json133264065098698565 0
 199C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\csso\node_modules\css-tree\lib\syntax\config\walker.js133264065104474159 0
-158C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\index.e37f48ea.js.map133271774463446494 0
+158C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\index.e37f48ea.js.map133271816199421470 0
 187C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\lmdb\node_modules\node-addon-api\README.md133264065098858051 0
 190C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\internals\async-iterator-prototype.js133264108053199262 0
 181C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\htmlnano\lib\modules\mergeScripts.js133264065098263261 0
@@ -8853,7 +8854,7 @@
 182C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\es\string\virtual\includes.js133264108063066341 0
 179C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\es\string\virtual\index.js133264108063690671 0
 178C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\es\string\virtual\link.js133264108066187947 0
-155C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\icons.dfd7a6db.svg133271774463132619 0
+155C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\icons.dfd7a6db.svg133271816198072725 0
 176C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\es\instance\includes.js133264108063046165 0
 244C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\@parcel\node-resolver-core\test\fixture\node_modules\side-effects-package-redirect-down\foo\bar\baz133264065102771405 1
 183C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\core-js\es\string\virtual\pad-start.js133264108067683021 0
@@ -9382,7 +9383,7 @@
 192C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\@swc\helpers\lib\_object_destructuring_empty.js133264065101406735 0
 176C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\caniuse-lite\data\regions\GN.js133264065105161935 0
 176C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\caniuse-lite\data\regions\GR.js133264065105173775 0
-157C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\favicon.8b2f57bf.png133271765265722825 0
+157C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\favicon.8b2f57bf.png133271785717687907 0
 176C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\caniuse-lite\data\regions\GW.js133264065105187359 0
 176C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\caniuse-lite\data\regions\HK.js133264065105249686 0
 176C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\caniuse-lite\data\regions\ID.js133264065105310053 0
@@ -10732,7 +10733,7 @@
 210C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\@parcel\optimizer-htmlnano\node_modules\svgo\plugins\prefixIds.js133264065100325291 0
 227C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\@parcel\optimizer-htmlnano\node_modules\svgo\plugins\removeAttributesBySelector.js133264065100439680 0
 215C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\@parcel\optimizer-htmlnano\node_modules\svgo\plugins\removeComments.js133264065100533657 0
-147C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\index.html133271744759930406 0
+147C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\index.html133271785717914305 0
 211C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\@parcel\optimizer-htmlnano\node_modules\svgo\plugins\removeDesc.js133264065100624542 0
 217C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\@parcel\optimizer-htmlnano\node_modules\svgo\plugins\removeDimensions.js133264065100689859 0
 216C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\node_modules\@parcel\optimizer-htmlnano\node_modules\svgo\plugins\removeEmptyText.js133264065101014608 0
@@ -11378,10 +11379,10 @@
 154C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\index.c7c92abd.js133264024372088048 0
 154C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\index.cdd27813.js133264103472205875 0
 158C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\index.cdd27813.js.map133264103472306779 0
-154C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\index.e37f48ea.js133271774463220855 0
+154C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\index.e37f48ea.js133271816198722467 0
 166C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\index.e37f48ea.js.map.1432.47133264103295327073 0
 154C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\index.ec016528.js133264067698062362 0
-155C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\index.f7626f62.css133271765265692882 0
+155C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\index.f7626f62.css133271785717522007 0
 167C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\index.f7626f62.css.map.1432.48133264103295357083 0
 178C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\dist\JavaScript-Course-AmeerGhazal.3464ddca.js133264066844249143 0
 181C:\Users\AmeerGhazal\OneDrive - UFLIP LLC\Documents\Github\Temp\ameer-udemy-javascript-zero-to-expert\JavaScript-Course-AmeerGhazal\ameer-udemy-javascript-zero-to-expert\.git\config133262367717254835 0

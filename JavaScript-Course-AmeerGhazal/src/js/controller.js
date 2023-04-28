@@ -1,10 +1,11 @@
-// Section 18 Lesson 301: Updating Recipe Servings
+// Section 18 Lesson 303-304: Implementing Bookmarks P1-2
 
 import * as model from './model.js'; // * imports everything exported from model.
 import recipeView from './views/recipeView.js';
 import searchView from './views/searchView.js';
 import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
+import bookmarksView from './views/bookmarksView.js';
 
 import icons from 'url:../img/icons.svg'; // parcel 2
 import 'core-js/stable'; // polyfilling.
@@ -24,6 +25,7 @@ const controlRecipes = async function () {
 
     // 0) Update results view to mark selected search result
     resultsView.update(model.getSearchResultsPage()); // would also work with render
+    bookmarksView.update(model.state.bookmarks);
 
     // 1) Loading Recipe
     await model.loadRecipe(id);
@@ -72,16 +74,20 @@ const controlServings = function (newServings) {
 
   // Update the recipe view
   // recipeView.render(model.state.recipe);
-  debugger;
   recipeView.update(model.state.recipe); // more efficent.
 };
 
 const controlAddBookmark = function () {
+  // 1) Add or remove a bookmark
   if (!model.state.recipe.bookmarked) model.addBookmark(model.state.recipe);
   // if there is no bookmark, we add one
   else model.deleteBookmark(model.state.recipe.id); // if there is one, we delete it
 
-  recipeView.update(model.state.recipe); // update the view
+  // 2) Update recipe view
+  recipeView.update(model.state.recipe);
+
+  // 3) Render bookmarks
+  bookmarksView.render(model.state.bookmarks); // goes into the list to display the bookmarks that are true.
 };
 
 // loops over to add the eventListener
