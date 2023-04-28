@@ -1,4 +1,4 @@
-// Section 18 Lesson 305-306: Storing Bookmarks in local storage & Part 3 Planning.
+// Section 18 Lesson 307: Uploading a new Recipe.
 
 import * as model from './model.js'; // * imports everything exported from model.
 import recipeView from './views/recipeView.js';
@@ -6,6 +6,7 @@ import searchView from './views/searchView.js';
 import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
 import bookmarksView from './views/bookmarksView.js';
+import addRecipeView from './views/addRecipeView.js';
 
 import icons from 'url:../img/icons.svg'; // parcel 2
 import 'core-js/stable'; // polyfilling.
@@ -96,6 +97,10 @@ const controlBookmarks = function () {
   bookmarksView.render(model.state?.bookmarks);
 };
 
+const controlAddRecipe = function (newRecipe) {
+  console.log(newRecipe);
+};
+
 // loops over to add the eventListener
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);
@@ -104,5 +109,6 @@ const init = function () {
   recipeView.addHandlerAddBookmark(controlAddBookmark);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
+  addRecipeView.addHandlerUpload(controlAddRecipe);
 };
 init();

@@ -2285,10 +2285,15 @@ Storing Bookmarks in Local Storage
 
 Project Planning III
 - Own recipe upload, automatically bookmarked, user can only see their own recipies and not from others. 
--
--
--
--
+
+Uploading a New Recipe
+- this keyword inside a handler function points toward the element which is attacted to it. 
+- to avoid this, use the bind method inside another function. 
+- FormData(certainForm) will give us an array of all the fields with all the values. 
+e.g.   const data = [...new FormData(this)];
+- Object.fromEntries() takes an array of entries and confines in into an object.
+
+
 
 
 
