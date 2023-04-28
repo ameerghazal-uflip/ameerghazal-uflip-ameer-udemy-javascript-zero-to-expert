@@ -95,7 +95,7 @@ const controlAddBookmark = function () {
 };
 
 const controlBookmarks = function () {
-  bookmarksView.render(model.state?.bookmarks);
+  bookmarksView.render(model.state.bookmarks);
 };
 
 const controlAddRecipe = async function (newRecipe) {
@@ -111,7 +111,7 @@ const controlAddRecipe = async function (newRecipe) {
     recipeView.render(model.state.recipe);
 
     // Success Message
-    recipeView.render(model.state.recipe);
+    addRecipeView.renderMessage();
 
     // Render bookmark view
     bookmarksView.render(model.state.bookmarks);
