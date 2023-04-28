@@ -1,6 +1,7 @@
-// Section 18 Lesson 307: Uploading a new Recipe.
+// Section 18 Lesson 308: Uploading a new Recipe #2.
 
 import * as model from './model.js'; // * imports everything exported from model.
+import { MODAL_CLOSE_SEC } from './config.js';
 import recipeView from './views/recipeView.js';
 import searchView from './views/searchView.js';
 import resultsView from './views/resultsView.js';
@@ -97,8 +98,35 @@ const controlBookmarks = function () {
   bookmarksView.render(model.state?.bookmarks);
 };
 
-const controlAddRecipe = function (newRecipe) {
-  console.log(newRecipe);
+const controlAddRecipe = async function (newRecipe) {
+  try {
+    // Show loading spinner
+    addRecipeView.renderSpinner();
+
+    // upload the new recipe data.
+    await model.uploadRecipe(newRecipe);
+    console.log(model.state.recipe);
+
+    // Render recipe
+    recipeView.render(model.state.recipe);
+
+    // Success Message
+    recipeView.render(model.state.recipe);
+
+    // Render bookmark view
+    bookmarksView.render(model.state.bookmarks);
+
+    // CHange ID in URL
+    window.history.pushState(null, '', `#${model.state.recipe.id}`);
+
+    // Close form window
+    setTimeout(function () {
+      addRecipeView.toggleWindow();
+    }, MODAL_CLOSE_SEC * 1000);
+  } catch (err) {
+    console.error(err);
+    addRecipeView.renderError(err.message);
+  }
 };
 
 // loops over to add the eventListener
