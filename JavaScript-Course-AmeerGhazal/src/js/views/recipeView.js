@@ -16,11 +16,20 @@ class RecipeView extends View {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.btn--update-servings');
       if (!btn) return;
+      console.log(btn);
 
       // console.log(btn.dataset.updateTo); different notation.
       const { updateTo } = btn.dataset; // destructre and remember that for a data set, the dashes make it camel case.
 
       if (+updateTo > 0) handler(+updateTo); // calls the handler function
+    });
+  }
+
+  addHandlerAddBookmark(handler) {
+    this._parentElement.addEventListener('click', function (e) {
+      const btn = e.target.closest('.btn--bookmark'); // event delegation to see if it was clicked on te correct thing.
+      if (!btn) return;
+      handler();
     });
   }
 
@@ -74,9 +83,11 @@ class RecipeView extends View {
 
     <div class="recipe__user-generated">
     </div>
-    <button class="btn--round">
+    <button class="btn--round btn--bookmark">
       <svg class="">
-        <use href="${icons}#icon-bookmark-fill"></use>
+        <use href="${icons}#icon-bookmark${
+      this._data.bookmarked ? '-fill' : ''
+    }"></use>
       </svg>
     </button>
   </div>
@@ -86,20 +97,6 @@ class RecipeView extends View {
     <ul class="recipe__ingredient-list">
       ${this._data.ingredients.map(this._generateMarkupIngredient).join('')}
     </div>
-     
-
-      <li class="recipe__ingredient">
-        <svg class="recipe__icon">
-          <use href="${icons}#icon-check"></use>
-        </svg>
-        <div class="recipe__quantity">0.5</div>
-        <div class="recipe__description">
-          <span class="recipe__unit">cup</span>
-          ricotta cheese
-        </div>
-      </li>
-    </ul>
-  </div>
 
   <div class="recipe__directions">
     <h2 class="heading--2">How to cook it</h2>

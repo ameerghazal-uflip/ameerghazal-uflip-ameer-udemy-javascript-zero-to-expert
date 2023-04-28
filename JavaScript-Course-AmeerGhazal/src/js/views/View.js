@@ -16,6 +16,10 @@ export default class View {
   }
 
   update(data) {
+    debugger;
+    if (!data || (Array.isArray(data) && data.length === 0))
+      return this.renderError(); // already has the default error message if empty. Checks if it is an array and is empty.;
+
     this._data = data;
     const newMarkup = this._generateMarkup();
 
@@ -31,7 +35,7 @@ export default class View {
         !newEl.isEqualNode(curEl) &&
         newEl.firstChild?.nodeValue.trim() !== ''
       ) {
-        curEl.textConent = newEl.textContent;
+        curEl.textContent = newEl.textContent;
       }
 
       // Updates changed Attributes

@@ -72,13 +72,23 @@ const controlServings = function (newServings) {
 
   // Update the recipe view
   // recipeView.render(model.state.recipe);
+  debugger;
   recipeView.update(model.state.recipe); // more efficent.
+};
+
+const controlAddBookmark = function () {
+  if (!model.state.recipe.bookmarked) model.addBookmark(model.state.recipe);
+  // if there is no bookmark, we add one
+  else model.deleteBookmark(model.state.recipe.id); // if there is one, we delete it
+
+  recipeView.update(model.state.recipe); // update the view
 };
 
 // loops over to add the eventListener
 const init = function () {
   recipeView.addHandlerRender(controlRecipes);
   recipeView.addHandlerUpdateServings(controlServings);
+  recipeView.addHandlerAddBookmark(controlAddBookmark);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
 };
