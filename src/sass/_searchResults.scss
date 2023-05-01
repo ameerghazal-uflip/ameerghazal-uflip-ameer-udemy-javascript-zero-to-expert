@@ -10,8 +10,14 @@
 }
 
 .pagination {
-  margin-top: auto;
-  padding: 0 3.5rem;
+  // margin-top: auto;
+  // padding: 0 3.5rem; // optional if needed.
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: 'previous numbers next';
+  width: 100%;
+  justify-items: center; // aligns everything center
+  align-items: center;
 
   &::after {
     content: '';
@@ -21,10 +27,23 @@
 
   &__btn {
     &--prev {
-      float: left;
+      grid-area: previous; // add. feature
+      // float: left; // changed in the additonal features
     }
     &--next {
-      float: right;
+      grid-area: next; // add. feature
+      // float: right; // changed in the additonal features
+    }
+  }
+
+  // ADDED WITH ADDITIONAL FEATURES
+  .pages_block {
+    grid-area: numbers;
+
+    .total__pages {
+      color: $color-primary;
+      font-size: 15px;
+      font-family: Nunito Sans, sans-serif;
     }
   }
 }

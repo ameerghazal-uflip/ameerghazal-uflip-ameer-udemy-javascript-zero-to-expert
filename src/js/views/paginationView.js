@@ -26,6 +26,11 @@ class PaginationView extends View {
     // Page 1, and there are other pages. Only creates a next page button
     if (currentPage === 1 && numPages > 1) {
       return `
+
+      <div class="pages_block">
+       <span class="total__pages">Page ${currentPage} out of ${numPages}.</span>
+      </div>
+
       <button data-goto="${
         currentPage + 1
       }" class="btn--inline pagination__btn--next">
@@ -33,19 +38,27 @@ class PaginationView extends View {
             <svg class="search__icon">
               <use href="${icons}#icon-arrow-right"></use>
             </svg>
-          </button>`;
+          </button>
+          `;
     }
 
     // Last Page: creates only a back button
     if (currentPage === numPages && numPages > 1) {
-      return `<button data-goto="${
+      return `
+      
+      <button data-goto="${
         currentPage - 1
       }" class="btn--inline pagination__btn--prev">
         <svg class="search__icon">
           <use href="${icons}#icon-arrow-left"></use>
         </svg>
         <span>Page ${currentPage - 1}</span>
-      </button>`;
+      </button>
+      <div class="pages_block">
+       <span class="total__pages">Page ${currentPage} out of ${numPages}.</span>
+      </div>
+      
+      `;
     }
 
     // Other Page but not the first or the last: creates both buttons
@@ -58,8 +71,12 @@ class PaginationView extends View {
                 <use href="${icons}#icon-arrow-left"></use>
             </svg>
             <span>Page ${currentPage - 1}</span>
-        </button>
+        </button>    
         
+        <div class="pages_block">
+          <span class="total__pages">Page ${currentPage} out of ${numPages}.</span>
+        </div>
+
         <button data-goto="${
           currentPage + 1
         }" class="btn--inline pagination__btn--next">
@@ -67,7 +84,8 @@ class PaginationView extends View {
             <svg class="search__icon">
               <use href="${icons}#icon-arrow-right"></use>
             </svg>
-          </button>`;
+          </button>
+          `;
     }
 
     // Page 1, with no other pages returns nothing.
