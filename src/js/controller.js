@@ -127,8 +127,20 @@ const controlAddRecipe = async function (newRecipe) {
   // Close form window and Reload for more recipes.
   setTimeout(function () {
     addRecipeView.toggleWindow();
-    location.reload();
+    // location.reload();
   }, MODAL_CLOSE_SEC * 1000);
+};
+
+//ADD 2
+const controlAddIngredient = async function (data) {
+  try {
+    // Checks if applicable.
+    await model.addIngredient(data);
+
+    // Renders a new ingredient label (assuming no errors from prev.)
+  } catch (err) {
+    addRecipeView.renderError(err.message);
+  }
 };
 
 // loops over to add the eventListener
@@ -140,5 +152,6 @@ const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
+  addRecipeView.addHandlerIngredient(controlAddIngredient); // add. feature 2
 };
 init();

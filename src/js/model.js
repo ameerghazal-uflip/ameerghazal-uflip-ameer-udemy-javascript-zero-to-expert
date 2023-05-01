@@ -1,5 +1,10 @@
 import { async } from 'regenerator-runtime';
-import { API_URL, RES_PER_PAGE, KEY } from './config.js';
+import {
+  API_URL,
+  RES_PER_PAGE,
+  KEY,
+  MIN_DISPLAY_INGREIDENTS,
+} from './config.js';
 // import { getJSON, sendJSON } from './helpers.js';
 import { AJAX } from './helpers.js';
 
@@ -161,5 +166,32 @@ export const uploadRecipe = async function (newRecipe) {
     state.recipe = createRecipeObject(data);
   } catch (err) {
     throw err;
+  }
+};
+
+export const addIngredient = async function (data) {
+  try {
+    const ingredients = Object.entries(data)
+      .filter(entry => entry[0].startsWith('ingredient') && entry[1] !== '')
+      .map(ing => {
+        const ingArr = ing[1].split(',').map(el => el.trim());
+        if (ingArr.length !== 3)
+          throw new Error(
+            'Wrong ingredient format! Please use correct format!'
+          );
+        const [quantity, unit, description] = ingArr;
+
+        return { quantity: quantity ? +quantity : null, unit, description }; // returns an object with the data.
+      });
+
+    // If it has not filled the default display of the ingredients
+    // ** ADD A SPAN.
+    if (ingredients.length < MIN_DISPLAY_INGREIDENTS) {
+      throw new Error(
+        'Sorry, please fill in the current ingredient tabs before requesting more.'
+      );
+    }
+  } catch (err) {
+    throw err; // rethrows the error
   }
 };

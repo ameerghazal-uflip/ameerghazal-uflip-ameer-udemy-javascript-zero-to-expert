@@ -96,4 +96,23 @@
     grid-column: 1 / -1;
     justify-self: center;
   }
+
+  // ADDED FOR ADDITIONAL FEATURE 2
+  .additonal_btns {
+    display: grid;
+    grid-column: 1 / -1; // makes it so it goes the length of the box.
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 'Upload Add-Ingredient';
+    width: 100%; // spans the entire div.
+    justify-items: center; // aligns everything center
+    align-items: center; // aligns everything center
+
+    .upload__btn {
+      grid-area: Upload;
+    }
+
+    .add__ingredient__btn {
+      grid-area: Add-Ingredient;
+    }
+  }
 }

@@ -10,6 +10,9 @@ class AddRecipeView extends View {
   _btnOpen = document.querySelector('.nav__btn--add-recipe');
   _btnClose = document.querySelector('.btn--close-modal');
 
+  // Additional Feature #2: adding a button for extra ingredients,
+  _btnAddIngredient = document.querySelector('.upload__column');
+
   constructor() {
     super();
     this._addHandlerShowWindow();
@@ -36,9 +39,19 @@ class AddRecipeView extends View {
       e.preventDefault();
       const dataArr = [...new FormData(this)];
       const data = Object.fromEntries(dataArr);
+      console.log(data);
       handler(data);
     });
   }
+
+  // ADDED FOR ADD. FEATURE 2
+  addHandlerIngredient(handler) {
+    this._parentElement.addEventListener('click', function (e) {
+      const data = Object.fromEntries([...new FormData(this)]);
+      handler(data);
+    });
+  }
+
   _generateMarkup() {}
 }
 
