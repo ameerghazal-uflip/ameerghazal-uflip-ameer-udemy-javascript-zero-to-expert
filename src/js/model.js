@@ -31,7 +31,7 @@ const createRecipeObject = function (data) {
 
 export const loadRecipe = async function (id) {
   try {
-    const data = await AJAX(`${API_URL}${id}}?key=${KEY}`);
+    const data = await AJAX(`${API_URL}${id}?key=${KEY}`);
     state.recipe = createRecipeObject(data);
 
     // deals with reloads, so it sets the bookmarked property if it is set.
@@ -145,6 +145,8 @@ export const uploadRecipe = async function (newRecipe) {
 
         return { quantity: quantity ? +quantity : null, unit, description }; // returns an object with the data.
       });
+
+    console.log(ingredients);
     const recipe = {
       title: newRecipe.title,
       source_url: newRecipe.sourceUrl,
@@ -154,9 +156,9 @@ export const uploadRecipe = async function (newRecipe) {
       servings: +newRecipe.servings,
       ingredients,
     };
-    const data = await AJAX(`${API_URL}?key=${KEY}}`, recipe);
+    console.log(recipe);
+    const data = await AJAX(`${API_URL}?key=${KEY}`, recipe);
     state.recipe = createRecipeObject(data);
-    addBookmark(state.recipe);
   } catch (err) {
     throw err;
   }

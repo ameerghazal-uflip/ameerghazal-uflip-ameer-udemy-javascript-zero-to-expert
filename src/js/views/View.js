@@ -4,8 +4,17 @@ import icons from 'url:../../img/icons.svg'; // parcel 2 for the pictures
 export default class View {
   _data;
 
+  /**
+   * Render the recived object to the DOM
+   * @param {Object | Object[]}} data The data to be renderd (e.g. recipe)
+   * @param {boolean} [render=true] if false, create markup string instead of rendering to the dom
+   * @returns {undefined | string } A markup string is returned if render=false.
+   * @this {Object} View Instance
+   * @author Ameer G
+   * @todo Finish Implmenetation
+   */
   render(data, render = true) {
-    console.log(data);
+    // console.log(data);
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError(); // already has the default error message if empty. Checks if it is an array and is empty.
 
@@ -19,10 +28,6 @@ export default class View {
   }
 
   update(data) {
-    debugger;
-    if (!data || (Array.isArray(data) && data.length === 0))
-      return this.renderError(); // already has the default error message if empty. Checks if it is an array and is empty.;
-
     this._data = data;
     const newMarkup = this._generateMarkup();
 

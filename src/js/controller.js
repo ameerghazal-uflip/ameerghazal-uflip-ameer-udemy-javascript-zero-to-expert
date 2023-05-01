@@ -39,6 +39,7 @@ const controlRecipes = async function () {
     // if we exported the class, we would do, const rec = new recipeView(model....)
   } catch (err) {
     recipeView.renderError();
+    console.error(err);
   }
 };
 
@@ -118,15 +119,16 @@ const controlAddRecipe = async function (newRecipe) {
 
     // CHange ID in URL
     window.history.pushState(null, '', `#${model.state.recipe.id}`);
-
-    // Close form window
-    setTimeout(function () {
-      addRecipeView.toggleWindow();
-    }, MODAL_CLOSE_SEC * 1000);
   } catch (err) {
     console.error(err);
     addRecipeView.renderError(err.message);
   }
+
+  // Close form window and Reload for more recipes.
+  setTimeout(function () {
+    addRecipeView.toggleWindow();
+    location.reload();
+  }, MODAL_CLOSE_SEC * 1000);
 };
 
 // loops over to add the eventListener

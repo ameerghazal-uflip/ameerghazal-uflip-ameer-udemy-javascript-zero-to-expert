@@ -16,18 +16,19 @@ class AddRecipeView extends View {
     this._addHandlerHideWindow();
   }
 
-  _addHandlerShowWindow() {
-    // in order to show this window, the controller does not interfere at all.
-    this._btnOpen.addEventListener('click', this.toggleWindow.bind(this)); // uses bind points to the specific current object.
-  }
-
   toggleWindow() {
     this._overlay.classList.toggle('hidden');
     this._window.classList.toggle('hidden');
   }
 
+  _addHandlerShowWindow() {
+    // in order to show this window, the controller does not interfere at all.
+    this._btnOpen.addEventListener('click', this.toggleWindow.bind(this)); // uses bind points to the specific current object.
+  }
+
   _addHandlerHideWindow() {
     this._btnClose.addEventListener('click', this.toggleWindow.bind(this));
+    this._overlay.addEventListener('click', this.toggleWindow.bind(this));
   }
 
   addHandlerUpload(handler) {

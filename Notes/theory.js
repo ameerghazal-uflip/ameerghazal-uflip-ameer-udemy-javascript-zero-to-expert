@@ -2222,7 +2222,7 @@ e.g.: import icons from 'url:../img/icons.svg';
 e.g. npm i core-js regenerator-runtime
 
 Listening for Load and Hashchange Events
-- window.location is the entire url, and .hash is the hasj
+- window.location is the entire url, and .hash is the hash
 
 The MVC Architecture
 - Structure: how we orgainze our cdoe.
@@ -2299,7 +2299,20 @@ e.g.   const data = [...new FormData(this)];
 - window.history.back(); auto goes back to the previous page.
 
 
-
+Final Considerations and JS Docs
+- similar to java with the syntax.
+- in the brackets we specfiy the return or parameter.
+- for the argument name we give a short description and if optional, we wrap it in brackets.
+- specify the return and define the constructor
+- hovering over the method if it has a js doc will give the js doc, similar to java.
+- Features:
+  - display the number of pages between the pagination buttonw
+  - ability to sort search results by duration or number of ingredients. 
+  - perform ingredient validation in view, before submitting the form.
+  - Imporve recipie ingredient input: sepeate in multiple fields and allow more than 6 ingredients.
+  - ShoppingList: adds all the ingredients of the recipie into a shoppingList. Original forkify had this.
+  - Weekley meal plan: assign recipes to the next 7 days and show on a weekly calander.
+  - Get nutrition data on each ingredient from a spoon acular API. E.g. get the calories, protien, etc.
 
 
 
