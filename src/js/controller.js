@@ -135,11 +135,15 @@ const controlAddRecipe = async function (newRecipe) {
 const controlAddIngredient = async function (data) {
   try {
     // Checks if applicable.
+    debugger;
     await model.addIngredient(data);
+
+    // Render it to the user assuming no errors were thrown
+    addRecipeView.renderNewIngr(data);
 
     // Renders a new ingredient label (assuming no errors from prev.)
   } catch (err) {
-    addRecipeView.renderError(err.message);
+    alert(err);
   }
 };
 

@@ -11,7 +11,9 @@ class AddRecipeView extends View {
   _btnClose = document.querySelector('.btn--close-modal');
 
   // Additional Feature #2: adding a button for extra ingredients,
-  _btnAddIngredient = document.querySelector('.upload__column');
+  _addIngrColumn = document.querySelector('.upload__column-ingredients');
+  _btnAdd = document.querySelector('.add_ingredient__btn');
+  _curIngredients = []; // number of current ingredients
 
   constructor() {
     super();
@@ -38,6 +40,7 @@ class AddRecipeView extends View {
     this._parentElement.addEventListener('submit', function (e) {
       e.preventDefault();
       const dataArr = [...new FormData(this)];
+      console.log(dataArr);
       const data = Object.fromEntries(dataArr);
       console.log(data);
       handler(data);
@@ -46,13 +49,53 @@ class AddRecipeView extends View {
 
   // ADDED FOR ADD. FEATURE 2
   addHandlerIngredient(handler) {
-    this._parentElement.addEventListener('click', function (e) {
-      const data = Object.fromEntries([...new FormData(this)]);
-      handler(data);
+    const current = this; // used for later
+    this._btnAdd.addEventListener('click', function (e) {
+      e.preventDefault(); // gets rid of the default resfresh
+
+      // Resets for the loop for no duplicates
+      current._curIngredients = [];
+
+      console.log(current._addIngrColumn.querySelectorAll('input'));
+
+      // Loops through and adds the number of ingredients
+      current._addIngrColumn.querySelectorAll('input').forEach(ingr => {
+        if (ingr.value && ingr.title) {
+          // if the value property exists, we add the ingrident to the data object. This is used for checking later
+          current._curIngredients.push(parseInt(ingr.title.at(-1))); // goes to the name string and gets the number, pushes it to the list.
+        }
+      });
+
+      handler(current._curIngredients); // passes in the list of ingrdient numbers that have values.
     });
   }
 
-  _generateMarkup() {}
+  _generateMarkup() {
+    // Adds a new ingrdient to the list.
+    this._data.push(this._data.length + 1);
+
+    return `
+    <label>Ingredient ${this._data.length} </label>
+      <input
+          type="text"
+          title="quantity ingredient-${this._data.length}"
+          placeholder="Quantity"
+        />
+      <input type="text" name="unit ingredient-${this._data.length}" placeholder="Unit" />
+      <input
+          type="text"
+          name="description ingredient-${this._data.length}"
+          placeholder="Description"
+        />`;
+
+    // return `
+    // <label>Ingredient ${this._data.length} </label>
+    // <input
+    //   type="text"
+    //   name="ingredient-${this._data.length}"
+    //   placeholder="Format: 'Quantity,Unit,Description'"
+    // />`;
+  }
 }
 
 export default new AddRecipeView();

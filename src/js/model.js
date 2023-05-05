@@ -1,12 +1,10 @@
 import { async } from 'regenerator-runtime';
-import {
-  API_URL,
-  RES_PER_PAGE,
-  KEY,
-  MIN_DISPLAY_INGREIDENTS,
-} from './config.js';
+import { API_URL, RES_PER_PAGE, KEY } from './config.js';
 // import { getJSON, sendJSON } from './helpers.js';
 import { AJAX } from './helpers.js';
+
+// #2 for fact checking
+let MIN_DISPLAY_INGREIDENTS = 6; // base val
 
 export const state = {
   recipe: {},
@@ -21,6 +19,7 @@ export const state = {
 
 const createRecipeObject = function (data) {
   const { recipe } = data.data; // destructure for data on the different sides.
+  console.log(recipe);
   return {
     id: recipe.id,
     title: recipe.title,
@@ -170,27 +169,16 @@ export const uploadRecipe = async function (newRecipe) {
 };
 
 export const addIngredient = async function (data) {
+  debugger;
   try {
-    const ingredients = Object.entries(data)
-      .filter(entry => entry[0].startsWith('ingredient') && entry[1] !== '')
-      .map(ing => {
-        const ingArr = ing[1].split(',').map(el => el.trim());
-        if (ingArr.length !== 3)
-          throw new Error(
-            'Wrong ingredient format! Please use correct format!'
-          );
-        const [quantity, unit, description] = ingArr;
-
-        return { quantity: quantity ? +quantity : null, unit, description }; // returns an object with the data.
-      });
-
-    // If it has not filled the default display of the ingredients
-    // ** ADD A SPAN.
-    if (ingredients.length < MIN_DISPLAY_INGREIDENTS) {
+    // Checks to make sure that all the tabs are full before displaying a new ingr.
+    if (data.length < MIN_DISPLAY_INGREIDENTS) {
       throw new Error(
         'Sorry, please fill in the current ingredient tabs before requesting more.'
       );
     }
+
+    MIN_DISPLAY_INGREIDENTS++; // updates this value for later use.
   } catch (err) {
     throw err; // rethrows the error
   }

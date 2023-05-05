@@ -7,4 +7,3 @@ export const KEY = '5f7d5f84-609d-4993-939c-c81cf057a08a';
 export const MODAL_CLOSE_SEC = 2.5;
 
 // ADDTIONAL FEATURE CONFIGS
-export const MIN_DISPLAY_INGREIDENTS = 6;

@@ -47,7 +47,8 @@
   grid-template-columns: 1fr 1fr;
   gap: 4rem 6rem;
 
-  &__column {
+  &__column,
+  &__column-ingredients {
     display: grid;
     grid-template-columns: 1fr 2.8fr;
     align-items: center;
@@ -81,6 +82,30 @@
       grid-column: 1 / span 2;
       justify-self: center;
       margin-top: 1rem;
+    }
+  }
+
+  // // Grid template for the ingredients side with more boxes: ADDTIONAL FT. 3
+  &__column-ingredients {
+    // max-width: 10rem;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 'Ingredient Quantity Unit Description';
+    // justify-items: center; // aligns everything center
+    // align-items: center; // aligns everything center
+    // max-width: 10rem;
+
+    .Quantity {
+      grid-area: Quantity;
+    }
+
+    .Unit {
+      grid-area: Unit;
+    }
+
+    .Description {
+      grid-area: Description;
     }
   }
 

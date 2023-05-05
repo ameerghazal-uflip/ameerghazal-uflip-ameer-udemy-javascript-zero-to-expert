@@ -27,6 +27,15 @@ export default class View {
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 
+  // #2 Challenge
+  renderNewIngr(data) {
+    this._data = data; // sets for the markup
+
+    const markup = this._generateMarkup(); // generates the markup
+
+    this._addIngrColumn.insertAdjacentHTML('beforeend', markup); // inserts it
+  }
+
   update(data) {
     this._data = data;
     const newMarkup = this._generateMarkup();
