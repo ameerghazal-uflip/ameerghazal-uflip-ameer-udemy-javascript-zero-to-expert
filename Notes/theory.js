@@ -2320,4 +2320,16 @@ Final Considerations and JS Docs
 
 
 
+
+
+
+  // CSS Extra
+  -grid-template-columns: repeat (#numColumns, minmax(0,1fr)) makes every boz the same size within the columns
+  - grid-areas: 'name 1 name2 etc..
+  -grid-area: name1 // sets it to that position in the column,
+  - use FormData the
+
+
+
+
 */

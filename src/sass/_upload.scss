@@ -85,12 +85,15 @@
     }
   }
 
-  // // Grid template for the ingredients side with more boxes: ADDTIONAL FT. 3
+  // Grid template for the ingredients side with more boxes: ADDTIONAL FT. 3
   &__column-ingredients {
     // max-width: 10rem;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(
+      4,
+      minmax(0, 1fr)
+    ); // minmax makes the everything be the same size.
     grid-template-areas: 'Ingredient Quantity Unit Description';
     // justify-items: center; // aligns everything center
     // align-items: center; // aligns everything center

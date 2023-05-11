@@ -135,6 +135,7 @@ const clearBookmarks = function () {
 
 export const uploadRecipe = async function (newRecipe) {
   // Take input from API and transform it
+  console.log(newRecipe);
   try {
     const ingredients = Object.entries(newRecipe)
       .filter(entry => entry[0].startsWith('ingredient') && entry[1] !== '')

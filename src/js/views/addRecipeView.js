@@ -42,8 +42,26 @@ class AddRecipeView extends View {
       const dataArr = [...new FormData(this)];
       console.log(dataArr);
       const data = Object.fromEntries(dataArr);
-      console.log(data);
-      handler(data);
+
+      // ADDITIONAL FEATURE 3: Gets the number of non-empty ingredients
+      const numIngr = dataArr.reduce((accum, entry) => {
+        if (entry[0].startsWith('ingredient') && entry[1] !== '') {
+          ++accum;
+        }
+        return accum;
+      }, 0);
+
+      // Divide the numIngr of actual ingredients by 3 to avoid duplicates (quanity, unit, etc.) & start at the index of 1
+      for (let index = 1; index <= numIngr / 3; ++index) {
+        let ingFormed = ''; // string manipulation
+        dataArr.forEach(entry => {
+          if (entry[0].startsWith(`ingredient-${index}`))
+            ingFormed += `${entry[1]},`; // concatinates all of the inputs for the upload
+        });
+
+        data[`ingredient-${index}`] = ingFormed.slice(0, -1); // update the data object we pass into the handler with the new string of all the ing.
+      }
+      handler(data); // passes the data back to the handler.
     });
   }
 
@@ -55,17 +73,30 @@ class AddRecipeView extends View {
 
       // Resets for the loop for no duplicates
       current._curIngredients = [];
-
-      console.log(current._addIngrColumn.querySelectorAll('input'));
+      const inputForm = current._addIngrColumn.querySelectorAll('input');
 
       // Loops through and adds the number of ingredients
-      current._addIngrColumn.querySelectorAll('input').forEach(ingr => {
-        if (ingr.value && ingr.title) {
-          // if the value property exists, we add the ingrident to the data object. This is used for checking later
-          current._curIngredients.push(parseInt(ingr.title.at(-1))); // goes to the name string and gets the number, pushes it to the list.
-        }
-      });
+      for (let index = 0; index < inputForm.length - 2; ++index) {
+        const ingr = inputForm[index],
+          ingrUnit = inputForm[index + 1],
+          ingrDes = inputForm[index + 2]; // stores the unit and desprction for the three inputs
 
+        if (ingr.value && ingrUnit.value && ingrDes.value) {
+          //checks if they all have values
+          if (ingr.title) {
+            // only pushes for the one with the title defined to not send in duplicate ingredients.
+            current._curIngredients.push(parseInt(ingr.title.at(-1))); // goes to the name string and gets the number, pushes it to the list.
+          }
+        }
+      }
+
+      // current._addIngrColumn.querySelectorAll('input').forEach(ingr => {
+      //   if (ingr.value && ingr.title) {
+      //     // if the value property exists, we add the ingrident to the data object. This is used for checking later
+      //     current._curIngredients.push(parseInt(ingr.title.at(-1))); // goes to the name string and gets the number, pushes it to the list.
+      //   }
+      // });
+      debugger;
       handler(current._curIngredients); // passes in the list of ingrdient numbers that have values.
     });
   }
@@ -75,16 +106,17 @@ class AddRecipeView extends View {
     this._data.push(this._data.length + 1);
 
     return `
-    <label>Ingredient ${this._data.length} </label>
+    <label>Ingredient ${this._data.length}</label>
       <input
           type="text"
-          title="quantity ingredient-${this._data.length}"
+          name="ingredient-${this._data.length}"
+          title="${this._data.length}"
           placeholder="Quantity"
         />
-      <input type="text" name="unit ingredient-${this._data.length}" placeholder="Unit" />
+      <input type="text" name="ingredient-${this._data.length}" placeholder="Unit" />
       <input
           type="text"
-          name="description ingredient-${this._data.length}"
+          name="ingredient-${this._data.length}"
           placeholder="Description"
         />`;
 
