@@ -65,7 +65,7 @@ class AddRecipeView extends View {
     });
   }
 
-  // ADDED FOR ADD. FEATURE 2
+  // ADDED FOR ADD. FEATURE 2-4
   addHandlerIngredient(handler) {
     const current = this; // used for later
     this._btnAdd.addEventListener('click', function (e) {
@@ -90,19 +90,12 @@ class AddRecipeView extends View {
         }
       }
 
-      // current._addIngrColumn.querySelectorAll('input').forEach(ingr => {
-      //   if (ingr.value && ingr.title) {
-      //     // if the value property exists, we add the ingrident to the data object. This is used for checking later
-      //     current._curIngredients.push(parseInt(ingr.title.at(-1))); // goes to the name string and gets the number, pushes it to the list.
-      //   }
-      // });
-      debugger;
       handler(current._curIngredients); // passes in the list of ingrdient numbers that have values.
     });
   }
 
   _generateMarkup() {
-    // Adds a new ingrdient to the list.
+    // Adds a new ingrdient to the list. & add feature
     this._data.push(this._data.length + 1);
 
     return `
@@ -119,14 +112,6 @@ class AddRecipeView extends View {
           name="ingredient-${this._data.length}"
           placeholder="Description"
         />`;
-
-    // return `
-    // <label>Ingredient ${this._data.length} </label>
-    // <input
-    //   type="text"
-    //   name="ingredient-${this._data.length}"
-    //   placeholder="Format: 'Quantity,Unit,Description'"
-    // />`;
   }
 }
 
