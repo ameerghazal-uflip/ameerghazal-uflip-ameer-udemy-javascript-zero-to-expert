@@ -9,9 +9,9 @@ import paginationView from './views/paginationView.js';
 import bookmarksView from './views/bookmarksView.js';
 import addRecipeView from './views/addRecipeView.js';
 
-import icons from 'url:../img/icons.svg'; // parcel 2
 import 'core-js/stable'; // polyfilling.
 import 'regenerator-runtime/runtime';
+import { async } from 'regenerator-runtime';
 
 // if (module.hot) {
 //   module.hot.accept();
@@ -39,6 +39,34 @@ const controlRecipes = async function () {
     // if we exported the class, we would do, const rec = new recipeView(model....)
   } catch (err) {
     recipeView.renderError();
+    console.error(err);
+  }
+};
+
+// ADD 5
+const controlDeleteRecipe = async function () {
+  debugger;
+  try {
+    const id = window.location.hash.slice(1); // gets the id of the page.
+
+    if (!id) return; // guard for no id.
+
+    recipeView.renderSpinner(); // displays the spinner.
+
+    model.deleteBookmark(id); // deletes the bookmark
+
+    await model.deleteRecipe(id); // deletes the recipe.
+
+    bookmarksView.update(model.state.bookmarks); // updating bookmarks view
+
+    recipeView.renderMessage(
+      'The recipe has been deleted. Try searching for another recipe or creating your own!'
+    ); // displays a new message
+
+    setTimeout(function () {
+      location.reload();
+    }, MODAL_CLOSE_SEC * 1000); // ADD A TOGGLE WINDOW
+  } catch (err) {
     console.error(err);
   }
 };
@@ -85,8 +113,8 @@ const controlServings = function (newServings) {
 const controlAddBookmark = function () {
   // 1) Add or remove a bookmark
   if (!model.state.recipe.bookmarked) model.addBookmark(model.state.recipe);
-  // if there is no bookmark, we add one
-  else model.deleteBookmark(model.state.recipe.id); // if there is one, we delete it
+  else model.deleteBookmark(model.state.recipe.id);
+  // if there is one, we delete it
 
   // 2) Update recipe view
   recipeView.update(model.state.recipe);
@@ -96,6 +124,7 @@ const controlAddBookmark = function () {
 };
 
 const controlBookmarks = function () {
+  debugger;
   bookmarksView.render(model.state.bookmarks);
 };
 
@@ -119,16 +148,16 @@ const controlAddRecipe = async function (newRecipe) {
 
     // CHange ID in URL
     window.history.pushState(null, '', `#${model.state.recipe.id}`);
+
+    // Close form window and Reload for more recipes.
+    setTimeout(function () {
+      addRecipeView.toggleWindow();
+      // location.reload();
+    }, MODAL_CLOSE_SEC * 1000);
   } catch (err) {
     console.error(err);
     addRecipeView.renderError(err.message);
   }
-
-  // Close form window and Reload for more recipes.
-  setTimeout(function () {
-    addRecipeView.toggleWindow();
-    // location.reload();
-  }, MODAL_CLOSE_SEC * 1000);
 };
 
 //ADD 2
@@ -153,6 +182,7 @@ const init = function () {
   recipeView.addHandlerRender(controlRecipes);
   recipeView.addHandlerUpdateServings(controlServings);
   recipeView.addHandlerAddBookmark(controlAddBookmark);
+  recipeView.addHandlerDeleteRecipe(controlDeleteRecipe); // add feature 5
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);

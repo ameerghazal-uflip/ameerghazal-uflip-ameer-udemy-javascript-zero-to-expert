@@ -33,6 +33,19 @@ class RecipeView extends View {
     });
   }
 
+  // ADD Feature 5: Delete Recipe Button
+  addHandlerDeleteRecipe(handler) {
+    debugger;
+    this._parentElement.addEventListener('click', function (e) {
+      const btn = e.target.closest('.delete_btn'); // deletes the recipe
+
+      // Guard Clause
+      if (!btn) return;
+
+      handler();
+    });
+  }
+
   _generateMarkup() {
     return `
   <figure class="recipe__fig">
@@ -101,7 +114,9 @@ class RecipeView extends View {
       ${this._data.ingredients
         .map(this._generateMarkupIngredient)
         .join('')} </ul>
-      <button class="btn edit_ingredients_btn">Edit Ingredients</button>
+      
+      <button class="btn--small delete_btn">Delete Recipe</button>
+      <button class="btn--small edit_ingredients_btn">Edit Ingredients</button>
     </div>
 
   <div class="recipe__directions">

@@ -39,9 +39,9 @@ export const loadRecipe = async function (id) {
     state.recipe = createRecipeObject(data);
 
     // deals with reloads, so it sets the bookmarked property if it is set.
-    if (state.bookmarks.some(bookmark => bookmark.id === id)) {
+    if (state.bookmarks.some(bookmark => bookmark.id === id))
       state.recipe.bookmarked = true;
-    } else state.recipe.bookmarked = false;
+    else state.recipe.bookmarked = false;
 
     // console.log(state.recipe);
   } catch (err) {
@@ -132,6 +132,7 @@ init();
 const clearBookmarks = function () {
   localStorage.clear('bookmarks');
 };
+// clearBookmarks();
 
 export const uploadRecipe = async function (newRecipe) {
   // Take input from API and transform it
@@ -164,11 +165,23 @@ export const uploadRecipe = async function (newRecipe) {
     console.log(recipe);
     const data = await AJAX(`${API_URL}?key=${KEY}`, recipe);
     state.recipe = createRecipeObject(data);
+    addBookmark(state.recipe);
   } catch (err) {
     throw err;
   }
 };
 
+// ADDITIONAL FEATURE 5: edit, delete button
+export const deleteRecipe = async function (id) {
+  debugger;
+  try {
+    const data = await AJAX(`${API_URL}${id}?key=${KEY}`, null, 'DELETE'); // this will delete the data from the page.
+  } catch (err) {
+    throw err;
+  }
+};
+
+// ADDITIONAL FEATURE 2-3: adding Ingredient validation
 export const addIngredient = async function (data) {
   debugger;
   try {
