@@ -1,6 +1,7 @@
 import icons from 'url:../../img/icons.svg'; // parcel 2 for the pictures
 import { Fraction } from 'fractional'; // for the fractions
 import View from './View.js';
+import addRecipeView from './addRecipeView.js';
 
 class RecipeView extends View {
   _parentElement = document.querySelector('.recipe'); // query selector
@@ -41,6 +42,19 @@ class RecipeView extends View {
 
       // Guard Clause
       if (!btn) return;
+
+      handler();
+    });
+  }
+
+  addHandlerEditRecipe(handler) {
+    this._parentElement.addEventListener('click', function (e) {
+      const btn = e.target.closest('.edit_ingredients_btn');
+      console.log(btn);
+
+      if (!btn) return; // guard
+
+      addRecipeView.toggleWindow(); // toggles the form to reopen.
 
       handler();
     });
@@ -115,8 +129,19 @@ class RecipeView extends View {
         .map(this._generateMarkupIngredient)
         .join('')} </ul>
       
-      <button class="btn--small delete_btn">Delete Recipe</button>
-      <button class="btn--small edit_ingredients_btn">Edit Ingredients</button>
+      ${document
+        .querySelector('.upload__column')
+        .querySelectorAll('input')
+        .forEach(input => {
+          if (input.name === 'publisher') {
+            if (input.value !== 'Simply foods') {
+              return `<button class="btn--small delete_btn">Delete Recipe</button>
+              <button class="btn--small edit_ingredients_btn">Edit Ingredients</button> `;
+            }
+          }
+
+          // return '';
+        })} 
     </div>
 
   <div class="recipe__directions">

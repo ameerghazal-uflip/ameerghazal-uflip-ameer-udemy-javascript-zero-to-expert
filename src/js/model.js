@@ -197,3 +197,99 @@ export const addIngredient = async function (data) {
     throw err; // rethrows the error
   }
 };
+
+// ADD 5: Edit Button
+export const editIngredients = async function () {
+  try {
+    const id = window.location.hash.slice(1); // gets the id of the page.
+
+    if (!id) return; // guard for no id.
+
+    // deleteRecipe(id); // deletes the recipe behind the scences
+
+    const recipe = state.recipe; // gets the current recipe to be used
+
+    // Query selects the title, etc.
+    const names = [
+      ...document.querySelector('.upload__column').querySelectorAll('input'),
+    ];
+
+    // Hard code the title, etc., in due to object and the value always being 6
+    names[0].value = recipe.title;
+    names[1].value = recipe.sourceUrl;
+    names[2].value = recipe.image;
+    names[3].value = recipe.publisher;
+    names[4].value = recipe.cookingTime;
+    names[5].value = recipe.servings;
+
+    // Query selects the ingredients
+    // let ingredients = [
+    //   ...document
+    //     .querySelector('.upload__column-ingredients')
+    //     .querySelectorAll('input'),
+    // ];
+
+    // console.log(ingredients);
+    console.log(recipe.ingredients);
+
+    if (recipe.ingredients.length > 6) {
+      let htmlMarkup = '';
+      for (
+        let index = 0, count = recipe.ingredients.length - 6;
+        index < recipe.ingredients.length - 6;
+        ++index, --count
+      ) {
+        htmlMarkup += `
+        <label>Ingredient ${recipe.ingredients.length - count + 1}</label>
+          <input
+              type="number"
+              name="ingredient-${recipe.ingredients.length - count + 1}"
+              title="${recipe.ingredients.length - count + 1}"
+              placeholder="Quantity"
+            />
+          <input type="text" name="ingredient-${
+            recipe.ingredients.length - count + 1
+          }" placeholder="Unit" />
+          <input
+              type="text"
+              name="ingredient-${recipe.ingredients.length - count + 1}"
+              placeholder="Description"
+            />`;
+      }
+
+      document
+        .querySelector('.upload__column-ingredients')
+        .insertAdjacentHTML('beforeend', htmlMarkup);
+    }
+
+    const ingredients = [
+      ...document
+        .querySelector('.upload__column-ingredients')
+        .querySelectorAll('input'),
+    ];
+
+    console.log(ingredients);
+
+    for (let index = 0, count = 0; index < recipe.ingredients.length; ++index) {
+      // we do it for the recipe ingredients so we do not update the wrong thing
+
+      ingredients[count].value = recipe.ingredients[index].quantity;
+      // ingredients[count++].quantity = recipe.ingredients[index].quantity;
+      count++;
+
+      ingredients[count].value = recipe.ingredients[index].unit;
+      // ingredients[count++].unit = recipe.ingredients[index].unit;
+      count++;
+
+      ingredients[count].value = recipe.ingredients[index].description;
+      // ingredients[count].description = recipe.ingredients[index].description;
+      count++;
+    }
+
+    console.log(ingredients);
+
+    console.log(recipe);
+  } catch (error) {
+    throw error;
+  }
+};

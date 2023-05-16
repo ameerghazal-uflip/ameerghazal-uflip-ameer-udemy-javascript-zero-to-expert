@@ -43,7 +43,7 @@ const controlRecipes = async function () {
   }
 };
 
-// ADD 5
+// ADD 5: Delete button for later
 const controlDeleteRecipe = async function () {
   debugger;
   try {
@@ -64,7 +64,7 @@ const controlDeleteRecipe = async function () {
     ); // displays a new message
 
     setTimeout(function () {
-      location.reload();
+      // location.reload();
     }, MODAL_CLOSE_SEC * 1000); // ADD A TOGGLE WINDOW
   } catch (err) {
     console.error(err);
@@ -124,7 +124,6 @@ const controlAddBookmark = function () {
 };
 
 const controlBookmarks = function () {
-  debugger;
   bookmarksView.render(model.state.bookmarks);
 };
 
@@ -160,7 +159,7 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
-//ADD 2
+// ADD 2: Addtional ingredient button
 const controlAddIngredient = async function (data) {
   try {
     // Checks if applicable.
@@ -176,6 +175,17 @@ const controlAddIngredient = async function (data) {
   }
 };
 
+// ADD 5: Edit Button
+const controlEditIngredient = async function (data) {
+  try {
+    recipeView.renderSpinner(); // displays the spinner.
+
+    model.editIngredients(); // deletes the current object, and auto sets the modal input fields for the new "updated" recipe.
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 // loops over to add the eventListener
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);
@@ -187,5 +197,6 @@ const init = function () {
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
   addRecipeView.addHandlerIngredient(controlAddIngredient); // add. feature 2
+  recipeView.addHandlerEditRecipe(controlEditIngredient); // add feature 5
 };
 init();

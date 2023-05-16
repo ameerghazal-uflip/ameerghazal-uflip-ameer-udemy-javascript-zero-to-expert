@@ -90,9 +90,23 @@ class AddRecipeView extends View {
         }
       }
 
+      console.log(current._curIngredients);
       handler(current._curIngredients); // passes in the list of ingrdient numbers that have values.
     });
   }
+
+  // addHandlerEditRecipe(handler) {
+  //   this._parentElement.addEventListener('click', function (e) {
+  //     const btn = e.target.closest('.edit_ingredients_btn');
+  //     console.log(btn);
+
+  //     if (!btn) return; // guard
+
+  //     toggleWindow(); // if the edit button is clicked, the window is brought back up, with the information pre-saved
+
+  //     handler();
+  //   });
+  // }
 
   _generateMarkup() {
     // Adds a new ingrdient to the list. & add feature
@@ -101,7 +115,7 @@ class AddRecipeView extends View {
     return `
     <label>Ingredient ${this._data.length}</label>
       <input
-          type="text"
+          type="number"
           name="ingredient-${this._data.length}"
           title="${this._data.length}"
           placeholder="Quantity"
