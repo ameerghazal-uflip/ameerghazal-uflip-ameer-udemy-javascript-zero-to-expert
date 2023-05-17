@@ -15,7 +15,7 @@ export const state = {
     resultsPerPage: RES_PER_PAGE,
   },
   bookmarks: [],
-  cart: [], // ADD FT. Advanced list
+  cart: ['3 kilos sugar'], // ADVANCED ADDITIONAL FEATURE: Shopping List
 };
 
 const createRecipeObject = function (data) {
@@ -124,39 +124,56 @@ export const deleteBookmark = function (id) {
 };
 
 // ADVANCED ADDITIONAL FEATURE: Shopping List
-
 const persistCart = function () {
   localStorage.setItem('cart', JSON.stringify(state.cart));
 };
 
+// ADVANCED ADDITIONAL FEATURE: Shopping List
 export const addToCart = function (ingredient) {
   state.cart.push(ingredient);
 
-  // Mark current recipe as bookmarked
-  if (recipe.id === state.recipe.id) {
-    state.recipe.bookmarked = true;
-  }
+  // // Mark current recipe as bookmarked
+  // if (ingredient.id === state.recipe.ingredient.id) {
+  //   state.recipe.addedToCart = true;
+  // }
 
   persistCart();
 };
 
-export const removeFromCart = function (id) {};
+// ADVANCED ADDITIONAL FEATURE: Shopping List
+export const removeFromCart = function (id) {
+  const index = state.cart.findIndex(el => el.id === id);
+  state.cart.splice(index, 1);
+
+  //  // Mark current recipe as NOT bookmarked
+  //  if (id === state.recipe.id) {
+  //   state.recipe.bookmarked = false;
+  // }
+
+  persistCart();
+};
 
 const init = function () {
   // Bookmarks
   const storageBookmarks = localStorage.getItem('bookmarks');
   if (storageBookmarks) state.bookmarks = JSON.parse(storageBookmarks);
 
-  const storageBookmarks = localStorage.getItem('bookmarks');
-  if (storageBookmarks) state.bookmarks = JSON.parse(storageBookmarks);
+  // Cart: Addtional Feature
+  const storageCart = localStorage.getItem('cart');
+  if (storageCart) state.cart = JSON.parse(storageCart);
 };
 init();
 
-// to clear them all, by default it will be turned off
 const clearBookmarks = function () {
   localStorage.clear('bookmarks');
 };
 // clearBookmarks();
+
+// ADVANCED ADDITIONAL FEATURE: Shopping List
+const clearCart = function () {
+  localStorage.clear('cart');
+};
+// clearCart();
 
 export const uploadRecipe = async function (newRecipe) {
   // Take input from API and transform it

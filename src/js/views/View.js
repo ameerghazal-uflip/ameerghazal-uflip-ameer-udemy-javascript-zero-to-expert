@@ -36,8 +36,24 @@ export default class View {
     this._addIngrColumn.insertAdjacentHTML('beforeend', markup); // inserts it
   }
 
+  // ADDED FOR ADDITIONAL FEATURE ADVANCED!!!!
+  renderList(data, render = true) {
+    // console.log(data);
+    if (!data || (Array.isArray(data) && data.length === 0))
+      return this.renderError(); // already has the default error message if empty. Checks if it is an array and is empty.
+
+    this._data = data;
+    const markup = this._generateMarkupList(); // uses the generate markup from whatever is called. for example, the buttons for the pages. This will call that generate markup in the pagination view, while a call for the results view would call that generate markup. This is evidenet throughout the project.
+
+    if (!render) return markup;
+
+    this._clear();
+    this._parentElement.insertAdjacentHTML('afterbegin', markup);
+  }
+
   update(data) {
     this._data = data;
+    console.log(this);
     const newMarkup = this._generateMarkup();
 
     const newDOM = document.createRange().createContextualFragment(newMarkup); // converts string html into a dom object.

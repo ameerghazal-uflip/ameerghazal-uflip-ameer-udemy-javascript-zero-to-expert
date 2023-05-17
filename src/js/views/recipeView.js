@@ -34,6 +34,17 @@ class RecipeView extends View {
     });
   }
 
+  // ADDITIONAL FEATURE ADVANCED: Shopping List.
+  addHandlerCartIngredient(handler) {
+    this._parentElement.addEventListener('click', function (e) {
+      const btn = e.target.closest('.cart_btn');
+
+      if (!btn) return;
+
+      handler();
+    });
+  }
+
   // ADD Feature 5: Delete Recipe Button
   addHandlerDeleteRecipe(handler) {
     debugger;
@@ -168,11 +179,12 @@ class RecipeView extends View {
   }
 
   _generateMarkupIngredient(ing) {
+    // ADDED A BUTTON UNDER LI FOR ADVANCED AD. FT. & changed icon.
     return `
       <li class="recipe__ingredient">
-      <svg class="recipe__icon">
-        <use href="${icons}#icon-check"></use>
-      </svg>
+        <button class="btn--tiny cart_btn">
+          <i class='fas fa-cart-plus'></i>
+        </button>
       <div class="recipe__quantity">${
         ing.quantity ? new Fraction(ing.quantity).toString() : ''
       }</div>

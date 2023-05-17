@@ -1,4 +1,4 @@
-// Section 18 Lesson 308: Uploading a new Recipe #2.
+// Section 18 FORKIFY ADVANCED FEATURES
 
 import * as model from './model.js'; // * imports everything exported from model.
 import { MODAL_CLOSE_SEC } from './config.js';
@@ -129,7 +129,21 @@ const controlBookmarks = function () {
 };
 
 // ADDTIONAL: Advanced Shopping List
-const controlShoppingList = function () {};
+const controlAddToCart = function () {
+  // Adding or removing something from the cart
+  model.addToCart(); ///////////////////////////////////////////////
+
+  // Update the view
+  // recipeView.update(model.state.recipe);
+
+  // Display the items in the cart
+  shoppingListView.render(model.state.cart);
+};
+
+// ADDTIONAL: Advanced Shopping List
+const controlCart = function () {
+  shoppingListView.render(model.state.cart);
+};
 
 const controlAddRecipe = async function (newRecipe) {
   try {
@@ -203,10 +217,11 @@ const init = function () {
   recipeView.addHandlerAddBookmark(controlAddBookmark);
   recipeView.addHandlerEditRecipe(controlEditIngredient); // add feature 5
   recipeView.addHandlerDeleteRecipe(controlDeleteRecipe); // add feature 5
+  recipeView.addHandlerCartIngredient(controlAddToCart); // add ft. advanced
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
   addRecipeView.addHandlerIngredient(controlAddIngredient); // add. feature 2
-  shoppingListView.addHandlerListRender(controlShoppingList);
+  shoppingListView.addHandlerListRender(controlCart); // add ft. advanced
 };
 init();
