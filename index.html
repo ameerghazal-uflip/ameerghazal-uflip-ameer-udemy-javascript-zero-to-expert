@@ -14,6 +14,11 @@
     <script type="module" src="src/js/controller.js"></script>
 
     <title>forkify // Search over 1,000,000 recipes</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
 
   <body>
@@ -36,6 +41,43 @@
 
         <nav class="nav">
           <ul class="nav__list">
+            <!-- INSERTING FOR ADVANCED ADD FT: GROCERYLIST -->
+            <li class="nav__item">
+              <button class="nav__btn nav__btn--shopping-list" style="gap: 8px">
+                <i class="fas fa-tags" style="font-size: 24px"></i>
+                <span> Shopping list</span>
+              </button>
+              <!-- ADDED FOR SHOPPING LIST -->
+              <div class="cart">
+                <ul class="shopping__list">
+                  <div class="message">
+                    <div>
+                      <svg>
+                        <use href="src/img/icons.svg#icon-smile"></use>
+                      </svg>
+                    </div>
+                    <p>
+                      Nothing in your cart yet. Find some ingredients and add
+                      them to your list!
+                    </p>
+                  </div>
+
+                  <!-- <li class="preview">
+                    <a class="preview__link" href="#23456">
+                      <figure class="preview__fig">
+                        <img src="src/img/test-1.jpg" alt="Test" />
+                      </figure>
+                      <div class="preview__data">
+                        <h4 class="preview__name">
+                          Pasta with Tomato Cream ...
+                        </h4>
+                        <p class="preview__publisher">The Pioneer Woman</p>
+                      </div>
+                    </a>
+                  </li> -->
+                </ul>
+              </div>
+            </li>
             <li class="nav__item">
               <button class="nav__btn nav__btn--add-recipe">
                 <svg class="nav__icon">
@@ -350,7 +392,8 @@
           </button>
           <!-- This addIng button was made for the additional feature. -->
           <button class="btn add_ingredient__btn">
-            <span>Add Ingredient 🧂</span>
+            <i class="fa fa-plus"></i>
+            <span>Add Ingredient</span>
           </button>
         </div>
       </form>

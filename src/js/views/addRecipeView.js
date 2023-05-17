@@ -95,19 +95,6 @@ class AddRecipeView extends View {
     });
   }
 
-  // addHandlerEditRecipe(handler) {
-  //   this._parentElement.addEventListener('click', function (e) {
-  //     const btn = e.target.closest('.edit_ingredients_btn');
-  //     console.log(btn);
-
-  //     if (!btn) return; // guard
-
-  //     toggleWindow(); // if the edit button is clicked, the window is brought back up, with the information pre-saved
-
-  //     handler();
-  //   });
-  // }
-
   _generateMarkup() {
     // Adds a new ingrdient to the list. & add feature
     this._data.push(this._data.length + 1);

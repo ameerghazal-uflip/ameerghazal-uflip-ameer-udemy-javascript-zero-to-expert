@@ -12,6 +12,7 @@ import addRecipeView from './views/addRecipeView.js';
 import 'core-js/stable'; // polyfilling.
 import 'regenerator-runtime/runtime';
 import { async } from 'regenerator-runtime';
+import shoppingListView from './views/shoppingListView.js';
 
 // if (module.hot) {
 //   module.hot.accept();
@@ -64,7 +65,7 @@ const controlDeleteRecipe = async function () {
     ); // displays a new message
 
     setTimeout(function () {
-      // location.reload();
+      location.reload();
     }, MODAL_CLOSE_SEC * 1000); // ADD A TOGGLE WINDOW
   } catch (err) {
     console.error(err);
@@ -127,6 +128,9 @@ const controlBookmarks = function () {
   bookmarksView.render(model.state.bookmarks);
 };
 
+// ADDTIONAL: Advanced Shopping List
+const controlShoppingList = function () {};
+
 const controlAddRecipe = async function (newRecipe) {
   try {
     // Show loading spinner
@@ -176,11 +180,16 @@ const controlAddIngredient = async function (data) {
 };
 
 // ADD 5: Edit Button
-const controlEditIngredient = async function (data) {
+const controlEditIngredient = async function () {
   try {
     recipeView.renderSpinner(); // displays the spinner.
 
     model.editIngredients(); // deletes the current object, and auto sets the modal input fields for the new "updated" recipe.
+
+    setTimeout(function () {
+      // removes the bookmarks
+      location.reload();
+    }, MODAL_CLOSE_SEC * 5000);
   } catch (error) {
     console.error(error);
   }
@@ -192,11 +201,12 @@ const init = function () {
   recipeView.addHandlerRender(controlRecipes);
   recipeView.addHandlerUpdateServings(controlServings);
   recipeView.addHandlerAddBookmark(controlAddBookmark);
+  recipeView.addHandlerEditRecipe(controlEditIngredient); // add feature 5
+  recipeView.addHandlerDeleteRecipe(controlDeleteRecipe); // add feature 5
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
   addRecipeView.addHandlerIngredient(controlAddIngredient); // add. feature 2
-  recipeView.addHandlerEditRecipe(controlEditIngredient); // add feature 5
-  recipeView.addHandlerDeleteRecipe(controlDeleteRecipe); // add feature 5
+  shoppingListView.addHandlerListRender(controlShoppingList);
 };
 init();

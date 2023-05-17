@@ -131,8 +131,15 @@ class RecipeView extends View {
       
         ${
           this._data.key
-            ? `<button class="btn--small delete_btn">Delete Recipe</button>
-        <button class="btn--small edit_ingredients_btn">Edit Ingredients</button>`
+            ? `
+            <button class="btn--small delete_btn">
+              <span>Delete Recipe</span>
+              <i class='fas fa-trash-alt'></i>
+            </button>
+            <button class="btn--small edit_ingredients_btn">
+              <span>Edit Ingredients</span>
+              <i class='fas fa-pencil-alt'></i>
+            </button>`
             : ''
         }
        
