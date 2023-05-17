@@ -151,7 +151,7 @@ const controlAddRecipe = async function (newRecipe) {
     // Close form window and Reload for more recipes.
     setTimeout(function () {
       addRecipeView.toggleWindow();
-      // location.reload();
+      location.reload();
     }, MODAL_CLOSE_SEC * 1000);
   } catch (err) {
     console.error(err);
@@ -192,11 +192,11 @@ const init = function () {
   recipeView.addHandlerRender(controlRecipes);
   recipeView.addHandlerUpdateServings(controlServings);
   recipeView.addHandlerAddBookmark(controlAddBookmark);
-  recipeView.addHandlerDeleteRecipe(controlDeleteRecipe); // add feature 5
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
   addRecipeView.addHandlerIngredient(controlAddIngredient); // add. feature 2
   recipeView.addHandlerEditRecipe(controlEditIngredient); // add feature 5
+  recipeView.addHandlerDeleteRecipe(controlDeleteRecipe); // add feature 5
 };
 init();

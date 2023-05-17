@@ -129,20 +129,14 @@ class RecipeView extends View {
         .map(this._generateMarkupIngredient)
         .join('')} </ul>
       
-      ${document
-        .querySelector('.upload__column')
-        .querySelectorAll('input')
-        .forEach(input => {
-          if (input.name === 'publisher') {
-            if (input.value !== 'Simply foods') {
-              return `<button class="btn--small delete_btn">Delete Recipe</button>
-              <button class="btn--small edit_ingredients_btn">Edit Ingredients</button> `;
-            }
-          }
-
-          // return '';
-        })} 
-    </div>
+        ${
+          this._data.key
+            ? `<button class="btn--small delete_btn">Delete Recipe</button>
+        <button class="btn--small edit_ingredients_btn">Edit Ingredients</button>`
+            : ''
+        }
+       
+  </div>
 
   <div class="recipe__directions">
     <h2 class="heading--2">How to cook it</h2>

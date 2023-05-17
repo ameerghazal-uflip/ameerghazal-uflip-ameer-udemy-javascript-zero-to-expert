@@ -205,7 +205,7 @@ export const editIngredients = async function () {
 
     if (!id) return; // guard for no id.
 
-    // deleteRecipe(id); // deletes the recipe behind the scences
+    await deleteRecipe(id); // deletes the recipe behind the scences
 
     const recipe = state.recipe; // gets the current recipe to be used
 
@@ -222,14 +222,6 @@ export const editIngredients = async function () {
     names[4].value = recipe.cookingTime;
     names[5].value = recipe.servings;
 
-    // Query selects the ingredients
-    // let ingredients = [
-    //   ...document
-    //     .querySelector('.upload__column-ingredients')
-    //     .querySelectorAll('input'),
-    // ];
-
-    // console.log(ingredients);
     console.log(recipe.ingredients);
 
     if (recipe.ingredients.length > 6) {
