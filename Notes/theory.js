@@ -2317,17 +2317,19 @@ Final Considerations and JS Docs
 
 
 
-
-
-
-
-
-
   // CSS Extra
   -grid-template-columns: repeat (#numColumns, minmax(0,1fr)) makes every boz the same size within the columns
   - grid-areas: 'name 1 name2 etc..
   -grid-area: name1 // sets it to that position in the column,
   - use FormData the
+
+
+
+  Section 19 Deployment & Parcel & Git
+  - For builds, attach a (--dist-dir ./dist) to anything for parcel 2 to the end of parcel build...
+  - also, make sure to use default rather than main!
+  - downgrading means to uninstall install a different verison.
+  - surge and netlify are good for publishing.
 
 
 

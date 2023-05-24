@@ -1,5 +1,5 @@
 import icons from 'url:../../img/icons.svg'; // parcel 2 for the pictures
-import { Fraction } from 'fractional'; // for the fractions
+import fracty from 'fracty'; // for the fractions
 import View from './View.js';
 import addRecipeView from './addRecipeView.js';
 
@@ -202,7 +202,7 @@ class RecipeView extends View {
           <i class='fas fa-cart-plus'></i>
         </button>
       <div class="recipe__quantity">${
-        ing.quantity ? new Fraction(ing.quantity).toString() : ''
+        ing.quantity ? fracty(ing.quantity) : ''
       }</div>
       <div class="recipe__description">
         <span class="recipe__unit">${ing.unit}</span>
