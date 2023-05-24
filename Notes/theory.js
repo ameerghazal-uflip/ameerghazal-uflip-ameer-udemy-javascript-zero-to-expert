@@ -2344,7 +2344,7 @@ Final Considerations and JS Docs
   - git reset --hard ____ : (where --hard is followed by the key of the commit.) This goes back to the certain commit.
   - git branch: displays the current branches.
   - git branch ___: is followed by the name of a new branch, and git checkout ___: leads us to that branch.
-  -
+  - git merge ___: is followed by the branch name to be merged with the current branch (e.g. on master and merge excess from section 18)
   -
   -
   -

@@ -216,10 +216,6 @@ const controlEditIngredient = async function () {
   }
 };
 
-const tester = function () {
-  console.log('wlcome');
-};
-
 // loops over to add the eventListener
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);
@@ -236,6 +232,5 @@ const init = function () {
   // shoppingListView.addHandlerListRender(controlCart); // add ft. advanced
   shoppingListView.addHandlerRemoveCartIngredient(controlRemoveFromCart); //adv ft.
   shoppingListView.addHandlerListRender(controlCart); // adv ft. (displays off reload)
-  tester();
 };
 init();
