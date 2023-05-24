@@ -2336,13 +2336,14 @@ Final Considerations and JS Docs
 
   Git Fundamentals
   - .gitignore (ignores certain files that are listed for git)
-  -
-  -
-  -
-  -
-  -
-  -
-  -
+  - git init: (adds all the files)
+  - git add -A: (adds all for a pre-step)
+  - git commit -m 'mesage': (this commits it to the repo)
+  - git reset --hard HEAD: (goes back to a commit)
+  - git log: (logs all of the previous commits made) (using q for quit)
+  - git reset --hard ____ : (where --hard is followed by the key of the commit.) This goes back to the certain commit.
+  - git branch: displays the current branches.
+  - git branch ___: is followed by the name of a new branch, and git checkout ___: leads us to that branch.
   -
   -
   -
