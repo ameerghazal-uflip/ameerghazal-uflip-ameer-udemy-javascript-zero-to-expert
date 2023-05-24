@@ -2330,8 +2330,24 @@ Final Considerations and JS Docs
   - also, make sure to use default rather than main!
   - downgrading means to uninstall install a different verison.
   - surge and netlify are good for publishing.
+  - git init intlizes an empty git repo
+  - git config --global user.name ____ (followed by the username)
+  - git config --global user.email ____ (followed by email)
 
-
+  Git Fundamentals
+  - .gitignore (ignores certain files that are listed for git)
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
 
 
 */
