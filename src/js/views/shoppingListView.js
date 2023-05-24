@@ -30,10 +30,10 @@ class ShoppingListView extends View {
   }
 
   _generateMarkup() {
-    console.log(this._data);
-    console.log(
-      this._data.map(item => previewView.renderList(item, false)).join('')
-    );
+    // console.log(
+    //   this._data.map(item => previewView.renderList(item, false)).join('')
+    // );
+
     return this._data.map(item => previewView.renderList(item, false)).join('');
   }
 }

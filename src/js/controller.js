@@ -90,7 +90,7 @@ const controlSearchResults = async function () {
     // 4) Render inital pagination buttons
     paginationView.render(model.state.search); // pass in the entire state object.
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 
@@ -159,7 +159,7 @@ const controlAddRecipe = async function (newRecipe) {
 
     // upload the new recipe data.
     await model.uploadRecipe(newRecipe);
-    console.log(model.state.recipe);
+    // console.log(model.state.recipe);
 
     // Render recipe
     recipeView.render(model.state.recipe);

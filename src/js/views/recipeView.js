@@ -17,7 +17,6 @@ class RecipeView extends View {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.btn--update-servings');
       if (!btn) return;
-      console.log(btn);
 
       // console.log(btn.dataset.updateTo); different notation.
       const { updateTo } = btn.dataset; // destructre and remember that for a data set, the dashes make it camel case.
@@ -77,7 +76,6 @@ class RecipeView extends View {
   addHandlerEditRecipe(handler) {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.edit_ingredients_btn');
-      console.log(btn);
 
       if (!btn) return; // guard
 

@@ -40,7 +40,7 @@ class AddRecipeView extends View {
     this._parentElement.addEventListener('submit', function (e) {
       e.preventDefault();
       const dataArr = [...new FormData(this)];
-      console.log(dataArr);
+      // console.log(dataArr);
       const data = Object.fromEntries(dataArr);
 
       // ADDITIONAL FEATURE 3: Gets the number of non-empty ingredients
@@ -90,7 +90,7 @@ class AddRecipeView extends View {
         }
       }
 
-      console.log(current._curIngredients);
+      // console.log(current._curIngredients);
       handler(current._curIngredients); // passes in the list of ingrdient numbers that have values.
     });
   }
