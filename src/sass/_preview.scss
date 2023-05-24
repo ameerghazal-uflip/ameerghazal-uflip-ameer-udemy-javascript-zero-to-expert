@@ -1,4 +1,7 @@
 .preview {
+  &::marker {
+    content: '';
+  }
   &__link {
     &:link,
     &:visited {
@@ -102,4 +105,42 @@
       fill: $color-primary;
     }
   }
+}
+
+// ADVACNED FT. Additional
+.preview__user-deleted {
+  // background-color: darken($color-grey-light-2, 2%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 10rem;
+
+  margin-left: auto;
+  margin-right: 1.75rem;
+
+  svg {
+    height: 1.2rem;
+    width: 1.2rem;
+    fill: $color-primary;
+  }
+}
+
+// ADVANCED ADDITIONAL FEATURE
+.preview__ingredient {
+  font-size: 1.75rem;
+  color: $color-grey-dark-2;
+  // text-transform: uppercase;
+  font-weight: 600;
+}
+
+.preview_link {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 3.25rem;
+  transition: all 0.3s;
+  border-right: 1px solid #fff;
+  text-decoration: none;
 }

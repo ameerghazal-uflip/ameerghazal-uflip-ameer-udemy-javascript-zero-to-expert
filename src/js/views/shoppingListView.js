@@ -14,31 +14,28 @@ class ShoppingListView extends View {
     window.addEventListener('load', handler);
   }
 
+  // ADDITIONAL FEATURE ADVANCED: Shopping List.
+  addHandlerRemoveCartIngredient(handler) {
+    const current = this;
+    this._parentElement.addEventListener('click', function (e) {
+      debugger;
+      const btn = e.target.closest('.delete_ing_btn'); // big x
+
+      if (!btn) return;
+
+      const ingredientLi = e.target.closest('.preview'); // the entire li it would delete
+
+      handler(ingredientLi);
+    });
+  }
+
   _generateMarkup() {
     console.log(this._data);
+    console.log(
+      this._data.map(item => previewView.renderList(item, false)).join('')
+    );
     return this._data.map(item => previewView.renderList(item, false)).join('');
   }
 }
 
 export default new ShoppingListView();
-
-/*
-
-<!-- <li class="preview">
-    <a class="preview__link" href="#23456">
-      <figure class="preview__fig">
-        <img src="src/img/test-1.jpg" alt="Test" />
-      </figure>
-      <div class="preview__data">
-        <h4 class="preview__name">
-          Pasta with Tomato Cream ...
-        </h4>
-        <p class="preview__publisher">The Pioneer Woman</p>
-       </div>
-      </a>
-    </li> -->
-
-
-
-
-*/

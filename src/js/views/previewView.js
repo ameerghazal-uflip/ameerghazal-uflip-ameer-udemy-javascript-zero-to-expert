@@ -31,26 +31,20 @@ class PreviewView extends View {
   `;
   }
 
+  // ADDED FOR ADDITIONAL ADVANCED FEATURE: edited markup.
   _generateMarkupList() {
     const id = window.location.hash.slice(1);
 
     return `
     <li class="preview">
-      <a class="preview__link ${
-        this._data.id === id ? 'preview__link--active' : ''
-      }" href="#${this._data.id}">
-        <figure class="preview__fig">
-          <img src="${this._data.image}" alt="${this._data.title}" />
-        </figure>
+      <a class="preview__link preview__link--active"
+      href="#${id}">
         <div class="preview__data">
-          <h4 class="preview__title">${this._data.title}</h4>
-          <p class="preview__publisher">${this._data.publisher}</p>
-          <div class="preview__user-generated ${
-            this._data.key ? '' : 'hidden'
-          }">
-            <svg>
-            <use href="${icons}#icon-user"></use>
-            </svg>
+          <p class="preview__ingredient">${this._data}</p>
+          <div class="preview__user-deleted">
+            <button class="btn--tiny delete_ing_btn" style="height: 5rem;">
+              <i class="fa fa-remove" style="font-size:24px; margin-left: 2rem; "></i>
+            </button>
           </div>
         </div>
       </a>

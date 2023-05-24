@@ -14,7 +14,6 @@ export default class View {
    * @todo Finish Implmenetation
    */
   render(data, render = true) {
-    // console.log(data);
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError(); // already has the default error message if empty. Checks if it is an array and is empty.
 
@@ -38,7 +37,6 @@ export default class View {
 
   // ADDED FOR ADDITIONAL FEATURE ADVANCED!!!!
   renderList(data, render = true) {
-    // console.log(data);
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError(); // already has the default error message if empty. Checks if it is an array and is empty.
 

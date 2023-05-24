@@ -15,7 +15,7 @@ export const state = {
     resultsPerPage: RES_PER_PAGE,
   },
   bookmarks: [],
-  cart: ['3 kilos sugar'], // ADVANCED ADDITIONAL FEATURE: Shopping List
+  cart: [], // ADVANCED ADDITIONAL FEATURE: Shopping List
 };
 
 const createRecipeObject = function (data) {
@@ -130,27 +130,51 @@ const persistCart = function () {
 
 // ADVANCED ADDITIONAL FEATURE: Shopping List
 export const addToCart = function (ingredient) {
-  state.cart.push(ingredient);
+  let counter = 0;
+  let description = ingredient.split(' ').at(2).toLowerCase(); // gets description to see if it matches.
+  let unit = ingredient.split(' ').at(1).toLowerCase(); // correct unit
+  const quantity = +ingredient.split(' ').at(0);
 
-  // // Mark current recipe as bookmarked
-  // if (ingredient.id === state.recipe.ingredient.id) {
-  //   state.recipe.addedToCart = true;
-  // }
+  let found = false; // boolean for checking later
+  state.cart.forEach(item => {
+    if (
+      // start at index 3 because of the 'of' & keep track of the period
+      item.split(' ').at(3).toLowerCase() === description + '.' &&
+      item.split(' ').at(1).toLowerCase() === unit
+    ) {
+      const updatedNumber = +item.split(' ').at(0) + quantity; // combined number
+      const index = state.cart.indexOf(item); // finds the index of the dup.
+
+      unit = unit.at(0).toUpperCase() + unit.substring(1); // first letter uppercase
+      description = description.at(0).toUpperCase() + description.substring(1); // first letter uppercase
+
+      state.cart[index] = `${updatedNumber} ${unit} of ${description}.`; // updates the cart
+      found = true;
+    }
+  });
+
+  if (!found) {
+    unit = unit.at(0).toUpperCase() + unit.substring(1); // first letter uppercase
+    description = description.at(0).toUpperCase() + description.substring(1); // first letter uppercase
+
+    state.cart.push(`${quantity} ${unit} of ${description}.`); // if no dups were found, add it in.
+  }
 
   persistCart();
 };
 
 // ADVANCED ADDITIONAL FEATURE: Shopping List
-export const removeFromCart = function (id) {
-  const index = state.cart.findIndex(el => el.id === id);
-  state.cart.splice(index, 1);
+export const removeFromCart = function (ingredientLi) {
+  debugger;
+  const ingredient = ingredientLi.querySelector(
+    '.preview__ingredient'
+  ).textContent; //finds the nearest ingredient and checks
 
-  //  // Mark current recipe as NOT bookmarked
-  //  if (id === state.recipe.id) {
-  //   state.recipe.bookmarked = false;
-  // }
+  const index = state.cart.findIndex(el => el === ingredient);
 
-  persistCart();
+  state.cart.splice(index, 1); // removes it from the cart
+
+  persistCart(); // updates local storage
 };
 
 const init = function () {

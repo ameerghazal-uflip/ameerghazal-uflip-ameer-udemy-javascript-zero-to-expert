@@ -35,13 +35,29 @@ class RecipeView extends View {
   }
 
   // ADDITIONAL FEATURE ADVANCED: Shopping List.
-  addHandlerCartIngredient(handler) {
+  addHandlerAddCartIngredient(handler) {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.cart_btn');
 
       if (!btn) return;
 
-      handler();
+      const quantity = e.target
+        .closest('.recipe__ingredient')
+        .querySelector('.recipe__quantity').textContent;
+
+      const unit_description = (
+        '' +
+        e.target
+          .closest('.recipe__ingredient')
+          .querySelector('.recipe__description').textContent
+      )
+        .replaceAll('\n', '')
+        .trim()
+        .replace(/\s+/g, ' '); // string manupluation to get the correct format
+
+      const ingredient = '' + quantity + ' ' + unit_description;
+
+      handler(ingredient); // passes in the correct ingredient to use.
     });
   }
 

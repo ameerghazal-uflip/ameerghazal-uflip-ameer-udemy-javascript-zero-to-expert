@@ -129,9 +129,9 @@ const controlBookmarks = function () {
 };
 
 // ADDTIONAL: Advanced Shopping List
-const controlAddToCart = function () {
-  // Adding or removing something from the cart
-  model.addToCart(); ///////////////////////////////////////////////
+const controlAddToCart = function (ingredient) {
+  // Adds or updates something from the cart
+  model.addToCart(ingredient);
 
   // Update the view
   // recipeView.update(model.state.recipe);
@@ -140,8 +140,15 @@ const controlAddToCart = function () {
   shoppingListView.render(model.state.cart);
 };
 
-// ADDTIONAL: Advanced Shopping List
+const controlRemoveFromCart = function (ingredientLi) {
+  model.removeFromCart(ingredientLi);
+
+  shoppingListView.render(model.state.cart);
+};
+
+// // ADDTIONAL: Advanced Shopping List
 const controlCart = function () {
+  // displays the carts off reload
   shoppingListView.render(model.state.cart);
 };
 
@@ -203,7 +210,7 @@ const controlEditIngredient = async function () {
     setTimeout(function () {
       // removes the bookmarks
       location.reload();
-    }, MODAL_CLOSE_SEC * 5000);
+    }, MODAL_CLOSE_SEC * 100000);
   } catch (error) {
     console.error(error);
   }
@@ -217,11 +224,13 @@ const init = function () {
   recipeView.addHandlerAddBookmark(controlAddBookmark);
   recipeView.addHandlerEditRecipe(controlEditIngredient); // add feature 5
   recipeView.addHandlerDeleteRecipe(controlDeleteRecipe); // add feature 5
-  recipeView.addHandlerCartIngredient(controlAddToCart); // add ft. advanced
+  recipeView.addHandlerAddCartIngredient(controlAddToCart); // add ft. advanced
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
   addRecipeView.addHandlerIngredient(controlAddIngredient); // add. feature 2
-  shoppingListView.addHandlerListRender(controlCart); // add ft. advanced
+  // shoppingListView.addHandlerListRender(controlCart); // add ft. advanced
+  shoppingListView.addHandlerRemoveCartIngredient(controlRemoveFromCart); //adv ft.
+  shoppingListView.addHandlerListRender(controlCart); // adv ft. (displays off reload)
 };
 init();
